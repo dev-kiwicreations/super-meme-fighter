@@ -48,7 +48,8 @@ namespace UFE3D
 			}
 			else if (selectedOption == VersusModeAfterBattleScreen.Option.MainMenu)
 			{
-				UFE.StartMainMenuScreen();
+                UFE.StopMusic();
+                UFE.StartMainMenuScreen();
 			}
 			else if (selectedOption == VersusModeAfterBattleScreen.Option.StageSelectionScreen)
 			{

@@ -16,6 +16,10 @@ namespace UFE3D
         {
             Debug.Log("GoToMainMenuDelayed");
             UFE.EndGame();
+            //TODO StopMusic is being called manually. 
+            //This means that whenever a new screen or gamemode is designed, we will have to call StopMusic again
+            //Design a better way to handle this so that the music automatically transitions between stage music and main menu or other screen music.
+            UFE.StopMusic();
             UFE.StartMainMenuScreen();
             UFE.PauseGame(false);
         }

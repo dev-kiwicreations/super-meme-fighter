@@ -1223,7 +1223,7 @@ public partial class UFE
 		Debug.Log("_StartMainMenuScreen");
 
         UFE.HideScreen(UFE.currentScreen);
-		UFE.StopMusic();
+		//UFE.StopMusic();
 		if (UFE.config.gameGUI.mainMenuScreen == null)
 		{
 			Debug.LogError("Main Menu Screen not found! Make sure you have set the prefab correctly in the Global Editor");
