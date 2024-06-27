@@ -1,4 +1,6 @@
-﻿namespace UFE3D
+﻿using UnityEngine;
+
+namespace UFE3D
 {
     public class PauseScreen : UFEScreen
     {
@@ -12,6 +14,7 @@
 
         private void GoToMainMenuDelayed()
         {
+            Debug.Log("GoToMainMenuDelayed");
             UFE.EndGame();
             UFE.StartMainMenuScreen();
             UFE.PauseGame(false);

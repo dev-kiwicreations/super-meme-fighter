@@ -1220,7 +1220,9 @@ public partial class UFE
 
 	private static void _StartMainMenuScreen(float fadeTime)
 	{
-		UFE.HideScreen(UFE.currentScreen);
+		Debug.Log("_StartMainMenuScreen");
+
+        UFE.HideScreen(UFE.currentScreen);
 		UFE.StopMusic();
 		if (UFE.config.gameGUI.mainMenuScreen == null)
 		{

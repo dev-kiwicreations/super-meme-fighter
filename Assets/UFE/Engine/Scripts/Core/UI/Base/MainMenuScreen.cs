@@ -7,7 +7,7 @@ namespace UFE3D
 	{
 		public Button buttonNetwork;
 
-		public override void OnShow()
+        public override void OnShow()
 		{
 			base.OnShow();
 
@@ -15,7 +15,11 @@ namespace UFE3D
 			{
 				buttonNetwork.interactable = UFE.IsNetworkAddonInstalled || UFE.IsBluetoothAddonInstalled;
 			}
-		}
+            if (!UFE.IsPlayingMusic())
+            {
+                UFE.PlayMusic(this.music);
+            }
+        }
 
 		public virtual void Quit()
 		{
