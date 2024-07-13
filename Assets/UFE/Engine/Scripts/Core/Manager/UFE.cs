@@ -1022,6 +1022,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
     private static void _StartGame(float fadeTime)
     {
+        Debug.Log("Trying to start Game");
         UFE.HideScreen(UFE.currentScreen);
         // Initialize Battle GUI
         if (UFE.config.gameGUI.battleGUI == null)
@@ -1341,6 +1342,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
         UFE.DelaySynchronizedAction(UFE.CastNewRound, newRoundDelay);
 
         UFE.FireGameBegins();
+        Debug.Log("_startGame complete");
     }
 
     #endregion
@@ -2121,6 +2123,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
     public static void PreloadBattle(float warmTimer)
     {
+        Debug.Log("PrLoadinng battle...");
         if (UFE.config.preloadHitEffects)
         {
             SearchAndCastGameObject(UFE.config.hitOptions.weakHit, warmTimer);
@@ -2153,6 +2156,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
         //if (UFE.config.warmAllShaders) Shader.WarmupAllShaders();
 
         memoryDump.Clear();
+        Debug.Log("PrLoad battle complete");
     }
 
     public static void SearchAndCastGameObject(UFE3D.CharacterInfo characterInfo, float warmTimer)

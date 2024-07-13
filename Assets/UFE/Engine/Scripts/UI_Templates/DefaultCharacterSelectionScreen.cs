@@ -186,10 +186,16 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     public override void SetHoverIndex(int player, int characterIndex)
     {
         Debug.Log("SetHoverIndex. player: " + player + " characterIndex: " + characterIndex);
+        Debug.Log("Before");
+        Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
+
         int maxCharacterIndex = this.GetMaxCharacterIndex();
         this.p1HoverIndex = Mathf.Clamp(this.p1HoverIndex, 0, maxCharacterIndex);
         this.p2HoverIndex = Mathf.Clamp(this.p2HoverIndex, 0, maxCharacterIndex);
         base.SetHoverIndex(player, characterIndex);
+
+        Debug.Log("After");
+        Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
 
         if (characterIndex >= 0 && characterIndex <= maxCharacterIndex)
         {
@@ -200,9 +206,9 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
             {
                 if (this.namePlayer1 != null)
                 {
-                    this.namePlayer1.text = character.characterName;
+                    this.namePlayer1.text = character.characterName.ToUpper();
                 }
-                this.namePlayer1.text = character.characterName;
+                this.namePlayer1.text = character.characterName.ToUpper();
                 if (this.displayMode == DisplayMode.CharacterPortrait)
                 {
                     if (this.portraitPlayer1 != null)
@@ -289,7 +295,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
             {
                 if (this.namePlayer2 != null)
                 {
-                    this.namePlayer2.text = character.characterName;
+                    this.namePlayer2.text = character.characterName.ToUpper();
                 }
 
                 if (this.displayMode == DisplayMode.CharacterPortrait)
@@ -431,11 +437,20 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 RectTransform rt = this.hudPlayer2.transform as RectTransform;
                 if (rt != null)
                 {
+                    if (this.characters[this.p2HoverIndex] == null)
+                    {
+                        Debug.Log("Player at index " + p2HoverIndex + " is null");
+                    }
+                    
                     rt.anchoredPosition = this.characters[this.p2HoverIndex].rectTransform.anchoredPosition + hudOffset;
                 }
                 else
                 {
-                    this.hudPlayer2.transform.position = this.characters[this.p2HoverIndex].transform.position;
+
+                    if (isPLayer2Allowed)
+                    {
+                        this.hudPlayer2.transform.position = this.characters[this.p2HoverIndex].transform.position;
+                    }
                 }
             }
 
@@ -533,7 +548,9 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
             {
                 this.portraitPlayer2.gameObject.SetActive(true);
             }
+            
         }
+        Invoke(nameof(AutoClickToshiPlayer1), 0.2f);
     }
     
     private void SetupCharacterSelection()
@@ -573,7 +590,6 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                     button.onClick.AddListener(() => { OnCharacterButtonClicked(index); });
                     button.targetGraphic = character;
                     this.characterButtonsWhiteList.Add(button);
-
                 }
             }
             
@@ -599,22 +615,14 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
         this.SetHoverIndex(1, Mathf.Clamp(this.defaultCharacterPlayer1, 0, this.selectableCharacters.Length - 1));
     }
+    public void AutoClickToshiPlayer1()
+    {
+        OnCharacterButtonClicked(0);
+    }
     private void OnCharacterButtonClicked(int index)
     {
         selectedCharacterIndex = index;
         hudPlayer1.gameObject.SetActive(true);
-
-        hudBothPlayers.gameObject.SetActive(true);
-        if (this.hudBothPlayers != null)
-        {
-            this.hudBothPlayers.SetBool("IsHidden", this.p1HoverIndex != this.p2HoverIndex);
-
-            this.hudBothPlayers.SetBool(
-                "IsSelected",
-                UFE.config.player1Character != null && UFE.config.player2Character != null
-            );
-        }
-
 
         if (isPLayer2Allowed)
         {
@@ -636,8 +644,63 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         selectButton.onClick.AddListener(() => { this.characterSelectButton(); });
 
     }
+    
+    public void ChangePlayer1NameColor()
+    {
+        UFEGradient player1nameGradient = namePlayer1.GetComponent<UFEGradient>();
+        if (player1nameGradient != null)
+        {
+            Debug.Log("Found on Player 1 name");
+            Color32 startColor = new Color32(0xFF, 0x4C, 0x4C, 0xFF); // #FF4C4C
+            Color32 endColor = new Color32(0xF7, 0xD1, 0x08, 0xFF);   // #F7D108
+
+            player1nameGradient.StartColor = startColor;
+            player1nameGradient.EndColor = endColor;
+
+            var graphic = player1nameGradient.GetComponent<Graphic>();
+            if (graphic != null)
+            {
+                graphic.SetVerticesDirty();
+                graphic.SetMaterialDirty();
+            }
+        }
+        else
+        {
+            Debug.Log("No UFE Gradient Found on Player 1 name");
+        }
+    }
+    public void ChangePlayer2NameColor()
+    {
+        UFEGradient player2nameGradient = namePlayer2.GetComponent<UFEGradient>();
+        if (player2nameGradient != null)
+        {
+            Debug.Log("Found on Player 1 name");
+            Color32 startColor = new Color32(0xFF, 0x4C, 0x4C, 0xFF); // #FF4C4C
+            Color32 endColor = new Color32(0xF7, 0xD1, 0x08, 0xFF);   // #F7D108
+
+            player2nameGradient.StartColor = startColor;
+            player2nameGradient.EndColor = endColor;
+
+            var graphic = player2nameGradient.GetComponent<Graphic>();
+            if (graphic != null)
+            {
+                graphic.SetVerticesDirty();
+                graphic.SetMaterialDirty();
+            }
+        }
+        else
+        {
+            Debug.Log("No UFE Gradient Found on Player 2 name");
+        }
+    }
     public void characterSelectButton()
     {
+        ChangePlayer1NameColor();
+        if(isPLayer2Allowed)
+        {
+            ChangePlayer2NameColor();
+        }
+
         isPLayer2Allowed = true;
         isPLayer1Allowed = false;
 
@@ -646,6 +709,19 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         title2.SetActive(true);
         
         hudPlayer2.gameObject.SetActive(true);
+
+        Invoke(nameof(AutoClickToshiPlayer1), 0.05f);
+
+        hudBothPlayers.gameObject.SetActive(true);
+        if (this.hudBothPlayers != null)
+        {
+            this.hudBothPlayers.SetBool("IsHidden", this.p1HoverIndex != this.p2HoverIndex);
+
+            this.hudBothPlayers.SetBool(
+                "IsSelected",
+                UFE.config.player1Character != null && UFE.config.player2Character != null
+            );
+        }
     }
     #endregion
 

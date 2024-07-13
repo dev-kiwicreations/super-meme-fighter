@@ -7,7 +7,7 @@ namespace UFE3D
     public class GameGUI
     {
         public bool hasGauge = true;
-        public Fix64 screenFadeDuration = .5;
+        public Fix64 screenFadeDuration = .9;
         public Fix64 gameFadeDuration = .5;
         public Fix64 roundFadeDuration = .5;
         public Color screenFadeColor = Color.black;

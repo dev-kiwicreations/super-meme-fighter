@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayType: 0
   profilePictureSmall: {fileID: 2800000, guid: 0c0a408b4e9d61243947637b02fe5d23, type: 3}
-  profilePictureBig: {fileID: 2800000, guid: ba35805180ab9a641acb81ec999850c1, type: 3}
+  profilePictureBig: {fileID: 2800000, guid: bca96324e7dc0284cbfa77dbe8b2bb5a, type: 3}
   characterName: Doge
   gender: 1
   characterDescription: Doge
@@ -639,7 +639,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 3
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 0
       takeOff:
         id: 1415fc3a-18c6-4a09-b736-df7fbedb6470
@@ -1557,10 +1557,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -1663,7 +1663,7 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 1
         moveInfo: {fileID: 0}
         useMoveFile: 0
         autoSpeed: 1
@@ -4313,7 +4313,7 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
         autoSpeed: 1

@@ -19,7 +19,7 @@ MonoBehaviour:
     clip: {fileID: 7400000, guid: 8bd03b3563cd7bd40ab72bff361505ee, type: 2}
     customHitBoxDefinition: {fileID: 11400000, guid: dea3ed47864984c4ea5f5e75d064e0cb, type: 2}
     length:
-      _serializedValue: 1503238656
+      _serializedValue: 2219066368
     bakeSpeed: 0
     hitBoxDefinitionType: 1
   _animationSpeed:
@@ -48,10 +48,10 @@ MonoBehaviour:
   speedKeyFrameToggle: 0
   fixedSpeed: 1
   animSpeedKeyFrame: []
-  totalFrames: 22
+  totalFrames: 31
   startUpFrames: 18
   activeFrames: 3
-  recoveryFrames: 1
+  recoveryFrames: 10
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -449,10 +449,10 @@ MonoBehaviour:
       type: 0
   blockableArea:
     enabled: 1
-    activeFramesBegin: 15
+    activeFramesBegin: 0
     activeFramesEnds: 21
     bodyPart: 0
-    hitBoxDefinitionIndex: 10
+    hitBoxDefinitionIndex: 0
     shape: 0
     rect:
       serializedVersion: 2

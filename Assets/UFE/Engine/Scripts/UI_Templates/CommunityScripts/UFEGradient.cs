@@ -20,9 +20,9 @@ namespace UFE3D
         public float Offset = 0f;
 
         [SerializeField]
-        private Color32 StartColor = Color.white;
+        public Color32 StartColor = Color.white;
         [SerializeField]
-        private Color32 EndColor = Color.black;
+        public Color32 EndColor = Color.black;
 
         public override void ModifyMesh(VertexHelper helper)
         {

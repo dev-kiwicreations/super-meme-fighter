@@ -115,7 +115,7 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      conditionsToggle: 0
+      conditionsToggle: 1
     - enabled: 1
       boolean: 0
       conditions:
@@ -169,7 +169,7 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      conditionsToggle: 0
+      conditionsToggle: 1
     reactions:
     - reactionType: 10
       moveClassification:
@@ -178,7 +178,7 @@ MonoBehaviour:
         startupSpeed: 0
         recoverySpeed: 0
         hitConfirmType: 0
-        preferableDistance: 0
+        preferableDistance: 1
         gaugeUsage: 0
         anyAttackType: 0
         anyHitType: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
-      desirability: 5
+      desirability: 4
     - reactionType: 8
       moveClassification:
         attackType: 0
@@ -204,10 +204,27 @@ MonoBehaviour:
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
-      desirability: 3
+      desirability: 5
+    - reactionType: 10
+      moveClassification:
+        attackType: 6
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 1
     debugToggle: 0
     eventsToggle: 0
-    reactionsToggle: 0
+    reactionsToggle: 1
   - ruleName: Dash Forward, Stay Close
     events:
     - enabled: 1
@@ -314,10 +331,27 @@ MonoBehaviour:
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
+      desirability: 4
+    - reactionType: 1
+      moveClassification:
+        attackType: 0
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 1
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
       desirability: 6
     debugToggle: 0
     eventsToggle: 0
-    reactionsToggle: 1
+    reactionsToggle: 0
   - ruleName: Grapple Priority
     events:
     - enabled: 1
@@ -357,7 +391,7 @@ MonoBehaviour:
         startupSpeed: 0
         recoverySpeed: 0
         hitConfirmType: 0
-        preferableDistance: 0
+        preferableDistance: 1
         gaugeUsage: 0
         anyAttackType: 0
         anyHitType: 0
@@ -367,8 +401,25 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 0
       desirability: 5
+    - reactionType: 10
+      moveClassification:
+        attackType: 6
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 1
     debugToggle: 0
-    eventsToggle: 1
+    eventsToggle: 0
     reactionsToggle: 1
   - ruleName: Enforce Defensive Maneuvers
     events:
@@ -460,10 +511,27 @@ MonoBehaviour:
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
-      desirability: 4
+      desirability: 3
+    - reactionType: 10
+      moveClassification:
+        attackType: 6
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 1
     debugToggle: 0
     eventsToggle: 0
-    reactionsToggle: 0
+    reactionsToggle: 1
   - ruleName: Change Behavior - Balanced
     events:
     - enabled: 1
