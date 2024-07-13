@@ -26,7 +26,7 @@ MonoBehaviour:
     _serializedValue: 4294967296
   wrapMode: 0
   characterPrefabStorage: 0
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 6984190503914508003, guid: d823490647b328f4b9303f5c60d88203, type: 3}
   prefabResourcePath: 
   moveName: Doge Crouch Kick
   description: Doge Crouch Kick
@@ -49,9 +49,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 25
-  activeFrames: 5
-  recoveryFrames: 1
+  startUpFrames: 20
+  activeFrames: 11
+  recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -140,8 +140,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 25
-    activeFramesEnds: 29
+  - activeFramesBegin: 20
+    activeFramesEnds: 30
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -232,18 +232,18 @@ MonoBehaviour:
       _serializedValue: 0
     frameAdvantageOnHit: 0
     frameAdvantageOnBlock: 0
-    damageScaling: 1
-    damageType: 1
+    damageScaling: 0
+    damageType: 0
     _damageOnHit:
-      _serializedValue: 128849018880
+      _serializedValue: 0
     _minDamageOnHit:
       _serializedValue: 0
     _damageOnBlock:
       _serializedValue: 0
     doesntKill: 0
-    hitType: 0
-    resetPreviousHorizontalPush: 1
-    resetPreviousVerticalPush: 1
+    hitType: 1
+    resetPreviousHorizontalPush: 0
+    resetPreviousVerticalPush: 0
     resetPreviousSidewaysPush: 0
     resetJumpForce: 0
     applyDifferentAirForce: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
     applyDifferentSelfBlockForce: 0
     _pushForce:
       x:
-        _serializedValue: 42949672960
+        _serializedValue: 0
       y:
         _serializedValue: 0
       z:
@@ -350,10 +350,10 @@ MonoBehaviour:
         z:
           _serializedValue: 0
     hitToggle: 1
-    damageOptionsToggle: 1
+    damageOptionsToggle: 0
     hitStunOptionsToggle: 0
-    forceOptionsToggle: 1
-    opponentForceToggle: 1
+    forceOptionsToggle: 0
+    opponentForceToggle: 0
     selfForceToggle: 0
     stageReactionsToggle: 0
     overrideEventsToggle: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
     - bodyPart: 0
       followXBounds: 0
       followYBounds: 0
-      hitBoxDefinitionIndex: 9
+      hitBoxDefinitionIndex: 8
       _offSet:
         x:
           _serializedValue: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 14130442240
           y:
             _serializedValue: 0
           z:
@@ -397,41 +397,41 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 14130442240
           y:
-            _serializedValue: 0
+            _serializedValue: 8589934592
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 8589934592
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 14130442240
         height:
-          _serializedValue: 0
+          _serializedValue: 8589934592
         xMax:
-          _serializedValue: 0
+          _serializedValue: 14130442240
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 8589934592
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1
-    activeFramesBegin: 17
+    activeFramesBegin: 20
     activeFramesEnds: 30
     bodyPart: 0
-    hitBoxDefinitionIndex: 10
-    shape: 0
+    hitBoxDefinitionIndex: 9
+    shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 4
-      height: 4
+      width: 4.77
+      height: 1.95
     _rect:
       _x:
         _serializedValue: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 20486993920
         y:
           _serializedValue: 0
         z:
@@ -453,26 +453,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 20486993920
         y:
-          _serializedValue: 0
+          _serializedValue: 8375186432
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 0
+          _serializedValue: 8375186432
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 0
+        _serializedValue: 20486993920
       height:
-        _serializedValue: 0
+        _serializedValue: 8375186432
       xMax:
-        _serializedValue: 0
+        _serializedValue: 20486993920
       yMax:
-        _serializedValue: 0
+        _serializedValue: 8375186432
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -500,9 +500,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: 0
+        _serializedValue: -7129645568
       y:
-        _serializedValue: 0
+        _serializedValue: 10909216768
       z:
         _serializedValue: 0
     prevPosition:
