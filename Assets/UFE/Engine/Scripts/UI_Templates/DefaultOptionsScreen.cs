@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UFE3D;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
+using Toggle = UnityEngine.UI.Toggle;
+using Button = UnityEngine.UI.Button;
+using System.Collections;
 
 public class DefaultOptionsScreen : OptionsScreen
 {
@@ -16,6 +21,11 @@ public class DefaultOptionsScreen : OptionsScreen
     public Button changeControlsButton;
     public Button cancelButton;
     public float sliderSpeed = 0.1f;
+
+    public Button increaseMusicButton;
+    public Button decreaseMusicButton;
+    public Button increaseSFXButton;
+    public Button decreaseSFXButton;
     #endregion
 
     #region private properties
@@ -97,6 +107,58 @@ public class DefaultOptionsScreen : OptionsScreen
                 (UFE.IsRewiredInstalled && UFE.config.inputOptions.inputManagerType == InputManagerType.Rewired)
             );
         }
+
+        ChangeVolumeButtonsAddListener();
+    }
+    private void ChangeVolumeButtonsAddListener()
+    {
+        if (increaseMusicButton != null)
+        {
+            increaseMusicButton.onClick.RemoveAllListeners();
+            increaseMusicButton.onClick.AddListener(() =>
+            {
+                IncreaseMusic();
+                StartCoroutine(DisableButtonTemporarily(increaseMusicButton));
+            });
+        }
+
+        if (decreaseMusicButton != null)
+        {
+            decreaseMusicButton.onClick.RemoveAllListeners();
+            decreaseMusicButton.onClick.AddListener(() =>
+            {
+                DecreaseMusic();
+                StartCoroutine(DisableButtonTemporarily(decreaseMusicButton));
+            });
+        }
+
+        if (increaseSFXButton != null)
+        {
+            increaseSFXButton.onClick.RemoveAllListeners();
+            increaseSFXButton.onClick.AddListener(() =>
+            {
+                IncreaseSFX();
+                StartCoroutine(DisableButtonTemporarily(increaseSFXButton));
+            });
+        }
+
+        if (decreaseSFXButton != null)
+        {
+            decreaseSFXButton.onClick.RemoveAllListeners();
+            decreaseSFXButton.onClick.AddListener(() =>
+            {
+                DecreaseSFX();
+                StartCoroutine(DisableButtonTemporarily(decreaseSFXButton));
+            });
+        }
+    }
+    private IEnumerator DisableButtonTemporarily(Button button)
+    {
+        button.onClick.RemoveAllListeners();
+        button.interactable = false;
+        yield return new WaitForSeconds(0.3f); // Adjust the wait time as needed
+        button.interactable = true;
+        ChangeVolumeButtonsAddListener();
     }
     #endregion
 
@@ -175,6 +237,39 @@ public class DefaultOptionsScreen : OptionsScreen
             this.SetSoundFXVolume(slider.value);
         }
     }
+
+    public void IncreaseMusic()
+    {
+        float currentMusicVolume = GetMusicVolume();
+        currentMusicVolume += 0.1f;
+        currentMusicVolume = Mathf.Clamp(currentMusicVolume, 0f, 1f);
+        this.SetMusicVolume(currentMusicVolume);
+    }
+
+    public void DecreaseMusic()
+    {
+        float currentMusicVolume = GetMusicVolume();
+        currentMusicVolume -= 0.1f;
+        currentMusicVolume = Mathf.Clamp(currentMusicVolume, 0f, 1f);
+        this.SetMusicVolume(currentMusicVolume);
+    }
+
+    public void IncreaseSFX()
+    {
+        float currentSFXVolume = GetSoundFXVolume();
+        currentSFXVolume += 0.1f;
+        currentSFXVolume = Mathf.Clamp(currentSFXVolume, 0f, 1f);
+        this.SetSoundFXVolume(currentSFXVolume);
+    }
+
+    public void DecreaseSFX()
+    {
+        float currentSFXVolume = GetSoundFXVolume();
+        currentSFXVolume -= 0.1f;
+        currentSFXVolume = Mathf.Clamp(currentSFXVolume, 0f, 1f);
+        this.SetSoundFXVolume(currentSFXVolume);
+    }
+
     #endregion
 
     #region public override methods

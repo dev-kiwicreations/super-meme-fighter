@@ -67,16 +67,16 @@ MonoBehaviour:
   defaultInputs:
     chargeMove: 0
     _chargeTiming:
-      _serializedValue: 1288490240
+      _serializedValue: 2147483648
     allowInputLeniency: 0
     allowNegativeEdge: 0
     forceAxisPrecision: 0
-    leniencyBuffer: 3
+    leniencyBuffer: 8
     onReleaseExecution: 0
     requireButtonPress: 1
-    onPressExecution: 1
+    onPressExecution: 0
     buttonSequence: 
-    buttonExecution: 07000000
+    buttonExecution: 
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -289,15 +289,15 @@ MonoBehaviour:
     nonAffectedBodyParts: 
   projectiles:
   - castingFrame: 55
-    projectilePrefab: {fileID: 5951313037330613596, guid: 63cb39dbbf3595a4485f96fa385b82f6, type: 3}
+    projectilePrefab: {fileID: 5951313037330613596, guid: 2a5c4666ca145e540a0da87d1578111f, type: 3}
     impactPrefab: {fileID: 0}
     bodyPart: 0
     hitBoxDefinitionIndex: 9
     _castingOffSet:
       x:
-        _serializedValue: 6442450944
+        _serializedValue: 8589934592
       y:
-        _serializedValue: 7516192768
+        _serializedValue: 3221225472
       z:
         _serializedValue: 0
     speed: 20

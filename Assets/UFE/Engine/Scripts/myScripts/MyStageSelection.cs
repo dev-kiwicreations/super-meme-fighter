@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MyStageSelection : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class MyStageSelection : MonoBehaviour
     public GameObject Title;
     public GameObject StageButtonsNew;
     public GameObject ReadyScreen;
+
+    public Text mapName;
+    public GameObject area51png;
     
 
     public void OnSelectPress()
@@ -21,6 +25,16 @@ public class MyStageSelection : MonoBehaviour
         Title.SetActive(false);
         Stage.SetActive(false);
         StageButtonsNew.SetActive(true);
+        if(mapName.text.Contains("rea"))
+        {
+            mapName.gameObject.SetActive(false);
+            area51png.SetActive(true);
+        }
+        else
+        {
+            mapName.gameObject.SetActive(true);
+            area51png.SetActive(false);
+        }
     }
     public void OnNewBackPress()
     {

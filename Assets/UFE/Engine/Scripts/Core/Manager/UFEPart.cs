@@ -2153,6 +2153,7 @@ public partial class UFE
 	public static bool IsPlayingMusic()
 	{
 		if (UFE.musicAudioSource.clip != null) return UFE.musicAudioSource.isPlaying;
+
 		return false;
 	}
 
@@ -2242,6 +2243,11 @@ public partial class UFE
 		if (UFE.config != null) UFE.config.musicVolume = volume;
 		if (UFE.musicAudioSource != null) UFE.musicAudioSource.volume = volume;
 
+		if(volume<=0.01)
+		{
+			UFE.config.musicVolume = 0;
+		}
+
 		PlayerPrefs.SetFloat(UFE.MusicVolumeKey, volume);
 		PlayerPrefs.Save();
 	}
@@ -2249,7 +2255,13 @@ public partial class UFE
 	public static void SetSoundFXVolume(float volume)
 	{
 		if (UFE.config != null) UFE.config.soundfxVolume = volume;
-		PlayerPrefs.SetFloat(UFE.SoundsVolumeKey, volume);
+
+        if (volume <= 0.01)
+        {
+            UFE.config.soundfxVolume = 0;
+        }
+
+        PlayerPrefs.SetFloat(UFE.SoundsVolumeKey, volume);
 		PlayerPrefs.Save();
 	}
 

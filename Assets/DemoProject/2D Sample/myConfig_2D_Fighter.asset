@@ -24,25 +24,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
   - {fileID: 11400000, guid: 54057043117984643925ed339c232c0d, type: 2}
   selectedStage:
-    stageName: Cape Town
+    stageName: Texas
     stageLoadingMethod: 0
     stagePath: 
-    screenshot: {fileID: 2800000, guid: abd5928ac6793074c841b7a61677ae4c, type: 3}
-    prefab: {fileID: 100000, guid: 931a6abee46769e42a7c5cfc0e988d5c, type: 3}
-    music: {fileID: 8300000, guid: 36542d82a5480984aac56c4e35ca62e2, type: 3}
+    screenshot: {fileID: 2800000, guid: 0a207762ec2234548b8beb6b4cacaf79, type: 3}
+    prefab: {fileID: 100000, guid: 15c44fcb714b16848bb9d1380f7e7301, type: 3}
+    music: {fileID: 8300000, guid: d5d4c6311e097ba49b36beb6671873f6, type: 3}
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
-      _serializedValue: -64424509440
+      _serializedValue: -150323855360
     _rightBoundary:
-      _serializedValue: 64424509440
+      _serializedValue: 150323855360
     position:
       x:
         _serializedValue: 0
       y:
         _serializedValue: 0
       z:
-        _serializedValue: 42949672960
+        _serializedValue: 0
   gameName: ExampleGame
   gameplayType: 0
   selectedLanguage:
@@ -149,11 +149,35 @@ MonoBehaviour:
           possibleStagesIndexes: 00000000
         showOpponentsInEditor: 1
       showStoryInEditor: 1
-    selectableCharactersInStoryMode: 01000000000000000200000003000000
-    selectableCharactersInVersusMode: 00000000010000000200000003000000
+    selectableCharactersInStoryMode: 01000000000000000200000003000000040000000500000006000000070000000800000009000000
+    selectableCharactersInVersusMode: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
     characterStories:
-      _keys: 00000000010000000200000003000000
+      _keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
       _values:
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
       - opening: {fileID: 0}
         ending: {fileID: 0}
         fightsGroups: []
@@ -240,7 +264,7 @@ MonoBehaviour:
     skipLoadingScreen: 0
   cameraOptions:
     initialDistance: {x: 0, y: 9, z: -46}
-    initialRotation: {x: 5, y: 0, z: 0}
+    initialRotation: {x: 4, y: 0, z: 0}
     enableLookAt: 0
     dollyAngle: 0
     distance3d: 0
@@ -250,15 +274,15 @@ MonoBehaviour:
     followCharacters: 0
     initialFieldOfView: 16
     verticalPriority: 0
-    verticalThreshold: 2
+    verticalThreshold: 0
     movementSpeed: 12
     minZoom: 40
     maxZoom: 50
     _maxDistance:
       _serializedValue: 77309411328
     rotationSpeed: 12
-    leftBoundary: -12
-    rightBoundary: 12
+    leftBoundary: -27
+    rightBoundary: 27
     rotationOffSet: {x: 0, y: 3.5, z: 0}
     motionSensor: 0
     motionSensibility: 1
@@ -288,7 +312,7 @@ MonoBehaviour:
     _mirrorBlending:
       _serializedValue: 171798688
   roundOptions:
-    totalRounds: 5
+    totalRounds: 3
     hasTimer: 1
     _timer:
       _serializedValue: 257698037760
@@ -298,14 +322,14 @@ MonoBehaviour:
       x:
         _serializedValue: -21474836480
       y:
-        _serializedValue: 0
+        _serializedValue: -21474836480
       z:
         _serializedValue: 0
     _p2XPosition:
       x:
         _serializedValue: 21474836480
       y:
-        _serializedValue: 0
+        _serializedValue: -21474836480
       z:
         _serializedValue: 0
     _p1XRotation:
@@ -334,7 +358,7 @@ MonoBehaviour:
       _serializedValue: 12884901888
     _slowMoSpeed:
       _serializedValue: 858993472
-    victoryMusic: {fileID: 8300000, guid: 641189ac87f861f41bfd4a406b0d3294, type: 3}
+    victoryMusic: {fileID: 0}
     resetLifePoints: 1
     resetPositions: 1
     allowMovementStart: 0
@@ -1145,9 +1169,9 @@ MonoBehaviour:
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
-      _serializedValue: -85899345920
+      _serializedValue: -150323855360
     _rightBoundary:
-      _serializedValue: 85899345920
+      _serializedValue: 150323855360
     position:
       x:
         _serializedValue: 0
@@ -1164,9 +1188,9 @@ MonoBehaviour:
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
-      _serializedValue: -64424509440
+      _serializedValue: -150323855360
     _rightBoundary:
-      _serializedValue: 64424509440
+      _serializedValue: 150323855360
     position:
       x:
         _serializedValue: 0
@@ -1183,9 +1207,9 @@ MonoBehaviour:
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
-      _serializedValue: -85899345920
+      _serializedValue: -150323855360
     _rightBoundary:
-      _serializedValue: 85899345920
+      _serializedValue: 150323855360
     position:
       x:
         _serializedValue: 0
@@ -1202,9 +1226,28 @@ MonoBehaviour:
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
-      _serializedValue: -85899345920
+      _serializedValue: -150323855360
     _rightBoundary:
-      _serializedValue: 85899345920
+      _serializedValue: 150323855360
+    position:
+      x:
+        _serializedValue: 0
+      y:
+        _serializedValue: 0
+      z:
+        _serializedValue: 0
+  - stageName: Area 51
+    stageLoadingMethod: 0
+    stagePath: 
+    screenshot: {fileID: 2800000, guid: d31d5301a0114854fa61dec9b84be79a, type: 3}
+    prefab: {fileID: 100000, guid: 2f736326b9cc3c1479e3808a22c90e9a, type: 3}
+    music: {fileID: 8300000, guid: 5d4b61199f7d90c42b76d9c12fb2cfac, type: 3}
+    _groundFriction:
+      _serializedValue: 429496729600
+    _leftBoundary:
+      _serializedValue: -150323855360
+    _rightBoundary:
+      _serializedValue: 150323855360
     position:
       x:
         _serializedValue: 0
@@ -1213,10 +1256,16 @@ MonoBehaviour:
       z:
         _serializedValue: 0
   characters:
-  - {fileID: 11400000, guid: 2e33b5283554a61478ac640c8b2f58c7, type: 2}
-  - {fileID: 11400000, guid: 2a22f5315d477254faeb77e8e77f1490, type: 2}
   - {fileID: 11400000, guid: d28a8bf41852181439d08a26481d0af5, type: 2}
+  - {fileID: 11400000, guid: f26659cebef032f4483334aed71b22e0, type: 2}
+  - {fileID: 11400000, guid: 53a9244a1d891ed4c96b2eb7b49c2a08, type: 2}
+  - {fileID: 11400000, guid: b770d4b72ab2c154faec19ee75d1ba50, type: 2}
+  - {fileID: 11400000, guid: ee6c65381ee642942b807d238bb11e62, type: 2}
+  - {fileID: 11400000, guid: b738b1c8f23ddab488c251493181a337, type: 2}
   - {fileID: 11400000, guid: 8a8e06d93c5aa9f4a97b7aaa9149f44f, type: 2}
+  - {fileID: 11400000, guid: 2a22f5315d477254faeb77e8e77f1490, type: 2}
+  - {fileID: 11400000, guid: 2e33b5283554a61478ac640c8b2f58c7, type: 2}
+  - {fileID: 11400000, guid: 1f2adee20440ef44f8b892659cc4ad27, type: 2}
   teamModes:
   - modeName: Tag Battle (DBZF\Marvel) - 2D 3v3 Tag Team
     teams:
@@ -2008,7 +2057,7 @@ MonoBehaviour:
       crouchProbability: 0.5
       attackProbability: 0
     multiCoreSupport: 1
-    persistentBehavior: 0
+    persistentBehavior: 1
     difficultyToggle: 1
     difficultySettings:
     - difficultyLevel: 0
@@ -2025,45 +2074,45 @@ MonoBehaviour:
       startupBehavior: 3
     - difficultyLevel: 1
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.3
+      timeBetweenDecisions: 0.5
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
+      timeBetweenActions: 0.5
       overrideAggressiveness: 1
-      aggressiveness: 0.3
+      aggressiveness: 0.1
       overrideRuleCompliance: 0
       ruleCompliance: 0.9
       overrideComboEfficiency: 1
-      comboEfficiency: 0.2
+      comboEfficiency: 0
       startupBehavior: 3
     - difficultyLevel: 2
-      overrideTimeBetweenDecisions: 0
-      timeBetweenDecisions: 0
-      overrideTimeBetweenActions: 0
-      timeBetweenActions: 0.05
-      overrideAggressiveness: 0
-      aggressiveness: 0.4
-      overrideRuleCompliance: 0
-      ruleCompliance: 0.9
-      overrideComboEfficiency: 0
-      comboEfficiency: 1
+      overrideTimeBetweenDecisions: 1
+      timeBetweenDecisions: 0.4
+      overrideTimeBetweenActions: 1
+      timeBetweenActions: 0.4
+      overrideAggressiveness: 1
+      aggressiveness: 0.2
+      overrideRuleCompliance: 1
+      ruleCompliance: 0.5
+      overrideComboEfficiency: 1
+      comboEfficiency: 0.125
       startupBehavior: 3
     - difficultyLevel: 3
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.05
+      timeBetweenDecisions: 0.2
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.05
+      timeBetweenActions: 0.2
       overrideAggressiveness: 1
-      aggressiveness: 0.6
-      overrideRuleCompliance: 0
-      ruleCompliance: 0.9
+      aggressiveness: 0.422
+      overrideRuleCompliance: 1
+      ruleCompliance: 0.401
       overrideComboEfficiency: 1
-      comboEfficiency: 1
+      comboEfficiency: 0.402
       startupBehavior: 3
     - difficultyLevel: 4
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.1
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.05
+      timeBetweenActions: 0.1
       overrideAggressiveness: 1
       aggressiveness: 0.6
       overrideRuleCompliance: 1
@@ -2073,13 +2122,13 @@ MonoBehaviour:
       startupBehavior: 4
     - difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.01
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0
+      timeBetweenActions: 0.01
       overrideAggressiveness: 1
-      aggressiveness: 0.7
+      aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.9
+      ruleCompliance: 0.504
       overrideComboEfficiency: 1
       comboEfficiency: 1
       startupBehavior: 4
@@ -2087,13 +2136,13 @@ MonoBehaviour:
     selectedDifficulty:
       difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.01
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0
+      timeBetweenActions: 0.01
       overrideAggressiveness: 1
-      aggressiveness: 0.7
+      aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.9
+      ruleCompliance: 0.504
       overrideComboEfficiency: 1
       comboEfficiency: 1
       startupBehavior: 4
@@ -2146,7 +2195,7 @@ MonoBehaviour:
     synchronizationMessageFrequency: 0
     synchronizationAction: 2
   music: 1
-  musicVolume: 1
+  musicVolume: 0.39836243
   soundfx: 1
   soundfxVolume: 1
   colorStateOne: {r: 1, g: 0, b: 0, a: 1}

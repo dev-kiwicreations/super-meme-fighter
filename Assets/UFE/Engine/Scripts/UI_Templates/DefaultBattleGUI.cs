@@ -416,11 +416,11 @@ public class DefaultBattleGUI : BattleGUI{
 		
 		// Set the character names
 		if (this.player1GUI != null && this.player1GUI.name != null){
-			this.player1GUI.name.text = cPlayer1.myInfo.characterName;
+			this.player1GUI.name.text = cPlayer1.myInfo.characterName.ToUpper();
 		}
 
 		if (this.player2GUI != null && this.player2GUI.name != null){
-			this.player2GUI.name.text = cPlayer2.myInfo.characterName;
+			this.player2GUI.name.text = cPlayer2.myInfo.characterName.ToUpper();
 		}
 
 		// Set the character portraits

@@ -366,12 +366,13 @@ namespace UFE3D
 
         protected virtual void OnGameEnd(ControlsScript winner, ControlsScript loser)
         {
+            Debug.Log("OnGameEndCalled");
             this.isRunning = false;
             if (winner.playerNum == this.player1.controlsScript.playerNum)
             {
                 this.player1.winner = true;
                 publicWinner = UFE.config.player1Character;
-                PlayerPrefs.SetString("winnerName", UFE.config.player1Character.name);
+                PlayerPrefs.SetString("winnerName", UFE.config.player1Character.characterName);
 
 
             }
@@ -379,7 +380,7 @@ namespace UFE3D
             {
                 this.player2.winner = true;
                 publicWinner = UFE.config.player2Character;
-                PlayerPrefs.SetString("winnerName", UFE.config.player2Character.name);
+                PlayerPrefs.SetString("winnerName", UFE.config.player2Character.characterName);
             }
 
             UFE.DelaySynchronizedAction(this.OpenMenuAfterBattle, UFE.config.roundOptions._showMenuDelay);

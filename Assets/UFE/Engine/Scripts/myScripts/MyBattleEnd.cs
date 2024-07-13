@@ -51,13 +51,16 @@ namespace UFE3D
             }
             else
             {
-                Debug.Log("Winner is null.");
+                
                 string storedWinnerName = PlayerPrefs.GetString("winnerName");
-                if (storedWinnerName == UFE.config.player1Character.name)
+                Debug.Log("Winner is null and name is: |" + storedWinnerName
+                    + "| comparing with |" + UFE.config.player1Character.characterName
+                    + "| and |" + UFE.config.player2Character.characterName);
+                if (storedWinnerName == (UFE.config.player1Character.characterName))
                 {
                     winnerPlayerInfo = UFE.config.player1Character;
                 }
-                else if (storedWinnerName == UFE.config.player2Character.name)
+                else if (storedWinnerName == (UFE.config.player2Character.characterName))
                 {
                     winnerPlayerInfo = UFE.config.player2Character;
                 }
@@ -65,7 +68,7 @@ namespace UFE3D
                 {
                     Debug.Log("The stored winner does not match player 1 or player 2.");
                 }
-                if (storedWinnerName.Contains("T"))
+                if (storedWinnerName == "Toshi" || storedWinnerName == "Trump")
                 {
                     winnerPortrait.transform.localScale = new Vector3(
                         -winnerPortrait.transform.localScale.x, 
@@ -73,6 +76,7 @@ namespace UFE3D
                         winnerPortrait.transform.localScale.z
                         );
                 }
+
             }
             SetWinnerPlayer();
         }
@@ -92,10 +96,104 @@ namespace UFE3D
 
             // Assign the Sprite to the Image component
             winnerPortrait.sprite = sprite;
-            
+            PortraitAdjust();
             //----------------------------------
 
             winnerText.text = (winnerPlayerInfo.characterName + " WINS!").ToUpper();
         }
+        public void PortraitAdjust()
+        {
+            if (winnerPlayerInfo.characterName == "Doge")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(48f, -587, 0);
+                    rectTransform.sizeDelta = new Vector2(1912.059f, 1889.804f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Toshi")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(134, -238, 0);
+                    rectTransform.sizeDelta = new Vector2(1412.2f, 1395.788f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Slerf")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(120, -279, 0);
+                    rectTransform.sizeDelta = new Vector2(1348.922f, 1333.247f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Trump")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(-133f, -406, 0);
+                    rectTransform.sizeDelta = new Vector2(1617.501f, 1598.675f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Mew")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(63.514f, -338.45f, 0);
+                    rectTransform.sizeDelta = new Vector2(1552.973f, 1534.897f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Shiba")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(-195f, -333f, 0);
+                    rectTransform.sizeDelta = new Vector2(1339.731f, 1469.614f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Pepe")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(95f, -1289f, 0);
+                    rectTransform.sizeDelta = new Vector2(2090f, 3312.942f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Boden")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(192f, -734, 0);
+                    rectTransform.sizeDelta = new Vector2(1375.53f, 2204.293f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Wif")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(74, -276.5f, 0);
+                    rectTransform.sizeDelta = new Vector2(1594.765f, 1411.008f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Brett")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(80, -235, 0);
+                    rectTransform.sizeDelta = new Vector2(1289.885f, 1297.487f);
+                }
+            }
+        }
     }
+
 }

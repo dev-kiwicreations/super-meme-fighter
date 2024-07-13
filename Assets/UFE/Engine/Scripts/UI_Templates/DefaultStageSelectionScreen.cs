@@ -92,7 +92,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             CreatePlayer1();
             if (this.namePlayer1 != null)
             {
-                this.namePlayer1.text = UFE.config.player1Character.characterName;
+                this.namePlayer1.text = UFE.config.player1Character.characterName.ToUpper();
             }
         }
 
@@ -109,7 +109,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             CreatePlayer2();
             if (this.namePlayer2 != null)
             {
-                this.namePlayer2.text = UFE.config.player2Character.characterName;
+                this.namePlayer2.text = UFE.config.player2Character.characterName.ToUpper();
             }
         }
 
