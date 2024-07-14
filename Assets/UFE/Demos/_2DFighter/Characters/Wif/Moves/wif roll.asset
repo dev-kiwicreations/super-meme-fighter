@@ -49,9 +49,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 20
-  activeFrames: 6
-  recoveryFrames: 5
+  startUpFrames: 0
+  activeFrames: 31
+  recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 20
-    activeFramesEnds: 25
+  - activeFramesBegin: 0
+    activeFramesEnds: 30
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 17265768448
           y:
             _serializedValue: 0
           z:
@@ -393,27 +393,27 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 17265768448
           y:
-            _serializedValue: 0
+            _serializedValue: 10694468608
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 10694468608
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 17265768448
         height:
-          _serializedValue: 0
+          _serializedValue: 10694468608
         xMax:
-          _serializedValue: 0
+          _serializedValue: 17265768448
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 10694468608
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1

@@ -49,9 +49,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 23
-  activeFrames: 6
-  recoveryFrames: 2
+  startUpFrames: 20
+  activeFrames: 11
+  recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 23
-    activeFramesEnds: 28
+  - activeFramesBegin: 20
+    activeFramesEnds: 30
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -421,13 +421,13 @@ MonoBehaviour:
     activeFramesEnds: 30
     bodyPart: 0
     hitBoxDefinitionIndex: 10
-    shape: 0
+    shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 4
-      height: 4
+      width: 10.65
+      height: 5.05
     _rect:
       _x:
         _serializedValue: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 45741400064
         y:
           _serializedValue: 0
         z:
@@ -449,26 +449,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 45741400064
         y:
-          _serializedValue: 0
+          _serializedValue: 21689585664
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 0
+          _serializedValue: 21689585664
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 0
+        _serializedValue: 45741400064
       height:
-        _serializedValue: 0
+        _serializedValue: 21689585664
       xMax:
-        _serializedValue: 0
+        _serializedValue: 45741400064
       yMax:
-        _serializedValue: 0
+        _serializedValue: 21689585664
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -496,7 +496,7 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: 0
+        _serializedValue: -12283606016
       y:
         _serializedValue: 0
       z:
