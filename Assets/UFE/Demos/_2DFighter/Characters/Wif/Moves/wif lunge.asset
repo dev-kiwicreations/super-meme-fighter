@@ -179,7 +179,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 9
+    sounds:
+    - {fileID: 8300000, guid: 96de110c7f3c0fe4787fdd18eb117a4a, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []

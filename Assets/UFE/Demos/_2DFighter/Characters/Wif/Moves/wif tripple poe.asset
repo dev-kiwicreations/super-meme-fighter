@@ -131,7 +131,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 16
+    sounds:
+    - {fileID: 8300000, guid: 43a88933512d9ff42947ad87cf4ec895, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
@@ -146,9 +150,9 @@ MonoBehaviour:
     forceStand: 0
     fixRotation: 0
     armorBreaker: 0
-    continuousHit: 0
+    continuousHit: 1
     unblockable: 0
-    spaceBetweenHits: 0
+    spaceBetweenHits: 5
     groundHit: 1
     crouchingHit: 1
     airHit: 1
@@ -362,7 +366,7 @@ MonoBehaviour:
     - bodyPart: 0
       followXBounds: 0
       followYBounds: 0
-      hitBoxDefinitionIndex: 8
+      hitBoxDefinitionIndex: 7
       _offSet:
         x:
           _serializedValue: 0
@@ -420,14 +424,14 @@ MonoBehaviour:
     activeFramesBegin: 0
     activeFramesEnds: 60
     bodyPart: 0
-    hitBoxDefinitionIndex: 10
-    shape: 0
+    hitBoxDefinitionIndex: 0
+    shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 4
-      height: 4
+      width: 1.71
+      height: 1.58
     _rect:
       _x:
         _serializedValue: 0
@@ -435,7 +439,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 7344394240
         y:
           _serializedValue: 0
         z:
@@ -449,26 +453,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 7344394240
         y:
-          _serializedValue: 0
+          _serializedValue: 6786048512
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 0
+          _serializedValue: 6786048512
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 0
+        _serializedValue: 7344394240
       height:
-        _serializedValue: 0
+        _serializedValue: 6786048512
       xMax:
-        _serializedValue: 0
+        _serializedValue: 7344394240
       yMax:
-        _serializedValue: 0
+        _serializedValue: 6786048512
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -496,9 +500,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: 0
+        _serializedValue: -2576980480
       y:
-        _serializedValue: 0
+        _serializedValue: 13743895552
       z:
         _serializedValue: 0
     prevPosition:

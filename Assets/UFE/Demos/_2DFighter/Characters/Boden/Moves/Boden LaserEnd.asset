@@ -131,7 +131,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 8
+    sounds:
+    - {fileID: 8300000, guid: 58493b31ef902c7458c9dcebd3cdf225, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
@@ -142,13 +146,13 @@ MonoBehaviour:
     activeFramesEnds: 30
     bodyPart: 0
     hitBoxDefinitionIndex: 10
-    shape: 0
+    shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 4
-      height: 4
+      width: 7.83
+      height: 6.16
     _rect:
       _x:
         _serializedValue: 0
@@ -156,7 +160,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 33629593600
         y:
           _serializedValue: 0
         z:
@@ -170,26 +174,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 33629593600
         y:
-          _serializedValue: 0
+          _serializedValue: 26456997888
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 0
+          _serializedValue: 26456997888
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 0
+        _serializedValue: 33629593600
       height:
-        _serializedValue: 0
+        _serializedValue: 26456997888
       xMax:
-        _serializedValue: 0
+        _serializedValue: 33629593600
       yMax:
-        _serializedValue: 0
+        _serializedValue: 26456997888
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -217,7 +221,7 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: 0
+        _serializedValue: -7172595200
       y:
         _serializedValue: 0
       z:
