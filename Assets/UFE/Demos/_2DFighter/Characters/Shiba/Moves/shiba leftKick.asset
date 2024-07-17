@@ -35,7 +35,7 @@ MonoBehaviour:
   ignoreFriction: 0
   cancelMoveWhenLanding: 0
   landingMoveLink: {fileID: 0}
-  forceMirrorLeft: 0
+  forceMirrorLeft: 1
   forceMirrorRight: 0
   invertRotationLeft: 0
   invertRotationRight: 0
@@ -131,7 +131,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 20
+    sounds:
+    - {fileID: 8300000, guid: 785a53d6e707956439d160a42e02dcf5, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
