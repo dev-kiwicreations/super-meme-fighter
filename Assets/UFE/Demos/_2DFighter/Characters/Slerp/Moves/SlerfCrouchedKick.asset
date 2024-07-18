@@ -48,10 +48,10 @@ MonoBehaviour:
   speedKeyFrameToggle: 0
   fixedSpeed: 1
   animSpeedKeyFrame: []
-  totalFrames: 16
-  startUpFrames: 13
-  activeFrames: 2
-  recoveryFrames: 1
+  totalFrames: 31
+  startUpFrames: 6
+  activeFrames: 9
+  recoveryFrames: 16
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 13
+  - activeFramesBegin: 6
     activeFramesEnds: 14
     hitConfirmType: 0
     throwMove: {fileID: 0}
@@ -349,7 +349,7 @@ MonoBehaviour:
           _serializedValue: 0
         z:
           _serializedValue: 0
-    hitToggle: 1
+    hitToggle: 0
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
     forceOptionsToggle: 1
@@ -421,7 +421,7 @@ MonoBehaviour:
       type: 0
   blockableArea:
     enabled: 1
-    activeFramesBegin: 8
+    activeFramesBegin: 0
     activeFramesEnds: 15
     bodyPart: 0
     hitBoxDefinitionIndex: 10
