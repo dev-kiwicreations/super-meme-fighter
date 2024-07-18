@@ -49,9 +49,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 22
-  activeFrames: 3
-  recoveryFrames: 6
+  startUpFrames: 15
+  activeFrames: 15
+  recoveryFrames: 1
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -75,11 +75,11 @@ MonoBehaviour:
     onReleaseExecution: 0
     requireButtonPress: 1
     onPressExecution: 1
-    buttonSequence: 0100000006000000
-    buttonExecution: 
+    buttonSequence: 
+    buttonExecution: 05000000
     editorToggle: 1
     buttonSequenceToggle: 1
-    buttonExecutionToggle: 0
+    buttonExecutionToggle: 1
   altInputs:
     chargeMove: 0
     _chargeTiming:
@@ -140,8 +140,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 22
-    activeFramesEnds: 24
+  - activeFramesBegin: 15
+    activeFramesEnds: 29
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -383,7 +383,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 9749575680
           y:
             _serializedValue: 0
           z:
@@ -397,34 +397,34 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 9749575680
           y:
-            _serializedValue: 0
+            _serializedValue: 9105330176
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 9105330176
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 9749575680
         height:
-          _serializedValue: 0
+          _serializedValue: 9105330176
         xMax:
-          _serializedValue: 0
+          _serializedValue: 9749575680
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 9105330176
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1
-    activeFramesBegin: 0
-    activeFramesEnds: 0
+    activeFramesBegin: 11
+    activeFramesEnds: 30
     bodyPart: 0
-    hitBoxDefinitionIndex: 0
+    hitBoxDefinitionIndex: 10
     shape: 0
     rect:
       serializedVersion: 2

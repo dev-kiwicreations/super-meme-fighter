@@ -49,9 +49,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 50
-  startUpFrames: 31
-  activeFrames: 3
-  recoveryFrames: 1
+  startUpFrames: 10
+  activeFrames: 10
+  recoveryFrames: 30
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -167,17 +167,17 @@ MonoBehaviour:
   hits: []
   blockableArea:
     enabled: 0
-    activeFramesBegin: 0
-    activeFramesEnds: 30
+    activeFramesBegin: 9
+    activeFramesEnds: 19
     bodyPart: 0
-    hitBoxDefinitionIndex: 0
+    hitBoxDefinitionIndex: 10
     shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 1.46
-      height: 1.21
+      width: 8.77
+      height: 6.56
     _rect:
       _x:
         _serializedValue: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 6270652416
+          _serializedValue: 37666865152
         y:
           _serializedValue: 0
         z:
@@ -199,26 +199,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 6270652416
+          _serializedValue: 37666865152
         y:
-          _serializedValue: 5196910592
+          _serializedValue: 28174985216
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 5196910592
+          _serializedValue: 28174985216
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 6270652416
+        _serializedValue: 37666865152
       height:
-        _serializedValue: 5196910592
+        _serializedValue: 28174985216
       xMax:
-        _serializedValue: 6270652416
+        _serializedValue: 37666865152
       yMax:
-        _serializedValue: 5196910592
+        _serializedValue: 28174985216
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -246,9 +246,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: -2576980480
+        _serializedValue: 0
       y:
-        _serializedValue: 17652316160
+        _serializedValue: 0
       z:
         _serializedValue: 0
     prevPosition:

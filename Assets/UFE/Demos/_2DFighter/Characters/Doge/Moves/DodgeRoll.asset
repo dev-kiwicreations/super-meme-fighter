@@ -158,11 +158,6 @@ MonoBehaviour:
   soundEffects:
   - castingFrame: 5
     sounds:
-    - {fileID: 8300000, guid: a58dbccd9f2600a47a3e35780db21396, type: 3}
-    - {fileID: 8300000, guid: fd84e3bb774bcff4b9547bf85677086d, type: 3}
-    soundEffectsToggle: 1
-  - castingFrame: 15
-    sounds:
     - {fileID: 8300000, guid: e70b34276e6b93740ba6b3f9e695fa35, type: 3}
     soundEffectsToggle: 1
   inGameAlert: []
@@ -412,7 +407,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 22849226752
           y:
             _serializedValue: 0
           z:
@@ -426,41 +421,41 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 22849226752
           y:
-            _serializedValue: 0
+            _serializedValue: 16879221760
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 16879221760
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 22849226752
         height:
-          _serializedValue: 0
+          _serializedValue: 16879221760
         xMax:
-          _serializedValue: 0
+          _serializedValue: 22849226752
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 16879221760
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1
     activeFramesBegin: 8
     activeFramesEnds: 29
     bodyPart: 0
-    hitBoxDefinitionIndex: 0
-    shape: 0
+    hitBoxDefinitionIndex: 10
+    shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 4
-      height: 4
+      width: 1.58
+      height: 1.04
     _rect:
       _x:
         _serializedValue: 0
@@ -468,7 +463,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 6786048512
         y:
           _serializedValue: 0
         z:
@@ -482,26 +477,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 6786048512
         y:
-          _serializedValue: 0
+          _serializedValue: 4466765824
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 0
+          _serializedValue: 4466765824
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 0
+        _serializedValue: 6786048512
       height:
-        _serializedValue: 0
+        _serializedValue: 4466765824
       xMax:
-        _serializedValue: 0
+        _serializedValue: 6786048512
       yMax:
-        _serializedValue: 0
+        _serializedValue: 4466765824
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -529,9 +524,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: 0
+        _serializedValue: -5282809856
       y:
-        _serializedValue: 0
+        _serializedValue: 11081015296
       z:
         _serializedValue: 0
     prevPosition:
@@ -575,4 +570,4 @@ MonoBehaviour:
     damageAbsorption: 0
     nonAffectedBodyParts: 
   projectiles: []
-  rotationPreview: {x: 0, y: 90, z: 0}
+  rotationPreview: {x: 0, y: 0, z: 0}

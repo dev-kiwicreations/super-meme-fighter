@@ -54,7 +54,7 @@ MonoBehaviour:
     obeyHitType: 1
     standBlockAccuracy: 6
     crouchBlockAccuracy: 6
-    jumpBlockAccuracy: 0
+    jumpBlockAccuracy: 6
     autoAttack: 1
     obeyPreferableDistances: 1
     attackFrequency: 5
@@ -115,7 +115,7 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      conditionsToggle: 1
+      conditionsToggle: 0
     - enabled: 1
       boolean: 0
       conditions:
@@ -169,7 +169,7 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      conditionsToggle: 1
+      conditionsToggle: 0
     reactions:
     - reactionType: 10
       moveClassification:
