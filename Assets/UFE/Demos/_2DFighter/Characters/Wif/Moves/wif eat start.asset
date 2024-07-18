@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: DoubleKick
+  m_Name: wif eat start
   m_EditorClassIdentifier: 
-  id: f8463c12-5b01-4ced-94fe-e215b01d709d
+  id: 40edd39a-a79d-489c-b792-fd355531425d
   gameplayType: 0
   animData:
     id: 
-    clip: {fileID: 7400000, guid: f1d58ad71c7e6a242be578b62dbe84d1, type: 2}
-    customHitBoxDefinition: {fileID: 11400000, guid: 71d04798cedf7a548b5b4d7846642917, type: 2}
+    clip: {fileID: 7400000, guid: cabf6f129efb5b144ac33b5a51b64314, type: 2}
+    customHitBoxDefinition: {fileID: 11400000, guid: 808d0e016e5be8149bff27ff7d1afb59, type: 2}
     length:
-      _serializedValue: 3650722048
+      _serializedValue: 1145324672
     bakeSpeed: 0
     hitBoxDefinitionType: 1
   _animationSpeed:
     _serializedValue: 4294967296
   wrapMode: 0
   characterPrefabStorage: 0
-  characterPrefab: {fileID: 956415592579279543, guid: 6b2199a8d587df14c9c34429d186a146, type: 3}
+  characterPrefab: {fileID: 8441277510628428427, guid: 7915baebfcdcf9948b2528925a641331, type: 3}
   prefabResourcePath: 
-  moveName: Brett Double Kick
-  description: Brett Double Kick
+  moveName: EatStart
+  description: 
   fps: 60
   ignoreGravity: 0
   ignoreFriction: 0
@@ -48,9 +48,9 @@ MonoBehaviour:
   speedKeyFrameToggle: 0
   fixedSpeed: 1
   animSpeedKeyFrame: []
-  totalFrames: 51
-  startUpFrames: 6
-  activeFrames: 45
+  totalFrames: 16
+  startUpFrames: 0
+  activeFrames: 22
   recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
@@ -76,9 +76,9 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 06000000
+    buttonExecution: 05000000
     editorToggle: 1
-    buttonSequenceToggle: 0
+    buttonSequenceToggle: 1
     buttonExecutionToggle: 1
   altInputs:
     chargeMove: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   moveClassification:
     attackType: 1
     hitType: 0
-    startupSpeed: 1
+    startupSpeed: 2
     recoverySpeed: 5
     hitConfirmType: 0
     preferableDistance: 1
@@ -132,20 +132,20 @@ MonoBehaviour:
   opponentOverride: []
   characterAssist: []
   soundEffects:
-  - castingFrame: 0
+  - castingFrame: 12
     sounds:
-    - {fileID: 8300000, guid: 9496db0b171f2c544ab0812b45e92c73, type: 3}
+    - {fileID: 8300000, guid: 75177b4061af1b64ebad8adc00b30e91, type: 3}
     soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 6
-    activeFramesEnds: 50
-    hitConfirmType: 0
-    throwMove: {fileID: 0}
+  - activeFramesBegin: 0
+    activeFramesEnds: 21
+    hitConfirmType: 1
+    throwMove: {fileID: 11400000, guid: 29a3e0039676958408ef702b03d57c44, type: 2}
     techMove: {fileID: 0}
-    techable: 1
+    techable: 0
     resetHitAnimations: 1
     forceStand: 0
     fixRotation: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
       basicMovesToggle: 0
       statesToggle: 0
     downHit: 0
-    resetPreviousHitStun: 0
+    resetPreviousHitStun: 1
     resetCrumples: 0
     customStunValues: 0
     overrideHitEffects: 0
@@ -225,25 +225,25 @@ MonoBehaviour:
     overrideHitAnimation: 0
     newHitAnimation: 27
     hitStrength: 0
-    hitStunType: 1
+    hitStunType: 2
     _hitStunOnHit:
-      _serializedValue: 128849018880
+      _serializedValue: 4294967296
     _hitStunOnBlock:
-      _serializedValue: 51539607552
+      _serializedValue: 4294967296
     frameAdvantageOnHit: 0
     frameAdvantageOnBlock: 0
-    damageScaling: 1
+    damageScaling: 0
     damageType: 1
     _damageOnHit:
-      _serializedValue: 171798691840
+      _serializedValue: 176093659136
     _minDamageOnHit:
       _serializedValue: 0
     _damageOnBlock:
       _serializedValue: 0
     doesntKill: 0
     hitType: 0
-    resetPreviousHorizontalPush: 1
-    resetPreviousVerticalPush: 1
+    resetPreviousHorizontalPush: 0
+    resetPreviousVerticalPush: 0
     resetPreviousSidewaysPush: 0
     resetJumpForce: 0
     applyDifferentAirForce: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
     applyDifferentSelfBlockForce: 0
     _pushForce:
       x:
-        _serializedValue: 51539607552
+        _serializedValue: 0
       y:
         _serializedValue: 0
       z:
@@ -366,7 +366,7 @@ MonoBehaviour:
     - bodyPart: 0
       followXBounds: 0
       followYBounds: 0
-      hitBoxDefinitionIndex: 8
+      hitBoxDefinitionIndex: 7
       _offSet:
         x:
           _serializedValue: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 6528350208
+            _serializedValue: -2534030592
           y:
             _serializedValue: 0
           z:
@@ -397,41 +397,41 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 6528350208
+            _serializedValue: -2534030592
           y:
-            _serializedValue: 5540507648
+            _serializedValue: 20486993920
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 5540507648
+            _serializedValue: 20486993920
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 6528350208
+          _serializedValue: -2534030592
         height:
-          _serializedValue: 5540507648
+          _serializedValue: 20486993920
         xMax:
-          _serializedValue: 6528350208
+          _serializedValue: -2534030592
         yMax:
-          _serializedValue: 5540507648
+          _serializedValue: 20486993920
       shape: 1
       type: 0
   blockableArea:
     enabled: 1
     activeFramesBegin: 0
-    activeFramesEnds: 50
+    activeFramesEnds: 15
     bodyPart: 0
-    hitBoxDefinitionIndex: 9
+    hitBoxDefinitionIndex: 0
     shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 6.43
-      height: 6.16
+      width: 1.5
+      height: 1.83
     _rect:
       _x:
         _serializedValue: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 27616638976
+          _serializedValue: 6442450944
         y:
           _serializedValue: 0
         z:
@@ -453,26 +453,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 27616638976
+          _serializedValue: 6442450944
         y:
-          _serializedValue: 26456997888
+          _serializedValue: 7859790336
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 26456997888
+          _serializedValue: 7859790336
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 27616638976
+        _serializedValue: 6442450944
       height:
-        _serializedValue: 26456997888
+        _serializedValue: 7859790336
       xMax:
-        _serializedValue: 27616638976
+        _serializedValue: 6442450944
       yMax:
-        _serializedValue: 26456997888
+        _serializedValue: 7859790336
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -500,9 +500,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: -12283606016
+        _serializedValue: -7988639232
       y:
-        _serializedValue: 0
+        _serializedValue: 13743895552
       z:
         _serializedValue: 0
     prevPosition:
