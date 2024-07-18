@@ -19,7 +19,7 @@ MonoBehaviour:
     clip: {fileID: 7400000, guid: 177d4c549d235354fbdd46589635586c, type: 2}
     customHitBoxDefinition: {fileID: 11400000, guid: e73a7f1c69415ef4989c4c6ba04701af, type: 2}
     length:
-      _serializedValue: 1145324672
+      _serializedValue: 1503238656
     bakeSpeed: 0
     hitBoxDefinitionType: 1
   _animationSpeed:
@@ -48,9 +48,9 @@ MonoBehaviour:
   speedKeyFrameToggle: 0
   fixedSpeed: 1
   animSpeedKeyFrame: []
-  totalFrames: 16
-  startUpFrames: 14
-  activeFrames: 2
+  totalFrames: 22
+  startUpFrames: 15
+  activeFrames: 7
   recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
@@ -140,12 +140,12 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 14
-    activeFramesEnds: 15
+  - activeFramesBegin: 15
+    activeFramesEnds: 21
     hitConfirmType: 0
-    throwMove: {fileID: 0}
+    throwMove: {fileID: 11400000}
     techMove: {fileID: 0}
-    techable: 1
+    techable: 0
     resetHitAnimations: 1
     forceStand: 0
     fixRotation: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
       basicMovesToggle: 0
       statesToggle: 0
     downHit: 0
-    resetPreviousHitStun: 0
+    resetPreviousHitStun: 1
     resetCrumples: 0
     customStunValues: 0
     overrideHitEffects: 0
@@ -225,11 +225,11 @@ MonoBehaviour:
     overrideHitAnimation: 0
     newHitAnimation: 27
     hitStrength: 0
-    hitStunType: 1
+    hitStunType: 2
     _hitStunOnHit:
-      _serializedValue: 128849018880
+      _serializedValue: 4294967296
     _hitStunOnBlock:
-      _serializedValue: 51539607552
+      _serializedValue: 4294967296
     frameAdvantageOnHit: 0
     frameAdvantageOnBlock: 0
     damageScaling: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
     hitToggle: 1
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
-    forceOptionsToggle: 0
-    opponentForceToggle: 0
+    forceOptionsToggle: 1
+    opponentForceToggle: 1
     selfForceToggle: 0
     stageReactionsToggle: 0
     overrideEventsToggle: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
     - bodyPart: 0
       followXBounds: 0
       followYBounds: 0
-      hitBoxDefinitionIndex: 9
+      hitBoxDefinitionIndex: 7
       _offSet:
         x:
           _serializedValue: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 6270652416
+            _serializedValue: 9491877888
           y:
             _serializedValue: 0
           z:
@@ -397,7 +397,7 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 6270652416
+            _serializedValue: 9491877888
           y:
             _serializedValue: 3736621568
           z:
@@ -410,11 +410,11 @@ MonoBehaviour:
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 6270652416
+          _serializedValue: 9491877888
         height:
           _serializedValue: 3736621568
         xMax:
-          _serializedValue: 6270652416
+          _serializedValue: 9491877888
         yMax:
           _serializedValue: 3736621568
       shape: 1
@@ -424,14 +424,14 @@ MonoBehaviour:
     activeFramesBegin: 0
     activeFramesEnds: 15
     bodyPart: 0
-    hitBoxDefinitionIndex: 10
+    hitBoxDefinitionIndex: 0
     shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 6.99
-      height: 6.16
+      width: 1.5
+      height: 1.83
     _rect:
       _x:
         _serializedValue: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 30021820416
+          _serializedValue: 6442450944
         y:
           _serializedValue: 0
         z:
@@ -453,26 +453,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 30021820416
+          _serializedValue: 6442450944
         y:
-          _serializedValue: 26456997888
+          _serializedValue: 7859790336
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 26456997888
+          _serializedValue: 7859790336
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 30021820416
+        _serializedValue: 6442450944
       height:
-        _serializedValue: 26456997888
+        _serializedValue: 7859790336
       xMax:
-        _serializedValue: 30021820416
+        _serializedValue: 6442450944
       yMax:
-        _serializedValue: 26456997888
+        _serializedValue: 7859790336
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -500,9 +500,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: -12283606016
+        _serializedValue: -5884105216
       y:
-        _serializedValue: 0
+        _serializedValue: 13743895552
       z:
         _serializedValue: 0
     prevPosition:
