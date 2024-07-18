@@ -35,7 +35,7 @@ MonoBehaviour:
   ignoreFriction: 0
   cancelMoveWhenLanding: 0
   landingMoveLink: {fileID: 0}
-  forceMirrorLeft: 1
+  forceMirrorLeft: 0
   forceMirrorRight: 0
   invertRotationLeft: 0
   invertRotationRight: 0
@@ -49,9 +49,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 21
-  activeFrames: 4
-  recoveryFrames: 6
+  startUpFrames: 20
+  activeFrames: 11
+  recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -140,8 +140,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 21
-    activeFramesEnds: 24
+  - activeFramesBegin: 20
+    activeFramesEnds: 30
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
