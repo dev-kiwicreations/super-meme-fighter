@@ -130,7 +130,7 @@ MonoBehaviour:
   slowMoEffects: []
   bodyPartVisibilityChanges: []
   opponentOverride:
-  - moveToPosition: 1
+  - moveToPosition: 0
     _position:
       x:
         _serializedValue: 4294967
@@ -139,7 +139,7 @@ MonoBehaviour:
       z:
         _serializedValue: 0
     forceGrounded: 1
-    castingFrame: 0
+    castingFrame: 15
     stun: 1
     _stunTime:
       _serializedValue: 90194313216
@@ -370,7 +370,7 @@ MonoBehaviour:
           _serializedValue: 0
         z:
           _serializedValue: 0
-    hitToggle: 1
+    hitToggle: 0
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
     forceOptionsToggle: 1
@@ -380,7 +380,7 @@ MonoBehaviour:
     overrideEventsToggle: 0
     hitConditionsToggle: 0
     pullInToggle: 0
-    hurtBoxesToggle: 1
+    hurtBoxesToggle: 0
     wallBounceToggle: 0
     groundBounceToggle: 0
     hurtBoxes:
