@@ -158,6 +158,10 @@ public class DefaultPauseScreen : PauseScreen
     {
         if (screen != null)
         {
+            if(Input.GetKeyDown(KeyCode.Space)) 
+            {
+                return;
+            }
             screen.gameObject.SetActive(true);
             screen.OnShow();
         }

@@ -51,6 +51,6 @@ public class VidExp : MonoBehaviour
 
     public void DisableStaticImage()
     {
-        staticImage.SetActive(false); // Hide the static image
+        //staticImage.SetActive(false); // Hide the static image
     }
 }

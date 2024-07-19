@@ -322,11 +322,11 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (verticalAxis > 0)
             {
-                this.PreviousStage();
+                //this.PreviousStage();
             }
             else if (verticalAxis < 0)
             {
-                this.NextStage();
+                //this.NextStage();
             }
         }
     }
