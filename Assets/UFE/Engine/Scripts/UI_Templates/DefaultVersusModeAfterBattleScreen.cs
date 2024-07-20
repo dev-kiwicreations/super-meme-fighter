@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UFE3D;
+using UnityEngine;
 
 public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
 {
@@ -18,4 +19,16 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     )
     { }
     #endregion
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            RepeatBattle();
+        } // Check if the Backspace key is pressed
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToMainMenu();
+        }
+    }
 }

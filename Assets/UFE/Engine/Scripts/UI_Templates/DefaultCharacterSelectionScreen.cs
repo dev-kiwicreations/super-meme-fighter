@@ -892,4 +892,15 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         this.TrySelectCharacter();
     }
     #endregion
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+        } // Check if the Backspace key is pressed
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToPreviousScreen();
+        }
+    }
 }

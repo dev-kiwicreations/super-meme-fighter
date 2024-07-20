@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using FPLibrary;
 using UFE3D;
+using Unity.VisualScripting;
 
 public class DefaultStageSelectionScreen : StageSelectionScreen
 {
+    public GameObject Stage;
+    public GameObject StageButtonsNew;
     public Text namePlayer1;
     public Text namePlayer2;
     public Text nameStage;
@@ -73,6 +77,35 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             new UFEScreenExtensions.ActionCallback(this.TrySelectStage),
             new UFEScreenExtensions.ActionCallback(this.TryDeselectStage)
         );
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PreviousStage();
+        }
+        // Check if the right arrow key is pressed
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextStage();
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (StageButtonsNew.activeInHierarchy)
+            {
+                TrySelectStage();
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            if (Stage.activeInHierarchy)
+            {
+                GoToCharacterSelectionScreen();
+            }
+        }
+
     }
 
     public override void OnShow()

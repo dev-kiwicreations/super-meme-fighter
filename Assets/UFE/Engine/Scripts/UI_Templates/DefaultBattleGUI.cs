@@ -580,6 +580,7 @@ public class DefaultBattleGUI : BattleGUI{
 			
 			if (this.mainAlert != null && this.mainAlert.text != null){
 				this.mainAlert.text.text = processedMessage;
+				Debug.Log("Confetti Here");
 
                
 

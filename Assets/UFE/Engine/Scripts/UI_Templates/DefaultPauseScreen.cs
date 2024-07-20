@@ -167,4 +167,16 @@ public class DefaultPauseScreen : PauseScreen
         }
     }
     #endregion
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GoToScreen(1);
+        } // Check if the Backspace key is pressed
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToMainMenu();
+        }
+    }
 }
