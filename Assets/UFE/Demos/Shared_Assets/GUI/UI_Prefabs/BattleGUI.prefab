@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 432758045413195638}
   - component: {fileID: 4146892136766396482}
   - component: {fileID: 1778516968328909729}
-  - component: {fileID: 3877591669928409331}
   - component: {fileID: 6160087226454157853}
   m_Layer: 5
   m_Name: Text_MainAlert
@@ -212,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0.74264705, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -220,7 +219,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b7ad162254aaed14fa6d2f73807d5c97, type: 3}
+    m_Font: {fileID: 12800000, guid: 300f90e970255634785102b49a785301, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -233,26 +232,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Fight!
---- !u!114 &3877591669928409331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812515983401060302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79dd231f54e754616a693fce67919ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GradientType: 0
-  Offset: 0
-  StartColor:
-    serializedVersion: 2
-    rgba: 4278255601
-  EndColor:
-    serializedVersion: 2
-    rgba: 4278190335
 --- !u!114 &6160087226454157853
 MonoBehaviour:
   m_ObjectHideFlags: 0
