@@ -96,8 +96,8 @@ MonoBehaviour:
   portraitPlayer2: {fileID: 11400024}
   screenshotStage: {fileID: 11400032}
   titleStage: {fileID: 3212626203813602519}
-  positionPlayer1: {x: -7, y: 1, z: 0}
-  positionPlayer2: {x: 7, y: 1, z: 0}
+  positionPlayer1: {x: -7.2, y: 1.5, z: 0}
+  positionPlayer2: {x: 7.2, y: 1.5, z: 0}
 --- !u!114 &5873161811210305762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,7 +1201,6 @@ GameObject:
   - component: {fileID: 22400016}
   - component: {fileID: 22200016}
   - component: {fileID: 11400028}
-  - component: {fileID: 5129201919199542984}
   - component: {fileID: 6815638267250618751}
   m_Layer: 5
   m_Name: Name_Stage
@@ -1258,8 +1257,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b7ad162254aaed14fa6d2f73807d5c97, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 300f90e970255634785102b49a785301, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
@@ -1271,26 +1270,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Halong Bay
---- !u!114 &5129201919199542984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79dd231f54e754616a693fce67919ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GradientType: 0
-  Offset: 0
-  StartColor:
-    serializedVersion: 2
-    rgba: 4278243327
-  EndColor:
-    serializedVersion: 2
-    rgba: 4283107830
 --- !u!114 &6815638267250618751
 MonoBehaviour:
   m_ObjectHideFlags: 0

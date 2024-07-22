@@ -83,12 +83,18 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            PreviousStage();
+            if (Stage.activeInHierarchy)
+            {
+                PreviousStage();
+            }
         }
         // Check if the right arrow key is pressed
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            NextStage();
+            if (Stage.activeInHierarchy)
+            {
+                NextStage();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
