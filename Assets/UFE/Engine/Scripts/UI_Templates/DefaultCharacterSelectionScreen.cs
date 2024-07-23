@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using FPLibrary;
 using UFE3D;
 using System;
+using System.Collections;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
@@ -42,6 +43,11 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     public GameObject title2;
     public Vector2 hudOffset = Vector2.zero;
     
+    [SerializeField]
+    private bool isDelayActive = false; // To track the delay state
+    [SerializeField]
+    private float moveDelay = 0.3f; // Adjust this to set the desired delay in seconds
+    
     #endregion
 
     #region protected instance fields
@@ -55,6 +61,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     private int selectedCharacterIndex = -1;
     private bool isPLayer2Allowed = false;
     private bool isPLayer1Allowed = true;
+    
 
     #region public override methods
     public override void DoFixedUpdate(
@@ -823,63 +830,76 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
         if (!characterSelected || currentIndex < 0)
         {
-            Vector3 direction = Vector3.zero;
+            if (!isDelayActive)
+            {
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                direction = Vector3.left;
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                direction = Vector3.right;
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                direction = Vector3.up;
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                direction = Vector3.down;
-            }
-            //if (horizontalAxisDown)
-            //{
-            //    if (horizontalAxis > 0) direction = Vector3.right;
-            //    else if (horizontalAxis < 0) direction = Vector3.left;
-            //}
 
-            //if (verticalAxisDown)
-            //{
-            //    if (verticalAxis > 0) direction = Vector3.up;
-            //    else if (verticalAxis < 0) direction = Vector3.down;
-            //}
+                Vector3 direction = Vector3.zero;
 
-            if (direction != Vector3.zero)
-            {
-                Debug.Log("Cursor Moved");
-                GameObject currentGameObject = this.characters[currentIndex].gameObject;
-                GameObject nextGameObject = currentGameObject.FindSelectableGameObject(
-                    direction,
-                    this.wrapInput,
-                    this.characterButtonsWhiteList
-                );
-
-                if (nextGameObject != null && nextGameObject != currentGameObject)
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    int index = -1;
+                    direction = Vector3.left;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    direction = Vector3.right;
+                }
+                else if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    direction = Vector3.up;
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    direction = Vector3.down;
+                }
+                //if (horizontalAxisDown)
+                //{
+                //    if (horizontalAxis > 0) direction = Vector3.right;
+                //    else if (horizontalAxis < 0) direction = Vector3.left;
+                //}
 
-                    for (int i = 0; i < this.characters.Length; ++i)
+                //if (verticalAxisDown)
+                //{
+                //    if (verticalAxis > 0) direction = Vector3.up;
+                //    else if (verticalAxis < 0) direction = Vector3.down;
+                //}
+
+                if (direction != Vector3.zero)
+                {
+                    Debug.Log("Cursor Moved");
+                    GameObject currentGameObject = this.characters[currentIndex].gameObject;
+                    GameObject nextGameObject = currentGameObject.FindSelectableGameObject(
+                        direction,
+                        this.wrapInput,
+                        this.characterButtonsWhiteList
+                    );
+
+                    if (nextGameObject != null && nextGameObject != currentGameObject)
                     {
-                        if (this.characters[i].gameObject == nextGameObject)
-                        {
-                            index = i;
-                            break;
-                        }
-                    }
+                        int index = -1;
 
-                    this.MoveCursor(player, index);
+                        for (int i = 0; i < this.characters.Length; ++i)
+                        {
+                            if (this.characters[i].gameObject == nextGameObject)
+                            {
+                                index = i;
+                                break;
+                            }
+                        }
+
+                        this.MoveCursor(player, index);
+                    }
+                    StartCoroutine(MovementDelay());
                 }
             }
         }
+    }
+    
+    private IEnumerator MovementDelay()
+    {
+        isDelayActive = true;
+        yield return new WaitForSeconds(moveDelay);
+        isDelayActive = false;
     }
 
     protected virtual void TryDeselectCharacter(AudioClip sound)
