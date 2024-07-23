@@ -2281,6 +2281,10 @@ MonoBehaviour:
   changeControlsButton: {fileID: 11400066}
   cancelButton: {fileID: 11400060}
   sliderSpeed: 0.1
+  increaseMusicButton: {fileID: 0}
+  decreaseMusicButton: {fileID: 0}
+  increaseSFXButton: {fileID: 0}
+  decreaseSFXButton: {fileID: 0}
 --- !u!225 &22500006
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5450,9 +5454,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22400134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 692, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &22200114
@@ -5706,7 +5710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 474, y: 127}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &22200120
@@ -5793,7 +5797,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000}
         m_TargetAssemblyTypeName: 
-        m_MethodName: ShowBackToMenuConfirmationDialog
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5841,10 +5845,10 @@ RectTransform:
   - {fileID: 22400128}
   m_Father: {fileID: 22400136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2, y: 0.05}
-  m_AnchorMax: {x: 0.8, y: 0.95}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -300}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &22200126
 CanvasRenderer:
@@ -5919,7 +5923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 474, y: 127}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &22200124

@@ -158,9 +158,25 @@ public class DefaultPauseScreen : PauseScreen
     {
         if (screen != null)
         {
+            if(Input.GetKeyDown(KeyCode.Space)) 
+            {
+                return;
+            }
             screen.gameObject.SetActive(true);
             screen.OnShow();
         }
     }
     #endregion
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GoToScreen(1);
+        } // Check if the Backspace key is pressed
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToMainMenu();
+        }
+    }
 }

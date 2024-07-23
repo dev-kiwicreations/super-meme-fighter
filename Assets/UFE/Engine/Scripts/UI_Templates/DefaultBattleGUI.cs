@@ -243,7 +243,7 @@ public class DefaultBattleGUI : BattleGUI{
                 }
 			}
 
-			if (this.pause != null){
+			if (this.pause != null ){
 				this.pause.DoFixedUpdate(player1PreviousInputs, player1CurrentInputs, player2PreviousInputs, player2CurrentInputs);
 			}
 
@@ -519,6 +519,8 @@ public class DefaultBattleGUI : BattleGUI{
 	protected override void OnGamePaused (bool isPaused){
 		base.OnGamePaused(isPaused);
 
+		
+
 		if (UFE.config.gameGUI.pauseScreen != null){
 			if (isPaused){
 				this.pause = GameObject.Instantiate(UFE.config.gameGUI.pauseScreen);
@@ -578,6 +580,7 @@ public class DefaultBattleGUI : BattleGUI{
 			
 			if (this.mainAlert != null && this.mainAlert.text != null){
 				this.mainAlert.text.text = processedMessage;
+				Debug.Log("Confetti Here");
 
                
 

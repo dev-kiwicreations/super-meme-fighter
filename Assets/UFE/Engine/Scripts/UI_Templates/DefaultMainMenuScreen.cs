@@ -1,4 +1,6 @@
-﻿using UFE3D;
+﻿using System;
+using UFE3D;
+using UnityEngine;
 
 public class DefaultMainMenuScreen : MainMenuScreen
 {
@@ -9,4 +11,16 @@ public class DefaultMainMenuScreen : MainMenuScreen
         base.OnShow();
     }
     #endregion
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            DirectlyStartPlayerVersusCPU();
+        } // Check if the Backspace key is pressed
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToOptionsScreen();
+        }
+    }
 }

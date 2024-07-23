@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +48,26 @@ public class MyStageSelection : MonoBehaviour
     }
     public void OnYesPress()
     { 
+
+    }
+
+    private void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (Stage.activeInHierarchy)
+            {
+                OnSelectPress();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            if(StageButtonsNew.activeInHierarchy)
+            {
+                OnNewBackPress();
+            }
+        }
 
     }
 }

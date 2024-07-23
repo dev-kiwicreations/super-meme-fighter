@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using UFE3D;
 using UnityEngine.UIElements;
@@ -416,4 +417,12 @@ public class DefaultOptionsScreen : OptionsScreen
         return -1;
     }
     #endregion
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToMainMenuScreen();
+        }
+    }
 }

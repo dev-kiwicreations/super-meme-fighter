@@ -87,6 +87,8 @@ MonoBehaviour:
   cancelSound: {fileID: 8300000, guid: 4645fc2e52953d74399d4cc64ba92510, type: 3}
   moveCursorSound: {fileID: 8300000, guid: e33073cf85d1edf4d992c2f5c6a33c90, type: 3}
   fadeBeforeGoingToLoadingBattleScreen: 0
+  Stage: {fileID: 100010}
+  StageButtonsNew: {fileID: 6624901177380323865}
   namePlayer1: {fileID: 11400030}
   namePlayer2: {fileID: 11400034}
   nameStage: {fileID: 11400028}
@@ -94,8 +96,8 @@ MonoBehaviour:
   portraitPlayer2: {fileID: 11400024}
   screenshotStage: {fileID: 11400032}
   titleStage: {fileID: 3212626203813602519}
-  positionPlayer1: {x: -7, y: 1, z: 0}
-  positionPlayer2: {x: 7, y: 1, z: 0}
+  positionPlayer1: {x: -7.2, y: 1.5, z: 0}
+  positionPlayer2: {x: 7.2, y: 1.5, z: 0}
 --- !u!114 &5873161811210305762
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -786,6 +786,11 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         int previousIndex = this.GetHoverIndex(player);
         this.SetHoverIndex(player, characterIndex);
         int newIndex = this.GetHoverIndex(player);
+        Debug.Log("PrevIndex = " + previousIndex);
+        Debug.Log("Index = "+newIndex);
+        selectButton.onClick.RemoveAllListeners();
+        selectButton.onClick.AddListener(() => { this.TrySelectCharacter(newIndex); });
+        selectButton.onClick.AddListener(() => { this.characterSelectButton(); });
         if (previousIndex != newIndex && this.moveCursorSound != null) UFE.PlaySound(this.moveCursorSound);
     }
     #endregion
@@ -804,7 +809,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     {
         bool characterSelected = true;
         int currentIndex = -1;
-
+        
         if (player == 1)
         {
             currentIndex = this.p1HoverIndex;
@@ -820,20 +825,37 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         {
             Vector3 direction = Vector3.zero;
 
-            if (horizontalAxisDown)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (horizontalAxis > 0) direction = Vector3.right;
-                else if (horizontalAxis < 0) direction = Vector3.left;
+                direction = Vector3.left;
             }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                direction = Vector3.right;
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                direction = Vector3.up;
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                direction = Vector3.down;
+            }
+            //if (horizontalAxisDown)
+            //{
+            //    if (horizontalAxis > 0) direction = Vector3.right;
+            //    else if (horizontalAxis < 0) direction = Vector3.left;
+            //}
 
-            if (verticalAxisDown)
-            {
-                if (verticalAxis > 0) direction = Vector3.up;
-                else if (verticalAxis < 0) direction = Vector3.down;
-            }
+            //if (verticalAxisDown)
+            //{
+            //    if (verticalAxis > 0) direction = Vector3.up;
+            //    else if (verticalAxis < 0) direction = Vector3.down;
+            //}
 
             if (direction != Vector3.zero)
             {
+                Debug.Log("Cursor Moved");
                 GameObject currentGameObject = this.characters[currentIndex].gameObject;
                 GameObject nextGameObject = currentGameObject.FindSelectableGameObject(
                     direction,
@@ -870,4 +892,15 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         this.TrySelectCharacter();
     }
     #endregion
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+        } // Check if the Backspace key is pressed
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            GoToPreviousScreen();
+        }
+    }
 }
