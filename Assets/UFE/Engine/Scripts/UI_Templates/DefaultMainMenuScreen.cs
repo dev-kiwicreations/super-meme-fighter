@@ -20,7 +20,7 @@ public class DefaultMainMenuScreen : MainMenuScreen
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            GoToOptionsScreen();
+            //GoToOptionsScreen();
         }
     }
 }
