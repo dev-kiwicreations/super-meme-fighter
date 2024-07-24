@@ -412,6 +412,8 @@ namespace UFE3D
 							if (moveInfo.cooldown)
 							{
 								moveInfo.cooldownFrames = EditorGUILayout.IntField("Frames cooldown:", Mathf.Max(moveInfo.cooldownFrames, 0));
+								moveInfo.attackCountForCooldownToActivate = EditorGUILayout.IntField("Attack Count For Cooldown to Activate:", Mathf.Max(moveInfo.attackCountForCooldownToActivate, 1));
+								moveInfo.cooldownFramesToTrackCooldown = EditorGUILayout.IntField("Frames To Track Cooldown Amount:", Mathf.Max(moveInfo.cooldownFramesToTrackCooldown, fpsTemp));
 							}
 
 #if !UFE_LITE && !UFE_BASIC

@@ -1782,15 +1782,48 @@ public class ControlsScript : MonoBehaviour
         currentMove = move;
         if (currentMove != null)
         {
+            if (opInfo.recordedMovesInCurrentRound.Exists(x => x.MoveID == currentMove.id))
+            {
+                var highestPressCountEntry = opInfo.recordedMovesInCurrentRound
+                    .Where(x => x.MoveID == currentMove.id)
+                    .OrderByDescending(x => x.PressCount)
+                    .FirstOrDefault();
+                int newPressCount = highestPressCountEntry.PressCount + 1;
+                opInfo.recordedMovesInCurrentRound.Add(new MoveRecord(move.id, UFE.currentFrame, newPressCount));
+            }
+            else
+            {
+                opInfo.recordedMovesInCurrentRound.Add(new MoveRecord(move.id, UFE.currentFrame, 0));
+            }   
+        }
+        if (currentMove != null)
+        {
             if (currentMove.cooldown)
             {
-                if (myMoveSetScript.lastMovesPlayed.ContainsKey(currentMove.id))
+                if (currentMove.attackCountForCooldownToActivate > 0)
                 {
-                    myMoveSetScript.lastMovesPlayed[currentMove.id] = UFE.currentFrame;
-                }
-                else
-                {
-                    myMoveSetScript.lastMovesPlayed.Add(currentMove.id, UFE.currentFrame);
+                    var lastEntry = opInfo.recordedMovesInCurrentRound.Last();
+                    var matchingEntries = opInfo.recordedMovesInCurrentRound
+                        .Where(x => x.MoveID == lastEntry.MoveID)
+                        .Reverse()
+                        .ToList();
+                    MoveRecord nthLastEntry;
+                    if (matchingEntries.Count >= currentMove.attackCountForCooldownToActivate)
+                    {
+                        nthLastEntry = matchingEntries[currentMove.attackCountForCooldownToActivate - 1];
+                        long frameDifference = lastEntry.Frame - nthLastEntry.Frame;
+                        if (frameDifference < currentMove.cooldownFramesToTrackCooldown)
+                        {
+                            if (myMoveSetScript.lastMovesPlayed.ContainsKey(currentMove.id))
+                            {
+                                myMoveSetScript.lastMovesPlayed[currentMove.id] = UFE.currentFrame;
+                            }
+                            else
+                            {
+                                myMoveSetScript.lastMovesPlayed.Add(currentMove.id, UFE.currentFrame);
+                            }
+                        }
+                    }
                 }
             }
 
@@ -4343,6 +4376,7 @@ public class ControlsScript : MonoBehaviour
             {
                 currentLifePoints = myInfo.lifePoints;
             }
+            myInfo.recordedMovesInCurrentRound.Clear();
         }
 
         blockStunned = false;

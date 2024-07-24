@@ -42,8 +42,10 @@ MonoBehaviour:
   autoCorrectRotation: 0
   allowSideSwitch: 0
   frameWindowRotation: 0
-  cooldown: 0
-  cooldownFrames: 0
+  cooldown: 1
+  cooldownFrames: 240
+  attackCountForCooldownToActivate: 3
+  cooldownFramesToTrackCooldown: 240
   disableHeadLook: 0
   speedKeyFrameToggle: 0
   fixedSpeed: 1

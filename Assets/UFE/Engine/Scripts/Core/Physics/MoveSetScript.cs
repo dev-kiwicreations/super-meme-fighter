@@ -1191,19 +1191,24 @@ public class MoveSetScript : MonoBehaviour
 
         return true;
     }
-
     private MoveInfo TestMoveExecution(MoveInfo move, MoveInfo currentMove, ButtonPress[] buttonPress, bool inputUp, bool fromSequence = false, bool forceExecution = false)
     {
         foreach (GaugeInfo gaugeInfo in move.gauges)
         {
             if (!hasEnoughGauge(gaugeInfo._gaugeRequired, (int)gaugeInfo.targetGauge)) return null;
         }
+       
         if (move.previousMoves.Length > 0 && currentMove == null) return null;
         if (move.previousMoves.Length > 0 && !searchMove(currentMove.id, move.previousMoves)) return null;
         if (controlsScript.isAirRecovering && controlsScript.airRecoveryType == AirRecoveryType.CantMove) return null;
-        if (move.cooldown && lastMovesPlayed.ContainsKey(move.id) && UFE.currentFrame - lastMovesPlayed[move.id] <= move.cooldownFrames) return null;
-
-
+        if (move.cooldown && lastMovesPlayed.ContainsKey(move.id) && UFE.currentFrame - lastMovesPlayed[move.id] <= move.cooldownFrames)
+        {
+            if (UFE.currentFrame - lastMovesPlayed[move.id] >= 30f)
+            {
+                UFE.FireAlert("Move Not Ready!", controlsScript);
+            }
+            return null;
+        }
         // Look for Projectiles On Screen
         if (move.projectiles.Length > 0 && controlsScript.projectiles.Count > 0)
         {
