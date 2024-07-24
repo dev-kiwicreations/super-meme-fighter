@@ -1191,7 +1191,6 @@ public class MoveSetScript : MonoBehaviour
 
         return true;
     }
-
     private MoveInfo TestMoveExecution(MoveInfo move, MoveInfo currentMove, ButtonPress[] buttonPress, bool inputUp, bool fromSequence = false, bool forceExecution = false)
     {
         foreach (GaugeInfo gaugeInfo in move.gauges)
@@ -1204,11 +1203,12 @@ public class MoveSetScript : MonoBehaviour
         if (controlsScript.isAirRecovering && controlsScript.airRecoveryType == AirRecoveryType.CantMove) return null;
         if (move.cooldown && lastMovesPlayed.ContainsKey(move.id) && UFE.currentFrame - lastMovesPlayed[move.id] <= move.cooldownFrames)
         {
-            //TODO: Invoke a call to show something on UI, where it can update
+            if (UFE.currentFrame - lastMovesPlayed[move.id] >= 30f)
+            {
+                UFE.FireAlert("Move Not Ready!", controlsScript);
+            }
             return null;
         }
-
-
         // Look for Projectiles On Screen
         if (move.projectiles.Length > 0 && controlsScript.projectiles.Count > 0)
         {
