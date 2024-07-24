@@ -34,6 +34,10 @@ namespace UFE3D
         public int frameWindowRotation;
         public bool cooldown;
         public int cooldownFrames;
+        public int attackCountForCooldownToActivate;
+        public int cooldownFramesToTrackCooldown;
+        //Hiding In Inspector
+
 
         public bool disableHeadLook = true;
 

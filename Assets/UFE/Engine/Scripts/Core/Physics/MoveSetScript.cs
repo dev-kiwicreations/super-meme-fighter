@@ -1198,10 +1198,15 @@ public class MoveSetScript : MonoBehaviour
         {
             if (!hasEnoughGauge(gaugeInfo._gaugeRequired, (int)gaugeInfo.targetGauge)) return null;
         }
+       
         if (move.previousMoves.Length > 0 && currentMove == null) return null;
         if (move.previousMoves.Length > 0 && !searchMove(currentMove.id, move.previousMoves)) return null;
         if (controlsScript.isAirRecovering && controlsScript.airRecoveryType == AirRecoveryType.CantMove) return null;
-        if (move.cooldown && lastMovesPlayed.ContainsKey(move.id) && UFE.currentFrame - lastMovesPlayed[move.id] <= move.cooldownFrames) return null;
+        if (move.cooldown && lastMovesPlayed.ContainsKey(move.id) && UFE.currentFrame - lastMovesPlayed[move.id] <= move.cooldownFrames)
+        {
+            //TODO: Invoke a call to show something on UI, where it can update
+            return null;
+        }
 
 
         // Look for Projectiles On Screen

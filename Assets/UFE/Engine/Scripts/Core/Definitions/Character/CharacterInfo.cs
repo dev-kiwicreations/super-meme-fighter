@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using FPLibrary;
 
@@ -47,5 +48,20 @@ namespace UFE3D
         public string[] stanceResourcePath = new string[0];
         public MoveSetData[] moves = new MoveSetData[0];
         public AIInstructionsSet[] aiInstructionsSet = new AIInstructionsSet[0];
+        public List<MoveRecord> recordedMovesInCurrentRound = new();
+    }
+
+    [System.Serializable]
+    public struct MoveRecord
+    {
+        public string MoveID;
+        public long Frame;
+        public int PressCount;
+        public MoveRecord(string moveID, long frameNumber, int PressCount)
+        {
+            MoveID = moveID;
+            Frame = frameNumber;
+            this.PressCount = PressCount;
+        }
     }
 }
