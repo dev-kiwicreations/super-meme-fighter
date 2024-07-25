@@ -1798,7 +1798,7 @@ public class ControlsScript : MonoBehaviour
         }
         if (currentMove != null)
         {
-            if (currentMove.cooldown)
+            if (currentMove.cooldown && UFE.config.aiOptions.selectedDifficultyLevel != AIDifficultyLevel.Impossible)
             {
                 if (currentMove.attackCountForCooldownToActivate > 0)
                 {
