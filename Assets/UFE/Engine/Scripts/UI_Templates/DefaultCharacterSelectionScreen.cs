@@ -46,7 +46,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     [SerializeField]
     private bool isDelayActive = false; // To track the delay state
     [SerializeField]
-    private float moveDelay = 0.3f; // Adjust this to set the desired delay in seconds
+    private float moveDelay = 0.15f; // Adjust this to set the desired delay in seconds
     
     #endregion
 
