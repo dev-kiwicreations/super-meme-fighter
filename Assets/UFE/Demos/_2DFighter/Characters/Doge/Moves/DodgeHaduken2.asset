@@ -43,9 +43,9 @@ MonoBehaviour:
   allowSideSwitch: 0
   frameWindowRotation: 0
   cooldown: 1
-  cooldownFrames: 240
-  attackCountForCooldownToActivate: 3
-  cooldownFramesToTrackCooldown: 240
+  cooldownFrames: 360
+  attackCountForCooldownToActivate: 2
+  cooldownFramesToTrackCooldown: 180
   disableHeadLook: 0
   speedKeyFrameToggle: 0
   fixedSpeed: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
     onPressExecution: 1
     buttonSequence: 
     buttonExecution: 
-    editorToggle: 0
+    editorToggle: 1
     buttonSequenceToggle: 0
     buttonExecutionToggle: 0
   previousMoves: []
