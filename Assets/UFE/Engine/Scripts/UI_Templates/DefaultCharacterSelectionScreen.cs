@@ -38,6 +38,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
     public int defaultCharacterPlayer1 = 0;
     public int defaultCharacterPlayer2 = 999;
+    public int playerIndex;
 
     public GameObject title1;
     public GameObject title2;
@@ -46,7 +47,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     [SerializeField]
     private bool isDelayActive = false; // To track the delay state
     [SerializeField]
-    private float moveDelay = 0.15f; // Adjust this to set the desired delay in seconds
+    private float moveDelay = 0.05f; // Adjust this to set the desired delay in seconds
     
     #endregion
 
@@ -793,6 +794,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         int previousIndex = this.GetHoverIndex(player);
         this.SetHoverIndex(player, characterIndex);
         int newIndex = this.GetHoverIndex(player);
+        playerIndex = newIndex;
         Debug.Log("PrevIndex = " + previousIndex);
         Debug.Log("Index = "+newIndex);
         selectButton.onClick.RemoveAllListeners();
@@ -917,6 +919,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            this.TrySelectCharacter(playerIndex);
+            this.characterSelectButton();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
