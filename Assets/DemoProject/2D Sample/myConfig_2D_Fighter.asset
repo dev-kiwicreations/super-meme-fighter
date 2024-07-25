@@ -2062,12 +2062,12 @@ MonoBehaviour:
     difficultySettings:
     - difficultyLevel: 0
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.4
+      timeBetweenDecisions: 0.5
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
+      timeBetweenActions: 0.5
       overrideAggressiveness: 1
       aggressiveness: 0.1
-      overrideRuleCompliance: 0
+      overrideRuleCompliance: 1
       ruleCompliance: 0.9
       overrideComboEfficiency: 1
       comboEfficiency: 0.1
@@ -2079,7 +2079,7 @@ MonoBehaviour:
       timeBetweenActions: 0.5
       overrideAggressiveness: 1
       aggressiveness: 0.1
-      overrideRuleCompliance: 0
+      overrideRuleCompliance: 1
       ruleCompliance: 0.9
       overrideComboEfficiency: 1
       comboEfficiency: 0
@@ -2102,11 +2102,11 @@ MonoBehaviour:
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.2
       overrideAggressiveness: 1
-      aggressiveness: 0.422
+      aggressiveness: 0.5
       overrideRuleCompliance: 1
-      ruleCompliance: 0.401
+      ruleCompliance: 0.8
       overrideComboEfficiency: 1
-      comboEfficiency: 0.402
+      comboEfficiency: 0.5
       startupBehavior: 3
     - difficultyLevel: 4
       overrideTimeBetweenDecisions: 1
@@ -2114,38 +2114,38 @@ MonoBehaviour:
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.1
       overrideAggressiveness: 1
-      aggressiveness: 0.6
+      aggressiveness: 0.75
       overrideRuleCompliance: 1
-      ruleCompliance: 0.9
+      ruleCompliance: 0.5
       overrideComboEfficiency: 1
-      comboEfficiency: 1
+      comboEfficiency: 0.85
       startupBehavior: 4
     - difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.01
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.01
+      timeBetweenActions: 0.001
       overrideAggressiveness: 1
       aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.504
+      ruleCompliance: 0.3
       overrideComboEfficiency: 1
       comboEfficiency: 1
-      startupBehavior: 4
+      startupBehavior: 5
     selectedDifficultyLevel: 5
     selectedDifficulty:
       difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.01
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.01
+      timeBetweenActions: 0.001
       overrideAggressiveness: 1
       aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.504
+      ruleCompliance: 0.3
       overrideComboEfficiency: 1
       comboEfficiency: 1
-      startupBehavior: 4
+      startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
     disableRootMotion: 0
