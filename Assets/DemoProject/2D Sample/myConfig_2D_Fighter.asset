@@ -2062,9 +2062,9 @@ MonoBehaviour:
     difficultySettings:
     - difficultyLevel: 1
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.5
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.5
+      timeBetweenActions: 0.1
       overrideAggressiveness: 1
       aggressiveness: 0.6
       overrideRuleCompliance: 1
@@ -2074,9 +2074,9 @@ MonoBehaviour:
       startupBehavior: 2
     - difficultyLevel: 2
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.4
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.4
+      timeBetweenActions: 0.075
       overrideAggressiveness: 1
       aggressiveness: 0.7
       overrideRuleCompliance: 1
@@ -2086,9 +2086,9 @@ MonoBehaviour:
       startupBehavior: 3
     - difficultyLevel: 3
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.2
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.2
+      timeBetweenActions: 0.05
       overrideAggressiveness: 1
       aggressiveness: 0.8
       overrideRuleCompliance: 1
@@ -2108,20 +2108,20 @@ MonoBehaviour:
       overrideComboEfficiency: 1
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 2
+    selectedDifficultyLevel: 3
     selectedDifficulty:
-      difficultyLevel: 2
+      difficultyLevel: 3
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.4
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.4
+      timeBetweenActions: 0.05
       overrideAggressiveness: 1
-      aggressiveness: 0.7
+      aggressiveness: 0.8
       overrideRuleCompliance: 1
-      ruleCompliance: 0.5
+      ruleCompliance: 0.8
       overrideComboEfficiency: 1
-      comboEfficiency: 0.125
-      startupBehavior: 3
+      comboEfficiency: 0.5
+      startupBehavior: 4
   networkOptions:
     forceAnimationControl: 1
     disableRootMotion: 0
