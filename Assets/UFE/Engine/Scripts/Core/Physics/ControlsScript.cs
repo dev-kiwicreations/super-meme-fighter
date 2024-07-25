@@ -1777,6 +1777,34 @@ public class ControlsScript : MonoBehaviour
         if (forceGrounded) myPhysicsScript.ForceGrounded();
     }
 
+    private void SetupCooldown()
+    {
+        if (currentMove.attackCountForCooldownToActivate > 0)
+        {
+            var lastEntry = opInfo.recordedMovesInCurrentRound.Last();
+            var matchingEntries = opInfo.recordedMovesInCurrentRound
+                .Where(x => x.MoveID == lastEntry.MoveID)
+                .Reverse()
+                .ToList();
+            MoveRecord nthLastEntry;
+            if (matchingEntries.Count >= currentMove.attackCountForCooldownToActivate)
+            {
+                nthLastEntry = matchingEntries[currentMove.attackCountForCooldownToActivate - 1];
+                long frameDifference = lastEntry.Frame - nthLastEntry.Frame;
+                if (frameDifference < currentMove.cooldownFramesToTrackCooldown)
+                {
+                    if (myMoveSetScript.lastMovesPlayed.ContainsKey(currentMove.id))
+                    {
+                        myMoveSetScript.lastMovesPlayed[currentMove.id] = UFE.currentFrame;
+                    }
+                    else
+                    {
+                        myMoveSetScript.lastMovesPlayed.Add(currentMove.id, UFE.currentFrame);
+                    }
+                }
+            }
+        } 
+    }
     public void SetMove(MoveInfo move)
     {
         currentMove = move;
@@ -1798,35 +1826,20 @@ public class ControlsScript : MonoBehaviour
         }
         if (currentMove != null)
         {
-            if (currentMove.cooldown && UFE.config.aiOptions.selectedDifficultyLevel != AIDifficultyLevel.Impossible)
+            if (currentMove.cooldown)
             {
-                if (currentMove.attackCountForCooldownToActivate > 0)
+                if (UFE.GetController(playerNum).isCPU)
                 {
-                    var lastEntry = opInfo.recordedMovesInCurrentRound.Last();
-                    var matchingEntries = opInfo.recordedMovesInCurrentRound
-                        .Where(x => x.MoveID == lastEntry.MoveID)
-                        .Reverse()
-                        .ToList();
-                    MoveRecord nthLastEntry;
-                    if (matchingEntries.Count >= currentMove.attackCountForCooldownToActivate)
+                    if (UFE.config.aiOptions.selectedDifficultyLevel != AIDifficultyLevel.Impossible)
                     {
-                        nthLastEntry = matchingEntries[currentMove.attackCountForCooldownToActivate - 1];
-                        long frameDifference = lastEntry.Frame - nthLastEntry.Frame;
-                        if (frameDifference < currentMove.cooldownFramesToTrackCooldown)
-                        {
-                            if (myMoveSetScript.lastMovesPlayed.ContainsKey(currentMove.id))
-                            {
-                                myMoveSetScript.lastMovesPlayed[currentMove.id] = UFE.currentFrame;
-                            }
-                            else
-                            {
-                                myMoveSetScript.lastMovesPlayed.Add(currentMove.id, UFE.currentFrame);
-                            }
-                        }
+                        SetupCooldown();
                     }
                 }
+                else
+                {
+                    SetupCooldown();
+                }
             }
-
             if (move.animData.clip != null && !myMoveSetScript.AnimationExists(move.id))
             {
                 Debug.LogWarning("Animation for move '" + move.moveName + "' not found! Make sure this move is assigned to the character's move set under Character Editor -> Move Sets");
