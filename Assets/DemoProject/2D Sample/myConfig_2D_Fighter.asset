@@ -873,7 +873,7 @@ MonoBehaviour:
     inputViewerIcon5: {fileID: 0}
     inputViewerIcon6: {fileID: 0}
   - inputType: 2
-    inputButtonName: P1Button1
+    inputButtonName: P1-Block
     engineRelatedButton: 4
     joystickAxisName: 
     joystickAxisNameAlt: 
@@ -890,7 +890,7 @@ MonoBehaviour:
     inputViewerIcon5: {fileID: 0}
     inputViewerIcon6: {fileID: 0}
   - inputType: 2
-    inputButtonName: P1Button2
+    inputButtonName: P1-Punch
     engineRelatedButton: 5
     joystickAxisName: 
     joystickAxisNameAlt: 
@@ -907,7 +907,7 @@ MonoBehaviour:
     inputViewerIcon5: {fileID: 0}
     inputViewerIcon6: {fileID: 0}
   - inputType: 2
-    inputButtonName: P1Button3
+    inputButtonName: P1-Combo
     engineRelatedButton: 6
     joystickAxisName: 
     joystickAxisNameAlt: 
@@ -924,7 +924,7 @@ MonoBehaviour:
     inputViewerIcon5: {fileID: 0}
     inputViewerIcon6: {fileID: 0}
   - inputType: 2
-    inputButtonName: P1Button4
+    inputButtonName: P1-Kick
     engineRelatedButton: 7
     joystickAxisName: 
     joystickAxisNameAlt: 
@@ -2026,7 +2026,7 @@ MonoBehaviour:
       button: 0
       executionOnly: 0
   aiOptions:
-    engine: 0
+    engine: 1
     attackWhenEnemyIsDown: 0
     moveWhenEnemyIsDown: 1
     inputFrequency: 0
@@ -2060,37 +2060,25 @@ MonoBehaviour:
     persistentBehavior: 1
     difficultyToggle: 1
     difficultySettings:
-    - difficultyLevel: 0
-      overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.4
-      overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
-      overrideAggressiveness: 1
-      aggressiveness: 0.1
-      overrideRuleCompliance: 0
-      ruleCompliance: 0.9
-      overrideComboEfficiency: 1
-      comboEfficiency: 0.1
-      startupBehavior: 3
     - difficultyLevel: 1
       overrideTimeBetweenDecisions: 1
       timeBetweenDecisions: 0.5
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.5
       overrideAggressiveness: 1
-      aggressiveness: 0.1
-      overrideRuleCompliance: 0
-      ruleCompliance: 0.9
+      aggressiveness: 0.6
+      overrideRuleCompliance: 1
+      ruleCompliance: 0.25
       overrideComboEfficiency: 1
       comboEfficiency: 0
-      startupBehavior: 3
+      startupBehavior: 2
     - difficultyLevel: 2
       overrideTimeBetweenDecisions: 1
       timeBetweenDecisions: 0.4
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.4
       overrideAggressiveness: 1
-      aggressiveness: 0.2
+      aggressiveness: 0.7
       overrideRuleCompliance: 1
       ruleCompliance: 0.5
       overrideComboEfficiency: 1
@@ -2102,50 +2090,38 @@ MonoBehaviour:
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.2
       overrideAggressiveness: 1
-      aggressiveness: 0.422
+      aggressiveness: 0.8
       overrideRuleCompliance: 1
-      ruleCompliance: 0.401
+      ruleCompliance: 0.8
       overrideComboEfficiency: 1
-      comboEfficiency: 0.402
-      startupBehavior: 3
-    - difficultyLevel: 4
-      overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.1
-      overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
-      overrideAggressiveness: 1
-      aggressiveness: 0.6
-      overrideRuleCompliance: 1
-      ruleCompliance: 0.9
-      overrideComboEfficiency: 1
-      comboEfficiency: 1
+      comboEfficiency: 0.5
       startupBehavior: 4
     - difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.01
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.01
+      timeBetweenActions: 0.001
       overrideAggressiveness: 1
       aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.504
+      ruleCompliance: 0.8
       overrideComboEfficiency: 1
       comboEfficiency: 1
-      startupBehavior: 4
-    selectedDifficultyLevel: 5
+      startupBehavior: 5
+    selectedDifficultyLevel: 2
     selectedDifficulty:
-      difficultyLevel: 5
+      difficultyLevel: 2
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.01
+      timeBetweenDecisions: 0.4
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.01
+      timeBetweenActions: 0.4
       overrideAggressiveness: 1
-      aggressiveness: 0.9
+      aggressiveness: 0.7
       overrideRuleCompliance: 1
-      ruleCompliance: 0.504
+      ruleCompliance: 0.5
       overrideComboEfficiency: 1
-      comboEfficiency: 1
-      startupBehavior: 4
+      comboEfficiency: 0.125
+      startupBehavior: 3
   networkOptions:
     forceAnimationControl: 1
     disableRootMotion: 0

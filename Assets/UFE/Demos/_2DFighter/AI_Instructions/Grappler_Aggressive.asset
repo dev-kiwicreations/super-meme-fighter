@@ -432,7 +432,7 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 0
       desirability: 6
-    debugToggle: 0
+    debugToggle: 1
     eventsToggle: 0
     reactionsToggle: 0
   - ruleName: Grapple Priority
@@ -501,7 +501,7 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 0
       desirability: 1
-    debugToggle: 0
+    debugToggle: 1
     eventsToggle: 0
     reactionsToggle: 0
   - ruleName: Only attempt throws when close
@@ -622,7 +622,7 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 3
       desirability: 4
-    debugToggle: 0
+    debugToggle: 1
     eventsToggle: 0
     reactionsToggle: 0
   aiDefinitions:
@@ -633,8 +633,8 @@ MonoBehaviour:
       strong: 0.2
       veryStrong: 0.25
     distance:
-      veryClose: 0.1
-      close: 0.2
+      veryClose: 0.05
+      close: 0.1
       mid: 0.5
       far: 0.85
       veryFar: 0.95

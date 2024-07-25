@@ -879,7 +879,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P1Button1
+    - name: P1-Block
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
       affectSourceKeys: 1
       affectedKeyPositive: 116
       affectedKeyNegative: 0
-      keyboardPositive: 116
+      keyboardPositive: 105
       keyboardPositiveAlt0: 0
       keyboardPositiveAlt1: 0
       keyboardPositiveAlt2: 0
@@ -906,7 +906,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P1Button2
+    - name: P1-Punch
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -914,7 +914,7 @@ MonoBehaviour:
       affectSourceKeys: 1
       affectedKeyPositive: 121
       affectedKeyNegative: 0
-      keyboardPositive: 121
+      keyboardPositive: 111
       keyboardPositiveAlt0: 0
       keyboardPositiveAlt1: 0
       keyboardPositiveAlt2: 0
@@ -933,7 +933,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P1Button3
+    - name: P1-Combo
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
       affectSourceKeys: 1
       affectedKeyPositive: 117
       affectedKeyNegative: 0
-      keyboardPositive: 117
+      keyboardPositive: 112
       keyboardPositiveAlt0: 0
       keyboardPositiveAlt1: 0
       keyboardPositiveAlt2: 0
@@ -960,7 +960,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P1Button4
+    - name: P1-Kick
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
       affectSourceKeys: 1
       affectedKeyPositive: 103
       affectedKeyNegative: 0
-      keyboardPositive: 103
+      keyboardPositive: 107
       keyboardPositiveAlt0: 0
       keyboardPositiveAlt1: 0
       keyboardPositiveAlt2: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P2Button1
+    - name: P2-Block
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -1203,7 +1203,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P2Button2
+    - name: P2-Punch
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -1230,7 +1230,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P2Button3
+    - name: P2-Combo
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -1257,7 +1257,7 @@ MonoBehaviour:
       scrollToAnalogSmoothingTime: 0.05
       scrollToAnalogStepDuration: 0.1
       scrollToDeltaSmoothingTime: 0.1
-    - name: P2Button4
+    - name: P2-Kick
       axisType: 2
       deltaMode: 1
       snap: 0
@@ -1713,25 +1713,25 @@ MonoBehaviour:
     digiFaceDownBinding:
       enabled: 1
       axisList:
-      - axisName: P1Button1
+      - axisName: P1-Block
         axisPositiveSide: 1
       keyList: 
     digiFaceRightBinding:
       enabled: 1
       axisList:
-      - axisName: P1Button2
+      - axisName: P1-Punch
         axisPositiveSide: 1
       keyList: 
     digiFaceLeftBinding:
       enabled: 1
       axisList:
-      - axisName: P1Button3
+      - axisName: P1-Combo
         axisPositiveSide: 1
       keyList: 
     digiFaceUpBinding:
       enabled: 1
       axisList:
-      - axisName: P1Button4
+      - axisName: P1-Kick
         axisPositiveSide: 1
       keyList: 
     digiStartBinding:
@@ -1747,25 +1747,25 @@ MonoBehaviour:
         axisPositiveSide: 1
       keyList: 
     digiL1Binding:
-      enabled: 1
+      enabled: 0
       axisList:
       - axisName: P1Button5
         axisPositiveSide: 1
       keyList: 
     digiR1Binding:
-      enabled: 1
+      enabled: 0
       axisList:
       - axisName: P1Button6
         axisPositiveSide: 1
       keyList: 
     digiL2Binding:
-      enabled: 1
+      enabled: 0
       axisList:
       - axisName: P1Button5
         axisPositiveSide: 1
       keyList: 
     digiR2Binding:
-      enabled: 1
+      enabled: 0
       axisList:
       - axisName: P1Button6
         axisPositiveSide: 1
@@ -1968,7 +1968,7 @@ MonoBehaviour:
           enabled: 0
           axisList: []
           keyList: 
-  - enabled: 1
+  - enabled: 0
     digiFaceDownBinding:
       enabled: 1
       axisList:
