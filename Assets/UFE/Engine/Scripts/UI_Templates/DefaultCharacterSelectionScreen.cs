@@ -243,15 +243,17 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
                     if (characterInfo.characterPrefabStorage == StorageMode.Prefab)
                     {
-                        this.gameObjectPlayer1 = GameObject.Instantiate(characterInfo.characterPrefab);
+                        this.gameObjectPlayer1 = GameObject.Instantiate(characterInfo.alternativeCostumes[2].prefab, this.namePlayer1.transform.parent);
                     }
                     else
                     {
                         this.gameObjectPlayer1 = GameObject.Instantiate(Resources.Load<GameObject>(characterInfo.prefabResourcePath));
                     }
+                    this.gameObjectPlayer1.transform.GetChild(characterIndex).gameObject.SetActive(true);
                     //this.gameObjectPlayer1 = GameObject.Instantiate(characterInfo.characterPrefab);
-                    this.gameObjectPlayer1.transform.position = this.positionPlayer1;
-                    this.gameObjectPlayer1.transform.SetParent(this.transform, true);
+                    //this.gameObjectPlayer1.transform.localPosition = this.positionPlayer1;
+                    //this.gameObjectPlayer1.transform.localScale = new Vector3(1, 1, 1);
+                    //this.gameObjectPlayer1.transform.SetParent(this.namePlayer1.transform.parent, true);
 
                     HitBoxesScript hitBoxes = this.gameObjectPlayer1.GetComponent<HitBoxesScript>();
                     if (hitBoxes != null)
@@ -298,6 +300,9 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
                     gameObjectPlayer1.transform.localRotation = characterInfo.initialRotation.ToQuaternion();
                     gameObjectPlayer1.transform.localScale *= 1.1f;
+                    
+                    // this.gameObjectPlayer1.transform.localPosition = new Vector3(-37, 350, 0);
+                    // this.gameObjectPlayer1.transform.localScale = new Vector3(1, 1, 1);
                 }
             }
             else if (player == 2 && isPLayer2Allowed)
@@ -333,17 +338,16 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
                         if (characterInfo.characterPrefabStorage == StorageMode.Prefab)
                         {
-                            this.gameObjectPlayer2 = GameObject.Instantiate(characterInfo.characterPrefab);
+                            this.gameObjectPlayer2 = GameObject.Instantiate(characterInfo.alternativeCostumes[1].prefab, this.namePlayer2.transform.parent);
                         }
                         else
                         {
                             this.gameObjectPlayer2 = GameObject.Instantiate(Resources.Load<GameObject>(characterInfo.prefabResourcePath));
                         }
                         //this.gameObjectPlayer2 = GameObject.Instantiate(characterInfo.characterPrefab);
-                        this.gameObjectPlayer2.transform.position = this.positionPlayer2;
+                        this.gameObjectPlayer2.transform.GetChild(characterIndex).gameObject.SetActive(true);
 
-
-                        this.gameObjectPlayer2.transform.SetParent(this.transform, true);
+                        //this.gameObjectPlayer2.transform.SetParent(this.namePlayer2.transform.parent, true);
 
                         HitBoxesScript hitBoxes = this.gameObjectPlayer2.GetComponent<HitBoxesScript>();
                         if (hitBoxes != null)
@@ -406,6 +410,11 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                             gameObjectPlayer2.transform.localRotation = Quaternion.Euler(characterInfo.initialRotation.ToQuaternion().eulerAngles.x, -invertedY, characterInfo.initialRotation.ToQuaternion().eulerAngles.z);
                         }
                         gameObjectPlayer2.transform.localScale *= 1.1f;
+                        
+                        //this.gameObjectPlayer2.transform.position = this.positionPlayer2;
+                        //this.gameObjectPlayer2.transform.localScale = new Vector3(-1, 1, 1);
+                        
+
                     }
                 }
             }
@@ -476,8 +485,10 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 }
             }
         }
+        
 
         this.UpdateHud();
+        
     }
 
     public override void OnCharacterSelectionAllowed(int characterIndex, int player)
@@ -524,9 +535,9 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 this.background = GameObject.Instantiate(background3dPrefab);
             }
 
-            UFE.canvas.planeDistance = 0.1f;
-            UFE.canvas.worldCamera = Camera.main;
-            UFE.canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            //UFE.canvas.planeDistance = 0.1f;
+            //UFE.canvas.worldCamera = Camera.main;
+            //UFE.canvas.renderMode = RenderMode.ScreenSpaceCamera;
         }
 
         base.OnShow();

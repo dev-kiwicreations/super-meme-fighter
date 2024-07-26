@@ -22,14 +22,32 @@ MonoBehaviour:
   selectionSound: {fileID: 0}
   deathSound: {fileID: 0}
   height: 6
-  age: 65
+  age: 6
   bloodType: Unknown
   lifePoints: 1000
   maxGaugePoints: 400
   characterPrefabStorage: 0
   characterPrefab: {fileID: 1200059181220733441, guid: 717b4e4c3738828498fdfc30c15865b5, type: 3}
   prefabResourcePath: 
-  alternativeCostumes: []
+  alternativeCostumes:
+  - name: Trump
+    characterPrefabStorage: 0
+    prefab: {fileID: 1200059181220733441, guid: 717b4e4c3738828498fdfc30c15865b5, type: 3}
+    prefabResourcePath: 
+    enableColorMask: 0
+    colorMask: {r: 0, g: 0, b: 0, a: 0}
+  - name: Trump
+    characterPrefabStorage: 0
+    prefab: {fileID: 5507747402435534483, guid: aa8286ba907064a4b908c46a3b053ea7, type: 3}
+    prefabResourcePath: 
+    enableColorMask: 0
+    colorMask: {r: 0, g: 0, b: 0, a: 0}
+  - name: Trump
+    characterPrefabStorage: 0
+    prefab: {fileID: 5507747402435534483, guid: 46b42194f43a8dd40bbec9fcc964cd0b, type: 3}
+    prefabResourcePath: 
+    enableColorMask: 0
+    colorMask: {r: 0, g: 0, b: 0, a: 0}
   initialPosition:
     x:
       _serializedValue: 0

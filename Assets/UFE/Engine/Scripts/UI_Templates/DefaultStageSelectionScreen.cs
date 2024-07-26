@@ -122,11 +122,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (this.portraitPlayer1 != null)
             {
-                this.portraitPlayer1.sprite = Sprite.Create(
-                    UFE.config.player1Character.profilePictureBig,
-                    new Rect(0f, 0f, UFE.config.player1Character.profilePictureBig.width, UFE.config.player1Character.profilePictureBig.height),
-                    new Vector2(0.5f * UFE.config.player1Character.profilePictureBig.width, 0.5f * UFE.config.player1Character.profilePictureBig.height)
-                );
+                this.portraitPlayer1.transform.GetChild(UFE.config.player1Character.age).gameObject.SetActive(true);
+                // this.portraitPlayer1.sprite = Sprite.Create(
+                //     UFE.config.player1Character.profilePictureBig,
+                //     new Rect(0f, 0f, UFE.config.player1Character.profilePictureBig.width, UFE.config.player1Character.profilePictureBig.height),
+                //     new Vector2(0.5f * UFE.config.player1Character.profilePictureBig.width, 0.5f * UFE.config.player1Character.profilePictureBig.height)
+                // );
             }
             CreatePlayer1();
             if (this.namePlayer1 != null)
@@ -139,11 +140,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (this.portraitPlayer2 != null)
             {
-                this.portraitPlayer2.sprite = Sprite.Create(
-                    UFE.config.player2Character.profilePictureBig,
-                    new Rect(0f, 0f, UFE.config.player2Character.profilePictureBig.width, UFE.config.player2Character.profilePictureBig.height),
-                    new Vector2(0.5f * UFE.config.player2Character.profilePictureBig.width, 0.5f * UFE.config.player2Character.profilePictureBig.height)
-                );
+                this.portraitPlayer2.transform.GetChild(UFE.config.player2Character.age).gameObject.SetActive(true);
+                // this.portraitPlayer2.sprite = Sprite.Create(
+                //     UFE.config.player2Character.profilePictureBig,
+                //     new Rect(0f, 0f, UFE.config.player2Character.profilePictureBig.width, UFE.config.player2Character.profilePictureBig.height),
+                //     new Vector2(0.5f * UFE.config.player2Character.profilePictureBig.width, 0.5f * UFE.config.player2Character.profilePictureBig.height)
+                // );
             }
             CreatePlayer2();
             if (this.namePlayer2 != null)
@@ -247,7 +249,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
 
             gameObjectPlayer1.transform.localRotation = characterInfo.initialRotation.ToQuaternion();
             gameObjectPlayer1.transform.localScale *= 1.1f;
-            portraitPlayer1.sprite = gameObjectPlayer1.GetComponent<SpriteRenderer>().sprite;
+            //portraitPlayer1.sprite = gameObjectPlayer1.GetComponent<SpriteRenderer>().sprite;
 
         }
     }
@@ -340,7 +342,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
                 gameObjectPlayer2.transform.localRotation = Quaternion.Euler(characterInfo.initialRotation.ToQuaternion().eulerAngles.x, -invertedY, characterInfo.initialRotation.ToQuaternion().eulerAngles.z);
             }
             gameObjectPlayer2.transform.localScale *= 1.1f;
-            portraitPlayer2.sprite = gameObjectPlayer2.GetComponent<SpriteRenderer>().sprite;
+            //portraitPlayer2.sprite = gameObjectPlayer2.GetComponent<SpriteRenderer>().sprite;
 
         }
     }
