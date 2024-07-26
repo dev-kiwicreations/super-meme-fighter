@@ -27,6 +27,8 @@ public class DefaultOptionsScreen : OptionsScreen
     public Button decreaseMusicButton;
     public Button increaseSFXButton;
     public Button decreaseSFXButton;
+    public GameObject optionScreen;
+    public GameObject controlScreen;
     #endregion
 
     #region private properties
@@ -422,7 +424,28 @@ public class DefaultOptionsScreen : OptionsScreen
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            GoToMainMenuScreen();
+            if (optionScreen.activeInHierarchy)
+            {
+                GoToMainMenuScreen();
+            }
+            else if (controlScreen.activeInHierarchy)
+            {
+                ShowHideControls(false);
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (optionScreen.activeInHierarchy)
+            {
+                ShowHideControls(true);
+            }
+        }
+    }
+
+    public void ShowHideControls(bool state)
+    {
+        controlScreen.SetActive(state);
+        optionScreen.SetActive(!state);
     }
 }

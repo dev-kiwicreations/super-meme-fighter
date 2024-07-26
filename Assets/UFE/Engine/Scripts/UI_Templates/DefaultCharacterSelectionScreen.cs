@@ -38,6 +38,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
     public int defaultCharacterPlayer1 = 0;
     public int defaultCharacterPlayer2 = 999;
+    public int playerIndex;
+    public int playerNo = 1;
 
     public GameObject title1;
     public GameObject title2;
@@ -46,7 +48,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     [SerializeField]
     private bool isDelayActive = false; // To track the delay state
     [SerializeField]
-    private float moveDelay = 0.15f; // Adjust this to set the desired delay in seconds
+    private float moveDelay = 0.05f; // Adjust this to set the desired delay in seconds
     
     #endregion
 
@@ -702,6 +704,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     }
     public void characterSelectButton()
     {
+        playerNo = 2;
         ChangePlayer1NameColor();
         if(isPLayer2Allowed)
         {
@@ -793,6 +796,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         int previousIndex = this.GetHoverIndex(player);
         this.SetHoverIndex(player, characterIndex);
         int newIndex = this.GetHoverIndex(player);
+        playerIndex = newIndex;
         Debug.Log("PrevIndex = " + previousIndex);
         Debug.Log("Index = "+newIndex);
         selectButton.onClick.RemoveAllListeners();
@@ -816,6 +820,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     {
         bool characterSelected = true;
         int currentIndex = -1;
+
+        playerNo = player;
         
         if (player == 1)
         {
@@ -830,7 +836,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
         if (!characterSelected || currentIndex < 0)
         {
-            if (!isDelayActive)
+            //if (!isDelayActive)
             {
 
 
@@ -889,7 +895,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
                         this.MoveCursor(player, index);
                     }
-                    StartCoroutine(MovementDelay());
+                    //StartCoroutine(MovementDelay());
                 }
             }
         }
@@ -917,10 +923,24 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            this.TrySelectCharacter(playerIndex);
+            this.characterSelectButton();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             GoToPreviousScreen();
         }
+    }
+
+    public void SelectHighlighter(int characterIndex)
+    {
+        int previousIndex = this.GetHoverIndex(playerNo);
+        this.SetHoverIndex(playerNo, characterIndex);
+        int newIndex = this.GetHoverIndex(playerNo);
+        playerIndex = newIndex;
+        selectButton.onClick.RemoveAllListeners();
+        selectButton.onClick.AddListener(() => { this.TrySelectCharacter(newIndex); });
+        selectButton.onClick.AddListener(() => { this.characterSelectButton(); });
+        if (previousIndex != newIndex && this.moveCursorSound != null) UFE.PlaySound(this.moveCursorSound);
     }
 }
