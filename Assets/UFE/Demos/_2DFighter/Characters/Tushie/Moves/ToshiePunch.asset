@@ -44,6 +44,8 @@ MonoBehaviour:
   frameWindowRotation: 0
   cooldown: 0
   cooldownFrames: 0
+  attackCountForCooldownToActivate: 0
+  cooldownFramesToTrackCooldown: 0
   disableHeadLook: 1
   speedKeyFrameToggle: 0
   fixedSpeed: 1
@@ -76,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 04000000
+    buttonExecution: 05000000
     editorToggle: 1
     buttonSequenceToggle: 0
     buttonExecutionToggle: 1
