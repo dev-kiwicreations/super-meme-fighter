@@ -51,9 +51,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 116
-  startUpFrames: 16
-  activeFrames: 96
-  recoveryFrames: 4
+  startUpFrames: 20
+  activeFrames: 87
+  recoveryFrames: 9
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0700000006000000
+    buttonExecution: 0600000007000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -180,8 +180,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 16
-    activeFramesEnds: 111
+  - activeFramesBegin: 20
+    activeFramesEnds: 106
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
