@@ -51,9 +51,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 116
-  startUpFrames: 20
-  activeFrames: 87
-  recoveryFrames: 9
+  startUpFrames: 21
+  activeFrames: 68
+  recoveryFrames: 27
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -180,13 +180,13 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 20
-    activeFramesEnds: 106
+  - activeFramesBegin: 21
+    activeFramesEnds: 88
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
     techable: 1
-    resetHitAnimations: 1
+    resetHitAnimations: 0
     forceStand: 1
     fixRotation: 0
     armorBreaker: 0
@@ -282,8 +282,8 @@ MonoBehaviour:
       _serializedValue: 0
     doesntKill: 0
     hitType: 0
-    resetPreviousHorizontalPush: 1
-    resetPreviousVerticalPush: 1
+    resetPreviousHorizontalPush: 0
+    resetPreviousVerticalPush: 0
     resetPreviousSidewaysPush: 0
     resetJumpForce: 0
     applyDifferentAirForce: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
     applyDifferentSelfBlockForce: 0
     _pushForce:
       x:
-        _serializedValue: 51539607552
+        _serializedValue: 21474836480
       y:
         _serializedValue: 0
       z:
@@ -398,7 +398,7 @@ MonoBehaviour:
     stageReactionsToggle: 0
     overrideEventsToggle: 0
     hitConditionsToggle: 0
-    pullInToggle: 0
+    pullInToggle: 1
     hurtBoxesToggle: 1
     wallBounceToggle: 0
     groundBounceToggle: 0

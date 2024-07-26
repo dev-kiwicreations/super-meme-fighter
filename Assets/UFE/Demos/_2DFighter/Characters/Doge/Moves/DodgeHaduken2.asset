@@ -266,7 +266,7 @@ MonoBehaviour:
   stateOverride: []
   armorOptions:
     activeFramesBegin: 0
-    activeFramesEnds: 0
+    activeFramesEnds: 49
     overrideHitEffects: 0
     blockHits: 0
     hitEffects:
@@ -290,8 +290,8 @@ MonoBehaviour:
       _shakeCameraDensity:
         _serializedValue: 3435973836
       editorToggle: 0
-    hitAbsorption: 0
-    damageAbsorption: 0
+    hitAbsorption: 100
+    damageAbsorption: 10
     nonAffectedBodyParts: 
   projectiles:
   - castingFrame: 15
