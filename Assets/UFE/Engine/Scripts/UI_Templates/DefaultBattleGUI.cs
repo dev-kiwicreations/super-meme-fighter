@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UFE3D;
 
@@ -14,6 +15,9 @@ public class DefaultBattleGUI : BattleGUI{
 		public Image[] gauges;
 		public Image[] wonRoundsImages;
 		public AlertGUI alert = new AlertGUI();
+		public Image cooldownEmpty;
+		public Image cooldownFiller;
+		public Image coolDownFilled;
 	}
 
 	[Serializable]
@@ -75,6 +79,50 @@ public class DefaultBattleGUI : BattleGUI{
 	public void AddInput (InputReferences[] inputReferences, int player){
 		this.OnInput(inputReferences, player);
 	}
+
+	public IEnumerator RunCooldownUIForPlayerOne(int seconds)
+	{
+		float timeElapsed = 0;
+		player1GUI.cooldownFiller.fillAmount = 0;
+		player1GUI.coolDownFilled.gameObject.SetActive(false);
+		while (timeElapsed < seconds)
+		{
+			player1GUI.cooldownFiller.fillAmount = Mathf.Lerp(0, 1, timeElapsed / seconds);
+			timeElapsed += Time.deltaTime;
+			yield return null;
+		}
+		player1GUI.cooldownFiller.fillAmount = 1;
+		player1GUI.coolDownFilled.gameObject.SetActive(true);
+	}
+
+	public IEnumerator RunCooldownUIForPlayerTwo(int seconds)
+	{
+		float timeElapsed = 0;
+		player2GUI.cooldownFiller.fillAmount = 0;
+		player2GUI.coolDownFilled.gameObject.SetActive(false);
+		while (timeElapsed < seconds)
+		{
+			player2GUI.cooldownFiller.fillAmount = Mathf.Lerp(0, 1, timeElapsed / seconds);
+			timeElapsed += Time.deltaTime;
+			yield return null;
+		}
+
+		player2GUI.cooldownFiller.fillAmount = 1;
+		player2GUI.coolDownFilled.gameObject.SetActive(true);
+	}
+
+	private void StartCooldown(int playerNum, int seconds)
+	{
+		if (playerNum == 1)
+		{
+			StartCoroutine(RunCooldownUIForPlayerOne(seconds));
+		}
+		else
+		{
+			StartCoroutine(RunCooldownUIForPlayerTwo(seconds));
+		}
+	}
+
 	#endregion
 
 	#region public override methods
@@ -283,7 +331,7 @@ public class DefaultBattleGUI : BattleGUI{
 	public override void OnShow (){
 		base.OnShow();
 		this.hiding = false;
-
+		UFE.OnCooldownStarted += StartCooldown;
 		/*if (UFE.config.debugOptions.debugMode){
 			UFE.debugger1.enabled = true;
 			UFE.debugger2.enabled = true;

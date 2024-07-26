@@ -1786,20 +1786,21 @@ public class ControlsScript : MonoBehaviour
                 .Where(x => x.MoveID == lastEntry.MoveID)
                 .Reverse()
                 .ToList();
-            MoveRecord nthLastEntry;
             if (matchingEntries.Count >= currentMove.attackCountForCooldownToActivate)
             {
-                nthLastEntry = matchingEntries[currentMove.attackCountForCooldownToActivate - 1];
+                var nthLastEntry = matchingEntries[currentMove.attackCountForCooldownToActivate - 1];
                 long frameDifference = lastEntry.Frame - nthLastEntry.Frame;
                 if (frameDifference < currentMove.cooldownFramesToTrackCooldown)
                 {
                     if (myMoveSetScript.lastMovesPlayed.ContainsKey(currentMove.id))
                     {
                         myMoveSetScript.lastMovesPlayed[currentMove.id] = UFE.currentFrame;
+                        UFE.FireCooldown(playerNum, (currentMove.cooldownFrames / 60));
                     }
                     else
                     {
                         myMoveSetScript.lastMovesPlayed.Add(currentMove.id, UFE.currentFrame);
+                        UFE.FireCooldown(playerNum, (currentMove.cooldownFrames / 60));
                     }
                 }
             }

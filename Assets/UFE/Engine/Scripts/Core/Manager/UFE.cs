@@ -29,6 +29,10 @@ public partial class UFE : MonoBehaviour, UFEInterface
     public delegate void StringHandler(string newString, ControlsScript player);
     public static event StringHandler OnNewAlert;
 
+    public delegate void SecondsHandler(int playerNum, int seconds);
+
+    public static event SecondsHandler OnCooldownStarted;
+
     public delegate void HitHandler(HitBox strokeHitBox, MoveInfo move, Hit hitInfo, ControlsScript player);
     public static event HitHandler OnHit;
     public static event HitHandler OnBlock;
@@ -763,6 +767,11 @@ public partial class UFE : MonoBehaviour, UFEInterface
         if (UFE.OnNewAlert != null) UFE.OnNewAlert(alertMessage, player);
     }
 
+    public static void FireCooldown(int playerNum, int seconds)
+    {
+        if (UFE.OnCooldownStarted != null) UFE.OnCooldownStarted(playerNum, seconds);
+        
+    }
     public static void FireHit(HitBox strokeHitBox, MoveInfo move, Hit hitInfo, ControlsScript player)
     {
         if (UFE.OnHit != null) UFE.OnHit(strokeHitBox, move, hitInfo, player);
