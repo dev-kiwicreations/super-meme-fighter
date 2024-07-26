@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eece8a2a5a74e6bb41b5d92c1c603b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightFirstOption: 1
+  highlightFirstOption: 0
   canvasPreview: 1
   firstSelectableGameObject: {fileID: 0}
   hasFadeIn: 1
@@ -90,8 +90,8 @@ MonoBehaviour:
   portraitPlayer1: {fileID: 0}
   portraitPlayer2: {fileID: 0}
   background3dPrefab: {fileID: 100000, guid: 801ed133f6ee0e749bce3c6f2940f36f, type: 3}
-  positionPlayer1: {x: -7.2, y: 1.5, z: 0}
-  positionPlayer2: {x: 7.2, y: 1.5, z: 0}
+  positionPlayer1: {x: -37, y: 350, z: 0}
+  positionPlayer2: {x: 37, y: 350, z: 0}
   characters:
   - {fileID: 11400072}
   - {fileID: 7795784156935932064}
@@ -6037,7 +6037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1782152071326185198
 RectTransform:
   m_ObjectHideFlags: 0

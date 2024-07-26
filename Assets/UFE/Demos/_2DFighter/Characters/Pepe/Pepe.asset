@@ -22,14 +22,32 @@ MonoBehaviour:
   selectionSound: {fileID: 0}
   deathSound: {fileID: 0}
   height: 0
-  age: 0
+  age: 2
   bloodType: Unknown
   lifePoints: 1000
   maxGaugePoints: 400
   characterPrefabStorage: 0
   characterPrefab: {fileID: 2759306172964311592, guid: 22d7d5035ddfa9f4ba90ed1d7a0bc4b9, type: 3}
   prefabResourcePath: 
-  alternativeCostumes: []
+  alternativeCostumes:
+  - name: Pepe
+    characterPrefabStorage: 0
+    prefab: {fileID: 2759306172964311592, guid: 22d7d5035ddfa9f4ba90ed1d7a0bc4b9, type: 3}
+    prefabResourcePath: 
+    enableColorMask: 0
+    colorMask: {r: 0, g: 0, b: 0, a: 0}
+  - name: Pepe
+    characterPrefabStorage: 0
+    prefab: {fileID: 5507747402435534483, guid: aa8286ba907064a4b908c46a3b053ea7, type: 3}
+    prefabResourcePath: 
+    enableColorMask: 0
+    colorMask: {r: 0, g: 0, b: 0, a: 0}
+  - name: Pepe
+    characterPrefabStorage: 0
+    prefab: {fileID: 5507747402435534483, guid: 46b42194f43a8dd40bbec9fcc964cd0b, type: 3}
+    prefabResourcePath: 
+    enableColorMask: 0
+    colorMask: {r: 0, g: 0, b: 0, a: 0}
   initialPosition:
     x:
       _serializedValue: 0
