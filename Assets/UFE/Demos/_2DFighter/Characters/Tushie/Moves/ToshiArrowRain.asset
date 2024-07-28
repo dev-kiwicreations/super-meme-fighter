@@ -115,7 +115,7 @@ MonoBehaviour:
     startupSpeed: 0
     recoverySpeed: 0
     hitConfirmType: 0
-    preferableDistance: 4
+    preferableDistance: 3
     gaugeUsage: 1
     anyAttackType: 1
     anyHitType: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
   stateOverride: []
   armorOptions:
     activeFramesBegin: 0
-    activeFramesEnds: 0
+    activeFramesEnds: 30
     overrideHitEffects: 0
     blockHits: 0
     hitEffects:
@@ -262,8 +262,8 @@ MonoBehaviour:
       _shakeCameraDensity:
         _serializedValue: 3435973836
       editorToggle: 0
-    hitAbsorption: 0
-    damageAbsorption: 0
+    hitAbsorption: 100
+    damageAbsorption: 10
     nonAffectedBodyParts: 
   projectiles:
   - castingFrame: 22

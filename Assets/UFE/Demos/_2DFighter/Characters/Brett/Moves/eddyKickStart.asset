@@ -51,9 +51,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 116
-  startUpFrames: 16
-  activeFrames: 96
-  recoveryFrames: 4
+  startUpFrames: 21
+  activeFrames: 68
+  recoveryFrames: 27
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0700000006000000
+    buttonExecution: 0600000007000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -129,7 +129,7 @@ MonoBehaviour:
     startupSpeed: 4
     recoverySpeed: 1
     hitConfirmType: 0
-    preferableDistance: 4
+    preferableDistance: 3
     gaugeUsage: 1
     anyAttackType: 1
     anyHitType: 1
@@ -180,13 +180,13 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 16
-    activeFramesEnds: 111
+  - activeFramesBegin: 21
+    activeFramesEnds: 88
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
     techable: 1
-    resetHitAnimations: 1
+    resetHitAnimations: 0
     forceStand: 1
     fixRotation: 0
     armorBreaker: 0
@@ -282,8 +282,8 @@ MonoBehaviour:
       _serializedValue: 0
     doesntKill: 0
     hitType: 0
-    resetPreviousHorizontalPush: 1
-    resetPreviousVerticalPush: 1
+    resetPreviousHorizontalPush: 0
+    resetPreviousVerticalPush: 0
     resetPreviousSidewaysPush: 0
     resetJumpForce: 0
     applyDifferentAirForce: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
     applyDifferentSelfBlockForce: 0
     _pushForce:
       x:
-        _serializedValue: 51539607552
+        _serializedValue: 21474836480
       y:
         _serializedValue: 0
       z:
@@ -398,7 +398,7 @@ MonoBehaviour:
     stageReactionsToggle: 0
     overrideEventsToggle: 0
     hitConditionsToggle: 0
-    pullInToggle: 0
+    pullInToggle: 1
     hurtBoxesToggle: 1
     wallBounceToggle: 0
     groundBounceToggle: 0

@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e87d7c439487834c82e9d4aa521a1ed, type: 3}
-  m_Name: Impossible (Literally Unplayable)
+  m_Name: Agressive Stance With Attack Spams
   m_EditorClassIdentifier: 
-  instructionsName: Impossible (Literally Unplayable)
+  instructionsName: Aggressive Stancing
   debugMode: 1
   debug_ReactionWeight: 1
   advancedOptions:
     timeBetweenDecisions: 0
     timeBetweenActions: 0
-    aggressiveness: 0.5
-    ruleCompliance: 1
+    aggressiveness: 0.9
+    ruleCompliance: 0.75
     comboEfficiency: 1
     movementDuration: 0.1
     buttonSequenceInterval: 1
     attackDesirabilityCalculation: 2
-    defaultDesirability: 0
+    defaultDesirability: 4
     playRandomMoves: 1
     reactionParameters:
       attackWhenEnemyIsDown: 0
@@ -53,66 +53,14 @@ MonoBehaviour:
     autoBlock: 1
     obeyHitType: 1
     standBlockAccuracy: 6
-    crouchBlockAccuracy: 0
-    jumpBlockAccuracy: 0
+    crouchBlockAccuracy: 6
+    jumpBlockAccuracy: 6
     autoAttack: 1
     obeyPreferableDistances: 1
     attackFrequency: 3
-    debugToggle: 1
-  aiRules:
-  - ruleName: Attack Spam
-    events:
-    - enabled: 1
-      boolean: 0
-      conditions:
-      - enabled: 1
-        boolean: 0
-        targetCharacter: 1
-        conditionType: 5
-        horizontalMovement: 1
-        verticalMovement: 1
-        movementSpeed: 0
-        healthStatus: 0
-        gaugeStatus: 0
-        playerDistance: 1
-        jumping: 0
-        blocking: 1
-        moveClassification:
-          attackType: 0
-          hitType: 0
-          startupSpeed: 0
-          recoverySpeed: 0
-          hitConfirmType: 0
-          preferableDistance: 0
-          gaugeUsage: 0
-          anyAttackType: 1
-          anyHitType: 1
-          anyHitConfirmType: 1
-        moveFrameData: 0
-        moveDamage: 0
-      conditionsToggle: 1
-    reactions:
-    - reactionType: 10
-      moveClassification:
-        attackType: 6
-        hitType: 0
-        startupSpeed: 0
-        recoverySpeed: 0
-        hitConfirmType: 0
-        preferableDistance: 0
-        gaugeUsage: 0
-        anyAttackType: 1
-        anyHitType: 1
-        anyHitConfirmType: 1
-      moveDamage: 0
-      specificMove: {fileID: 0}
-      buttonPress: 4
-      behavior: 0
-      desirability: 4
     debugToggle: 0
-    eventsToggle: 0
-    reactionsToggle: 0
-  - ruleName: Dash Forward, Stay Close
+  aiRules:
+  - ruleName: Close Distance
     events:
     - enabled: 1
       boolean: 0
@@ -247,7 +195,278 @@ MonoBehaviour:
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
+      desirability: 5
+    debugToggle: 0
+    eventsToggle: 0
+    reactionsToggle: 0
+  - ruleName: Use Forward Launchers If Opponent is In Mid Distance
+    events:
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 5
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 3
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 0
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 1
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 0
+    reactions:
+    - reactionType: 10
+      moveClassification:
+        attackType: 2
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 5
+    debugToggle: 0
+    eventsToggle: 0
+    reactionsToggle: 0
+  - ruleName: Use Projectiles if Opponent is In Mid Distance
+    events:
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 5
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 3
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 0
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 1
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 1
+    reactions:
+    - reactionType: 10
+      moveClassification:
+        attackType: 6
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 4
+    debugToggle: 0
+    eventsToggle: 0
+    reactionsToggle: 0
+  - ruleName: Only Use Close Melee Options on Very Close Distance
+    events:
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 5
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 1
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 0
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 1
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 1
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 5
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 2
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 0
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 1
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 1
+    reactions:
+    - reactionType: 10
+      moveClassification:
+        attackType: 1
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
       desirability: 6
+    debugToggle: 0
+    eventsToggle: 0
+    reactionsToggle: 0
+  - ruleName: Jump Or Try Blocking on Attacks
+    events:
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 6
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 3
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 6
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 0
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 0
+    reactions:
+    - reactionType: 4
+      moveClassification:
+        attackType: 0
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 1
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 4
+    - reactionType: 5
+      moveClassification:
+        attackType: 0
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 1
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 4
+    - reactionType: 6
+      moveClassification:
+        attackType: 0
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 1
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 4
     debugToggle: 0
     eventsToggle: 0
     reactionsToggle: 0

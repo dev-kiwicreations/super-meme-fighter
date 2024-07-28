@@ -51,9 +51,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 23
-  activeFrames: 4
-  recoveryFrames: 4
+  startUpFrames: 10
+  activeFrames: 20
+  recoveryFrames: 1
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0700000006000000
+    buttonExecution: 0600000007000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -110,12 +110,12 @@ MonoBehaviour:
     basicMovesToggle: 0
     statesToggle: 0
   moveClassification:
-    attackType: 1
+    attackType: 2
     hitType: 0
     startupSpeed: 1
     recoverySpeed: 5
     hitConfirmType: 0
-    preferableDistance: 2
+    preferableDistance: 3
     gaugeUsage: 1
     anyAttackType: 1
     anyHitType: 1
@@ -178,8 +178,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 23
-    activeFramesEnds: 26
+  - activeFramesBegin: 10
+    activeFramesEnds: 29
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -334,7 +334,7 @@ MonoBehaviour:
       z:
         _serializedValue: 0
     cornerPush: 1
-    groundBounce: 1
+    groundBounce: 0
     overrideForcesOnGroundBounce: 0
     resetGroundBounceHorizontalPush: 0
     resetGroundBounceVerticalPush: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
         _serializedValue: 0
       z:
         _serializedValue: 0
-    wallBounce: 0
+    wallBounce: 1
     knockOutOnWallBounce: 0
     overrideForcesOnWallBounce: 0
     resetWallBounceHorizontalPush: 0
@@ -357,7 +357,7 @@ MonoBehaviour:
         _serializedValue: 0
       z:
         _serializedValue: 0
-    bounceOnCameraEdge: 0
+    bounceOnCameraEdge: 1
     cameraEdgeOffSet:
       _serializedValue: 0
     overrideCameraSpeed: 0
@@ -393,12 +393,12 @@ MonoBehaviour:
     forceOptionsToggle: 1
     opponentForceToggle: 1
     selfForceToggle: 1
-    stageReactionsToggle: 0
+    stageReactionsToggle: 1
     overrideEventsToggle: 0
     hitConditionsToggle: 0
     pullInToggle: 1
     hurtBoxesToggle: 1
-    wallBounceToggle: 0
+    wallBounceToggle: 1
     groundBounceToggle: 0
     hurtBoxes:
     - bodyPart: 0
