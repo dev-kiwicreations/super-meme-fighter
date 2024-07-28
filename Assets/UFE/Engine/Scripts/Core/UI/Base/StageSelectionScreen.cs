@@ -68,7 +68,7 @@ namespace UFE3D
 
 		public void PlayYesSound()
 		{
-			Invoke(nameof(TrySelectStage), 1f);
+			Invoke(nameof(TrySelectStage), 0.4f);
 		}
 		
 		public void TrySelectStage()
