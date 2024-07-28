@@ -65,6 +65,12 @@ namespace UFE3D
 			this.TrySelectStage(-1);
 		}
 
+
+		public void PlayYesSound()
+		{
+			Invoke(nameof(TrySelectStage), 1f);
+		}
+		
 		public void TrySelectStage()
 		{
 			this.TrySelectStage(this.stageHoverIndex);
