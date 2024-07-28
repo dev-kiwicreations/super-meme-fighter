@@ -8,6 +8,9 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     public override void OnShow()
     {
         base.OnShow();
+        // UFE.canvas.planeDistance = 0.1f;
+        // UFE.canvas.worldCamera = Camera.main;
+        // UFE.canvas.renderMode = RenderMode.ScreenSpaceCamera;
     }
 
     // Override constructor and don't call base
