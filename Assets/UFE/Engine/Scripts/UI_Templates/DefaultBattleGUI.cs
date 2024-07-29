@@ -604,7 +604,6 @@ public class DefaultBattleGUI : BattleGUI{
 				    this.player1GUI.alert.text.gameObject.SetActive(true);
 				    this.player1GUI.alert.text.text = "hit combo!";
 				    
-				    Debug.Log(player.opControlsScript.comboHits);
 				    var number = player.opControlsScript.comboHits;
 				    if (number is < 0 or > 99)
 				    {
@@ -614,6 +613,8 @@ public class DefaultBattleGUI : BattleGUI{
 				    var tens = number / 10;
 				    var ones = number % 10;
 
+				    this.player1GUI.alert.digit1Image.enabled = tens >= 1;
+				    
 				    this.player1GUI.alert.digit1Image.sprite = this.player1GUI.alert.digitSprites[tens];
 				    this.player1GUI.alert.digit2Image.sprite = this.player1GUI.alert.digitSprites[ones];
 
@@ -634,7 +635,6 @@ public class DefaultBattleGUI : BattleGUI{
                     this.player2GUI.alert.text.gameObject.SetActive(true);
                     this.player2GUI.alert.text.text = "hit combo!";
                    
-                    Debug.Log(player.opControlsScript.comboHits);
                     var number = player.opControlsScript.comboHits;
                     if (number is < 0 or > 99)
                     {
@@ -643,6 +643,8 @@ public class DefaultBattleGUI : BattleGUI{
 
                     var tens = number / 10;
                     var ones = number % 10;
+                    
+                    this.player2GUI.alert.digit1Image.enabled = tens >= 1;
 
                     this.player2GUI.alert.digit1Image.sprite = this.player2GUI.alert.digitSprites[tens];
                     this.player2GUI.alert.digit2Image.sprite = this.player2GUI.alert.digitSprites[ones];
