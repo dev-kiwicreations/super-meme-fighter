@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2409278455147958072}
   - component: {fileID: 6570862428907894775}
   - component: {fileID: 8661806606886743570}
+  - component: {fileID: 8487138806965505674}
   m_Layer: 5
   m_Name: VersusModeAfterBattleScreen
   m_TagString: Untagged
@@ -243,6 +244,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8487138806965505674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7efb6e681947f4685ab1027bb3f361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,9 +985,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8661806606886743570}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
+        - m_Target: {fileID: 8487138806965505674}
+          m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -988,9 +1001,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8661806606886743570}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
+        - m_Target: {fileID: 8487138806965505674}
+          m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
+          m_MethodName: PlayClickSFX
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
@@ -1587,9 +1600,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8661806606886743570}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
+        - m_Target: {fileID: 8487138806965505674}
+          m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -1603,9 +1616,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8661806606886743570}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
+        - m_Target: {fileID: 8487138806965505674}
+          m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
+          m_MethodName: PlayClickSFX
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
@@ -2024,15 +2037,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 144.48724
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 144.48724
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 144.48724
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2074,9 +2087,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_SortingLayer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_Materials.Array.size
@@ -2110,15 +2131,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 144.48724
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 144.48724
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 144.48724
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2159,6 +2180,18 @@ PrefabInstance:
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_Materials.Array.size

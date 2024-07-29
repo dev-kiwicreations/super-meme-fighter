@@ -110,8 +110,8 @@ MonoBehaviour:
       behavior: 0
       desirability: 4
     debugToggle: 0
-    eventsToggle: 1
-    reactionsToggle: 1
+    eventsToggle: 0
+    reactionsToggle: 0
   - ruleName: Dash Forward, Stay Close
     events:
     - enabled: 1
@@ -248,8 +248,8 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 0
       desirability: 5
-    debugToggle: 0
-    eventsToggle: 0
+    debugToggle: 1
+    eventsToggle: 1
     reactionsToggle: 1
   aiDefinitions:
     damage:

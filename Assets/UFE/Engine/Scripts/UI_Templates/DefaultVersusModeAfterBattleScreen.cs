@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UFE3D;
 using UnityEngine;
 
@@ -12,7 +13,8 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         {
             UFE.PlayMusic(this.music);
         }
-        UFE.canvas.planeDistance = 0.1f;
+        UFE.canvas.planeDistance = 20f;
+        UFE.canvas.sortingOrder = 200;
         UFE.canvas.worldCamera = Camera.main;
         UFE.canvas.renderMode = RenderMode.ScreenSpaceCamera;
     }
@@ -37,5 +39,12 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         {
             GoToMainMenu();
         }
+    }
+
+    private void OnDisable()
+    {
+        UFE.canvas.sortingOrder = 0;
+        UFE.canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        UFE.canvas.worldCamera = null;
     }
 }
