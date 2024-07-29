@@ -25,7 +25,10 @@ public class DefaultBattleGUI : BattleGUI{
 		public Text text;
 		public Vector3 initialPosition;
 		public Vector3 finalPosition;
-		public float movementSpeed = 15f;
+		public float movementSpeed = 15f; 
+		public Image digit1Image;
+		public Image digit2Image;
+		public Sprite[] digitSprites;
 	}
 
 	[Serializable]
@@ -149,6 +152,7 @@ public class DefaultBattleGUI : BattleGUI{
 					this.player1AlertTimer -= deltaTime;
 				}else if (!string.IsNullOrEmpty(this.player1GUI.alert.text.text)){
 					this.player1GUI.alert.text.text = string.Empty;
+					this.player1GUI.alert.text.gameObject.SetActive(false);
 				}
 			}
 
@@ -163,6 +167,7 @@ public class DefaultBattleGUI : BattleGUI{
 					this.player2AlertTimer -= deltaTime;
 				}else if (!string.IsNullOrEmpty(this.player2GUI.alert.text.text)){
 					this.player2GUI.alert.text.text = string.Empty;
+					this.player2GUI.alert.text.gameObject.SetActive(false);
 				}
 			}
 
@@ -602,7 +607,23 @@ public class DefaultBattleGUI : BattleGUI{
 			    string processedMessage = this.ProcessMessage(msg, player);
 
 			    if (this.player1GUI != null && this.player1GUI.alert != null && this.player1GUI.alert.text != null){
-				    this.player1GUI.alert.text.text = processedMessage;
+				    //this.player1GUI.alert.text.text = processedMessage;
+				    this.player1GUI.alert.text.gameObject.SetActive(true);
+				    this.player1GUI.alert.text.text = "hit combo!";
+				    
+				    var number = player.opControlsScript.comboHits;
+				    if (number is < 0 or > 99)
+				    {
+					    return;
+				    }
+
+				    var tens = number / 10;
+				    var ones = number % 10;
+
+				    this.player1GUI.alert.digit1Image.enabled = tens >= 1;
+				    
+				    this.player1GUI.alert.digit1Image.sprite = this.player1GUI.alert.digitSprites[tens];
+				    this.player1GUI.alert.digit2Image.sprite = this.player1GUI.alert.digitSprites[ones];
 
 				    if(
 					    msg != UFE.config.selectedLanguage.combo ||
@@ -617,8 +638,24 @@ public class DefaultBattleGUI : BattleGUI{
 			    string processedMessage = this.ProcessMessage(msg, player);
 
                 if (this.player2GUI != null && this.player2GUI.alert != null && this.player2GUI.alert.text != null) {
-                    this.player2GUI.alert.text.text = processedMessage;
+                    //this.player2GUI.alert.text.text = processedMessage;
+                    this.player2GUI.alert.text.gameObject.SetActive(true);
+                    this.player2GUI.alert.text.text = "hit combo!";
+                   
+                    var number = player.opControlsScript.comboHits;
+                    if (number is < 0 or > 99)
+                    {
+	                    return;
+                    }
 
+                    var tens = number / 10;
+                    var ones = number % 10;
+                    
+                    this.player2GUI.alert.digit1Image.enabled = tens >= 1;
+
+                    this.player2GUI.alert.digit1Image.sprite = this.player2GUI.alert.digitSprites[tens];
+                    this.player2GUI.alert.digit2Image.sprite = this.player2GUI.alert.digitSprites[ones];
+                    
                     if (
                         msg != UFE.config.selectedLanguage.combo ||
                         player.opControlsScript.comboHits == 2 ||
@@ -666,6 +703,7 @@ public class DefaultBattleGUI : BattleGUI{
 			}
 		}
 	}
+	
 
 	protected override void OnRoundBegin(int roundNumber){
 		base.OnRoundBegin(roundNumber);
