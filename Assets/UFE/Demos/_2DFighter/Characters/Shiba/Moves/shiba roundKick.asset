@@ -51,9 +51,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 21
-  activeFrames: 4
-  recoveryFrames: 6
+  startUpFrames: 19
+  activeFrames: 11
+  recoveryFrames: 1
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -142,8 +142,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 21
-    activeFramesEnds: 24
+  - activeFramesBegin: 19
+    activeFramesEnds: 29
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -368,7 +368,7 @@ MonoBehaviour:
     - bodyPart: 0
       followXBounds: 0
       followYBounds: 0
-      hitBoxDefinitionIndex: 9
+      hitBoxDefinitionIndex: 8
       _offSet:
         x:
           _serializedValue: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
     activeFramesBegin: 0
     activeFramesEnds: 30
     bodyPart: 0
-    hitBoxDefinitionIndex: 10
+    hitBoxDefinitionIndex: 9
     shape: 0
     rect:
       serializedVersion: 2

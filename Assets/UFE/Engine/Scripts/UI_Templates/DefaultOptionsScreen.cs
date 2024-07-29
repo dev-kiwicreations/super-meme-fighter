@@ -190,23 +190,27 @@ public class DefaultOptionsScreen : OptionsScreen
         }
         else if (virtualSlider == 3)
         {
-            virtualSlider = 5;
+            virtualSlider = 3;
         }
-        else if(virtualSlider == 5)
-        {
-            virtualSlider = 5;
-        }
+        //else if (virtualSlider == 4)
+        //{
+        //    virtualSlider = 4;
+        //}
         //virtualSlider = Mathf.Clamp(virtualSlider + 1, 0, UFE.config.aiOptions.difficultySettings.Length - 1);
 
-        
+
         SetAIDifficulty(UFE.config.aiOptions.difficultySettings[Mathf.RoundToInt(virtualSlider)]);
     }
 
     public void DecreaseAiDifficulty()
     {
-        if (virtualSlider == 1)
+        if (virtualSlider == 0)
         {
-            virtualSlider = 1;
+            virtualSlider = 0;
+        }
+        else if (virtualSlider == 1)
+        {
+            virtualSlider = 0;
         }
         else if (virtualSlider == 2)
         {
@@ -216,10 +220,10 @@ public class DefaultOptionsScreen : OptionsScreen
         {
             virtualSlider = 2;
         }
-        else if (virtualSlider == 5)
-        {
-            virtualSlider = 3;
-        }
+        //else if(virtualSlider == 5)
+        //{
+        //    virtualSlider = 4;
+        //}
         //virtualSlider = Mathf.Clamp(virtualSlider - 1, 0, UFE.config.aiOptions.difficultySettings.Length - 1);
 
         SetAIDifficulty(UFE.config.aiOptions.difficultySettings[Mathf.RoundToInt(virtualSlider)]);

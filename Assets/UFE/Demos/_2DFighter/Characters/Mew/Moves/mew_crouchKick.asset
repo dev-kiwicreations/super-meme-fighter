@@ -51,9 +51,9 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 16
-  startUpFrames: 11
-  activeFrames: 3
-  recoveryFrames: 2
+  startUpFrames: 8
+  activeFrames: 8
+  recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -142,8 +142,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 11
-    activeFramesEnds: 13
+  - activeFramesBegin: 8
+    activeFramesEnds: 15
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -385,7 +385,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 14946486272
           y:
             _serializedValue: 0
           z:
@@ -399,41 +399,41 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 14946486272
           y:
-            _serializedValue: 0
+            _serializedValue: 4294967296
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 4294967296
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 14946486272
         height:
-          _serializedValue: 0
+          _serializedValue: 4294967296
         xMax:
-          _serializedValue: 0
+          _serializedValue: 14946486272
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 4294967296
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1
-    activeFramesBegin: 0
+    activeFramesBegin: 8
     activeFramesEnds: 15
     bodyPart: 0
-    hitBoxDefinitionIndex: 10
-    shape: 0
+    hitBoxDefinitionIndex: 9
+    shape: 1
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 4
-      height: 4
+      width: 3.36
+      height: 3.8
     _rect:
       _x:
         _serializedValue: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 14431089664
         y:
           _serializedValue: 0
         z:
@@ -455,26 +455,26 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 0
+          _serializedValue: 14431089664
         y:
-          _serializedValue: 0
+          _serializedValue: 16320875520
         z:
           _serializedValue: 0
       bottomLeft:
         x:
           _serializedValue: 0
         y:
-          _serializedValue: 0
+          _serializedValue: 16320875520
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 0
+        _serializedValue: 14431089664
       height:
-        _serializedValue: 0
+        _serializedValue: 16320875520
       xMax:
-        _serializedValue: 0
+        _serializedValue: 14431089664
       yMax:
-        _serializedValue: 0
+        _serializedValue: 16320875520
     followXBounds: 0
     followYBounds: 0
     _radius:
@@ -502,7 +502,7 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: 0
+        _serializedValue: 9019430912
       y:
         _serializedValue: 0
       z:

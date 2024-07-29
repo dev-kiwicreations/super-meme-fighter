@@ -318,14 +318,21 @@ public class DefaultBattleGUI : BattleGUI{
 		}
 	}
 
-	public override void OnHide ()
+    private void OnDisable()
+    {
+		UFE.OnCooldownStarted -= StartCooldown;
+    }
+
+    public override void OnHide ()
     {
 		if (UFE.debugger1 != null) UFE.debugger1.enabled = false;
 		if (UFE.debugger2 != null) UFE.debugger2.enabled = false;
 
 		this.hiding = true;
+		UFE.OnCooldownStarted -= StartCooldown;
 		this.OnGamePaused(false);
-		base.OnHide ();
+
+        base.OnHide ();
 	}
 
 	public override void OnShow (){
@@ -346,7 +353,7 @@ public class DefaultBattleGUI : BattleGUI{
 			});
 		}
     }
-
+	 
     
 
 	public override void SelectOption(int option, int player){

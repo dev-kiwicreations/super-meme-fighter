@@ -44,21 +44,21 @@ MonoBehaviour:
     preferableCombatDistance: 1
     attacksAtPreferableDistance: 5
     autoMove: 1
-    restOnLocation: 1
-    moveFrequency: 3
+    restOnLocation: 0
+    moveFrequency: 6
     autoJump: 1
-    jumpBackFrequency: 1
-    jumpStraightFrequency: 1
-    jumpForwardFrequency: 1
-    autoBlock: 1
+    jumpBackFrequency: 0
+    jumpStraightFrequency: 0
+    jumpForwardFrequency: 0
+    autoBlock: 0
     obeyHitType: 1
     standBlockAccuracy: 6
     crouchBlockAccuracy: 0
     jumpBlockAccuracy: 0
     autoAttack: 1
     obeyPreferableDistances: 1
-    attackFrequency: 3
-    debugToggle: 1
+    attackFrequency: 5
+    debugToggle: 0
   aiRules:
   - ruleName: Attack Spam
     events:
@@ -94,15 +94,15 @@ MonoBehaviour:
     reactions:
     - reactionType: 10
       moveClassification:
-        attackType: 6
+        attackType: 1
         hitType: 0
         startupSpeed: 0
         recoverySpeed: 0
         hitConfirmType: 0
-        preferableDistance: 0
+        preferableDistance: 1
         gaugeUsage: 0
-        anyAttackType: 1
-        anyHitType: 1
+        anyAttackType: 0
+        anyHitType: 0
         anyHitConfirmType: 1
       moveDamage: 0
       specificMove: {fileID: 0}
@@ -110,8 +110,8 @@ MonoBehaviour:
       behavior: 0
       desirability: 4
     debugToggle: 0
-    eventsToggle: 0
-    reactionsToggle: 0
+    eventsToggle: 1
+    reactionsToggle: 1
   - ruleName: Dash Forward, Stay Close
     events:
     - enabled: 1
@@ -247,10 +247,10 @@ MonoBehaviour:
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
-      desirability: 6
+      desirability: 5
     debugToggle: 0
     eventsToggle: 0
-    reactionsToggle: 0
+    reactionsToggle: 1
   aiDefinitions:
     damage:
       veryWeak: 0.05

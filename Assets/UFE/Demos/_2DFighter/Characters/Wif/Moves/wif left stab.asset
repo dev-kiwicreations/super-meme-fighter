@@ -42,10 +42,10 @@ MonoBehaviour:
   autoCorrectRotation: 0
   allowSideSwitch: 0
   frameWindowRotation: 0
-  cooldown: 0
-  cooldownFrames: 0
-  attackCountForCooldownToActivate: 0
-  cooldownFramesToTrackCooldown: 0
+  cooldown: 1
+  cooldownFrames: 360
+  attackCountForCooldownToActivate: 2
+  cooldownFramesToTrackCooldown: 180
   disableHeadLook: 1
   speedKeyFrameToggle: 0
   fixedSpeed: 1
@@ -385,7 +385,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 21904332800
           y:
             _serializedValue: 0
           z:
@@ -399,27 +399,27 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 21904332800
           y:
-            _serializedValue: 0
+            _serializedValue: 5068061184
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 5068061184
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 21904332800
         height:
-          _serializedValue: 0
+          _serializedValue: 5068061184
         xMax:
-          _serializedValue: 0
+          _serializedValue: 21904332800
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 5068061184
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1

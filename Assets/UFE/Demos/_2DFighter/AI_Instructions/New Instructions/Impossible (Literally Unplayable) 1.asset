@@ -44,12 +44,12 @@ MonoBehaviour:
     preferableCombatDistance: 1
     attacksAtPreferableDistance: 5
     autoMove: 1
-    restOnLocation: 1
-    moveFrequency: 3
+    restOnLocation: 0
+    moveFrequency: 6
     autoJump: 1
-    jumpBackFrequency: 1
-    jumpStraightFrequency: 1
-    jumpForwardFrequency: 1
+    jumpBackFrequency: 0
+    jumpStraightFrequency: 0
+    jumpForwardFrequency: 0
     autoBlock: 1
     obeyHitType: 1
     standBlockAccuracy: 6
@@ -57,8 +57,8 @@ MonoBehaviour:
     jumpBlockAccuracy: 0
     autoAttack: 1
     obeyPreferableDistances: 1
-    attackFrequency: 3
-    debugToggle: 1
+    attackFrequency: 6
+    debugToggle: 0
   aiRules:
   - ruleName: Attack Spam
     events:
@@ -94,21 +94,21 @@ MonoBehaviour:
     reactions:
     - reactionType: 10
       moveClassification:
-        attackType: 6
+        attackType: 1
         hitType: 0
         startupSpeed: 0
         recoverySpeed: 0
         hitConfirmType: 0
         preferableDistance: 0
         gaugeUsage: 0
-        anyAttackType: 1
-        anyHitType: 1
-        anyHitConfirmType: 1
+        anyAttackType: 0
+        anyHitType: 0
+        anyHitConfirmType: 0
       moveDamage: 0
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
-      desirability: 4
+      desirability: 5
     debugToggle: 0
     eventsToggle: 0
     reactionsToggle: 0
@@ -244,6 +244,75 @@ MonoBehaviour:
         anyHitType: 1
         anyHitConfirmType: 1
       moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 4
+    debugToggle: 0
+    eventsToggle: 0
+    reactionsToggle: 0
+  - ruleName: Projectile and Mid Range Attacks
+    events:
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 5
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 3
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 0
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 1
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 0
+    reactions:
+    - reactionType: 10
+      moveClassification:
+        attackType: 6
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 0
+        anyHitConfirmType: 0
+      moveDamage: 4
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 6
+    - reactionType: 10
+      moveClassification:
+        attackType: 1
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 3
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 0
+        anyHitConfirmType: 0
+      moveDamage: 3
       specificMove: {fileID: 0}
       buttonPress: 4
       behavior: 0
