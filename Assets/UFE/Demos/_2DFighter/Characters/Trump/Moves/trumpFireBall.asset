@@ -44,6 +44,8 @@ MonoBehaviour:
   frameWindowRotation: 0
   cooldown: 0
   cooldownFrames: 0
+  attackCountForCooldownToActivate: 0
+  cooldownFramesToTrackCooldown: 0
   disableHeadLook: 0
   speedKeyFrameToggle: 0
   fixedSpeed: 1
@@ -74,9 +76,9 @@ MonoBehaviour:
     leniencyBuffer: 8
     onReleaseExecution: 0
     requireButtonPress: 1
-    onPressExecution: 0
+    onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 
+    buttonExecution: 0600000007000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -299,9 +301,9 @@ MonoBehaviour:
     hitBoxDefinitionIndex: 9
     _castingOffSet:
       x:
-        _serializedValue: 8589934592
+        _serializedValue: 17179869184
       y:
-        _serializedValue: 3221225472
+        _serializedValue: 2791728640
       z:
         _serializedValue: 0
     speed: 20
