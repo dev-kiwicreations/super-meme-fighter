@@ -24,12 +24,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
   - {fileID: 11400000, guid: 54057043117984643925ed339c232c0d, type: 2}
   selectedStage:
-    stageName: Texas
+    stageName: Shanghai
     stageLoadingMethod: 0
     stagePath: 
-    screenshot: {fileID: 2800000, guid: 0a207762ec2234548b8beb6b4cacaf79, type: 3}
-    prefab: {fileID: 100000, guid: 15c44fcb714b16848bb9d1380f7e7301, type: 3}
-    music: {fileID: 8300000, guid: d5d4c6311e097ba49b36beb6671873f6, type: 3}
+    screenshot: {fileID: 2800000, guid: 73aaaa0dbce16c643963e644fef4f363, type: 3}
+    prefab: {fileID: 100000, guid: e9f471bfa88c90c4f91cfd7f502f2e23, type: 3}
+    music: {fileID: 8300000, guid: 719b33feb4dbf454280701b4f60fce24, type: 3}
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
@@ -1255,6 +1255,25 @@ MonoBehaviour:
         _serializedValue: 0
       z:
         _serializedValue: 0
+  - stageName: Shanghai
+    stageLoadingMethod: 0
+    stagePath: 
+    screenshot: {fileID: 2800000, guid: 73aaaa0dbce16c643963e644fef4f363, type: 3}
+    prefab: {fileID: 100000, guid: e9f471bfa88c90c4f91cfd7f502f2e23, type: 3}
+    music: {fileID: 8300000, guid: 719b33feb4dbf454280701b4f60fce24, type: 3}
+    _groundFriction:
+      _serializedValue: 429496729600
+    _leftBoundary:
+      _serializedValue: -150323855360
+    _rightBoundary:
+      _serializedValue: 150323855360
+    position:
+      x:
+        _serializedValue: 0
+      y:
+        _serializedValue: 0
+      z:
+        _serializedValue: 0
   characters:
   - {fileID: 11400000, guid: d28a8bf41852181439d08a26481d0af5, type: 2}
   - {fileID: 11400000, guid: f26659cebef032f4483334aed71b22e0, type: 2}
@@ -2171,7 +2190,7 @@ MonoBehaviour:
     synchronizationMessageFrequency: 0
     synchronizationAction: 2
   music: 1
-  musicVolume: 1
+  musicVolume: 0.15563598
   soundfx: 1
   soundfxVolume: 1
   colorStateOne: {r: 1, g: 0, b: 0, a: 1}
