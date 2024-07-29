@@ -15,7 +15,7 @@ namespace UFE3D
         public string finalRound = "Final Round";
         public string fight = "Fight!";
         public string firstHit = "First Hit!";
-        public string combo = "%number% hit combo!";
+        public string combo = "hit combo!";
         public string parry = "Parry!";
         public string counterHit = "Counter!";
         public string victory = "%character% wins!";
