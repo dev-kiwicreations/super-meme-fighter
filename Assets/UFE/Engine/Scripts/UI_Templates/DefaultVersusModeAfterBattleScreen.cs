@@ -14,7 +14,7 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             UFE.PlayMusic(this.music);
         }
         UFE.canvas.planeDistance = 20f;
-        UFE.canvas.sortingOrder = 200;
+        UFE.canvas.sortingOrder = 500;
         UFE.canvas.worldCamera = Camera.main;
         UFE.canvas.renderMode = RenderMode.ScreenSpaceCamera;
     }
