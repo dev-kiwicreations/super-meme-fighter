@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlaySFX : MonoBehaviour
 {
-    public void PlayHoverSFX(AudioClip clip)
-    {
-        UFE.PlaySound(clip);
-    }
+    public AudioClip clickSound;
+    public AudioClip selectSound;
+    public AudioClip yesSound;
+    public AudioClip characterSound;
     
-    public void PlayClickSFX(AudioClip clip)
+    public void PlaySfx(AudioClip clip)
     {
         UFE.PlaySound(clip);
     }

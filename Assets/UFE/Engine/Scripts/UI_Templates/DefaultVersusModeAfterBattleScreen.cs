@@ -14,7 +14,7 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             UFE.PlayMusic(this.music);
         }
         UFE.canvas.planeDistance = 20f;
-        UFE.canvas.sortingOrder = 200;
+        UFE.canvas.sortingOrder = 500;
         UFE.canvas.worldCamera = Camera.main;
         UFE.canvas.renderMode = RenderMode.ScreenSpaceCamera;
     }
@@ -33,10 +33,12 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             RepeatBattle();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToMainMenu();
         }
     }
