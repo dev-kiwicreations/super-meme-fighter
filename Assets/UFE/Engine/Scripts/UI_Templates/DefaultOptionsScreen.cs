@@ -29,6 +29,7 @@ public class DefaultOptionsScreen : OptionsScreen
     public Button decreaseSFXButton;
     public GameObject optionScreen;
     public GameObject controlScreen;
+    public PlaySFX playSfx;
     #endregion
 
     #region private properties
@@ -430,10 +431,12 @@ public class DefaultOptionsScreen : OptionsScreen
         {
             if (optionScreen.activeInHierarchy)
             {
+                playSfx.PlaySfx(playSfx.clickSound);
                 GoToMainMenuScreen();
             }
             else if (controlScreen.activeInHierarchy)
             {
+                playSfx.PlaySfx(playSfx.clickSound);
                 ShowHideControls(false);
             }
         }
@@ -442,6 +445,7 @@ public class DefaultOptionsScreen : OptionsScreen
         {
             if (optionScreen.activeInHierarchy)
             {
+                playSfx.PlaySfx(playSfx.clickSound);
                 ShowHideControls(true);
             }
         }

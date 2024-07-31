@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DefaultMainMenuScreen : MainMenuScreen
 {
+    public PlaySFX playSfx;
     
     #region public override methods
     public override void OnShow()
@@ -16,6 +17,7 @@ public class DefaultMainMenuScreen : MainMenuScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            playSfx.PlaySfx(playSfx.clickSound);
             DirectlyStartPlayerVersusCPU();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))

@@ -100,7 +100,8 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (StageButtonsNew.activeInHierarchy)
             {
-                TrySelectStage();
+                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().yesSound);
+                PlayYesSound();
             }
         }
         
@@ -108,6 +109,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (Stage.activeInHierarchy)
             {
+                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
                 GoToCharacterSelectionScreen();
             }
         }

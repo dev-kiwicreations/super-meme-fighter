@@ -123,6 +123,7 @@ MonoBehaviour:
   decreaseSFXButton: {fileID: 4692382471252165259}
   optionScreen: {fileID: 2715463656540317264}
   controlScreen: {fileID: 5576036085017741863}
+  playSfx: {fileID: 360467897733105953}
 --- !u!114 &360467897733105953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7efb6e681947f4685ab1027bb3f361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
+  selectSound: {fileID: 8300000, guid: 47cd0cb2fa8892b4fa76cfc4ec8189e0, type: 3}
+  yesSound: {fileID: 8300000, guid: 253bbc47bb33e2348baf04eac849c24c, type: 3}
+  characterSound: {fileID: 8300000, guid: 929355f0cb2f06d4eb628a50bd42a7cd, type: 3}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2319,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 360467897733105953}
           m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
-          m_MethodName: PlayHoverSFX
+          m_MethodName: PlaySfx
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -2330,7 +2335,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 360467897733105953}
           m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
-          m_MethodName: PlayClickSFX
+          m_MethodName: PlaySfx
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
@@ -4894,7 +4899,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 360467897733105953}
           m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
-          m_MethodName: PlayHoverSFX
+          m_MethodName: PlaySfx
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -4910,7 +4915,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 360467897733105953}
           m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
-          m_MethodName: PlayClickSFX
+          m_MethodName: PlaySfx
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
@@ -6477,7 +6482,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 360467897733105953}
           m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
-          m_MethodName: PlayHoverSFX
+          m_MethodName: PlaySfx
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -6493,7 +6498,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 360467897733105953}
           m_TargetAssemblyTypeName: PlaySFX, Assembly-CSharp
-          m_MethodName: PlayClickSFX
+          m_MethodName: PlaySfx
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
