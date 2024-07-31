@@ -46,10 +46,6 @@ public class MyStageSelection : MonoBehaviour
         Stage.SetActive(true);
         StageButtonsNew.SetActive(false);
     }
-    public void OnYesPress()
-    { 
-
-    }
 
     private void Update()
     {
@@ -58,6 +54,7 @@ public class MyStageSelection : MonoBehaviour
         {
             if (Stage.activeInHierarchy)
             {
+                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().selectSound);
                 OnSelectPress();
             }
         }
@@ -65,6 +62,7 @@ public class MyStageSelection : MonoBehaviour
         {
             if(StageButtonsNew.activeInHierarchy)
             {
+                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
                 OnNewBackPress();
             }
         }

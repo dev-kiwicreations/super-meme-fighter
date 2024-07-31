@@ -33,10 +33,12 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             RepeatBattle();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToMainMenu();
         }
     }

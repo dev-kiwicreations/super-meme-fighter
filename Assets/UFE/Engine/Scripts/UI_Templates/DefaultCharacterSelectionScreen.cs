@@ -642,6 +642,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     private void OnCharacterButtonClicked(int index)
     {
         selectedCharacterIndex = index;
+        playerIndex = index;
         hudPlayer1.gameObject.SetActive(true);
 
         if (isPLayer2Allowed)
@@ -934,11 +935,13 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().characterSound);
             this.TrySelectCharacter(playerIndex);
             this.characterSelectButton();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToPreviousScreen();
         }
     }
