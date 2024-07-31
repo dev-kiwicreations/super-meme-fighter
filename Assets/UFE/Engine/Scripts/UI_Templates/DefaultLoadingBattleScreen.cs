@@ -117,7 +117,7 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             if (rectTransform != null)
             {
                 rectTransform.anchoredPosition = new Vector3(-748, -146, 0);
-                rectTransform.sizeDelta = new Vector2(1762.174f, 2060.36f);
+                rectTransform.sizeDelta = new Vector2(2285.71f, 2059.42f);
                 rectTransform.localScale = new Vector3(-rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
@@ -215,7 +215,7 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             if (rectTransform != null)
             {
                 rectTransform.anchoredPosition = new Vector3(-748, -146, 0);
-                rectTransform.sizeDelta = new Vector2(1762.174f, 2060.36f);
+                rectTransform.sizeDelta = new Vector2(2285.71f, 2059.4f);
                 rectTransform.localScale = new Vector3(-rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
