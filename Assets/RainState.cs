@@ -1,16 +1,16 @@
-using DigitalRuby.RainMaker;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RainState : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Awake()
     {
-        GameObject.Find("RainPrefab2D").GetComponent<RainScript2D>().enabled = true;
+       RainManager.Instance.ActivateRain();
     }
-
     private void OnDestroy()
     {
-        GameObject.Find("RainPrefab2D").GetComponent<RainScript2D>().enabled = false;
+        RainManager.Instance.DeactivateRain();
     }
 }
