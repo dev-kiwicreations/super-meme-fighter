@@ -24,12 +24,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
   - {fileID: 11400000, guid: 54057043117984643925ed339c232c0d, type: 2}
   selectedStage:
-    stageName: Shanghai
+    stageName: Texas
     stageLoadingMethod: 0
     stagePath: 
-    screenshot: {fileID: 2800000, guid: 73aaaa0dbce16c643963e644fef4f363, type: 3}
-    prefab: {fileID: 100000, guid: e9f471bfa88c90c4f91cfd7f502f2e23, type: 3}
-    music: {fileID: 8300000, guid: 719b33feb4dbf454280701b4f60fce24, type: 3}
+    screenshot: {fileID: 2800000, guid: 0a207762ec2234548b8beb6b4cacaf79, type: 3}
+    prefab: {fileID: 100000, guid: 15c44fcb714b16848bb9d1380f7e7301, type: 3}
+    music: {fileID: 8300000, guid: d5d4c6311e097ba49b36beb6671873f6, type: 3}
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
@@ -2077,7 +2077,7 @@ MonoBehaviour:
       attackProbability: 0
     multiCoreSupport: 0
     persistentBehavior: 1
-    difficultyToggle: 0
+    difficultyToggle: 1
     difficultySettings:
     - difficultyLevel: 1
       overrideTimeBetweenDecisions: 1
@@ -2090,7 +2090,7 @@ MonoBehaviour:
       ruleCompliance: 0.25
       overrideComboEfficiency: 1
       comboEfficiency: 0.6248
-      startupBehavior: 2
+      startupBehavior: 5
     - difficultyLevel: 2
       overrideTimeBetweenDecisions: 1
       timeBetweenDecisions: 0
@@ -2102,7 +2102,7 @@ MonoBehaviour:
       ruleCompliance: 0.5
       overrideComboEfficiency: 1
       comboEfficiency: 0.7
-      startupBehavior: 3
+      startupBehavior: 5
     - difficultyLevel: 3
       overrideTimeBetweenDecisions: 1
       timeBetweenDecisions: 0
@@ -2114,7 +2114,7 @@ MonoBehaviour:
       ruleCompliance: 0.8
       overrideComboEfficiency: 1
       comboEfficiency: 0.5
-      startupBehavior: 4
+      startupBehavior: 5
     - difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
       timeBetweenDecisions: 0.001
@@ -2129,18 +2129,18 @@ MonoBehaviour:
       startupBehavior: 5
     selectedDifficultyLevel: 1
     selectedDifficulty:
-      difficultyLevel: 1
+      difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.001
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.05
+      timeBetweenActions: 0.001
       overrideAggressiveness: 1
-      aggressiveness: 0.6
+      aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.25
+      ruleCompliance: 0.8
       overrideComboEfficiency: 1
-      comboEfficiency: 0.6248
-      startupBehavior: 2
+      comboEfficiency: 1
+      startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
     disableRootMotion: 0
