@@ -5,6 +5,7 @@ using UnityEngine;
 public class DefaultMainMenuScreen : MainMenuScreen
 {
     public PlaySFX playSfx;
+    public GameObject howToPlayScreen;
     
     #region public override methods
     public override void OnShow()
@@ -22,7 +23,15 @@ public class DefaultMainMenuScreen : MainMenuScreen
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            //GoToOptionsScreen();
+            if (howToPlayScreen.activeInHierarchy)
+            {
+                HTP_Screen(false);
+            }
         }
+    }
+
+    public void HTP_Screen(bool state)
+    {
+        howToPlayScreen.SetActive(state);
     }
 }

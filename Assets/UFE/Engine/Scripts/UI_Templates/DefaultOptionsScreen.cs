@@ -434,21 +434,21 @@ public class DefaultOptionsScreen : OptionsScreen
                 playSfx.PlaySfx(playSfx.clickSound);
                 GoToMainMenuScreen();
             }
-            else if (controlScreen.activeInHierarchy)
-            {
-                playSfx.PlaySfx(playSfx.clickSound);
-                ShowHideControls(false);
-            }
+            // else if (controlScreen.activeInHierarchy)
+            // {
+            //     playSfx.PlaySfx(playSfx.clickSound);
+            //     ShowHideControls(false);
+            // }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (optionScreen.activeInHierarchy)
-            {
-                playSfx.PlaySfx(playSfx.clickSound);
-                ShowHideControls(true);
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Return))
+        // {
+        //     if (optionScreen.activeInHierarchy)
+        //     {
+        //         playSfx.PlaySfx(playSfx.clickSound);
+        //         ShowHideControls(true);
+        //     }
+        // }
     }
 
     public void ShowHideControls(bool state)

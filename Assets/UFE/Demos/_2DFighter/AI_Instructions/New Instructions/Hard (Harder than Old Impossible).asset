@@ -18,8 +18,8 @@ MonoBehaviour:
   advancedOptions:
     timeBetweenDecisions: 0
     timeBetweenActions: 0
-    aggressiveness: 0.5
-    ruleCompliance: 1
+    aggressiveness: 0.6
+    ruleCompliance: 0.7
     comboEfficiency: 1
     movementDuration: 0.1
     buttonSequenceInterval: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
     attacksAtPreferableDistance: 5
     autoMove: 1
     restOnLocation: 1
-    moveFrequency: 3
+    moveFrequency: 6
     autoJump: 1
     jumpBackFrequency: 1
     jumpStraightFrequency: 1
@@ -58,60 +58,8 @@ MonoBehaviour:
     autoAttack: 1
     obeyPreferableDistances: 1
     attackFrequency: 3
-    debugToggle: 1
-  aiRules:
-  - ruleName: Attack Spam
-    events:
-    - enabled: 1
-      boolean: 0
-      conditions:
-      - enabled: 1
-        boolean: 0
-        targetCharacter: 1
-        conditionType: 5
-        horizontalMovement: 1
-        verticalMovement: 1
-        movementSpeed: 0
-        healthStatus: 0
-        gaugeStatus: 0
-        playerDistance: 1
-        jumping: 0
-        blocking: 1
-        moveClassification:
-          attackType: 0
-          hitType: 0
-          startupSpeed: 0
-          recoverySpeed: 0
-          hitConfirmType: 0
-          preferableDistance: 0
-          gaugeUsage: 0
-          anyAttackType: 1
-          anyHitType: 1
-          anyHitConfirmType: 1
-        moveFrameData: 0
-        moveDamage: 0
-      conditionsToggle: 1
-    reactions:
-    - reactionType: 10
-      moveClassification:
-        attackType: 1
-        hitType: 0
-        startupSpeed: 0
-        recoverySpeed: 0
-        hitConfirmType: 0
-        preferableDistance: 0
-        gaugeUsage: 0
-        anyAttackType: 0
-        anyHitType: 1
-        anyHitConfirmType: 1
-      moveDamage: 0
-      specificMove: {fileID: 0}
-      buttonPress: 4
-      behavior: 0
-      desirability: 4
     debugToggle: 0
-    eventsToggle: 0
-    reactionsToggle: 0
+  aiRules:
   - ruleName: Dash Forward, Stay Close
     events:
     - enabled: 1
@@ -200,7 +148,7 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      conditionsToggle: 0
+      conditionsToggle: 1
     - enabled: 1
       boolean: 0
       conditions:
@@ -229,7 +177,7 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      conditionsToggle: 0
+      conditionsToggle: 1
     reactions:
     - reactionType: 1
       moveClassification:
@@ -248,6 +196,58 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 0
       desirability: 6
+    debugToggle: 0
+    eventsToggle: 0
+    reactionsToggle: 0
+  - ruleName: Attack Spam
+    events:
+    - enabled: 1
+      boolean: 0
+      conditions:
+      - enabled: 1
+        boolean: 0
+        targetCharacter: 1
+        conditionType: 5
+        horizontalMovement: 1
+        verticalMovement: 1
+        movementSpeed: 0
+        healthStatus: 0
+        gaugeStatus: 0
+        playerDistance: 1
+        jumping: 0
+        blocking: 1
+        moveClassification:
+          attackType: 0
+          hitType: 0
+          startupSpeed: 0
+          recoverySpeed: 0
+          hitConfirmType: 0
+          preferableDistance: 0
+          gaugeUsage: 0
+          anyAttackType: 1
+          anyHitType: 1
+          anyHitConfirmType: 1
+        moveFrameData: 0
+        moveDamage: 0
+      conditionsToggle: 1
+    reactions:
+    - reactionType: 10
+      moveClassification:
+        attackType: 1
+        hitType: 0
+        startupSpeed: 0
+        recoverySpeed: 0
+        hitConfirmType: 0
+        preferableDistance: 0
+        gaugeUsage: 0
+        anyAttackType: 0
+        anyHitType: 1
+        anyHitConfirmType: 1
+      moveDamage: 0
+      specificMove: {fileID: 0}
+      buttonPress: 4
+      behavior: 0
+      desirability: 4
     debugToggle: 0
     eventsToggle: 0
     reactionsToggle: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
       veryStrong: 0.25
     distance:
       veryClose: 0.1
-      close: 0.1
+      close: 0.2
       mid: 0.5
       far: 0.85
       veryFar: 0.95
