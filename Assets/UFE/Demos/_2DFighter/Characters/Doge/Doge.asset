@@ -1825,7 +1825,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 12
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       blockingHighHit:
         id: 57d75b06-dae7-433b-b3b7-8af3dfc5543d
@@ -1932,7 +1932,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 13
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       blockingLowHit:
         id: 1e11d370-ec46-456b-bcb7-c967b81f0c40
@@ -2039,7 +2039,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 14
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       blockingAirPose:
         id: fbb99eb9-f745-44bf-8769-fdfc4e89272b
@@ -5972,7 +5972,7 @@ MonoBehaviour:
       moveEnabled: 1
       jumpEnabled: 1
       crouchEnabled: 1
-      blockEnabled: 1
+      blockEnabled: 0
       parryEnabled: 0
     attackMoves:
     - {fileID: 11400000, guid: 57c5470d3cd7daf42a2577feee4e10b7, type: 2}
@@ -5983,7 +5983,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 159f3bc54bfe4254fb5cec1deabe4ab2, type: 2}
     - {fileID: 11400000, guid: d6f72d45714238e40b06b666ff626511, type: 2}
     AM_File: {fileID: 0}
-    enabledBasicMovesToggle: 0
+    enabledBasicMovesToggle: 1
     basicMovesToggle: 1
     attackMovesToggle: 1
   aiInstructionsSet:

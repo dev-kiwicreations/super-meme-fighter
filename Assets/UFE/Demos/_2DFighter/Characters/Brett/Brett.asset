@@ -5969,7 +5969,7 @@ MonoBehaviour:
       moveEnabled: 1
       jumpEnabled: 1
       crouchEnabled: 1
-      blockEnabled: 1
+      blockEnabled: 0
       parryEnabled: 0
     attackMoves:
     - {fileID: 11400000, guid: c70b45f2b80e15344bae137a0bc8e89b, type: 2}
@@ -5980,7 +5980,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b3fcd9f01c67572418a788ec63c734d9, type: 2}
     - {fileID: 11400000, guid: 7cb3971386ea49d4a884035b0d026b0f, type: 2}
     AM_File: {fileID: 0}
-    enabledBasicMovesToggle: 0
+    enabledBasicMovesToggle: 1
     basicMovesToggle: 1
     attackMovesToggle: 1
   aiInstructionsSet:

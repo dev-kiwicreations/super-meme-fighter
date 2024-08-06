@@ -870,7 +870,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 5
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       jumpBack:
         id: 065be3cd-f8b8-48e4-8eba-a978f3c4a5ee
@@ -2040,7 +2040,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 14
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       blockingAirPose:
         id: 0d460770-f600-4256-9e6a-50d09b15b1b4
@@ -5972,18 +5972,17 @@ MonoBehaviour:
       moveEnabled: 1
       jumpEnabled: 1
       crouchEnabled: 1
-      blockEnabled: 1
+      blockEnabled: 0
       parryEnabled: 0
     attackMoves:
     - {fileID: 11400000, guid: 9316ce40adebd404fb25e4a7250fc453, type: 2}
-    - {fileID: 11400000, guid: 55d863969b8d7f541ad8ac38d9fa47c0, type: 2}
     - {fileID: 11400000, guid: cf27c263843278746ad8a7dc91a2d956, type: 2}
     - {fileID: 11400000, guid: 2a75059fda56b0540a99c95b15a74637, type: 2}
     - {fileID: 11400000, guid: 42c3bf8fc51f6d84a9178b4eda9c4897, type: 2}
     - {fileID: 11400000, guid: 691a47906ef591e4aad7a113e829823e, type: 2}
     - {fileID: 11400000, guid: 998e57d612156d44590f8612b4577184, type: 2}
     AM_File: {fileID: 0}
-    enabledBasicMovesToggle: 0
+    enabledBasicMovesToggle: 1
     basicMovesToggle: 1
     attackMovesToggle: 1
   aiInstructionsSet:
