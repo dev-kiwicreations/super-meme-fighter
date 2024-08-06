@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UFE3D;
 
 public class DefaultBattleGUI : BattleGUI{
@@ -22,7 +23,7 @@ public class DefaultBattleGUI : BattleGUI{
 
 	[Serializable]
 	public class AlertGUI{
-		public Text text;
+		public TextMeshProUGUI text;
 		public Vector3 initialPosition;
 		public Vector3 finalPosition;
 		public float movementSpeed = 15f; 
