@@ -127,7 +127,19 @@ MonoBehaviour:
     value: 211
     editorToggle: 0
   particleEffects: []
-  appliedForces: []
+  appliedForces:
+  - castingFrame: 0
+    resetPreviousVertical: 0
+    resetPreviousHorizontal: 1
+    affectAssists: 0
+    affectCharacter: 1
+    _force:
+      x:
+        _serializedValue: 64424509440
+      y:
+        _serializedValue: 0
+      z:
+        _serializedValue: 0
   opAppliedForces: []
   slowMoEffects: []
   bodyPartVisibilityChanges: []
