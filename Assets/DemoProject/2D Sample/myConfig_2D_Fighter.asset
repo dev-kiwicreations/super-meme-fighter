@@ -2129,17 +2129,17 @@ MonoBehaviour:
       startupBehavior: 5
     selectedDifficultyLevel: 1
     selectedDifficulty:
-      difficultyLevel: 1
+      difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.001
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.05
+      timeBetweenActions: 0.001
       overrideAggressiveness: 1
-      aggressiveness: 0.6
+      aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.25
+      ruleCompliance: 0.5
       overrideComboEfficiency: 1
-      comboEfficiency: 0.6248
+      comboEfficiency: 1
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
