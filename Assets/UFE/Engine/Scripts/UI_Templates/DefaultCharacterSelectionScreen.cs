@@ -94,8 +94,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                     AudioClip sound
                 )
                 {
-                    this.MoveCursor(
-                        1,
+                    this.MoveCursor(1,
                         horizontalAxis,
                         verticalAxis,
                         horizontalAxisDown,
@@ -854,19 +853,19 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
                 Vector3 direction = Vector3.zero;
 
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyUp(KeyCode.LeftArrow))
                 {
                     direction = Vector3.left;
                 }
-                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                else if (Input.GetKeyUp(KeyCode.RightArrow))
                 {
                     direction = Vector3.right;
                 }
-                else if (Input.GetKeyDown(KeyCode.UpArrow))
+                else if (Input.GetKeyUp(KeyCode.UpArrow))
                 {
                     direction = Vector3.up;
                 }
-                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                else if (Input.GetKeyUp(KeyCode.DownArrow))
                 {
                     direction = Vector3.down;
                 }
@@ -885,7 +884,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 if (direction != Vector3.zero)
                 {
                     Debug.Log("Cursor Moved");
-                    GameObject currentGameObject = this.characters[currentIndex].gameObject;
+                    GameObject currentGameObject = characters[currentIndex].gameObject;
                     GameObject nextGameObject = currentGameObject.FindSelectableGameObject(
                         direction,
                         this.wrapInput,
@@ -896,7 +895,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                     {
                         int index = -1;
 
-                        for (int i = 0; i < this.characters.Length; ++i)
+                        for (int i = 0; i < characters.Length; i++)
                         {
                             if (this.characters[i].gameObject == nextGameObject)
                             {
