@@ -849,38 +849,33 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         {
             //if (!isDelayActive)
             {
-
-
                 Vector3 direction = Vector3.zero;
-
-                if (Input.GetKeyUp(KeyCode.LeftArrow))
+                // if (Input.GetKeyUp(KeyCode.LeftArrow))
+                // {
+                //     direction = Vector3.left;
+                // }
+                // else if (Input.GetKeyUp(KeyCode.RightArrow))
+                // {
+                //     direction = Vector3.right;
+                // }
+                // else if (Input.GetKeyUp(KeyCode.UpArrow))
+                // {
+                //     direction = Vector3.up;
+                // }
+                // else if (Input.GetKeyUp(KeyCode.DownArrow))
+                // {
+                //     direction = Vector3.down;
+                // }
+                if (horizontalAxisDown)
                 {
-                    direction = Vector3.left;
+                    if (horizontalAxis > 0) direction = Vector3.right;
+                    else if (horizontalAxis < 0) direction = Vector3.left;
                 }
-                else if (Input.GetKeyUp(KeyCode.RightArrow))
+                if (verticalAxisDown)
                 {
-                    direction = Vector3.right;
+                    if (verticalAxis > 0) direction = Vector3.up;
+                    else if (verticalAxis < 0) direction = Vector3.down;
                 }
-                else if (Input.GetKeyUp(KeyCode.UpArrow))
-                {
-                    direction = Vector3.up;
-                }
-                else if (Input.GetKeyUp(KeyCode.DownArrow))
-                {
-                    direction = Vector3.down;
-                }
-                //if (horizontalAxisDown)
-                //{
-                //    if (horizontalAxis > 0) direction = Vector3.right;
-                //    else if (horizontalAxis < 0) direction = Vector3.left;
-                //}
-
-                //if (verticalAxisDown)
-                //{
-                //    if (verticalAxis > 0) direction = Vector3.up;
-                //    else if (verticalAxis < 0) direction = Vector3.down;
-                //}
-
                 if (direction != Vector3.zero)
                 {
                     Debug.Log("Cursor Moved");
