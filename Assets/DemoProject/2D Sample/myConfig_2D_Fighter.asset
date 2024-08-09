@@ -2127,19 +2127,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 2
+    selectedDifficultyLevel: 5
     selectedDifficulty:
-      difficultyLevel: 2
+      difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.1
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
-      overrideAggressiveness: 0
-      aggressiveness: 0.7
-      overrideRuleCompliance: 0
-      ruleCompliance: 0.6
+      timeBetweenActions: 0.001
+      overrideAggressiveness: 1
+      aggressiveness: 0.9
+      overrideRuleCompliance: 1
+      ruleCompliance: 0.7
       overrideComboEfficiency: 0
-      comboEfficiency: 0.7
+      comboEfficiency: 1
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1

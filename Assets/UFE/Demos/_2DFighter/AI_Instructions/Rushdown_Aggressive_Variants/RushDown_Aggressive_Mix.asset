@@ -16,12 +16,12 @@ MonoBehaviour:
   debugMode: 1
   debug_ReactionWeight: 1
   advancedOptions:
-    timeBetweenDecisions: 0
-    timeBetweenActions: 0
-    aggressiveness: 0.5
-    ruleCompliance: 0.9
+    timeBetweenDecisions: 0.5
+    timeBetweenActions: 0.5
+    aggressiveness: 0.9
+    ruleCompliance: 1
     comboEfficiency: 1
-    movementDuration: 0.06
+    movementDuration: 1
     buttonSequenceInterval: 1
     attackDesirabilityCalculation: 2
     defaultDesirability: 0
@@ -45,19 +45,19 @@ MonoBehaviour:
     attacksAtPreferableDistance: 5
     autoMove: 1
     restOnLocation: 1
-    moveFrequency: 3
+    moveFrequency: 6
     autoJump: 1
-    jumpBackFrequency: 0
-    jumpStraightFrequency: 1
-    jumpForwardFrequency: 4
+    jumpBackFrequency: 1
+    jumpStraightFrequency: 2
+    jumpForwardFrequency: 3
     autoBlock: 1
     obeyHitType: 1
-    standBlockAccuracy: 5
-    crouchBlockAccuracy: 6
-    jumpBlockAccuracy: 0
+    standBlockAccuracy: 2
+    crouchBlockAccuracy: 2
+    jumpBlockAccuracy: 2
     autoAttack: 1
-    obeyPreferableDistances: 0
-    attackFrequency: 5
+    obeyPreferableDistances: 1
+    attackFrequency: 4
     debugToggle: 0
   aiRules:
   - ruleName: Counter Slow Attacks (VC|C)
@@ -331,8 +331,8 @@ MonoBehaviour:
       behavior: 0
       desirability: 6
     debugToggle: 0
-    eventsToggle: 0
-    reactionsToggle: 0
+    eventsToggle: 1
+    reactionsToggle: 1
   - ruleName: Grapple Defensive Opponents
     events:
     - enabled: 1
@@ -488,7 +488,7 @@ MonoBehaviour:
       desirability: 6
     debugToggle: 0
     eventsToggle: 0
-    reactionsToggle: 0
+    reactionsToggle: 1
   - ruleName: Avoid Zoning
     events:
     - enabled: 1
@@ -698,9 +698,9 @@ MonoBehaviour:
       buttonPress: 4
       behavior: 0
       desirability: 4
-    debugToggle: 0
-    eventsToggle: 0
-    reactionsToggle: 0
+    debugToggle: 1
+    eventsToggle: 1
+    reactionsToggle: 1
   - ruleName: Tech Throws
     events:
     - enabled: 1
@@ -943,31 +943,6 @@ MonoBehaviour:
           anyHitConfirmType: 1
         moveFrameData: 0
         moveDamage: 0
-      - enabled: 1
-        boolean: 1
-        targetCharacter: 0
-        conditionType: 5
-        horizontalMovement: 1
-        verticalMovement: 1
-        movementSpeed: 0
-        healthStatus: 0
-        gaugeStatus: 0
-        playerDistance: 2
-        jumping: 0
-        blocking: 1
-        moveClassification:
-          attackType: 0
-          hitType: 0
-          startupSpeed: 0
-          recoverySpeed: 0
-          hitConfirmType: 0
-          preferableDistance: 0
-          gaugeUsage: 0
-          anyAttackType: 1
-          anyHitType: 1
-          anyHitConfirmType: 1
-        moveFrameData: 0
-        moveDamage: 0
       conditionsToggle: 1
     reactions:
     - reactionType: 1
@@ -1006,7 +981,7 @@ MonoBehaviour:
       desirability: 5
     debugToggle: 0
     eventsToggle: 0
-    reactionsToggle: 1
+    reactionsToggle: 0
   aiDefinitions:
     damage:
       veryWeak: 0.05

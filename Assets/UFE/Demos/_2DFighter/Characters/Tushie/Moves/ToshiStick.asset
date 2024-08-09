@@ -51,8 +51,8 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 26
-  startUpFrames: 21
-  activeFrames: 3
+  startUpFrames: 5
+  activeFrames: 19
   recoveryFrames: 2
   applyRootMotion: 0
   lockXMotion: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 21
+  - activeFramesBegin: 5
     activeFramesEnds: 23
     hitConfirmType: 0
     throwMove: {fileID: 0}
@@ -265,11 +265,11 @@ MonoBehaviour:
     damageScaling: 1
     damageType: 1
     _damageOnHit:
-      _serializedValue: 214748364800
+      _serializedValue: 171798691840
     _minDamageOnHit:
       _serializedValue: 0
     _damageOnBlock:
-      _serializedValue: 0
+      _serializedValue: 21474836480
     doesntKill: 0
     hitType: 0
     resetPreviousHorizontalPush: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
       type: 0
   blockableArea:
     enabled: 1
-    activeFramesBegin: 16
+    activeFramesBegin: 0
     activeFramesEnds: 25
     bodyPart: 0
     hitBoxDefinitionIndex: 10
