@@ -44,6 +44,8 @@ MonoBehaviour:
   frameWindowRotation: 0
   cooldown: 0
   cooldownFrames: 0
+  attackCountForCooldownToActivate: 0
+  cooldownFramesToTrackCooldown: 0
   disableHeadLook: 1
   speedKeyFrameToggle: 0
   fixedSpeed: 1
@@ -113,7 +115,7 @@ MonoBehaviour:
     startupSpeed: 0
     recoverySpeed: 0
     hitConfirmType: 0
-    preferableDistance: 4
+    preferableDistance: 3
     gaugeUsage: 1
     anyAttackType: 1
     anyHitType: 1
