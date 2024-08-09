@@ -2283,6 +2283,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198800777605945384, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198800777605945384, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198800777605945384, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -2376,6 +2388,14 @@ PrefabInstance:
     - target: {fileID: 4666163797709126, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198800777605945384, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198800777605945384, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
+      propertyPath: startDelay.scalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 199250404324783290, guid: 70f87175181453b49b4aedbef1d4365c, type: 3}
       propertyPath: m_SortingLayer
