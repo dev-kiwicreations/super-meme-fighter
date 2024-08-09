@@ -2080,14 +2080,14 @@ MonoBehaviour:
     difficultyToggle: 1
     difficultySettings:
     - difficultyLevel: 1
-      overrideTimeBetweenDecisions: 0
-      timeBetweenDecisions: 0
-      overrideTimeBetweenActions: 0
-      timeBetweenActions: 0.05
-      overrideAggressiveness: 0
-      aggressiveness: 0.6
-      overrideRuleCompliance: 0
-      ruleCompliance: 0.5
+      overrideTimeBetweenDecisions: 1
+      timeBetweenDecisions: 0.15
+      overrideTimeBetweenActions: 1
+      timeBetweenActions: 0.15
+      overrideAggressiveness: 1
+      aggressiveness: 0.65
+      overrideRuleCompliance: 1
+      ruleCompliance: 0.6
       overrideComboEfficiency: 0
       comboEfficiency: 0.6248
       startupBehavior: 5
@@ -2096,21 +2096,21 @@ MonoBehaviour:
       timeBetweenDecisions: 0.1
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.1
-      overrideAggressiveness: 0
+      overrideAggressiveness: 1
       aggressiveness: 0.7
-      overrideRuleCompliance: 0
+      overrideRuleCompliance: 1
       ruleCompliance: 0.6
       overrideComboEfficiency: 0
       comboEfficiency: 0.7
       startupBehavior: 5
     - difficultyLevel: 3
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.05
       overrideTimeBetweenActions: 1
       timeBetweenActions: 0.05
       overrideAggressiveness: 1
       aggressiveness: 0.8
-      overrideRuleCompliance: 0
+      overrideRuleCompliance: 1
       ruleCompliance: 0.6
       overrideComboEfficiency: 0
       comboEfficiency: 0.5
@@ -2127,19 +2127,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 5
+    selectedDifficultyLevel: 1
     selectedDifficulty:
-      difficultyLevel: 5
+      difficultyLevel: 1
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0
+      timeBetweenDecisions: 0.15
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.001
+      timeBetweenActions: 0.15
       overrideAggressiveness: 1
-      aggressiveness: 0.9
+      aggressiveness: 0.65
       overrideRuleCompliance: 1
-      ruleCompliance: 0.7
+      ruleCompliance: 0.6
       overrideComboEfficiency: 0
-      comboEfficiency: 1
+      comboEfficiency: 0.6248
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
