@@ -2075,9 +2075,9 @@ MonoBehaviour:
       jumpingProbability: 0.6
       crouchProbability: 0.5
       attackProbability: 0
-    multiCoreSupport: 0
-    persistentBehavior: 1
-    difficultyToggle: 0
+    multiCoreSupport: 1
+    persistentBehavior: 0
+    difficultyToggle: 1
     difficultySettings:
     - difficultyLevel: 1
       overrideTimeBetweenDecisions: 0
@@ -2092,10 +2092,10 @@ MonoBehaviour:
       comboEfficiency: 0.6248
       startupBehavior: 5
     - difficultyLevel: 2
-      overrideTimeBetweenDecisions: 0
-      timeBetweenDecisions: 0
-      overrideTimeBetweenActions: 0
-      timeBetweenActions: 0.0455
+      overrideTimeBetweenDecisions: 1
+      timeBetweenDecisions: 0.1
+      overrideTimeBetweenActions: 1
+      timeBetweenActions: 0.1
       overrideAggressiveness: 0
       aggressiveness: 0.7
       overrideRuleCompliance: 0
@@ -2104,11 +2104,11 @@ MonoBehaviour:
       comboEfficiency: 0.7
       startupBehavior: 5
     - difficultyLevel: 3
-      overrideTimeBetweenDecisions: 0
+      overrideTimeBetweenDecisions: 1
       timeBetweenDecisions: 0
-      overrideTimeBetweenActions: 0
+      overrideTimeBetweenActions: 1
       timeBetweenActions: 0.05
-      overrideAggressiveness: 0
+      overrideAggressiveness: 1
       aggressiveness: 0.8
       overrideRuleCompliance: 0
       ruleCompliance: 0.6
@@ -2116,13 +2116,13 @@ MonoBehaviour:
       comboEfficiency: 0.5
       startupBehavior: 5
     - difficultyLevel: 5
-      overrideTimeBetweenDecisions: 0
-      timeBetweenDecisions: 0.001
-      overrideTimeBetweenActions: 0
+      overrideTimeBetweenDecisions: 1
+      timeBetweenDecisions: 0
+      overrideTimeBetweenActions: 1
       timeBetweenActions: 0.001
-      overrideAggressiveness: 0
-      aggressiveness: 0.7
-      overrideRuleCompliance: 0
+      overrideAggressiveness: 1
+      aggressiveness: 0.9
+      overrideRuleCompliance: 1
       ruleCompliance: 0.7
       overrideComboEfficiency: 0
       comboEfficiency: 1
@@ -2130,10 +2130,10 @@ MonoBehaviour:
     selectedDifficultyLevel: 2
     selectedDifficulty:
       difficultyLevel: 2
-      overrideTimeBetweenDecisions: 0
-      timeBetweenDecisions: 0
-      overrideTimeBetweenActions: 0
-      timeBetweenActions: 0.0455
+      overrideTimeBetweenDecisions: 1
+      timeBetweenDecisions: 0.1
+      overrideTimeBetweenActions: 1
+      timeBetweenActions: 0.1
       overrideAggressiveness: 0
       aggressiveness: 0.7
       overrideRuleCompliance: 0
