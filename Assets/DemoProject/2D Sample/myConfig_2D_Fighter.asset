@@ -24,12 +24,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
   - {fileID: 11400000, guid: 54057043117984643925ed339c232c0d, type: 2}
   selectedStage:
-    stageName: Area 51
+    stageName: Texas
     stageLoadingMethod: 0
     stagePath: 
-    screenshot: {fileID: 2800000, guid: d31d5301a0114854fa61dec9b84be79a, type: 3}
-    prefab: {fileID: 100000, guid: 2f736326b9cc3c1479e3808a22c90e9a, type: 3}
-    music: {fileID: 8300000, guid: 5d4b61199f7d90c42b76d9c12fb2cfac, type: 3}
+    screenshot: {fileID: 2800000, guid: 0a207762ec2234548b8beb6b4cacaf79, type: 3}
+    prefab: {fileID: 100000, guid: 15c44fcb714b16848bb9d1380f7e7301, type: 3}
+    music: {fileID: 8300000, guid: d5d4c6311e097ba49b36beb6671873f6, type: 3}
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
@@ -100,7 +100,7 @@ MonoBehaviour:
     teamSelectionScreen: {fileID: 0}
     stageSelectionScreen: {fileID: 11400008, guid: 4e1ca63af339f4c6b84a167dd4fc7ede, type: 3}
     loadingBattleScreen: {fileID: 11400008, guid: 238b7713a35be4f919fcef89a9d43a23, type: 3}
-    battleGUI: {fileID: 8008647689190016299, guid: 3cc97a7591eae4678bb26cd12746e0ec, type: 3}
+    battleGUI: {fileID: 8008647689190016299, guid: 07d8c2d7cd5bfaf4a8a833ee600dfefa, type: 3}
     storyModeContinueScreen: {fileID: 11400018, guid: 979dfe6c6baae4df1ae04fdbd4bcbff1, type: 3}
     storyModeGameOverScreen: {fileID: 11400004, guid: 79e43a319a85a4c7ea68f019b05163cc, type: 3}
     storyModeCongratulationsScreen: {fileID: 11400002, guid: a49fe14e0eee247a9a37e3b60f3ba43c, type: 3}
@@ -1484,7 +1484,7 @@ MonoBehaviour:
       charactersToggle: 0
     teamsToggle: 0
   debugOptions:
-    debugMode: 1
+    debugMode: 0
     emulateNetwork: 0
     trainingModeDebugger: 0
     preloadedObjects: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
       button: 0
       executionOnly: 0
   aiOptions:
-    engine: 0
+    engine: 1
     attackWhenEnemyIsDown: 0
     moveWhenEnemyIsDown: 1
     inputFrequency: 0
@@ -2127,19 +2127,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 3
+    selectedDifficultyLevel: 2
     selectedDifficulty:
-      difficultyLevel: 3
+      difficultyLevel: 2
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.05
+      timeBetweenDecisions: 0.1
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.05
+      timeBetweenActions: 0.1
       overrideAggressiveness: 1
-      aggressiveness: 0.8
+      aggressiveness: 0.7
       overrideRuleCompliance: 1
       ruleCompliance: 0.6
       overrideComboEfficiency: 0
-      comboEfficiency: 0.5
+      comboEfficiency: 0.7
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1

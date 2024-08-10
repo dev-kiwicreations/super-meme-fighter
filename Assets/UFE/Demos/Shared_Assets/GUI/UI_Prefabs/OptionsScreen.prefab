@@ -1513,8 +1513,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 22400036}
   - {fileID: 7983789101493648999}
+  - {fileID: 22400036}
   - {fileID: 22400032}
   m_Father: {fileID: 22432458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2729,14 +2729,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7295556412182946305}
   - {fileID: 22400060}
   - {fileID: 22400058}
-  - {fileID: 7295556412182946305}
   m_Father: {fileID: 22464404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -367.88696, y: 86}
+  m_AnchoredPosition: {x: -367.88696, y: 86.46625}
   m_SizeDelta: {x: 734.3235, y: 37.8661}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &22200050
@@ -3446,7 +3446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Random
+  m_Text: Fuzzy
 --- !u!1 &190346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3878,7 +3878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d16799943a29c5043bf81a4e2f48cd3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3e850260131a1b4e9cfd26174f6ba78, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5198,7 +5198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d16799943a29c5043bf81a4e2f48cd3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3e850260131a1b4e9cfd26174f6ba78, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
