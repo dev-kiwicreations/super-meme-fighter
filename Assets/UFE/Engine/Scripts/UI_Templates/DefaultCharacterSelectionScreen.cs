@@ -204,6 +204,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
         Debug.Log("After");
         Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
+        UFE.PlaySound(cancelSound);
 
         if (characterIndex >= 0 && characterIndex <= maxCharacterIndex)
         {
@@ -728,8 +729,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         
         title1.SetActive(false);
         title2.SetActive(true);
-        
-        hudPlayer2.gameObject.SetActive(true);
+        this.defaultCharacterPlayer2 = 0;
+        //hudPlayer2.gameObject.SetActive(true);
 
         Invoke(nameof(AutoClickToshiPlayer1), 0.05f);
 
@@ -779,19 +780,19 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         {
             if (this.hudPlayer1 != null)
             {
-                this.hudPlayer1.SetBool("IsHidden", this.p1HoverIndex == this.p2HoverIndex);
+                this.hudPlayer1.SetBool("IsHidden", false);
                 this.hudPlayer1.SetBool("IsSelected", UFE.config.player1Character != null);
             }
 
             if (this.hudPlayer2 != null)
             {
-                this.hudPlayer2.SetBool("IsHidden", this.p1HoverIndex == this.p2HoverIndex);
+                this.hudPlayer2.SetBool("IsHidden", false);
                 this.hudPlayer2.SetBool("IsSelected", UFE.config.player2Character != null);
             }
 
             if (this.hudBothPlayers != null)
             {
-                this.hudBothPlayers.SetBool("IsHidden", this.p1HoverIndex != this.p2HoverIndex);
+                this.hudBothPlayers.SetBool("IsHidden", false);
 
                 this.hudBothPlayers.SetBool(
                     "IsSelected",

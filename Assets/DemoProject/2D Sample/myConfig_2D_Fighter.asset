@@ -24,12 +24,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
   - {fileID: 11400000, guid: 54057043117984643925ed339c232c0d, type: 2}
   selectedStage:
-    stageName: Texas
+    stageName: Area 51
     stageLoadingMethod: 0
     stagePath: 
-    screenshot: {fileID: 2800000, guid: 0a207762ec2234548b8beb6b4cacaf79, type: 3}
-    prefab: {fileID: 100000, guid: 15c44fcb714b16848bb9d1380f7e7301, type: 3}
-    music: {fileID: 8300000, guid: d5d4c6311e097ba49b36beb6671873f6, type: 3}
+    screenshot: {fileID: 2800000, guid: d31d5301a0114854fa61dec9b84be79a, type: 3}
+    prefab: {fileID: 100000, guid: 2f736326b9cc3c1479e3808a22c90e9a, type: 3}
+    music: {fileID: 8300000, guid: 5d4b61199f7d90c42b76d9c12fb2cfac, type: 3}
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
@@ -1484,7 +1484,7 @@ MonoBehaviour:
       charactersToggle: 0
     teamsToggle: 0
   debugOptions:
-    debugMode: 0
+    debugMode: 1
     emulateNetwork: 0
     trainingModeDebugger: 0
     preloadedObjects: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
       button: 0
       executionOnly: 0
   aiOptions:
-    engine: 1
+    engine: 0
     attackWhenEnemyIsDown: 0
     moveWhenEnemyIsDown: 1
     inputFrequency: 0
@@ -2127,19 +2127,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 2
+    selectedDifficultyLevel: 3
     selectedDifficulty:
-      difficultyLevel: 1
+      difficultyLevel: 3
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.15
+      timeBetweenDecisions: 0.05
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.15
+      timeBetweenActions: 0.05
       overrideAggressiveness: 1
-      aggressiveness: 0.65
+      aggressiveness: 0.8
       overrideRuleCompliance: 1
       ruleCompliance: 0.6
       overrideComboEfficiency: 0
-      comboEfficiency: 0.6248
+      comboEfficiency: 0.5
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
