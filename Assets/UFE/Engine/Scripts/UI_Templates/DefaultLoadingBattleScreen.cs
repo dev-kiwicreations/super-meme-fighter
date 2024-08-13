@@ -90,7 +90,7 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             if (rectTransform != null)
             {
                 rectTransform.anchoredPosition = new Vector3(-611, -188, 0);
-                rectTransform.sizeDelta = new Vector2(1656.197f, 1982.41f);
+                rectTransform.sizeDelta = new Vector2(1700f, 1982.41f);
             }
         }
         else if (UFE.config.player1Character.characterName == "Toshi")
