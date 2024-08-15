@@ -172,22 +172,11 @@ public class DefaultPauseScreen : PauseScreen
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-            GoToScreen(1);
-        }
-
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             if (howToPlayScreen.activeInHierarchy)
             {
                 HTP_Screen(false);
-            }
-            else
-            {
-                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-                GoToMainMenu();
             }
         }
     }

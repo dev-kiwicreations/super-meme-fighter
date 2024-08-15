@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3ad87d22941424f8742d4321c591d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightFirstOption: 0
+  highlightFirstOption: 1
   canvasPreview: 1
-  firstSelectableGameObject: {fileID: 0}
+  firstSelectableGameObject: {fileID: 6252352119181487209}
   hasFadeIn: 1
   hasFadeOut: 1
   wrapInput: 1
@@ -99,6 +99,7 @@ MonoBehaviour:
   portraitPlayer2: {fileID: 8477733115594679855}
   screenshotStage: {fileID: 11400032}
   titleStage: {fileID: 3212626203813602519}
+  MyStageSelection: {fileID: 5873161811210305762}
   positionPlayer1: {x: -37, y: 350, z: 0}
   positionPlayer2: {x: 37, y: 350, z: 0}
 --- !u!114 &5873161811210305762
@@ -120,6 +121,8 @@ MonoBehaviour:
   Title: {fileID: 100012}
   StageButtonsNew: {fileID: 6624901177380323865}
   ReadyScreen: {fileID: 915819664646555026}
+  DefaultStageSelectionScreen: {fileID: 11400008}
+  ButtonSelectYesStage: {fileID: 2410219579158011218}
   mapName: {fileID: 3212626203813602519}
   area51png: {fileID: 4671600093633880384}
 --- !u!114 &6963775516184765198
@@ -348,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -496,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1820,8 +1823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1838,7 +1841,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 26eb32c887306c94bbeacac22c61b807, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: a6ba58e433d56a1479edfc7755e2e69d, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 5934fd896d47395429b523e97f9c14a8, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 26eb32c887306c94bbeacac22c61b807, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 5934fd896d47395429b523e97f9c14a8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2339,8 +2342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2357,7 +2360,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: c6e89b4cee8a9e64ba15a273c6d726b4, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7a642cb7eedeaee4a9fb30895c026361, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: fa8afea061eb4e54d8da44b49876e195, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c6e89b4cee8a9e64ba15a273c6d726b4, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fa8afea061eb4e54d8da44b49876e195, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2382,6 +2385,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 11400008}
+        m_TargetAssemblyTypeName: UFE3D.StageSelectionScreen, UFE3D
+        m_MethodName: TrySelectStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7135134814186750683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2592,8 +2607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2610,7 +2625,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 26eb32c887306c94bbeacac22c61b807, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: a6ba58e433d56a1479edfc7755e2e69d, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 5934fd896d47395429b523e97f9c14a8, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 26eb32c887306c94bbeacac22c61b807, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 5934fd896d47395429b523e97f9c14a8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3234,8 +3249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3252,7 +3267,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 70a29b89343257d4eafb17aeb0625949, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: fb2adde0a10e41d4a808ca30f1c66165, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 8e21fbd5fbd3fe2488c9d8f67d076a35, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 70a29b89343257d4eafb17aeb0625949, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 8e21fbd5fbd3fe2488c9d8f67d076a35, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3268,10 +3283,10 @@ MonoBehaviour:
       - m_Target: {fileID: 5873161811210305762}
         m_TargetAssemblyTypeName: MyStageSelection, Assembly-CSharp
         m_MethodName: OnSelectPress
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -17,7 +17,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     public Image portraitPlayer2;
     public Image screenshotStage;
     public Text titleStage;
-
+    public MyStageSelection MyStageSelection;
     protected GameObject gameObjectPlayer1;
     protected GameObject gameObjectPlayer2;
     public Vector3 positionPlayer1 = new Vector3(-4, 0, 0);
@@ -74,9 +74,10 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             player2PreviousInputs,
             player2CurrentInputs,
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),
-            new UFEScreenExtensions.ActionCallback(this.TrySelectStage),
+            new UFEScreenExtensions.ActionCallback(MyStageSelection.OnSelectPress),
             new UFEScreenExtensions.ActionCallback(this.TryDeselectStage)
         );
+        
     }
 
     private void Update()
@@ -96,24 +97,6 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
                 NextStage();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (StageButtonsNew.activeInHierarchy)
-            {
-                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().yesSound);
-                PlayYesSound();
-            }
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            if (Stage.activeInHierarchy)
-            {
-                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-                GoToCharacterSelectionScreen();
-            }
-        }
-
     }
 
     public override void OnShow()

@@ -356,10 +356,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 3062812753953137194}
+    m_SelectOnDown: {fileID: 4205268100770634774}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: c5937c4a49ba78247b163e039970c5e5, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: c8cf6c494a3d973468817b82b5cee7d5, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 185fbd8e9cc090645bd9a8a23f030411, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: c5937c4a49ba78247b163e039970c5e5, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 185fbd8e9cc090645bd9a8a23f030411, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightFirstOption: 1
   canvasPreview: 1
-  firstSelectableGameObject: {fileID: 0}
+  firstSelectableGameObject: {fileID: 2034699804423151081}
   hasFadeIn: 1
   hasFadeOut: 1
   wrapInput: 1
@@ -556,7 +556,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
   selectSound: {fileID: 8300000, guid: 929355f0cb2f06d4eb628a50bd42a7cd, type: 3}
   cancelSound: {fileID: 8300000, guid: 9b0faf212cdc72c469189b882e349840, type: 3}
-  moveCursorSound: {fileID: 8300000, guid: e33073cf85d1edf4d992c2f5c6a33c90, type: 3}
+  moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
   buttonNetwork: {fileID: 11418330}
   playSfx: {fileID: 978952480087745386}
   howToPlayScreen: {fileID: 849408582151425257}
@@ -2107,10 +2107,10 @@ RectTransform:
   - {fileID: 6619629682638554965}
   m_Father: {fileID: 22400018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 300}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1107180314456118550
 GameObject:
@@ -2435,10 +2435,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 11400024}
+    m_SelectOnDown: {fileID: 3062812753953137194}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -2453,7 +2453,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: a1ca625d39c890647ba078461c1d0617, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: db68f45137f3ab2439bdcbb95a1008e3, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: fa09e74eb284e834a8a040cb4d4b99dd, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a1ca625d39c890647ba078461c1d0617, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: fa09e74eb284e834a8a040cb4d4b99dd, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2699,15 +2699,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 22400016}
-  - {fileID: 1840583272423428300}
   - {fileID: 8991209467158970106}
+  - {fileID: 1840583272423428300}
+  - {fileID: 22400016}
   m_Father: {fileID: 2623945191415999459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!82 &9212665594598955175
 AudioSource:
@@ -3149,10 +3149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 4205268100770634774}
+    m_SelectOnDown: {fileID: 11400024}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -3167,7 +3167,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 88f58f4a624df2a43b81b2d57a12ee4b, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 71f26ed19d09b7a44a103f5cf5f2aa76, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 24cd9eafb31b8534da9891ac42ea6b7e, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 88f58f4a624df2a43b81b2d57a12ee4b, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 24cd9eafb31b8534da9891ac42ea6b7e, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal

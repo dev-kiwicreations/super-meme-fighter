@@ -16,11 +16,6 @@ public class DefaultMainMenuScreen : MainMenuScreen
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            playSfx.PlaySfx(playSfx.clickSound);
-            DirectlyStartPlayerVersusCPU();
-        } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             if (howToPlayScreen.activeInHierarchy)

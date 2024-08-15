@@ -13,12 +13,14 @@ public class MyStageSelection : MonoBehaviour
     public GameObject Title;
     public GameObject StageButtonsNew;
     public GameObject ReadyScreen;
+    public DefaultStageSelectionScreen DefaultStageSelectionScreen;
+    public GameObject ButtonSelectYesStage;
 
     public Text mapName;
     public GameObject area51png;
     
 
-    public void OnSelectPress()
+    public void OnSelectPress(AudioClip sound)
     {
         //portraitP1.SetActive(false);
         //portraitP2.SetActive(false);
@@ -36,8 +38,9 @@ public class MyStageSelection : MonoBehaviour
             mapName.gameObject.SetActive(true);
             area51png.SetActive(false);
         }
+        DefaultStageSelectionScreen.firstSelectableGameObject = ButtonSelectYesStage;
     }
-    public void OnNewBackPress()
+    public void OnNewBackPress(AudioClip sound)
     {
         //portraitP1.SetActive(false);
         //portraitP2.SetActive(false);
@@ -45,27 +48,5 @@ public class MyStageSelection : MonoBehaviour
         Title.SetActive(true);
         Stage.SetActive(true);
         StageButtonsNew.SetActive(false);
-    }
-
-    private void Update()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (Stage.activeInHierarchy)
-            {
-                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().selectSound);
-                OnSelectPress();
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            if(StageButtonsNew.activeInHierarchy)
-            {
-                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-                OnNewBackPress();
-            }
-        }
-
     }
 }

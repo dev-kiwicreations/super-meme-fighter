@@ -1866,7 +1866,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
   m_IsOn: 1
 --- !u!222 &22200040
 CanvasRenderer:
@@ -5784,8 +5784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 11400024}
     m_SelectOnDown: {fileID: 11400154}
     m_SelectOnLeft: {fileID: 11400144}
@@ -5802,7 +5802,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 402d5a9d08f8a9b44baff97bb66f16fd, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: eab5c3fdb62d9d943ba63baae897052b, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 9349adb5e3116744cb572fc75409b3d4, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 402d5a9d08f8a9b44baff97bb66f16fd, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 9349adb5e3116744cb572fc75409b3d4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -6141,8 +6141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 11400144}
     m_SelectOnDown: {fileID: 11400154}
     m_SelectOnLeft: {fileID: 11400154}
@@ -6159,7 +6159,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 313f79757f2231c48b7416beee2a1956, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 1b77dfb751d571e40aaf81e49076ad2f, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 34ef8ecb5a55d304699abc8703b8282c, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 313f79757f2231c48b7416beee2a1956, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 34ef8ecb5a55d304699abc8703b8282c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -6706,8 +6706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
+    m_Mode: 2
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -6724,7 +6724,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 88f58f4a624df2a43b81b2d57a12ee4b, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 71f26ed19d09b7a44a103f5cf5f2aa76, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 24cd9eafb31b8534da9891ac42ea6b7e, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 88f58f4a624df2a43b81b2d57a12ee4b, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 24cd9eafb31b8534da9891ac42ea6b7e, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -6809,7 +6809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4494014083508880657
 RectTransform:
   m_ObjectHideFlags: 0

@@ -204,8 +204,6 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
         Debug.Log("After");
         Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
-        UFE.PlaySound(cancelSound);
-
         if (characterIndex >= 0 && characterIndex <= maxCharacterIndex)
         {
             UFE3D.CharacterInfo character = this.selectableCharacters[characterIndex];
@@ -654,11 +652,12 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         if (UFE.config.player1Character == null)
         {
             this.SetHoverIndex(1, index);
-                
+            UFE.PlaySound(cancelSound);
         }
         else if (UFE.config.player2Character == null && UFE.gameMode != GameMode.StoryMode)
         {
             this.SetHoverIndex(2, index);
+            UFE.PlaySound(cancelSound);
         }
         selectButton.onClick.RemoveAllListeners();
         selectButton.onClick.AddListener(() => { this.TrySelectCharacter(selectedCharacterIndex); });
@@ -930,8 +929,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().characterSound);
-            this.TrySelectCharacter(playerIndex);
+            // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().characterSound);
+            // this.TrySelectCharacter(playerIndex);
             this.characterSelectButton();
         } // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
