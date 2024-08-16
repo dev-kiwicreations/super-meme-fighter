@@ -150,14 +150,14 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
                 rectTransform.localScale = new Vector3(-rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
-        else if (UFE.config.player1Character.characterName == "Boden")
+        else if (UFE.config.player1Character.characterName == "Popcat")
         {
             RectTransform rectTransform = portraitPlayer1.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
                 rectTransform.anchoredPosition = new Vector3(-678, -169, 0);
-                rectTransform.sizeDelta = new Vector2(1412.971f, 2264.292f);
-                rectTransform.localScale = new Vector3(-rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
+                rectTransform.sizeDelta = new Vector2(1083f, 1201f);
+                rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
         else if (UFE.config.player1Character.characterName == "Wif")
@@ -248,14 +248,14 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
                 rectTransform.localScale = new Vector3(-rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
-        else if (UFE.config.player2Character.characterName == "Boden")
+        else if (UFE.config.player2Character.characterName == "Popcat")
         {
             RectTransform rectTransform = portraitPlayer2.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
                 rectTransform.anchoredPosition = new Vector3(-678, -169, 0);
-                rectTransform.sizeDelta = new Vector2(1412.971f, 2264.292f);
-                rectTransform.localScale = new Vector3(-rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
+                rectTransform.sizeDelta = new Vector2(1083f, 1201f);
+                rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
         }
         else if (UFE.config.player2Character.characterName == "Wif")

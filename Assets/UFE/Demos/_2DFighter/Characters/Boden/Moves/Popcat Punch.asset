@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: Boden Crouch Kick
+  m_Name: Popcat Punch
   m_EditorClassIdentifier: 
-  id: 06c63750-8b53-4f45-80f5-e4f6bdbf625b
+  id: 3c3f385b-7500-4aac-b56d-085ff87a5917
   gameplayType: 0
   animData:
     id: 
-    clip: {fileID: 7400000, guid: d24bd85b5c908a94fb7b42fe05b84b79, type: 2}
-    customHitBoxDefinition: {fileID: 11400000, guid: dc0f582b2b8197846b7f0fd4825fc2b4, type: 2}
+    clip: {fileID: 7400000, guid: c97d4f7dc4a3e9844b37dc6d99595a82, type: 2}
+    customHitBoxDefinition: {fileID: 11400000, guid: 602f31223b8935c42a4a3f54f4319b29, type: 2}
     length:
       _serializedValue: 2219066368
     bakeSpeed: 0
     hitBoxDefinitionType: 1
   _animationSpeed:
     _serializedValue: 4294967296
-  wrapMode: 0
+  wrapMode: 8
   characterPrefabStorage: 0
-  characterPrefab: {fileID: 8163239627644416165, guid: 4ad1aa45e10cbf74b97a7523c779c282, type: 3}
+  characterPrefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
   prefabResourcePath: 
-  moveName: Boden Coruch Kick
-  description: Boden Coruch Kick
+  moveName: Popcat Punch
+  description: Popcat Punch
   fps: 60
   ignoreGravity: 0
   ignoreFriction: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 31
-  startUpFrames: 15
-  activeFrames: 16
+  startUpFrames: 0
+  activeFrames: 31
   recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
@@ -77,10 +77,10 @@ MonoBehaviour:
     onReleaseExecution: 0
     requireButtonPress: 1
     onPressExecution: 1
-    buttonSequence: 0300000007000000
-    buttonExecution: 07000000
+    buttonSequence: 
+    buttonExecution: 05000000
     editorToggle: 1
-    buttonSequenceToggle: 1
+    buttonSequenceToggle: 0
     buttonExecutionToggle: 1
   altInputs:
     chargeMove: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   gauges: []
   sortOrder:
   - castingFrame: 0
-    value: 204
+    value: 202
     editorToggle: 0
   particleEffects: []
   appliedForces: []
@@ -134,15 +134,15 @@ MonoBehaviour:
   opponentOverride: []
   characterAssist: []
   soundEffects:
-  - castingFrame: 15
+  - castingFrame: 21
     sounds:
-    - {fileID: 8300000, guid: 41fe709eae21f89408afb379c4edcfd0, type: 3}
+    - {fileID: 8300000, guid: 38d0bc2132f27f4428b79944e757d0a2, type: 3}
     soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 15
+  - activeFramesBegin: 0
     activeFramesEnds: 30
     hitConfirmType: 0
     throwMove: {fileID: 0}
@@ -231,17 +231,17 @@ MonoBehaviour:
     _hitStunOnHit:
       _serializedValue: 128849018880
     _hitStunOnBlock:
-      _serializedValue: 55834574848
+      _serializedValue: 51539607552
     frameAdvantageOnHit: 0
     frameAdvantageOnBlock: 0
-    damageScaling: 0
+    damageScaling: 1
     damageType: 1
     _damageOnHit:
-      _serializedValue: 171798691840
+      _serializedValue: 128849018880
     _minDamageOnHit:
       _serializedValue: 0
     _damageOnBlock:
-      _serializedValue: 42949672960
+      _serializedValue: 0
     doesntKill: 0
     hitType: 0
     resetPreviousHorizontalPush: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
     applyDifferentSelfBlockForce: 0
     _pushForce:
       x:
-        _serializedValue: 42949672960
+        _serializedValue: 51539607552
       y:
         _serializedValue: 0
       z:
@@ -354,7 +354,7 @@ MonoBehaviour:
     hitToggle: 1
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
-    forceOptionsToggle: 0
+    forceOptionsToggle: 1
     opponentForceToggle: 1
     selfForceToggle: 0
     stageReactionsToggle: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
     - bodyPart: 0
       followXBounds: 0
       followYBounds: 0
-      hitBoxDefinitionIndex: 8
+      hitBoxDefinitionIndex: 7
       _offSet:
         x:
           _serializedValue: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
           _serializedValue: 0
         topRight:
           x:
-            _serializedValue: 10780367872
+            _serializedValue: 7687991296
           y:
             _serializedValue: 0
           z:
@@ -399,26 +399,26 @@ MonoBehaviour:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 10780367872
+            _serializedValue: 7687991296
           y:
-            _serializedValue: 4595615232
+            _serializedValue: 3736621568
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 4595615232
+            _serializedValue: 3736621568
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 10780367872
+          _serializedValue: 7687991296
         height:
-          _serializedValue: 4595615232
+          _serializedValue: 3736621568
         xMax:
-          _serializedValue: 10780367872
+          _serializedValue: 7687991296
         yMax:
-          _serializedValue: 4595615232
+          _serializedValue: 3736621568
       shape: 1
       type: 0
   blockableArea:
@@ -432,7 +432,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 1.68
+      width: 1.79
       height: 0.87
     _rect:
       _x:
@@ -441,7 +441,7 @@ MonoBehaviour:
         _serializedValue: 0
       topRight:
         x:
-          _serializedValue: 7215544832
+          _serializedValue: 7687991296
         y:
           _serializedValue: 0
         z:
@@ -455,7 +455,7 @@ MonoBehaviour:
           _serializedValue: 0
       bottomRight:
         x:
-          _serializedValue: 7215544832
+          _serializedValue: 7687991296
         y:
           _serializedValue: 3736621568
         z:
@@ -468,11 +468,11 @@ MonoBehaviour:
         z:
           _serializedValue: 0
       width:
-        _serializedValue: 7215544832
+        _serializedValue: 7687991296
       height:
         _serializedValue: 3736621568
       xMax:
-        _serializedValue: 7215544832
+        _serializedValue: 7687991296
       yMax:
         _serializedValue: 3736621568
     followXBounds: 0
@@ -502,9 +502,9 @@ MonoBehaviour:
         _serializedValue: 0
     position:
       x:
-        _serializedValue: -1116691456
+        _serializedValue: -1632087552
       y:
-        _serializedValue: 15934328832
+        _serializedValue: 21303037952
       z:
         _serializedValue: 0
     prevPosition:

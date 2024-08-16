@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayType: 0
   profilePictureSmall: {fileID: 2800000, guid: 3d2512c709c5d3943896d00796ab22bd, type: 3}
-  profilePictureBig: {fileID: 2800000, guid: 2e593dc746d2b244cacdf020dcf9c5c0, type: 3}
+  profilePictureBig: {fileID: 2800000, guid: f91adb37233ae8049b93dff9d6d20893, type: 3}
   characterName: Popcat
   gender: 0
   characterDescription: he got dementia
@@ -38,13 +38,13 @@ MonoBehaviour:
     colorMask: {r: 0, g: 0, b: 0, a: 0}
   - name: Popcat
     characterPrefabStorage: 0
-    prefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
+    prefab: {fileID: 5507747402435534483, guid: aa8286ba907064a4b908c46a3b053ea7, type: 3}
     prefabResourcePath: 
     enableColorMask: 0
     colorMask: {r: 0, g: 0, b: 0, a: 0}
   - name: Popcat
     characterPrefabStorage: 0
-    prefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
+    prefab: {fileID: 5507747402435534483, guid: 46b42194f43a8dd40bbec9fcc964cd0b, type: 3}
     prefabResourcePath: 
     enableColorMask: 0
     colorMask: {r: 0, g: 0, b: 0, a: 0}
@@ -233,7 +233,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 0
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 0
       moveForward:
         id: f318ddfb-f7aa-4f4f-9000-96843cd276b1
@@ -339,7 +339,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 1
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 0
       moveBack:
         id: 7b78e86c-0920-410e-81c6-9cb89a39f314
@@ -445,7 +445,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 2
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 0
       moveSideways:
         id: 4ec8f884-abf9-4262-a584-488d35677fe9
@@ -657,7 +657,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 3
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 0
       takeOff:
         id: 7dc641f2-5cff-4589-981b-b0032b8e8cd5
@@ -1088,7 +1088,7 @@ MonoBehaviour:
         id: cf389cbf-28cf-4a6e-bc83-0b0f9dc60412
         animData:
         - id: 
-          clip: {fileID: 0}
+          clip: {fileID: 7400000, guid: c646c53871860d444be4772a22f5bc0d, type: 2}
           customHitBoxDefinition: {fileID: 0}
           length:
             _serializedValue: 2219066368
@@ -1188,7 +1188,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 8
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       fallBack:
         id: 1dde6b25-13d8-4e39-aef6-fbf746fd0d97
@@ -3418,7 +3418,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 38
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       airRecovery:
         id: 24414078-6743-46d9-9b00-ba013597228e
@@ -4588,7 +4588,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 40
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 0
       standUpFromAirHit:
         id: e79face6-6e64-44aa-9565-b72f8d906531
@@ -5973,9 +5973,12 @@ MonoBehaviour:
       crouchEnabled: 1
       blockEnabled: 0
       parryEnabled: 0
-    attackMoves: []
+    attackMoves:
+    - {fileID: 11400000, guid: 75aebd59be0dbf84483405825b67f26d, type: 2}
+    - {fileID: 11400000, guid: 5216b59be4ba2ff4d942764193a6bd70, type: 2}
+    - {fileID: 11400000, guid: e65fdbbe36e900b4596a59dbda5efdfb, type: 2}
     AM_File: {fileID: 0}
-    enabledBasicMovesToggle: 1
+    enabledBasicMovesToggle: 0
     basicMovesToggle: 1
     attackMovesToggle: 1
   aiInstructionsSet:
