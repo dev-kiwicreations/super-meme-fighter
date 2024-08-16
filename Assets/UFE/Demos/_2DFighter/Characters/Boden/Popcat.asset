@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2e5269517f28664db5ccd78cbd208b1, type: 3}
-  m_Name: Boden
+  m_Name: Popcat
   m_EditorClassIdentifier: 
   gameplayType: 0
   profilePictureSmall: {fileID: 2800000, guid: 3d2512c709c5d3943896d00796ab22bd, type: 3}
@@ -30,21 +30,21 @@ MonoBehaviour:
   characterPrefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
   prefabResourcePath: 
   alternativeCostumes:
-  - name: Boden
+  - name: Popcat
     characterPrefabStorage: 0
-    prefab: {fileID: 8163239627644416165, guid: 4ad1aa45e10cbf74b97a7523c779c282, type: 3}
+    prefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
     prefabResourcePath: 
     enableColorMask: 0
     colorMask: {r: 0, g: 0, b: 0, a: 0}
-  - name: Boden
+  - name: Popcat
     characterPrefabStorage: 0
-    prefab: {fileID: 5507747402435534483, guid: aa8286ba907064a4b908c46a3b053ea7, type: 3}
+    prefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
     prefabResourcePath: 
     enableColorMask: 0
     colorMask: {r: 0, g: 0, b: 0, a: 0}
-  - name: Boden
+  - name: Popcat
     characterPrefabStorage: 0
-    prefab: {fileID: 5507747402435534483, guid: 46b42194f43a8dd40bbec9fcc964cd0b, type: 3}
+    prefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
     prefabResourcePath: 
     enableColorMask: 0
     colorMask: {r: 0, g: 0, b: 0, a: 0}
@@ -3418,7 +3418,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 38
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       airRecovery:
         id: 24414078-6743-46d9-9b00-ba013597228e
@@ -3738,7 +3738,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 23
-        editorToggle: 1
+        editorToggle: 0
         soundEffectsToggle: 1
       getHitLow:
         id: 648ec6c5-10ba-4b2e-8606-31437abd8ca0
@@ -4021,10 +4021,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -4063,8 +4063,8 @@ MonoBehaviour:
         id: 27e631a4-730b-4f57-9044-9558c205d781
         animData:
         - id: 
-          clip: {fileID: 7400000, guid: 6987b0f6fcb80754f994332558bea707, type: 2}
-          customHitBoxDefinition: {fileID: 11400000, guid: 30444a0e727589247a6b085219b89c60, type: 2}
+          clip: {fileID: 0}
+          customHitBoxDefinition: {fileID: 0}
           length:
             _serializedValue: 2219066368
           bakeSpeed: 0
@@ -4234,7 +4234,7 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
         autoSpeed: 1
@@ -4446,10 +4446,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -4588,7 +4588,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 40
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       standUpFromAirHit:
         id: e79face6-6e64-44aa-9565-b72f8d906531
@@ -5612,10 +5612,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -5824,10 +5824,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
