@@ -68,13 +68,22 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     IDictionary<InputReferences, InputEvents> player2CurrentInputs
 )
     {
+        UFEScreenExtensions.ActionCallback callback;
+        if (MyStageSelection.StageButtonsNew.activeInHierarchy)
+        {
+            callback = new UFEScreenExtensions.ActionCallback(this.TrySelectStage);
+        }
+        else
+        {
+            callback = new UFEScreenExtensions.ActionCallback(MyStageSelection.OnSelectPress);
+        }
         this.SpecialNavigationSystem(
             player1PreviousInputs,
             player1CurrentInputs,
             player2PreviousInputs,
             player2CurrentInputs,
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),
-            new UFEScreenExtensions.ActionCallback(MyStageSelection.OnSelectPress),
+            callback,
             new UFEScreenExtensions.ActionCallback(this.TryDeselectStage)
         );
         

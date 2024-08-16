@@ -657,7 +657,7 @@ namespace UFE3D
 					}
 					else if (pair.Key.inputType == InputType.VerticalAxis)
 					{
-						currentVerticalAxis = pair.Value.axisRaw;
+						currentVerticalAxis = -pair.Value.axisRaw;
 						currentVerticalButton = pair.Value.button;
 					}
 					else

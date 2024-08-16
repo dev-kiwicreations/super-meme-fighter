@@ -14,7 +14,7 @@ public class MyStageSelection : MonoBehaviour
     public GameObject StageButtonsNew;
     public GameObject ReadyScreen;
     public DefaultStageSelectionScreen DefaultStageSelectionScreen;
-    public GameObject ButtonSelectYesStage;
+    public Button ButtonSelectYesStage;
 
     public Text mapName;
     public GameObject area51png;
@@ -38,7 +38,8 @@ public class MyStageSelection : MonoBehaviour
             mapName.gameObject.SetActive(true);
             area51png.SetActive(false);
         }
-        DefaultStageSelectionScreen.firstSelectableGameObject = ButtonSelectYesStage;
+        // DefaultStageSelectionScreen.firstSelectableGameObject = ButtonSelectYesStage.gameObject;
+        ButtonSelectYesStage.Select();
     }
     public void OnNewBackPress(AudioClip sound)
     {
