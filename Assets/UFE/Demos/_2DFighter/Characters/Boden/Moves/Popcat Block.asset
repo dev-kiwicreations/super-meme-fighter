@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: Boden Block
+  m_Name: Popcat Block
   m_EditorClassIdentifier: 
   id: f69425af-4fbf-40fc-bc60-71edb727fa4c
   gameplayType: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   characterPrefabStorage: 0
   characterPrefab: {fileID: 0}
   prefabResourcePath: 
-  moveName: Boden Block
+  moveName: Popcat Block
   description: 
   fps: 60
   ignoreGravity: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     buttonExecution: 04000000
     editorToggle: 1
     buttonSequenceToggle: 0
-    buttonExecutionToggle: 0
+    buttonExecutionToggle: 1
   altInputs:
     chargeMove: 0
     _chargeTiming:
@@ -259,7 +259,7 @@ MonoBehaviour:
         _serializedValue: 3435973836
       editorToggle: 0
     hitAbsorption: 100
-    damageAbsorption: 100
+    damageAbsorption: 50
     nonAffectedBodyParts: 
   projectiles: []
   rotationPreview: {x: 0, y: 90, z: 0}

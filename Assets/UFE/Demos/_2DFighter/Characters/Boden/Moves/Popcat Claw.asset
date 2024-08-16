@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: Boden Back Knee
+  m_Name: Popcat Claw
   m_EditorClassIdentifier: 
-  id: d68f63a2-46d8-4add-9d6c-4b16cfc5a7c1
+  id: 786dafbb-7780-4010-a07e-97005301f0bd
   gameplayType: 0
   animData:
     id: 
-    clip: {fileID: 7400000, guid: c7c108b50dd75a64885b59b8e4b962fb, type: 2}
-    customHitBoxDefinition: {fileID: 11400000, guid: 54409cdf3fb85b74f8d4ea18bfc6d872, type: 2}
+    clip: {fileID: 7400000, guid: b01852709e01ad043ad47978687e577b, type: 2}
+    customHitBoxDefinition: {fileID: 11400000, guid: 96dcfffc38f73994fad6307130c2c357, type: 2}
     length:
       _serializedValue: 2219066368
     bakeSpeed: 0
@@ -26,10 +26,10 @@ MonoBehaviour:
     _serializedValue: 4294967296
   wrapMode: 0
   characterPrefabStorage: 0
-  characterPrefab: {fileID: 8163239627644416165, guid: 4ad1aa45e10cbf74b97a7523c779c282, type: 3}
+  characterPrefab: {fileID: 0}
   prefabResourcePath: 
-  moveName: Boden Back Knee
-  description: Boden Back Knee
+  moveName: Popcat Claw
+  description: 
   fps: 60
   ignoreGravity: 0
   ignoreFriction: 0
@@ -52,8 +52,8 @@ MonoBehaviour:
   animSpeedKeyFrame: []
   totalFrames: 31
   startUpFrames: 9
-  activeFrames: 6
-  recoveryFrames: 16
+  activeFrames: 17
+  recoveryFrames: 5
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -70,15 +70,15 @@ MonoBehaviour:
     chargeMove: 0
     _chargeTiming:
       _serializedValue: 3006477107
-    allowInputLeniency: 0
+    allowInputLeniency: 1
     allowNegativeEdge: 0
     forceAxisPrecision: 0
-    leniencyBuffer: 3
+    leniencyBuffer: 2
     onReleaseExecution: 0
     requireButtonPress: 1
     onPressExecution: 1
-    buttonSequence: 
-    buttonExecution: 0500000006000000
+    buttonSequence: 06000000
+    buttonExecution: 07000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -110,40 +110,45 @@ MonoBehaviour:
     basicMovesToggle: 0
     statesToggle: 0
   moveClassification:
-    attackType: 1
+    attackType: 0
     hitType: 0
-    startupSpeed: 3
-    recoverySpeed: 1
+    startupSpeed: 0
+    recoverySpeed: 0
     hitConfirmType: 0
-    preferableDistance: 1
-    gaugeUsage: 1
+    preferableDistance: 0
+    gaugeUsage: 0
     anyAttackType: 1
     anyHitType: 1
     anyHitConfirmType: 1
   frameLinks: []
   gauges: []
-  sortOrder:
-  - castingFrame: 0
-    value: 211
-    editorToggle: 0
+  sortOrder: []
   particleEffects: []
-  appliedForces: []
+  appliedForces:
+  - castingFrame: 10
+    resetPreviousVertical: 0
+    resetPreviousHorizontal: 1
+    affectAssists: 0
+    affectCharacter: 1
+    _force:
+      x:
+        _serializedValue: 64424509440
+      y:
+        _serializedValue: 0
+      z:
+        _serializedValue: 0
   opAppliedForces: []
   slowMoEffects: []
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects:
-  - castingFrame: 8
-    sounds:
-    - {fileID: 8300000, guid: 38d0bc2132f27f4428b79944e757d0a2, type: 3}
-    soundEffectsToggle: 1
+  soundEffects: []
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
   hits:
   - activeFramesBegin: 9
-    activeFramesEnds: 14
+    activeFramesEnds: 25
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
@@ -153,7 +158,7 @@ MonoBehaviour:
     fixRotation: 0
     armorBreaker: 0
     continuousHit: 0
-    unblockable: 0
+    unblockable: 1
     spaceBetweenHits: 0
     groundHit: 1
     crouchingHit: 1
@@ -226,26 +231,26 @@ MonoBehaviour:
     instantAirRecovery: 0
     overrideHitAnimation: 0
     newHitAnimation: 27
-    hitStrength: 0
+    hitStrength: 1
     hitStunType: 1
     _hitStunOnHit:
       _serializedValue: 128849018880
     _hitStunOnBlock:
-      _serializedValue: 51539607552
+      _serializedValue: 55834574848
     frameAdvantageOnHit: 0
     frameAdvantageOnBlock: 0
-    damageScaling: 1
+    damageScaling: 0
     damageType: 1
     _damageOnHit:
       _serializedValue: 171798691840
     _minDamageOnHit:
       _serializedValue: 0
     _damageOnBlock:
-      _serializedValue: 51539607552
+      _serializedValue: 42949672960
     doesntKill: 0
     hitType: 0
-    resetPreviousHorizontalPush: 1
-    resetPreviousVerticalPush: 1
+    resetPreviousHorizontalPush: 0
+    resetPreviousVerticalPush: 0
     resetPreviousSidewaysPush: 0
     resetJumpForce: 0
     applyDifferentAirForce: 0
@@ -254,9 +259,9 @@ MonoBehaviour:
     applyDifferentSelfBlockForce: 0
     _pushForce:
       x:
-        _serializedValue: 51539607552
+        _serializedValue: 0
       y:
-        _serializedValue: 107374182400
+        _serializedValue: 0
       z:
         _serializedValue: 0
     _pushForceAir:
@@ -354,8 +359,8 @@ MonoBehaviour:
     hitToggle: 1
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
-    forceOptionsToggle: 1
-    opponentForceToggle: 1
+    forceOptionsToggle: 0
+    opponentForceToggle: 0
     selfForceToggle: 0
     stageReactionsToggle: 0
     overrideEventsToggle: 0
@@ -365,7 +370,7 @@ MonoBehaviour:
     wallBounceToggle: 0
     groundBounceToggle: 0
     hurtBoxes:
-    - bodyPart: 0
+    - bodyPart: 2
       followXBounds: 0
       followYBounds: 0
       hitBoxDefinitionIndex: 7
@@ -382,49 +387,49 @@ MonoBehaviour:
         _x:
           _serializedValue: 0
         _y:
-          _serializedValue: 0
+          _serializedValue: 7129645568
         topRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 19456202752
           y:
-            _serializedValue: 0
+            _serializedValue: 7129645568
           z:
             _serializedValue: 0
         topLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 7129645568
           z:
             _serializedValue: 0
         bottomRight:
           x:
-            _serializedValue: 0
+            _serializedValue: 19456202752
           y:
-            _serializedValue: 0
+            _serializedValue: 21474836480
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 0
+            _serializedValue: 21474836480
           z:
             _serializedValue: 0
         width:
-          _serializedValue: 0
+          _serializedValue: 19456202752
         height:
-          _serializedValue: 0
+          _serializedValue: 14345190400
         xMax:
-          _serializedValue: 0
+          _serializedValue: 19456202752
         yMax:
-          _serializedValue: 0
-      shape: 0
+          _serializedValue: 21474836480
+      shape: 1
       type: 0
   blockableArea:
     enabled: 1
     activeFramesBegin: 0
-    activeFramesEnds: 30
+    activeFramesEnds: 0
     bodyPart: 0
     hitBoxDefinitionIndex: 0
     shape: 0
@@ -548,4 +553,4 @@ MonoBehaviour:
     damageAbsorption: 0
     nonAffectedBodyParts: 
   projectiles: []
-  rotationPreview: {x: 0, y: 0, z: 0}
+  rotationPreview: {x: 0, y: 90, z: 0}
