@@ -133,7 +133,7 @@ namespace UFE3D
 
 							if (nextSelectable == null || previousSelectable == nextSelectable)
 							{
-								nextSelectable = currentGameObject.FindSelectable(Vector3.up, false);
+								nextSelectable = currentGameObject.FindSelectable(Vector3.down, false);
 
 								if (nextSelectable == null || previousSelectable == nextSelectable)
 								{
@@ -141,7 +141,7 @@ namespace UFE3D
 
 									if (nextSelectable == null || previousSelectable == nextSelectable)
 									{
-										nextSelectable = currentGameObject.FindSelectable(Vector3.down, false);
+										nextSelectable = currentGameObject.FindSelectable(Vector3.up, false);
 									}
 								}
 							}
