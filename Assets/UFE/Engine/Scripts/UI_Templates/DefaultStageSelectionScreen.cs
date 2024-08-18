@@ -8,8 +8,6 @@ using Unity.VisualScripting;
 
 public class DefaultStageSelectionScreen : StageSelectionScreen
 {
-    public GameObject Stage;
-    public GameObject StageButtonsNew;
     public Text namePlayer1;
     public Text namePlayer2;
     public Text nameStage;
@@ -17,7 +15,6 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     public Image portraitPlayer2;
     public Image screenshotStage;
     public Text titleStage;
-    public MyStageSelection MyStageSelection;
     protected GameObject gameObjectPlayer1;
     protected GameObject gameObjectPlayer2;
     public Vector3 positionPlayer1 = new Vector3(-4, 0, 0);
@@ -45,6 +42,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             StageOptions stage = UFE.config.stages[stageIndex];
             base.SetHoverIndex(stageIndex);
+            UFE.config.selectedStage = stage;
 
             if (this.titleStage != null) this.titleStage.text = stage.stageName;
             if (this.nameStage != null) this.nameStage.text = stage.stageName;
@@ -69,7 +67,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
 )
     {
         UFEScreenExtensions.ActionCallback callback;
-        if (MyStageSelection.StageButtonsNew.activeInHierarchy)
+        /*if (MyStageSelection.StageButtonsNew.activeInHierarchy)
         {
             callback = new UFEScreenExtensions.ActionCallback(this.TrySelectStage);
         }
@@ -85,26 +83,21 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),
             callback,
             new UFEScreenExtensions.ActionCallback(this.TryDeselectStage)
-        );
+        );*/
         
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (Stage.activeInHierarchy)
-            {
-                PreviousStage();
-            }
+        {   
+            PreviousStage();
         }
+
         // Check if the right arrow key is pressed
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (Stage.activeInHierarchy)
-            {
-                NextStage();
-            }
+            NextStage();
         }
     }
 
@@ -353,7 +346,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         AudioClip sound
     )
     {
-        if (verticalAxisDown)
+        /*if (verticalAxisDown)
         {
             if (verticalAxis > 0)
             {
@@ -363,7 +356,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             {
                 //this.NextStage();
             }
-        }
+        }*/
     }
 
     protected virtual void TryDeselectStage(AudioClip sound)

@@ -66,6 +66,11 @@ namespace UFE3D
 		{
 			UFE.StartOptionsScreen();
 		}
+		
+		public virtual void GoToControlsScreen()
+		{
+			UFE.StartControlScreen();
+		}
 
 		public virtual void GoToCreditsScreen()
 		{

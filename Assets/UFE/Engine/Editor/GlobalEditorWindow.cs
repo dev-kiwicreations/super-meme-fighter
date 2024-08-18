@@ -2086,6 +2086,39 @@ namespace UFE3D
 										EditorGUI.EndDisabledGroup();
 									}
 									EditorGUILayout.EndHorizontal();
+									
+									EditorGUILayout.BeginHorizontal();
+									{
+										globalInfo.gameGUI.controlScreen = (ControlScreen)EditorGUILayout.ObjectField("Control Screen:", globalInfo.gameGUI.controlScreen, typeof(ControlScreen), true);
+										EditorGUI.BeginDisabledGroup(DisableScreenButton(globalInfo.gameGUI.controlScreen));
+										{
+											ScreenButton(globalInfo.gameGUI.controlScreen);
+										}
+										EditorGUI.EndDisabledGroup();
+									}
+									EditorGUILayout.EndHorizontal();
+									
+									EditorGUILayout.BeginHorizontal();
+									{
+										globalInfo.gameGUI.controlGMScreen = (ControlGMScreen)EditorGUILayout.ObjectField("Control GM Screen:", globalInfo.gameGUI.controlGMScreen, typeof(ControlGMScreen), true);
+										EditorGUI.BeginDisabledGroup(DisableScreenButton(globalInfo.gameGUI.controlGMScreen));
+										{
+											ScreenButton(globalInfo.gameGUI.controlGMScreen);
+										}
+										EditorGUI.EndDisabledGroup();
+									}
+									EditorGUILayout.EndHorizontal();
+									
+									EditorGUILayout.BeginHorizontal();
+									{
+										globalInfo.gameGUI.stageReadyScreen = (StageReadyScreen)EditorGUILayout.ObjectField("Stage Ready Screen:", globalInfo.gameGUI.stageReadyScreen, typeof(StageReadyScreen), true);
+										EditorGUI.BeginDisabledGroup(DisableScreenButton(globalInfo.gameGUI.stageReadyScreen));
+										{
+											ScreenButton(globalInfo.gameGUI.stageReadyScreen);
+										}
+										EditorGUI.EndDisabledGroup();
+									}
+									EditorGUILayout.EndHorizontal();
 
 									EditorGUILayout.Space();
 

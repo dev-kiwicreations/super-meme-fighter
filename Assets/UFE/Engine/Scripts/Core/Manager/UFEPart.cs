@@ -573,6 +573,26 @@ public partial class UFE
 		UFE.StartOptionsScreen((float)UFE.config.gameGUI.screenFadeDuration);
 	}
 
+	public static void StartControlScreen()
+	{
+		UFE.StartControlScreen((float)UFE.config.gameGUI.screenFadeDuration);
+	}
+
+	public static void StartControlGMScreen()
+	{
+		UFE.StartControlGMScreen((float)UFE.config.gameGUI.screenFadeDuration);
+	}
+	
+	public static void StartStageReadyScreen()
+	{
+		UFE.StartStageReadyScreen((float)UFE.config.gameGUI.screenFadeDuration);
+	}
+
+	public static void StartPauseScreen()
+	{
+		UFE.StartPauseScreen((float)UFE.config.gameGUI.screenFadeDuration);
+	}
+
 	public static void StartOptionsScreen(float fadeTime)
 	{
 		if (UFE.currentScreen.hasFadeOut)
@@ -589,6 +609,82 @@ public partial class UFE
 		else
 		{
 			UFE._StartOptionsScreen(fadeTime / 2f);
+		}
+	}
+	
+	public static void StartControlScreen(float fadeTime)
+	{
+		if (UFE.currentScreen.hasFadeOut)
+		{
+			UFE.eventSystem.enabled = false;
+			CameraFade.StartAlphaFade(
+				UFE.config.gameGUI.screenFadeColor,
+				false,
+				fadeTime / 2f,
+				0f
+			);
+			UFE.DelayLocalAction(() => { UFE.eventSystem.enabled = true; UFE._StartControlScreen(fadeTime / 2f); }, (Fix64)fadeTime / 2);
+		}
+		else
+		{
+			UFE._StartControlScreen(fadeTime / 2f);
+		}
+	}
+	
+	public static void StartControlGMScreen(float fadeTime)
+	{
+		if (UFE.currentScreen.hasFadeOut)
+		{
+			UFE.eventSystem.enabled = false;
+			CameraFade.StartAlphaFade(
+				UFE.config.gameGUI.screenFadeColor,
+				false,
+				fadeTime / 2f,
+				0f
+			);
+			UFE.DelayLocalAction(() => { UFE.eventSystem.enabled = true; UFE._StartControlGMScreen(fadeTime / 2f); }, (Fix64)fadeTime / 2);
+		}
+		else
+		{
+			UFE._StartControlGMScreen(fadeTime / 2f);
+		}
+	}
+	
+	public static void StartStageReadyScreen(float fadeTime)
+	{
+		if (UFE.currentScreen.hasFadeOut)
+		{
+			UFE.eventSystem.enabled = false;
+			CameraFade.StartAlphaFade(
+				UFE.config.gameGUI.screenFadeColor,
+				false,
+				fadeTime / 2f,
+				0f
+			);
+			UFE.DelayLocalAction(() => { UFE.eventSystem.enabled = true; UFE._StartStageReadyScreen(fadeTime / 2f); }, (Fix64)fadeTime / 2);
+		}
+		else
+		{
+			UFE._StartStageReadyScreen(fadeTime / 2f);
+		}
+	}
+	
+	public static void StartPauseScreen(float fadeTime)
+	{
+		if (UFE.currentScreen.hasFadeOut)
+		{
+			UFE.eventSystem.enabled = false;
+			CameraFade.StartAlphaFade(
+				UFE.config.gameGUI.screenFadeColor,
+				false,
+				fadeTime / 2f,
+				0f
+			);
+			UFE.DelayLocalAction(() => { UFE.eventSystem.enabled = true; UFE._StartPauseScreen(fadeTime / 2f); }, (Fix64)fadeTime / 2);
+		}
+		else
+		{
+			UFE._StartPauseScreen(fadeTime / 2f);
 		}
 	}
 
@@ -1445,6 +1541,67 @@ public partial class UFE
 		{
 			UFE.ShowScreen(UFE.config.gameGUI.optionsScreen);
 			if (!UFE.config.gameGUI.optionsScreen.hasFadeIn) fadeTime = 0;
+			CameraFade.StartAlphaFade(UFE.config.gameGUI.screenFadeColor, true, fadeTime);
+		}
+	}
+	
+	private static void _StartControlScreen(float fadeTime)
+	{
+
+		UFE.HideScreen(UFE.currentScreen);
+		if (UFE.config.gameGUI.controlScreen == null)
+		{
+			Debug.LogError("Options Screen not found! Make sure you have set the prefab correctly in the Global Editor");
+		}
+		else
+		{
+			UFE.ShowScreen(UFE.config.gameGUI.controlScreen);
+			if (!UFE.config.gameGUI.controlScreen.hasFadeIn) fadeTime = 0;
+			CameraFade.StartAlphaFade(UFE.config.gameGUI.screenFadeColor, true, fadeTime);
+		}
+	}
+	
+	private static void _StartControlGMScreen(float fadeTime)
+	{
+		//UFE.HideScreen(UFE.currentScreen);
+		if (UFE.config.gameGUI.controlGMScreen == null)
+		{
+			Debug.LogError("Options Screen not found! Make sure you have set the prefab correctly in the Global Editor");
+		}
+		else
+		{
+			UFE.ShowScreen(UFE.config.gameGUI.controlGMScreen);
+			if (!UFE.config.gameGUI.controlGMScreen.hasFadeIn) fadeTime = 0;
+			CameraFade.StartAlphaFade(UFE.config.gameGUI.screenFadeColor, true, fadeTime);
+		}
+	}	
+	
+	private static void _StartStageReadyScreen(float fadeTime)
+	{
+		UFE.HideScreen(UFE.currentScreen);
+		if (UFE.config.gameGUI.stageReadyScreen == null)
+		{
+			Debug.LogError("Options Screen not found! Make sure you have set the prefab correctly in the Global Editor");
+		}
+		else
+		{
+			UFE.ShowScreen(UFE.config.gameGUI.stageReadyScreen);
+			if (!UFE.config.gameGUI.stageReadyScreen.hasFadeIn) fadeTime = 0;
+			CameraFade.StartAlphaFade(UFE.config.gameGUI.screenFadeColor, true, fadeTime);
+		}
+	}
+	
+	private static void _StartPauseScreen(float fadeTime)
+	{
+		UFE.HideScreen(UFE.currentScreen);
+		if (UFE.config.gameGUI.pauseScreen == null)
+		{
+			Debug.LogError("Options Screen not found! Make sure you have set the prefab correctly in the Global Editor");
+		}
+		else
+		{
+			//UFE.ShowScreen(UFE.config.gameGUI.controlGMScreen);
+			if (!UFE.config.gameGUI.controlGMScreen.hasFadeIn) fadeTime = 0;
 			CameraFade.StartAlphaFade(UFE.config.gameGUI.screenFadeColor, true, fadeTime);
 		}
 	}

@@ -10,6 +10,11 @@ namespace UFE3D
         {
             // Delay is necessary to avoid double input through the menu
             UFE.DelayLocalAction(GoToMainMenuDelayed, BackToMenuFrameDelay);
+        }	
+        
+        public virtual void GoToControlGMScreen()
+        {
+            UFE.StartControlGMScreen();
         }
 
         private void GoToMainMenuDelayed()

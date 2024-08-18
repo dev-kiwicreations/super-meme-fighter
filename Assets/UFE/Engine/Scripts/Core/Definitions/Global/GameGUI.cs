@@ -21,6 +21,9 @@ namespace UFE3D
         public OptionsScreen optionsScreen;
         public CreditsScreen creditsScreen;
         public PauseScreen pauseScreen;
+        public ControlScreen controlScreen;
+        public ControlGMScreen controlGMScreen;
+        public StageReadyScreen stageReadyScreen;
 
         public CharacterSelectionScreen characterSelectionScreen;
         public CharacterSelectionScreen teamSelectionScreen;

@@ -43,7 +43,7 @@ namespace UFE3D
 				this.SetHoverIndex(stageIndex);
 
 				UFE.config.selectedStage = UFE.config.stages[stageIndex];
-				this.StartLoadingBattleScreen();
+				//this.StartLoadingBattleScreen();
 			}
 			else if (stageIndex < 0)
 			{
@@ -55,7 +55,7 @@ namespace UFE3D
 				else
 				{
 					if (this.cancelSound != null) UFE.PlaySound(this.cancelSound);
-					this.StartLoadingCharacterSelectionScreen();
+					//this.StartLoadingCharacterSelectionScreen();
 				}
 			}
 		}
@@ -68,7 +68,7 @@ namespace UFE3D
 
 		public void PlayYesSound()
 		{
-			Invoke(nameof(TrySelectStage), 0.6f);
+			Invoke(nameof(TrySelectStage), 0f);
 		}
 		
 		public void TrySelectStage()
@@ -117,6 +117,12 @@ namespace UFE3D
 		protected virtual void StartLoadingCharacterSelectionScreen()
 		{
 			UFE.StartCharacterSelectionScreen();
+		} 
+		
+		public virtual void GoToStageReadyScreen()
+		{
+			TrySelectStage();
+			UFE.StartStageReadyScreen();
 		}
 
 		protected virtual void StartLoadingBattleScreen()

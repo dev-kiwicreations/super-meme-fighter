@@ -7,8 +7,6 @@ public class DefaultPauseScreen : PauseScreen
     #region public instance fields
     public UFEScreen backToMenuConfirmationDialog;
     public UFEScreen[] screens;
-    public GameObject howToPlayScreen;
-    public GameObject pauseScreen;
     #endregion
 
     #region protected instance fields
@@ -170,20 +168,4 @@ public class DefaultPauseScreen : PauseScreen
     }
     #endregion
     
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            if (howToPlayScreen.activeInHierarchy)
-            {
-                HTP_Screen(false);
-            }
-        }
-    }
-    
-    public void HTP_Screen(bool state)
-    {
-        howToPlayScreen.SetActive(state);
-        pauseScreen.SetActive(!state);
-    }
 }
