@@ -193,6 +193,15 @@ namespace UFE3D
                     rectTransform.sizeDelta = new Vector2(1289.885f, 1297.487f);
                 }
             }
+            else if (winnerPlayerInfo.characterName == "Popcat")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(0, -235, 0);
+                    rectTransform.sizeDelta = new Vector2(1083f, 1201f);
+                }
+            }
         }
     }
 

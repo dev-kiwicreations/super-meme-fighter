@@ -155,7 +155,7 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             RectTransform rectTransform = portraitPlayer1.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                rectTransform.anchoredPosition = new Vector3(-678, -169, 0);
+                rectTransform.anchoredPosition = new Vector3(-490, -169, 0);
                 rectTransform.sizeDelta = new Vector2(1083f, 1201f);
                 rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
@@ -253,7 +253,7 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             RectTransform rectTransform = portraitPlayer2.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                rectTransform.anchoredPosition = new Vector3(-678, -169, 0);
+                rectTransform.anchoredPosition = new Vector3(-490, -169, 0);
                 rectTransform.sizeDelta = new Vector2(1083f, 1201f);
                 rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, rectTransform.localScale.z);
             }
