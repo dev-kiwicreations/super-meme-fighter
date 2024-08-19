@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightFirstOption: 0
   canvasPreview: 1
-  firstSelectableGameObject: {fileID: 0}
+  firstSelectableGameObject: {fileID: 100134}
   hasFadeIn: 0
   hasFadeOut: 0
   wrapInput: 0
@@ -78,6 +78,10 @@ MonoBehaviour:
   screens:
   - {fileID: 8660982594841586580}
   - {fileID: 5857993740340032388}
+  ContinueGame: {fileID: 11400154}
+  HowToPlayScreen: {fileID: 7502905558339905170}
+  MainMenu: {fileID: 11400144}
+  GameControlsScreen: {fileID: 903087424745940031}
 --- !u!114 &5825594736810718399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,18 +1165,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000}
-        m_TargetAssemblyTypeName: DefaultPauseScreen, Assembly-CSharp
-        m_MethodName: GoToScreen
-        m_Mode: 3
+      - m_Target: {fileID: 903087424745940031}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &1299031390761382260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,17 +1493,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000}
-        m_TargetAssemblyTypeName: DefaultPauseScreen, Assembly-CSharp
-        m_MethodName: GoToScreen
-        m_Mode: 3
+      - m_Target: {fileID: 903087424745940031}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &2477935831724914534
 MonoBehaviour:
