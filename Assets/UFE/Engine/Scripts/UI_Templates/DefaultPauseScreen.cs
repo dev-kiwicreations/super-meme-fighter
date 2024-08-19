@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using FPLibrary;
 using UFE3D;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DefaultPauseScreen : PauseScreen
 {
     #region public instance fields
     public UFEScreen backToMenuConfirmationDialog;
     public UFEScreen[] screens;
+    public Button ContinueGame;
+    public Button HowToPlayScreen;
+    public Button MainMenu;
+    public GameObject GameControlsScreen;
     #endregion
 
     #region protected instance fields
@@ -102,6 +109,38 @@ public class DefaultPauseScreen : PauseScreen
         if (!this.confirmationDialogVisible && currentScreen == -1)
         {
             base.DoFixedUpdate(player1PreviousInputs, player1CurrentInputs, player2PreviousInputs, player2CurrentInputs);
+        }
+        this.SpecialNavigationSystem(
+            player1PreviousInputs,
+            player1CurrentInputs,
+            player2PreviousInputs,
+            player2CurrentInputs,
+            new UFEScreenExtensions.MoveCursorCallback(TraverseUI));
+    }
+    protected virtual void TraverseUI(
+        Fix64 horizontalAxis,
+        Fix64 verticalAxis,
+        bool horizontalAxisDown,
+        bool verticalAxisDown,
+        bool confirmButtonDown,
+        bool cancelButtonDown,
+        AudioClip sound
+    )
+    {
+        if (confirmButtonDown)
+        {
+            if (EventSystem.current.currentSelectedGameObject == ContinueGame.gameObject)
+            {
+                ResumeGame();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == HowToPlayScreen.gameObject)
+            {
+                GameControlsScreen.SetActive(true);
+            }
+            else if (EventSystem.current.currentSelectedGameObject == MainMenu.gameObject)
+            {
+                GoToMainMenu();
+            }
         }
     }
 
