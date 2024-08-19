@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: myConfig_2D_Fighter
   m_EditorClassIdentifier: 
   version: 2
-  player1Character: {fileID: 0}
-  player2Character: {fileID: 0}
+  player1Character: {fileID: 11400000, guid: b738b1c8f23ddab488c251493181a337, type: 2}
+  player2Character: {fileID: 11400000, guid: b770d4b72ab2c154faec19ee75d1ba50, type: 2}
   player1Team:
   - {fileID: 11400000, guid: 573f29652f969dd429ee24d097b56bc0, type: 2}
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
@@ -24,12 +24,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d6dc227d62e62a40af291dbbd4c5276, type: 2}
   - {fileID: 11400000, guid: 54057043117984643925ed339c232c0d, type: 2}
   selectedStage:
-    stageName: Texas
+    stageName: Shanghai
     stageLoadingMethod: 0
     stagePath: 
-    screenshot: {fileID: 2800000, guid: 0a207762ec2234548b8beb6b4cacaf79, type: 3}
-    prefab: {fileID: 100000, guid: 15c44fcb714b16848bb9d1380f7e7301, type: 3}
-    music: {fileID: 8300000, guid: d5d4c6311e097ba49b36beb6671873f6, type: 3}
+    screenshot: {fileID: 2800000, guid: 73aaaa0dbce16c643963e644fef4f363, type: 3}
+    prefab: {fileID: 100000, guid: e9f471bfa88c90c4f91cfd7f502f2e23, type: 3}
+    music: {fileID: 8300000, guid: 719b33feb4dbf454280701b4f60fce24, type: 3}
     _groundFriction:
       _serializedValue: 429496729600
     _leftBoundary:
@@ -2130,19 +2130,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 2
+    selectedDifficultyLevel: 1
     selectedDifficulty:
-      difficultyLevel: 2
+      difficultyLevel: 1
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.1
+      timeBetweenDecisions: 0.15
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
+      timeBetweenActions: 0.15
       overrideAggressiveness: 1
-      aggressiveness: 0.7
+      aggressiveness: 0.65
       overrideRuleCompliance: 1
       ruleCompliance: 0.6
       overrideComboEfficiency: 0
-      comboEfficiency: 0.7
+      comboEfficiency: 0.6248
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1

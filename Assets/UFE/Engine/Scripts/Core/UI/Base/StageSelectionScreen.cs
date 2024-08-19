@@ -103,8 +103,8 @@ namespace UFE3D
 		#region public override methods
 		public override void OnShow()
 		{
-			base.OnShow();
 			UFE.config.selectedStage = null;
+			base.OnShow();
 		}
 
 		public override void SelectOption(int option, int player)

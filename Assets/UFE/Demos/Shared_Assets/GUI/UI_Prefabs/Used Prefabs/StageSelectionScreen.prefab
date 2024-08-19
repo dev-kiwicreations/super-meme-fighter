@@ -63,12 +63,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightFirstOption: 1
-  canvasPreview: 1
+  canvasPreview: 0
   firstSelectableGameObject: {fileID: 6252352119181487209}
   hasFadeIn: 1
   hasFadeOut: 1
   wrapInput: 1
-  stopPreviousSoundEffectsOnLoad: 0
+  stopPreviousSoundEffectsOnLoad: 1
   delayBeforePlayingMusic: 0.1
   onLoadSound: {fileID: 0}
   music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
@@ -83,6 +83,8 @@ MonoBehaviour:
   portraitPlayer2: {fileID: 8477733115594679855}
   screenshotStage: {fileID: 11400032}
   titleStage: {fileID: 0}
+  ConfirmStage: {fileID: 9066839427611425430}
+  BackToCharacterSelect: {fileID: 11400040}
   positionPlayer1: {x: -37, y: 350, z: 0}
   positionPlayer2: {x: 37, y: 350, z: 0}
 --- !u!114 &6963775516184765198
@@ -203,7 +205,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +353,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,10 +931,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
+    m_Mode: 4
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 9066839427611425430}
-    m_SelectOnDown: {fileID: 9066839427611425430}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -1299,9 +1301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 11400040}
+    m_Mode: 4
+    m_WrapAround: 1
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 11400040}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}

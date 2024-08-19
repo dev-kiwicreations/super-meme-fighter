@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using FPLibrary;
 using UFE3D;
+using UnityEngine.EventSystems;
 
 public class DefaultStageReadyScreen : StageReadyScreen
 {
@@ -15,6 +16,8 @@ public class DefaultStageReadyScreen : StageReadyScreen
     public Text titleStage;
     protected GameObject gameObjectPlayer1;
     protected GameObject gameObjectPlayer2;
+    public Button GoToFight;
+    public Button BackToStageSelect;
     public Vector3 positionPlayer1 = new Vector3(-4, 0, 0);
     public Vector3 positionPlayer2 = new Vector3(4, 0, 0);
 
@@ -262,12 +265,28 @@ public class DefaultStageReadyScreen : StageReadyScreen
         {
             if (verticalAxis > 0)
             {
-                //this.PreviousStage();
+                GoToFight.Select();
             }
             else if (verticalAxis < 0)
             {
-                //this.NextStage();
+                BackToStageSelect.Select();
+
             }
+        }
+        if (confirmButtonDown)
+        {
+            if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject)
+            {
+                GoToLoadingBattleScreen();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject)
+            {
+                GoToStageSelectionScreen();
+            }
+        }
+        if (cancelButtonDown)
+        {
+            GoToStageSelectionScreen();
         }
     }
     

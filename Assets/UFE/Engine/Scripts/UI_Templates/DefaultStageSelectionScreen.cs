@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using FPLibrary;
 using UFE3D;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 public class DefaultStageSelectionScreen : StageSelectionScreen
 {
@@ -17,6 +18,8 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     public Text titleStage;
     protected GameObject gameObjectPlayer1;
     protected GameObject gameObjectPlayer2;
+    public Button ConfirmStage;
+    public Button BackToCharacterSelect;
     public Vector3 positionPlayer1 = new Vector3(-4, 0, 0);
     public Vector3 positionPlayer2 = new Vector3(4, 0, 0);
 
@@ -74,37 +77,32 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         else
         {
             callback = new UFEScreenExtensions.ActionCallback(MyStageSelection.OnSelectPress);
-        }
+        }*/
         this.SpecialNavigationSystem(
             player1PreviousInputs,
             player1CurrentInputs,
             player2PreviousInputs,
             player2CurrentInputs,
-            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),
-            callback,
-            new UFEScreenExtensions.ActionCallback(this.TryDeselectStage)
-        );*/
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
         
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {   
-            PreviousStage();
-        }
-
-        // Check if the right arrow key is pressed
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            NextStage();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.LeftArrow))
+    //     {   
+    //         PreviousStage();
+    //     }
+    //
+    //     // Check if the right arrow key is pressed
+    //     if (Input.GetKeyDown(KeyCode.RightArrow))
+    //     {
+    //         NextStage();
+    //     }
+    // }
 
     public override void OnShow()
     {
-        base.OnShow();
-
         if (UFE.config.player1Character != null)
         {
             if (this.portraitPlayer1 != null)
@@ -164,6 +162,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
                 this.titleStage.text = stage.stageName;
             }
         }
+        base.OnShow();
     }
     public void CreatePlayer1()
     {
@@ -346,17 +345,43 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         AudioClip sound
     )
     {
-        /*if (verticalAxisDown)
+        if (horizontalAxisDown)
+        {
+            if (horizontalAxis > 0)
+            {
+                this.PreviousStage();
+            }
+            else if (horizontalAxis < 0)
+            {
+                this.NextStage();
+            }
+        }
+        if (verticalAxisDown)
         {
             if (verticalAxis > 0)
             {
-                //this.PreviousStage();
+                BackToCharacterSelect.Select();
             }
             else if (verticalAxis < 0)
             {
-                //this.NextStage();
+                ConfirmStage.Select();
             }
-        }*/
+        }
+        if (confirmButtonDown)
+        {
+            if (EventSystem.current.currentSelectedGameObject == ConfirmStage.gameObject)
+            {
+                GoToStageReadyScreen();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == BackToCharacterSelect.gameObject)
+            {
+                GoToCharacterSelectionScreen();
+            }
+        }
+        if (cancelButtonDown)
+        {
+            GoToCharacterSelectionScreen();
+        }
     }
 
     protected virtual void TryDeselectStage(AudioClip sound)
