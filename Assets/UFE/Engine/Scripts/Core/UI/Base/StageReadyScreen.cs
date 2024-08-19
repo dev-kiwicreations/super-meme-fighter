@@ -5,6 +5,7 @@ namespace UFE3D
 	public class StageReadyScreen : UFEScreen
 	{
 		public bool fadeBeforeGoingToLoadingBattleScreen = false;
+		public float yesSoundDelay;
 
 		public AudioClip yesSound;
 
@@ -48,7 +49,7 @@ namespace UFE3D
 			}
 			else
 			{
-				UFE.StartLoadingBattleScreen(0f);
+				UFE.StartLoadingBattleScreen(yesSoundDelay);
 			}
 		}
 		

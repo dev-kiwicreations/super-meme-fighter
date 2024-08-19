@@ -1,44 +1,74 @@
-using UFE3D;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using FPLibrary;
+using UFE3D;
+using UnityEngine.EventSystems;
 
 public class DefaultControlGMScreen : ControlGMScreen
 {
-    protected UFEScreen pause = null;
-    protected bool hiding = false;
+    public PauseScreen PauseScreen;
+    public Button BackToPause;
+    public PlaySFX playSfx;
     
     #region public override methods
-    public override void OnHide()
+    
+    public override void DoFixedUpdate(
+        IDictionary<InputReferences, InputEvents> player1PreviousInputs,
+        IDictionary<InputReferences, InputEvents> player1CurrentInputs,
+        IDictionary<InputReferences, InputEvents> player2PreviousInputs,
+        IDictionary<InputReferences, InputEvents> player2CurrentInputs
+    )
     {
-        base.OnHide();
+        this.SpecialNavigationSystem(
+            player1PreviousInputs,
+            player1CurrentInputs,
+            player2PreviousInputs,
+            player2CurrentInputs,
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
     }
 
-    public override void OnShow()
+    protected virtual void HighlightStage(
+        Fix64 horizontalAxis,
+        Fix64 verticalAxis,
+        bool horizontalAxisDown,
+        bool verticalAxisDown,
+        bool confirmButtonDown,
+        bool cancelButtonDown,
+        AudioClip sound
+    )
     {
-        base.OnShow();
-    }
-    
-    /*public override void OnGamePaused(bool isPaused)
-    {
-        base.OnGamePaused(isPaused);
-        if (UFE.config.gameGUI.pauseScreen != null)
+        if (verticalAxisDown)
         {
-            if (isPaused)
+            if (verticalAxis < 0)
             {
-                this.pause = GameObject.Instantiate(UFE.config.gameGUI.pauseScreen);
-                this.pause.transform.SetParent(UFE.canvas != null ? UFE.canvas.transform : null, false);
-                this.pause.OnShow();
+                UFE.PlaySound(moveCursorSound);
+                BackToPause.Select();
             }
-            else if (this.pause != null)
+            else if (verticalAxis > 0)
             {
-                if (!this.hiding)
-                {
-                    UFE.PlayMusic(UFE.config.selectedStage.music);
-                }
-                this.pause.OnHide();
-                GameObject.Destroy(this.pause.gameObject);
+                UFE.PlaySound(moveCursorSound);
+                BackToPause.Select();
             }
         }
-    }*/
+        if (confirmButtonDown)
+        {
+            if (EventSystem.current.currentSelectedGameObject == BackToPause.gameObject)
+            {
+                UFE.PlaySound(selectSound);
+            }
+        }
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            playSfx.PlaySfx(playSfx.clickSound);
+        }
+    }
+    
     #endregion
     
 }

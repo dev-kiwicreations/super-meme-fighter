@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 
 public class DefaultStageSelectionScreen : StageSelectionScreen
 {
+    public AudioClip clickSound;
     public Text namePlayer1;
     public Text namePlayer2;
     public Text nameStage;
@@ -22,6 +23,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     public Button BackToCharacterSelect;
     public Vector3 positionPlayer1 = new Vector3(-4, 0, 0);
     public Vector3 positionPlayer2 = new Vector3(4, 0, 0);
+    public PlaySFX playSfx;
 
     #region public instance methods
     public virtual void NextStage()
@@ -87,19 +89,14 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         
     }
 
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.LeftArrow))
-    //     {   
-    //         PreviousStage();
-    //     }
-    //
-    //     // Check if the right arrow key is pressed
-    //     if (Input.GetKeyDown(KeyCode.RightArrow))
-    //     {
-    //         NextStage();
-    //     }
-    // }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            playSfx.PlaySfx(playSfx.clickSound);
+            GoToCharacterSelectionScreen();
+        }
+    }
 
     public override void OnShow()
     {
@@ -349,10 +346,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (horizontalAxis > 0)
             {
+                UFE.PlaySound(moveCursorSound);
                 this.PreviousStage();
             }
             else if (horizontalAxis < 0)
             {
+                UFE.PlaySound(moveCursorSound);
                 this.NextStage();
             }
         }
@@ -360,10 +359,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (verticalAxis > 0)
             {
+                UFE.PlaySound(moveCursorSound);
                 BackToCharacterSelect.Select();
             }
             else if (verticalAxis < 0)
             {
+                UFE.PlaySound(moveCursorSound);
                 ConfirmStage.Select();
             }
         }
@@ -371,10 +372,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (EventSystem.current.currentSelectedGameObject == ConfirmStage.gameObject)
             {
+                UFE.PlaySound(selectSound);
                 GoToStageReadyScreen();
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToCharacterSelect.gameObject)
             {
+                UFE.PlaySound(clickSound);
                 GoToCharacterSelectionScreen();
             }
         }

@@ -99,10 +99,10 @@ public class DefaultPauseScreen : PauseScreen
         IDictionary<InputReferences, InputEvents> player2CurrentInputs
     )
     {
-        if (!this.confirmationDialogVisible && currentScreen == -1)
-        {
-            base.DoFixedUpdate(player1PreviousInputs, player1CurrentInputs, player2PreviousInputs, player2CurrentInputs);
-        }
+        // if (!this.confirmationDialogVisible && currentScreen == -1)
+        // {
+        //     //base.DoFixedUpdate(player1PreviousInputs, player1CurrentInputs, player2PreviousInputs, player2CurrentInputs);
+        // }
     }
 
     public override void OnShow()

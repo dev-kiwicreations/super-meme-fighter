@@ -69,7 +69,7 @@ MonoBehaviour:
   stopPreviousSoundEffectsOnLoad: 0
   delayBeforePlayingMusic: 0.1
   onLoadSound: {fileID: 0}
-  music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
+  music: {fileID: 0}
   selectSound: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
   cancelSound: {fileID: 8300000, guid: 9b0faf212cdc72c469189b882e349840, type: 3}
   moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -120,12 +120,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 22400134}
+  m_Father: {fileID: 22400136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -398,10 +398,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 22400132}
-  - {fileID: 4012163914888819031}
   - {fileID: 22400130}
-  - {fileID: 22400128}
+  - {fileID: 4012163914888819031}
+  - {fileID: 22400132}
   m_Father: {fileID: 22400136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -752,6 +751,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 22400128}
   - {fileID: 22400134}
   m_Father: {fileID: 22400052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -801,7 +801,7 @@ MonoBehaviour:
   stopPreviousSoundEffectsOnLoad: 0
   delayBeforePlayingMusic: 0.1
   onLoadSound: {fileID: 0}
-  music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
+  music: {fileID: 0}
   selectSound: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
   cancelSound: {fileID: 8300000, guid: 9b0faf212cdc72c469189b882e349840, type: 3}
   moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
@@ -865,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8738641492036219828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -945,10 +945,13 @@ MonoBehaviour:
   stopPreviousSoundEffectsOnLoad: 0
   delayBeforePlayingMusic: 0.1
   onLoadSound: {fileID: 0}
-  music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
+  music: {fileID: 0}
   selectSound: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
   cancelSound: {fileID: 8300000, guid: 9b0faf212cdc72c469189b882e349840, type: 3}
   moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
+  PauseScreen: {fileID: 11400000}
+  BackToPause: {fileID: 2511477215288262209}
+  playSfx: {fileID: 1388848971726725332}
 --- !u!114 &1388848971726725332
 MonoBehaviour:
   m_ObjectHideFlags: 0

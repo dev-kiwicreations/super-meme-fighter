@@ -31,7 +31,14 @@ namespace UFE3D
 
         public virtual void ResumeGame()
         {
+            UFE.DelayLocalAction(Resume, 0.5f);
+        }
+
+        public void Resume()
+        {
             UFE.PauseGame(false);
         }
+        
+        
     }
 }

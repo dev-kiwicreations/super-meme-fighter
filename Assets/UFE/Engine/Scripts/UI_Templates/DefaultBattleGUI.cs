@@ -255,23 +255,27 @@ public class DefaultBattleGUI : BattleGUI{
                 }
             }
 
-			if(
-				// Check if both players have their life points above zero...
-				UFE.GetPlayer1ControlsScript().currentLifePoints > 0 &&
-				UFE.GetPlayer2ControlsScript().currentLifePoints > 0 &&
-				UFE.gameMode != GameMode.NetworkGame &&
-				(
-					// and at least one of the players have pressed the Start button...
-					player1CurrentStartButton && !player1PreviousStartButton ||
-					player2CurrentStartButton && !player2PreviousStartButton 
-				)
-			){
-				// In that case, we can process pause menu events
-				UFE.PauseGame(!UFE.IsPaused());
-			}
+            if (
+	            // Check if both players have their life points above zero...
+	            UFE.GetPlayer1ControlsScript().currentLifePoints > 0 &&
+	            UFE.GetPlayer2ControlsScript().currentLifePoints > 0 &&
+	            UFE.gameMode != GameMode.NetworkGame &&
+	            (
+		            // and at least one of the players have pressed the Start button...
+		            player1CurrentStartButton && !player1PreviousStartButton ||
+		            player2CurrentStartButton && !player2PreviousStartButton
+	            )
+            )
+            {
+	            if (!UFE.IsPaused())
+	            {
+		            // In that case, we can process pause menu events
+		            UFE.PauseGame(!UFE.IsPaused());
+	            }
+            }
 
 
-			// Draw the Life Bars and Gauge Meters using the data stored in UFE.config.guiOptions
+            // Draw the Life Bars and Gauge Meters using the data stored in UFE.config.guiOptions
 			if (this.player1GUI != null && this.player1GUI.lifeBar != null){
 				this.player1GUI.lifeBar.fillAmount = this.player1.targetLife / this.player1.totalLife;
 			}

@@ -10,6 +10,9 @@ using System.Collections;
 
 public class DefaultControlScreen : ControlScreen
 {
+    
+    public PlaySFX playSfx;
+    
     #region public override methods
     public override void OnHide()
     {
@@ -21,5 +24,13 @@ public class DefaultControlScreen : ControlScreen
         base.OnShow();
     }
     #endregion
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            playSfx.PlaySfx(playSfx.clickSound);
+            GoToMainMenuScreen();
+        }
+    }
 }

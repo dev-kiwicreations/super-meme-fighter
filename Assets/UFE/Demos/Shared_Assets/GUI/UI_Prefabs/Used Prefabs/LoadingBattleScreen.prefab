@@ -65,19 +65,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17aa70cbd0aec4a25a5e116c4ed16650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightFirstOption: 1
-  canvasPreview: 1
+  highlightFirstOption: 0
+  canvasPreview: 0
   firstSelectableGameObject: {fileID: 0}
   hasFadeIn: 0
   hasFadeOut: 0
-  wrapInput: 1
-  stopPreviousSoundEffectsOnLoad: 1
+  wrapInput: 0
+  stopPreviousSoundEffectsOnLoad: 0
   delayBeforePlayingMusic: 0.1
   onLoadSound: {fileID: 0}
-  music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
-  selectSound: {fileID: 8300000, guid: 929355f0cb2f06d4eb628a50bd42a7cd, type: 3}
-  cancelSound: {fileID: 8300000, guid: 9b0faf212cdc72c469189b882e349840, type: 3}
-  moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
+  music: {fileID: 0}
+  selectSound: {fileID: 0}
+  cancelSound: {fileID: 0}
+  moveCursorSound: {fileID: 0}
   delayBeforePreload: 1
   delayAfterPreload: 2
   namePlayer1: {fileID: 11400000}

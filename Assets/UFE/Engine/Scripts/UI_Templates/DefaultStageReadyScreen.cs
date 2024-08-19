@@ -23,6 +23,7 @@ public class DefaultStageReadyScreen : StageReadyScreen
 
     public Text mapName;
     public GameObject area51png;
+    public PlaySFX playSfx;
     
     public override void OnShow()
     {
@@ -252,8 +253,12 @@ public class DefaultStageReadyScreen : StageReadyScreen
 
     #region protected instance methods: methods required by the Special Navigation System (GUI)
 
-    public override void DoFixedUpdate(IDictionary<InputReferences, InputEvents> player1PreviousInputs, IDictionary<InputReferences, InputEvents> player1CurrentInputs,
-        IDictionary<InputReferences, InputEvents> player2PreviousInputs, IDictionary<InputReferences, InputEvents> player2CurrentInputs)
+    public override void DoFixedUpdate(
+        IDictionary<InputReferences, InputEvents> player1PreviousInputs,
+        IDictionary<InputReferences, InputEvents> player1CurrentInputs,
+        IDictionary<InputReferences, InputEvents> player2PreviousInputs,
+        IDictionary<InputReferences, InputEvents> player2CurrentInputs
+        )
     {
         this.SpecialNavigationSystem(
             player1PreviousInputs,
@@ -277,10 +282,12 @@ public class DefaultStageReadyScreen : StageReadyScreen
         {
             if (verticalAxis < 0)
             {
+                UFE.PlaySound(moveCursorSound);
                 GoToFight.Select();
             }
             else if (verticalAxis > 0)
             {
+                UFE.PlaySound(moveCursorSound);
                 BackToStageSelect.Select();
             }
         }
@@ -288,15 +295,26 @@ public class DefaultStageReadyScreen : StageReadyScreen
         {
             if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject)
             {
+                UFE.PlaySound(yesSound);
                 GoToLoadingBattleScreen();
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject)
             {
+                UFE.PlaySound(selectSound);
                 GoToStageSelectionScreen();
             }
         }
         if (cancelButtonDown)
         {
+            GoToStageSelectionScreen();
+        }
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            playSfx.PlaySfx(playSfx.clickSound);
             GoToStageSelectionScreen();
         }
     }

@@ -71,11 +71,12 @@ MonoBehaviour:
   stopPreviousSoundEffectsOnLoad: 1
   delayBeforePlayingMusic: 0.1
   onLoadSound: {fileID: 0}
-  music: {fileID: 8300000, guid: facc67b1ecb3b084ca75cff85c83b2c9, type: 3}
-  selectSound: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
+  music: {fileID: 0}
+  selectSound: {fileID: 8300000, guid: 929355f0cb2f06d4eb628a50bd42a7cd, type: 3}
   cancelSound: {fileID: 8300000, guid: 9b0faf212cdc72c469189b882e349840, type: 3}
   moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
   fadeBeforeGoingToLoadingBattleScreen: 0
+  clickSound: {fileID: 8300000, guid: 835f089f85ddcba429d75bfc6428277a, type: 3}
   namePlayer1: {fileID: 1342345190062161189}
   namePlayer2: {fileID: 6403894984229791029}
   nameStage: {fileID: 11400028}
@@ -87,6 +88,7 @@ MonoBehaviour:
   BackToCharacterSelect: {fileID: 11400040}
   positionPlayer1: {x: -37, y: 350, z: 0}
   positionPlayer2: {x: 37, y: 350, z: 0}
+  playSfx: {fileID: 6963775516184765198}
 --- !u!114 &6963775516184765198
 MonoBehaviour:
   m_ObjectHideFlags: 0

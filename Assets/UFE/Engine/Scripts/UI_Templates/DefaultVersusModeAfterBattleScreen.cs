@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using FPLibrary;
 using UFE3D;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
 {
+    public Button PlayAgain;
+    public Button BackToMainMenu;
+    
     #region public override methods
     public override void OnShow()
     {
@@ -26,7 +32,57 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         IDictionary<InputReferences, InputEvents> player2PreviousInputs,
         IDictionary<InputReferences, InputEvents> player2CurrentInputs
     )
-    { }
+    {
+        this.SpecialNavigationSystem(
+            player1PreviousInputs,
+            player1CurrentInputs,
+            player2PreviousInputs,
+            player2CurrentInputs,
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
+    }
+    
+    protected virtual void HighlightStage(
+        Fix64 horizontalAxis,
+        Fix64 verticalAxis,
+        bool horizontalAxisDown,
+        bool verticalAxisDown,
+        bool confirmButtonDown,
+        bool cancelButtonDown,
+        AudioClip sound
+    )
+    {
+        if (verticalAxisDown)
+        {
+            if (verticalAxis < 0)
+            {
+                UFE.PlaySound(moveCursorSound);
+                PlayAgain.Select();
+            }
+            else if (verticalAxis > 0)
+            {
+                UFE.PlaySound(moveCursorSound);
+                BackToMainMenu.Select();
+            }
+        }
+        if (confirmButtonDown)
+        {
+            if (EventSystem.current.currentSelectedGameObject == PlayAgain.gameObject)
+            {
+                UFE.PlaySound(selectSound);
+                RepeatBattle();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == BackToMainMenu.gameObject)
+            {
+                UFE.PlaySound(selectSound);
+                GoToMainMenu();
+            }
+        }
+        if (cancelButtonDown)
+        {
+            GoToStageSelectionScreen();
+        }
+    }
+    
     #endregion
     
     private void Update()
