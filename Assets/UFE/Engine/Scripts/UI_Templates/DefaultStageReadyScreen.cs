@@ -251,6 +251,18 @@ public class DefaultStageReadyScreen : StageReadyScreen
     }
 
     #region protected instance methods: methods required by the Special Navigation System (GUI)
+
+    public override void DoFixedUpdate(IDictionary<InputReferences, InputEvents> player1PreviousInputs, IDictionary<InputReferences, InputEvents> player1CurrentInputs,
+        IDictionary<InputReferences, InputEvents> player2PreviousInputs, IDictionary<InputReferences, InputEvents> player2CurrentInputs)
+    {
+        this.SpecialNavigationSystem(
+            player1PreviousInputs,
+            player1CurrentInputs,
+            player2PreviousInputs,
+            player2CurrentInputs,
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
+    }
+
     protected virtual void HighlightStage(
         Fix64 horizontalAxis,
         Fix64 verticalAxis,
@@ -263,14 +275,13 @@ public class DefaultStageReadyScreen : StageReadyScreen
     {
         if (verticalAxisDown)
         {
-            if (verticalAxis > 0)
+            if (verticalAxis < 0)
             {
                 GoToFight.Select();
             }
-            else if (verticalAxis < 0)
+            else if (verticalAxis > 0)
             {
                 BackToStageSelect.Select();
-
             }
         }
         if (confirmButtonDown)

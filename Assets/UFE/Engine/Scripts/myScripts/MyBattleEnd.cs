@@ -56,9 +56,11 @@ namespace UFE3D
                 Debug.Log("Winner is null and name is: |" + storedWinnerName
                     + "| comparing with |" + UFE.config.player1Character.characterName
                     + "| and |" + UFE.config.player2Character.characterName);
+                bool winCondition = false;
                 if (storedWinnerName == (UFE.config.player1Character.characterName))
                 {
                     winnerPlayerInfo = UFE.config.player1Character;
+                    winCondition = true;
                 }
                 else if (storedWinnerName == (UFE.config.player2Character.characterName))
                 {
@@ -68,6 +70,7 @@ namespace UFE3D
                 {
                     Debug.Log("The stored winner does not match player 1 or player 2.");
                 }
+                APIReader.Instance.PutAPIRequest(winCondition);
                 if (storedWinnerName == "Toshi" || storedWinnerName == "Trump")
                 {
                     winnerPortrait.transform.localScale = new Vector3(

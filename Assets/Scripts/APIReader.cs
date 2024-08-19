@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Text;
 using NaughtyAttributes;
@@ -9,27 +10,35 @@ public class APIReader : MonoBehaviour
 {
     [SerializeField] private string APIUrl;
     [SerializeField] private string AuthorizationToken;
+    public static APIReader Instance;
     private string _requestData = $"";
+    private PostAPIResponse _postAPIResponse;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     [Button("POST API Request")]
-    private void PostAPIRequest()
+    public void PostAPIRequest(string playerName, string enemyName, int difficulty)
     {
         APIPostData postData = new APIPostData
         {
             player_wallet_id = "0x87a16F829Dd5979548D5581f1B32503Eb0b3f9D4",
-            player_meme = "DOGE",
-            enemy_meme = "TRUMP",
-            started_at = "2024-07-24 01:02:03",
-            difficulty = 2
+            player_meme = playerName,
+            enemy_meme = enemyName,
+            started_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            difficulty = difficulty
         };
+        //time format: "2024-07-24 01:02:03"
         _requestData = JsonConvert.SerializeObject(postData);
         StartCoroutine(GetAPIRequest(_requestData, RequestType.POST));
     }
     [Button("PUT API Request")]
-    private void PutAPIRequest()
+    public void PutAPIRequest(bool winCondition)
     {
         APIPutData putData = new APIPutData
         {
-            win = true
+            win = winCondition
         };
         _requestData = JsonConvert.SerializeObject(putData);
         StartCoroutine(GetAPIRequest(_requestData, RequestType.PUT));
@@ -46,7 +55,7 @@ public class APIReader : MonoBehaviour
                 request = new UnityWebRequest(APIUrl, "POST");
                 break;
             case RequestType.PUT:
-                request = new UnityWebRequest(APIUrl + $"/1", "PUT");
+                request = new UnityWebRequest(APIUrl + $"/{_postAPIResponse.id}", "PUT");
                 break;
         }
         ProcessRequestSettings(postData, request);
@@ -55,6 +64,7 @@ public class APIReader : MonoBehaviour
         {
             string response = request.downloadHandler.text;
             Debug.Log(response);
+            _postAPIResponse = JsonConvert.DeserializeObject<PostAPIResponse>(response);
         }
         else
         {
@@ -82,6 +92,10 @@ public struct APIPostData
     public int difficulty;
 }
 
+public struct PostAPIResponse
+{
+    public int id;
+}
 public struct APIPutData
 {
     public bool win;

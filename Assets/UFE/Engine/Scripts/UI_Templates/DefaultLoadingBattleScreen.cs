@@ -19,7 +19,7 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
     {
         Debug.Log("Stage Selection: OnShow");
         base.OnShow();
-
+        APIReader.Instance.PostAPIRequest(UFE.config.player1Character.name, UFE.config.player2Character.name, (int)UFE.GetAIDifficulty().difficultyLevel);
         if (UFE.config.player1Character != null)
         {
             if (this.portraitPlayer1 != null)
