@@ -53,12 +53,12 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     {
         if (verticalAxisDown)
         {
-            if (verticalAxis < 0)
+            if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 PlayAgain.Select();
             }
-            else if (verticalAxis > 0)
+            else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 BackToMainMenu.Select();
