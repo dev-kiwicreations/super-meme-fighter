@@ -7,6 +7,9 @@ using Slider = UnityEngine.UI.Slider;
 using Toggle = UnityEngine.UI.Toggle;
 using Button = UnityEngine.UI.Button;
 using System.Collections;
+using System.Collections.Generic;
+using FPLibrary;
+using UnityEngine.EventSystems;
 
 public class DefaultOptionsScreen : OptionsScreen
 {
@@ -418,7 +421,6 @@ public class DefaultOptionsScreen : OptionsScreen
                 return i;
             }
         }
-
         return -1;
     }
     #endregion
@@ -431,4 +433,65 @@ public class DefaultOptionsScreen : OptionsScreen
                 GoToMainMenuScreen();
         }
     }
+    public override void DoFixedUpdate(
+        IDictionary<InputReferences, InputEvents> player1PreviousInputs,
+        IDictionary<InputReferences, InputEvents> player1CurrentInputs,
+        IDictionary<InputReferences, InputEvents> player2PreviousInputs,
+        IDictionary<InputReferences, InputEvents> player2CurrentInputs
+    )
+    {
+        this.SpecialNavigationSystem(
+            player1PreviousInputs,
+            player1CurrentInputs,
+            player2PreviousInputs,
+            player2CurrentInputs,
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
+    }
+    protected virtual void HighlightStage(
+        Fix64 horizontalAxis,
+        Fix64 verticalAxis,
+        bool horizontalAxisDown,
+        bool verticalAxisDown,
+        bool confirmButtonDown,
+        bool cancelButtonDown,
+        AudioClip sound
+    )
+    {
+        if (verticalAxisDown)
+        {
+            if (verticalAxis > 0)
+            {
+                UFE.PlaySound(moveCursorSound);
+                if (EventSystem.current.currentSelectedGameObject == musicSlider.gameObject)
+                {
+                    cancelButton.Select();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == soundSlider.gameObject)
+                {
+                    musicSlider.Select();
+                }
+                else if(EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
+                {
+                    soundSlider.Select();
+                }
+            }
+            else if (verticalAxis < 0)
+            {
+                UFE.PlaySound(moveCursorSound);
+                if (EventSystem.current.currentSelectedGameObject == musicSlider.gameObject)
+                {
+                    soundSlider.Select();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == soundSlider.gameObject)
+                {
+                    cancelButton.Select();
+                }
+                else if(EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
+                {
+                    musicSlider.Select();
+                }
+            }
+        }
+    }
+    
 }
