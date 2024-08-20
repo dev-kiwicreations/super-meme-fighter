@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541bcafeba624d03b9d6f444318955a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightFirstOption: 0
+  highlightFirstOption: 1
   canvasPreview: 1
   firstSelectableGameObject: {fileID: 100134}
   hasFadeIn: 0
@@ -78,6 +78,11 @@ MonoBehaviour:
   screens:
   - {fileID: 8660982594841586580}
   - {fileID: 5857993740340032388}
+  ContinueButton: {fileID: 11400154}
+  HowToPlayButton: {fileID: 7502905558339905170}
+  MainMenuButton: {fileID: 11400144}
+  BackButtonOnHowToPlay: {fileID: 2511477215288262209}
+  ShowControls: {fileID: 903087424745940031}
 --- !u!114 &5825594736810718399
 MonoBehaviour:
   m_ObjectHideFlags: 0

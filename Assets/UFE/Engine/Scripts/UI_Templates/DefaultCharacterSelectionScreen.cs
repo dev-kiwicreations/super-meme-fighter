@@ -494,6 +494,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         Debug.Log("OnCharacterSelectionAllowed. characterIndex: " + characterIndex + "player: " + player);
         base.OnCharacterSelectionAllowed(characterIndex, player);
         this.UpdateHud();
+        this.characterSelectButton();
     }
 
     public override void OnHide()

@@ -280,12 +280,12 @@ public class DefaultStageReadyScreen : StageReadyScreen
     {
         if (verticalAxisDown)
         {
-            if (verticalAxis < 0)
+            if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 GoToFight.Select();
             }
-            else if (verticalAxis > 0)
+            else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 BackToStageSelect.Select();

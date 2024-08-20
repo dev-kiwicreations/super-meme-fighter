@@ -9,15 +9,15 @@ InputManager:
     m_Name: P1KeyboardVertical
     descriptiveName: Up
     descriptiveNegativeName: Down
-    negativeButton: w
-    positiveButton: s
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton: down
+    positiveButton: up
+    altNegativeButton: s
+    altPositiveButton: w
     gravity: 1000
     dead: 0.1
     sensitivity: 1
     snap: 0
-    invert: 1
+    invert: 0
     type: 0
     axis: 1
     joyNum: 1
@@ -25,10 +25,10 @@ InputManager:
     m_Name: P1KeyboardHorizontal
     descriptiveName: Right
     descriptiveNegativeName: Left
-    negativeButton: a
-    positiveButton: d
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton: left
+    positiveButton: right
+    altNegativeButton: a
+    altPositiveButton: d
     gravity: 1000
     dead: 0.1
     sensitivity: 1
@@ -166,11 +166,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: P1Button1
+    m_Name: P1-Block
     descriptiveName: Light Punch
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: t
+    positiveButton: i
     altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
@@ -182,11 +182,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: P1Button2
+    m_Name: P1-Punch
     descriptiveName: Medium Punch
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: y
+    positiveButton: o
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
@@ -198,11 +198,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: P1Button3
+    m_Name: P1-Combo
     descriptiveName: Hard Punch
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: u
+    positiveButton: p
     altNegativeButton: 
     altPositiveButton: joystick button 2
     gravity: 1000
@@ -214,11 +214,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: P1Button4
+    m_Name: P1-Kick
     descriptiveName: Light Kick
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: g
+    positiveButton: k
     altNegativeButton: 
     altPositiveButton: joystick button 3
     gravity: 1000
@@ -265,15 +265,15 @@ InputManager:
     m_Name: P2KeyboardVertical
     descriptiveName: Up
     descriptiveNegativeName: Down
-    negativeButton: up
-    positiveButton: down
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton: down
+    positiveButton: up
+    altNegativeButton: s
+    altPositiveButton: w
     gravity: 1000
     dead: 0.1
     sensitivity: 1
     snap: 0
-    invert: 1
+    invert: 0
     type: 0
     axis: 1
     joyNum: 2
@@ -321,7 +321,7 @@ InputManager:
     dead: 0.5
     sensitivity: 1
     snap: 0
-    invert: 1
+    invert: 0
     type: 2
     axis: 1
     joyNum: 2
@@ -353,7 +353,7 @@ InputManager:
     dead: 0.1
     sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 6
     joyNum: 2

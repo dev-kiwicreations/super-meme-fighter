@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using FPLibrary;
 using UFE3D;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DefaultPauseScreen : PauseScreen
 {
     #region public instance fields
     public UFEScreen backToMenuConfirmationDialog;
     public UFEScreen[] screens;
+    public Button ContinueButton;
+    public Button HowToPlayButton;
+    public Button MainMenuButton;
+    public Button BackButtonOnHowToPlay;
+    public GameObject ShowControls;
     #endregion
 
     #region protected instance fields
@@ -99,10 +107,74 @@ public class DefaultPauseScreen : PauseScreen
         IDictionary<InputReferences, InputEvents> player2CurrentInputs
     )
     {
-        // if (!this.confirmationDialogVisible && currentScreen == -1)
-        // {
-        //     //base.DoFixedUpdate(player1PreviousInputs, player1CurrentInputs, player2PreviousInputs, player2CurrentInputs);
-        // }
+        this.SpecialNavigationSystem(
+            player1PreviousInputs,
+            player1CurrentInputs,
+            player2PreviousInputs,
+            player2CurrentInputs,
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
+    }
+    protected virtual void HighlightStage(
+        Fix64 horizontalAxis,
+        Fix64 verticalAxis,
+        bool horizontalAxisDown,
+        bool verticalAxisDown,
+        bool confirmButtonDown,
+        bool cancelButtonDown,
+        AudioClip sound
+    )
+    {
+        if (verticalAxisDown)
+        {
+            if (verticalAxis < 0)
+            {
+                UFE.PlaySound(moveCursorSound);
+                if (EventSystem.current.currentSelectedGameObject == ContinueButton.gameObject)
+                {
+                    MainMenuButton.Select();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
+                {
+                    ContinueButton.Select();
+                }
+                else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject) 
+                {
+                    HowToPlayButton.Select();
+                }
+            }
+            else if (verticalAxis > 0)
+            {
+                UFE.PlaySound(moveCursorSound);
+                if (EventSystem.current.currentSelectedGameObject == ContinueButton.gameObject)
+                {
+                    HowToPlayButton.Select();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
+                {
+                    MainMenuButton.Select();
+                }
+                else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject) 
+                {
+                    ContinueButton.Select();
+                }
+            }
+        }
+        if (confirmButtonDown)
+        {
+            if (EventSystem.current.currentSelectedGameObject == ContinueButton.gameObject)
+            {
+                ResumeGame();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
+            {
+                ShowControls.gameObject.SetActive(true);
+                BackButtonOnHowToPlay.Select();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject)
+            {
+                GoToMainMenu();
+            }
+        }
     }
 
     public override void OnShow()

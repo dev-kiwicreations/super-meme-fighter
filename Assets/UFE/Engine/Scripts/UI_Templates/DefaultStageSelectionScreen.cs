@@ -357,12 +357,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         }
         if (verticalAxisDown)
         {
-            if (verticalAxis > 0)
+            if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 BackToCharacterSelect.Select();
             }
-            else if (verticalAxis < 0)
+            else if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 ConfirmStage.Select();
