@@ -492,6 +492,39 @@ public class DefaultOptionsScreen : OptionsScreen
                 }
             }
         }
+
+        if (horizontalAxisDown)
+        {
+            if (horizontalAxis > 0)
+            {
+                if (EventSystem.current.currentSelectedGameObject == musicSlider.gameObject)
+                {
+                    IncreaseMusic();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == soundSlider.gameObject)
+                {
+                    IncreaseSFX();
+                }
+            }
+            else if (horizontalAxis < 0)
+            {
+                if (EventSystem.current.currentSelectedGameObject == musicSlider.gameObject)
+                {
+                    DecreaseMusic();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == soundSlider.gameObject)
+                {
+                    DecreaseSFX();
+                }
+            }
+        }
+        if (confirmButtonDown)
+        {
+            if(EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
+            {
+                GoToMainMenuScreen();
+            }
+        }
     }
     
 }
