@@ -472,6 +472,10 @@ public class DefaultOptionsScreen : OptionsScreen
                 }
                 else if(EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
                 {
+                    difficultySlider.Select();
+                }
+                else if(EventSystem.current.currentSelectedGameObject == difficultySlider.gameObject) 
+                {
                     soundSlider.Select();
                 }
             }
@@ -483,6 +487,10 @@ public class DefaultOptionsScreen : OptionsScreen
                     soundSlider.Select();
                 }
                 else if (EventSystem.current.currentSelectedGameObject == soundSlider.gameObject)
+                {
+                    difficultySlider.Select();
+                }
+                else if(EventSystem.current.currentSelectedGameObject == difficultySlider.gameObject) 
                 {
                     cancelButton.Select();
                 }
@@ -505,6 +513,10 @@ public class DefaultOptionsScreen : OptionsScreen
                 {
                     IncreaseSFX();
                 }
+                else if (EventSystem.current.currentSelectedGameObject == difficultySlider.gameObject)
+                {
+                    IncreaseAiDifficulty();
+                }
             }
             else if (horizontalAxis < 0)
             {
@@ -515,6 +527,10 @@ public class DefaultOptionsScreen : OptionsScreen
                 else if (EventSystem.current.currentSelectedGameObject == soundSlider.gameObject)
                 {
                     DecreaseSFX();
+                }
+                else if (EventSystem.current.currentSelectedGameObject == difficultySlider.gameObject)
+                {
+                    DecreaseAiDifficulty();
                 }
             }
         }
