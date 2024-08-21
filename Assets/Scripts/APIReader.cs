@@ -64,7 +64,10 @@ public class APIReader : MonoBehaviour
         {
             string response = request.downloadHandler.text;
             Debug.Log(response);
-            _postAPIResponse = JsonConvert.DeserializeObject<PostAPIResponse>(response);
+            if (requestType == RequestType.POST)
+            {
+                _postAPIResponse = JsonConvert.DeserializeObject<PostAPIResponse>(response);
+            }
         }
         else
         {
