@@ -214,7 +214,7 @@ public class DefaultBattleGUI : BattleGUI{
             {
                 foreach (KeyValuePair<InputReferences, InputEvents> pair in player1CurrentInputs)
                 {
-                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Start)
+                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Button7)
                     {
                         player1CurrentStartButton = pair.Value.button;
                         break;
@@ -225,7 +225,7 @@ public class DefaultBattleGUI : BattleGUI{
             {
                 foreach (KeyValuePair<InputReferences, InputEvents> pair in player1PreviousInputs)
                 {
-                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Start)
+                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Button7)
                     {
                         player1PreviousStartButton = pair.Value.button;
                         break;
@@ -236,7 +236,7 @@ public class DefaultBattleGUI : BattleGUI{
             {
                 foreach (KeyValuePair<InputReferences, InputEvents> pair in player2CurrentInputs)
                 {
-                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Start)
+                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Button7)
                     {
                         player2CurrentStartButton = pair.Value.button;
                         break;
@@ -247,7 +247,7 @@ public class DefaultBattleGUI : BattleGUI{
             {
                 foreach (KeyValuePair<InputReferences, InputEvents> pair in player2PreviousInputs)
                 {
-                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Start)
+                    if (pair.Key.inputType == InputType.Button && pair.Key.engineRelatedButton == ButtonPress.Button7)
                     {
                         player2PreviousStartButton = pair.Value.button;
                         break;
