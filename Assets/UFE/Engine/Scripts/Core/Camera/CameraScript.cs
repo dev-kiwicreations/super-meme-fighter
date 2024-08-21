@@ -89,7 +89,7 @@ namespace UFE3D
                 {
                     Vector3 newPosition = ((player1.transform.position + player2.transform.position) / 2) + UFE.config.cameraOptions.initialDistance;
                     float highestPos = player1.transform.position.y > player2.transform.position.y ? player1.transform.position.y : player2.transform.position.y;
-                    if (highestPos >= UFE.config.cameraOptions.verticalThreshold)
+                    if (UFE.config.cameraOptions.verticalPriority != VerticalPriority.Disabled && highestPos >= UFE.config.cameraOptions.verticalThreshold)
                     {
                         if (UFE.config.cameraOptions.verticalPriority == VerticalPriority.AverageDistance)
                         {
