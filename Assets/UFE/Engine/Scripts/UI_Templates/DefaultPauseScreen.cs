@@ -156,7 +156,11 @@ public class DefaultPauseScreen : PauseScreen
     {
         if (verticalAxisDown)
         {
-            if (verticalAxis < 0)
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                ContinueButton.Select();
+            }
+            if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 if (EventSystem.current.currentSelectedGameObject == ContinueButton.gameObject)
@@ -172,7 +176,7 @@ public class DefaultPauseScreen : PauseScreen
                     HowToPlayButton.Select();
                 }
             }
-            else if (verticalAxis > 0)
+            else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
                 if (EventSystem.current.currentSelectedGameObject == ContinueButton.gameObject)

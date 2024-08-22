@@ -45,6 +45,10 @@ public class DefaultMainMenuScreen : MainMenuScreen
     {
         if (verticalAxisDown)
         {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                StartGame.Select();
+            }
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);

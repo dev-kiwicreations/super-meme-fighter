@@ -280,6 +280,10 @@ public class DefaultStageReadyScreen : StageReadyScreen
     {
         if (verticalAxisDown)
         {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                GoToFight.Select();
+            }
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);

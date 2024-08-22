@@ -357,6 +357,10 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         }
         if (verticalAxisDown)
         {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                ConfirmStage.Select();
+            }
             if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
