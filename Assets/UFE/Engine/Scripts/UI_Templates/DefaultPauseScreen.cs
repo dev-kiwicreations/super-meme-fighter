@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
 using FPLibrary;
 using UFE3D;
@@ -20,9 +22,37 @@ public class DefaultPauseScreen : PauseScreen
     #region protected instance fields
     protected int currentScreen = -1;
     protected bool confirmationDialogVisible = false;
+    private Coroutine _coroutine;
     #endregion
 
     #region public instance methods
+
+    private void Start()
+    {
+        BackButtonOnHowToPlay.onClick.AddListener(GoBackToPause);
+    }
+
+    private void OnDestroy()
+    {
+        BackButtonOnHowToPlay.onClick.RemoveAllListeners();
+    }
+
+    private void GoBackToPause()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+        _coroutine = StartCoroutine(DelayedPauseSelection());
+    }
+
+    private IEnumerator DelayedPauseSelection()
+    {
+        ShowControls.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+        ContinueButton.Select();
+    }
+
     public virtual void HideBackToMenuConfirmationDialog()
     {
         this.HideBackToMenuConfirmationDialog(true);

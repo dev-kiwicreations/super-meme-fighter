@@ -617,7 +617,7 @@ public class DefaultBattleGUI : BattleGUI{
 				    this.player1GUI.alert.text.text = "hit combo!";
 				    
 				    var number = player.opControlsScript.comboHits;
-				    if (number is < 0 or > 99)
+				    if (number is < 2 or > 99)
 				    {
 					    return;
 				    }
@@ -648,7 +648,7 @@ public class DefaultBattleGUI : BattleGUI{
                     this.player2GUI.alert.text.text = "hit combo!";
                    
                     var number = player.opControlsScript.comboHits;
-                    if (number is < 0 or > 99)
+                    if (number is < 2 or > 99)
                     {
 	                    return;
                     }
