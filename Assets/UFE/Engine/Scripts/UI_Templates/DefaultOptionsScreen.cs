@@ -459,6 +459,10 @@ public class DefaultOptionsScreen : OptionsScreen
     {
         if (verticalAxisDown)
         {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                cancelButton.Select();
+            }
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
