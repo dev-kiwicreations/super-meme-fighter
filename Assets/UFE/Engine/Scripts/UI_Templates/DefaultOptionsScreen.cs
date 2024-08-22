@@ -445,7 +445,11 @@ public class DefaultOptionsScreen : OptionsScreen
             player1CurrentInputs,
             player2PreviousInputs,
             player2CurrentInputs,
-            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),null,
+            new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
+            {
+                GoToMainMenuScreen();
+            }));
     }
     protected virtual void HighlightStage(
         Fix64 horizontalAxis,

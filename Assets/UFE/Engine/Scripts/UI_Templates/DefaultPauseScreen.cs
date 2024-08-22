@@ -37,7 +37,7 @@ public class DefaultPauseScreen : PauseScreen
         BackButtonOnHowToPlay.onClick.RemoveAllListeners();
     }
 
-    private void GoBackToPause()
+    public void GoBackToPause()
     {
         if (_coroutine != null)
         {
