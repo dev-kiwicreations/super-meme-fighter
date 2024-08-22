@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class DefaultControlGMScreen : ControlGMScreen
 {
-    public PauseScreen PauseScreen;
+    public DefaultPauseScreen PauseScreen;
     public Button BackToPause;
     public PlaySFX playSfx;
     
@@ -21,12 +21,17 @@ public class DefaultControlGMScreen : ControlGMScreen
         IDictionary<InputReferences, InputEvents> player2CurrentInputs
     )
     {
+        Debug.Log("pause menu gm controls");
         this.SpecialNavigationSystem(
             player1PreviousInputs,
             player1CurrentInputs,
             player2PreviousInputs,
             player2CurrentInputs,
-            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
+            new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),null, new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
+            {
+                // this.TryDeselectCharacter(1);
+               PauseScreen.GoBackToPause();
+            }));
     }
 
     protected virtual void HighlightStage(
@@ -59,16 +64,21 @@ public class DefaultControlGMScreen : ControlGMScreen
                 UFE.PlaySound(selectSound);
             }
         }
-    }
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Backspace))
+
+        if (cancelButtonDown)
         {
-            playSfx.PlaySfx(playSfx.clickSound);
+            PauseScreen.GoBackToPause();
         }
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetButtonUp("P1Pause"))
+        {
+            PauseScreen.GoBackToPause();
+        }
+    }
+
     #endregion
     
 }
