@@ -112,7 +112,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 ,
                 new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
                 {
-                    this.TryDeselectCharacter(1);
+                    // this.TryDeselectCharacter(1);
+                    GoToPreviousScreen();
                 })
             );
 
