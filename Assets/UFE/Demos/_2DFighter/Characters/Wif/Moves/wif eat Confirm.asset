@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: wif eat opp 1
+  m_Name: wif eat Confirm
   m_EditorClassIdentifier: 
   id: 40edd39a-a79d-489c-b792-fd355531425d
   gameplayType: 0
@@ -19,7 +19,7 @@ MonoBehaviour:
     clip: {fileID: 7400000, guid: 177d4c549d235354fbdd46589635586c, type: 2}
     customHitBoxDefinition: {fileID: 11400000, guid: e73a7f1c69415ef4989c4c6ba04701af, type: 2}
     length:
-      _serializedValue: 1503238656
+      _serializedValue: 2219066368
     bakeSpeed: 0
     hitBoxDefinitionType: 1
   _animationSpeed:
@@ -28,7 +28,7 @@ MonoBehaviour:
   characterPrefabStorage: 0
   characterPrefab: {fileID: 8441277510628428427, guid: 7915baebfcdcf9948b2528925a641331, type: 3}
   prefabResourcePath: 
-  moveName: Eat
+  moveName: Eat Confirm
   description: 
   fps: 60
   ignoreGravity: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 22
-  startUpFrames: 15
-  activeFrames: 7
+  startUpFrames: 19
+  activeFrames: 12
   recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
@@ -76,12 +76,12 @@ MonoBehaviour:
     leniencyBuffer: 3
     onReleaseExecution: 0
     requireButtonPress: 1
-    onPressExecution: 1
+    onPressExecution: 0
     buttonSequence: 
-    buttonExecution: 07000000
-    editorToggle: 1
+    buttonExecution: 
+    editorToggle: 0
     buttonSequenceToggle: 1
-    buttonExecutionToggle: 1
+    buttonExecutionToggle: 0
   altInputs:
     chargeMove: 0
     _chargeTiming:
@@ -132,27 +132,29 @@ MonoBehaviour:
   slowMoEffects: []
   bodyPartVisibilityChanges: []
   opponentOverride:
-  - moveToPosition: 0
+  - moveToPosition: 1
     _position:
       x:
-        _serializedValue: 4294967
+        _serializedValue: 2147483648
       y:
-        _serializedValue: 0
+        _serializedValue: 8589934592
       z:
         _serializedValue: 0
     forceGrounded: 1
-    castingFrame: 15
+    castingFrame: 0
     stun: 1
     _stunTime:
-      _serializedValue: 90194313216
-    overrideHitAnimations: 0
+      _serializedValue: 515396075520
+    overrideHitAnimations: 1
     resetAppliedForces: 1
     standUpOptions: 1
     characterSpecific: 0
-    move: {fileID: 0}
-    characterSpecificMoves: []
+    move: {fileID: 11400000, guid: e787915f3bea8ae498b6ffaed8d0cbe3, type: 2}
+    characterSpecificMoves:
+    - move: {fileID: 11400000, guid: e787915f3bea8ae498b6ffaed8d0cbe3, type: 2}
+      characterName: Shiba
     animationPreview: 0
-    movesToggle: 0
+    movesToggle: 1
   characterAssist: []
   soundEffects:
   - castingFrame: 12
@@ -163,8 +165,8 @@ MonoBehaviour:
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 15
-    activeFramesEnds: 21
+  - activeFramesBegin: 19
+    activeFramesEnds: 30
     hitConfirmType: 0
     throwMove: {fileID: 11400000, guid: 29a3e0039676958408ef702b03d57c44, type: 2}
     techMove: {fileID: 0}
@@ -372,17 +374,17 @@ MonoBehaviour:
           _serializedValue: 0
         z:
           _serializedValue: 0
-    hitToggle: 0
+    hitToggle: 1
     damageOptionsToggle: 1
-    hitStunOptionsToggle: 1
-    forceOptionsToggle: 1
+    hitStunOptionsToggle: 0
+    forceOptionsToggle: 0
     opponentForceToggle: 1
     selfForceToggle: 0
     stageReactionsToggle: 0
     overrideEventsToggle: 0
     hitConditionsToggle: 0
     pullInToggle: 0
-    hurtBoxesToggle: 0
+    hurtBoxesToggle: 1
     wallBounceToggle: 0
     groundBounceToggle: 0
     hurtBoxes:
