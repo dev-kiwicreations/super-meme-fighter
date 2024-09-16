@@ -3734,7 +3734,11 @@ namespace UFE3D
 										moveInfo.projectiles[i]._castingOffSet = FPVector.ToFPVector(EditorGUILayout.Vector3Field("Casting Off Set:", moveInfo.projectiles[i]._castingOffSet.ToVector()));
 
 										moveInfo.projectiles[i]._duration = EditorGUILayout.FloatField("Duration (Seconds):", (float)moveInfo.projectiles[i]._duration);
-										moveInfo.projectiles[i].mirrorOn2PSide = EditorGUILayout.Toggle("Mirror on Right Side", moveInfo.projectiles[i].mirrorOn2PSide);
+										moveInfo.projectiles[i].isBoomerang = EditorGUILayout.Toggle("Is Boomerang", moveInfo.projectiles[i].isBoomerang);
+                                        moveInfo.projectiles[i].BoomerangPrefab = (GameObject)EditorGUILayout.ObjectField("Boomerang Prefab:", moveInfo.projectiles[i].BoomerangPrefab, typeof(UnityEngine.GameObject), true);
+
+
+                                        moveInfo.projectiles[i].mirrorOn2PSide = EditorGUILayout.Toggle("Mirror on Right Side", moveInfo.projectiles[i].mirrorOn2PSide);
 
 										EditorGUILayout.Space();
 

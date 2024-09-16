@@ -239,8 +239,8 @@ MonoBehaviour:
         id: 20a84e99-1ccb-4dd6-8db1-4c0f1c71cca1
         animData:
         - id: 
-          clip: {fileID: 7400000, guid: b47b7598a62621140a5188df19e772c5, type: 2}
-          customHitBoxDefinition: {fileID: 11400000, guid: 04cca86900ef8d7479a7e8611397a24b, type: 2}
+          clip: {fileID: 7400000, guid: 8877a8525205e304b975482739436b5d, type: 2}
+          customHitBoxDefinition: {fileID: 11400000, guid: fe7d2672a67685443a6f490e2e595787, type: 2}
           length:
             _serializedValue: 0
           bakeSpeed: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 1
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       moveBack:
         id: b7bf34eb-52f2-4ecb-9032-e09ebcf7aa7c
@@ -445,7 +445,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 2
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       moveSideways:
         id: 1e7e846b-e8ee-472b-a6c5-aeda14ab6b4b
@@ -657,7 +657,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 3
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       takeOff:
         id: 71fee9d9-a2eb-478d-94c0-b71a36a43b1f
@@ -870,7 +870,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 5
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       jumpBack:
         id: 4f1decd1-606a-4b15-b466-0c4e6291e677
@@ -1188,7 +1188,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 8
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       fallBack:
         id: ee60d97e-95c9-4d5f-96ce-04f3cd43cb89
@@ -1294,7 +1294,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 9
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       fallForward:
         id: 37d49f2d-f9ad-41f6-bc1d-ffbbccb167ef
@@ -1400,7 +1400,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 10
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       landing:
         id: cd6a5050-6de9-4031-a1e3-c3eb14bd7192
@@ -1506,7 +1506,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 11
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       blockingCrouchingPose:
         id: b6f234c0-5771-4aad-b5f0-7d07fec6b213
@@ -2853,10 +2853,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -3420,7 +3420,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 38
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       airRecovery:
         id: 1bbaaa61-4b42-4bba-a676-1c7870647af1
@@ -3633,7 +3633,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 25
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       getHitHigh:
         id: b0daccea-567d-474a-b415-e0ef3999d196
@@ -3740,7 +3740,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 23
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       getHitLow:
         id: 671b1309-158a-42f4-867e-012270ac5942
@@ -3847,7 +3847,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 24
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       getHitHighKnockdown:
         id: 20bb6a68-a8f3-4647-a00f-45345ea8c168
@@ -4166,7 +4166,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 26
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       getHitCrumple:
         id: 3cd93eee-e98f-4fc7-b897-e6da77006477
@@ -4236,7 +4236,7 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
         autoSpeed: 1
@@ -4590,7 +4590,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 40
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       standUpFromAirHit:
         id: 815185dd-679a-4eaf-9936-aeba5a675dbc
@@ -4872,7 +4872,7 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
         autoSpeed: 1
@@ -5650,7 +5650,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 51
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       roundWon:
         id: c779d7c4-764a-41b1-84f2-9edb63c9c7cf
@@ -5756,7 +5756,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 52
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       timeOut:
         id: 56008ac3-fea4-4816-a4e9-9d9b5f8cd473
@@ -5862,7 +5862,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 53
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       gameWon:
         id: 026df1af-a23f-4d31-a4f6-0e14f2ff0983
@@ -5968,7 +5968,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 54
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       moveEnabled: 1
       jumpEnabled: 1
@@ -5983,10 +5983,12 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6a4bf3d3b60a6ad4e84a793cb41b74ea, type: 2}
     - {fileID: 11400000, guid: eecef67b4437b2f4fa675919ee44dbb4, type: 2}
     - {fileID: 11400000, guid: 6e656d6964649b141984ab5026dedaf5, type: 2}
+    - {fileID: 11400000, guid: 00b699183b561064b832764b7b8f03e0, type: 2}
+    - {fileID: 11400000, guid: f8368f15af0af0041860d6370827f8ac, type: 2}
     AM_File: {fileID: 0}
     enabledBasicMovesToggle: 1
-    basicMovesToggle: 1
-    attackMovesToggle: 0
+    basicMovesToggle: 0
+    attackMovesToggle: 1
   aiInstructionsSet:
   - aiInfo: {fileID: 11400000, guid: b6aab449a11683144aa744471183370f, type: 2}
     behavior: 5

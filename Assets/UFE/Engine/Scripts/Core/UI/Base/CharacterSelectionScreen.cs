@@ -27,6 +27,7 @@ public class CharacterSelectionScreen : UFEScreen
 
     public virtual void GoToPreviousScreen()
     {
+       
         if (UFE.gameMode == GameMode.VersusMode)
         {
             UFE.DelaySynchronizedAction(this.GoToVersusModeScreen, 0);
@@ -37,6 +38,7 @@ public class CharacterSelectionScreen : UFEScreen
         }
         else
         {
+            Debug.Log("MAIN IS CALLED!!");
             UFE.DelaySynchronizedAction(this.GoToMainMenuScreen, 0);
         }
     }
@@ -260,7 +262,7 @@ public class CharacterSelectionScreen : UFEScreen
     #region protected instance methods
     protected virtual int GetMaxCharacterIndex()
     {
-        return this.selectableCharacters.Length - 1;
+         return this.selectableCharacters.Length - 1;
     }
 
     protected void GoToMainMenuScreen()

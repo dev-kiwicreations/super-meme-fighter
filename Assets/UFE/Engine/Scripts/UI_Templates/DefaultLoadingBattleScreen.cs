@@ -89,8 +89,8 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             RectTransform rectTransform = portraitPlayer1.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                rectTransform.anchoredPosition = new Vector3(-611, -188, 0);
-                rectTransform.sizeDelta = new Vector2(1700f, 1982.41f);
+                rectTransform.anchoredPosition = new Vector3(-596, -250, 0);
+                rectTransform.sizeDelta = new Vector2(1778.057f, 1838.92f);
             }
         }
         else if (UFE.config.player1Character.characterName == "Toshi")
@@ -179,6 +179,15 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
                 rectTransform.sizeDelta = new Vector2(1261.419f, 1268.854f);
             }
         }
+        else if (UFE.config.player1Character.characterName == "Mog")
+        {
+            RectTransform rectTransform = portraitPlayer1.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                rectTransform.anchoredPosition = new Vector3(-540, -212, 0);
+                rectTransform.sizeDelta = new Vector2(1020.493f, 1026.508f);
+            }
+        }
     }
     public void RightPortraitAdjust()
     {
@@ -187,8 +196,8 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             RectTransform rectTransform = portraitPlayer2.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                rectTransform.anchoredPosition = new Vector3(-611, -188, 0);
-                rectTransform.sizeDelta = new Vector2(1656.197f, 1982.41f);
+                rectTransform.anchoredPosition = new Vector3(-597, -250, 0);
+                rectTransform.sizeDelta = new Vector2(1778.057f, 1838.92f);
             }
         }
         else if (UFE.config.player2Character.characterName == "Toshi")
@@ -275,6 +284,15 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             {
                 rectTransform.anchoredPosition = new Vector3(-550, -142, 0);
                 rectTransform.sizeDelta = new Vector2(1261.419f, 1268.854f);
+            }
+        }
+        else if (UFE.config.player2Character.characterName == "Mog")
+        {
+            RectTransform rectTransform = portraitPlayer2.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                rectTransform.anchoredPosition = new Vector3(-549, -193, 0);
+                rectTransform.sizeDelta = new Vector2(1053.449f, 1074.78f);
             }
         }
     }

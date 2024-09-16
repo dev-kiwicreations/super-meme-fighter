@@ -310,17 +310,19 @@ public class DefaultStageReadyScreen : StageReadyScreen
         }
         if (cancelButtonDown)
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
+
             GoToStageSelectionScreen();
         }
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
+       /* if (Input.GetKeyDown(KeyCode.Backspace))
         {
             playSfx.PlaySfx(playSfx.clickSound);
             GoToStageSelectionScreen();
-        }
+        }*/
     }
     
     #endregion

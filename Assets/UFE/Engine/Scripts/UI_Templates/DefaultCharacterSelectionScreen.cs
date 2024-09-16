@@ -9,6 +9,7 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
+using UnityEngine.EventSystems;
 
 public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 {
@@ -113,7 +114,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
                 {
                     // this.TryDeselectCharacter(1);
-                    GoToPreviousScreen();
+                    
+                  //  GoToPreviousScreen();
                 })
             );
 
@@ -751,6 +753,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     #region protected instance methods
     protected override int GetMaxCharacterIndex()
     {
+        Debug.Log(Mathf.Min(this.selectableCharacters.Length, this.characters.Length) - 1);
         return Mathf.Min(this.selectableCharacters.Length, this.characters.Length) - 1;
     }
 
@@ -918,6 +921,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
     protected virtual void TryDeselectCharacter(AudioClip sound)
     {
+        GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
         this.TryDeselectCharacter();
     }
 
@@ -935,11 +939,11 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
             // this.TrySelectCharacter(playerIndex);
             this.characterSelectButton();
         } // Check if the Backspace key is pressed
-        if (Input.GetKeyDown(KeyCode.Backspace))
+      /*  if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
+           // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToPreviousScreen();
-        }
+        }*/
     }
 
     public void SelectHighlighter(int characterIndex)

@@ -11,9 +11,12 @@ public class DefaultControlGMScreen : ControlGMScreen
     public DefaultPauseScreen PauseScreen;
     public Button BackToPause;
     public PlaySFX playSfx;
-    
+    int i = 0;
+    public Sprite[] ControlTextures;
+    public UnityEngine.UI.Image LayoutImage;
+    public GameObject NextBtn, PrevBtn;
     #region public override methods
-    
+
     public override void DoFixedUpdate(
         IDictionary<InputReferences, InputEvents> player1PreviousInputs,
         IDictionary<InputReferences, InputEvents> player1CurrentInputs,
@@ -77,8 +80,38 @@ public class DefaultControlGMScreen : ControlGMScreen
         {
             PauseScreen.GoBackToPause();
         }
+
+        if (Input.GetAxis("P1JoystickHorizontal") > 0 || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("P1JoystickHorizontalDpad") > 0)
+        {
+            ChangeControlLayout(1);
+            NextBtn.SetActive(false);
+            PrevBtn.SetActive(true);
+        }
+        if (Input.GetAxis("P1JoystickHorizontal") < 0 || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("P1JoystickHorizontalDpad") < 0)
+        {
+            ChangeControlLayout(0);
+            PrevBtn.SetActive(false);
+            NextBtn.SetActive(true);
+        }
     }
 
     #endregion
-    
+
+    public void NextLayoutBtn()
+    {
+        ChangeControlLayout(1);
+
+        NextBtn.SetActive(false);
+        PrevBtn.SetActive(true);
+    }
+    public void PrevLayoutBtn()
+    {
+        ChangeControlLayout(0);
+        PrevBtn.SetActive(false);
+        NextBtn.SetActive(true);
+    }
+    public void ChangeControlLayout(int index)
+    {
+        LayoutImage.sprite = ControlTextures[index];
+    }
 }

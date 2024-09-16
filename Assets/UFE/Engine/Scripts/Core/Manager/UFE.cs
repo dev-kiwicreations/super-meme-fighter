@@ -2185,7 +2185,11 @@ public partial class UFE : MonoBehaviour, UFEInterface
             foreach (MoveInfo move in moveSet.attackMoves)
             {
                 foreach (MoveParticleEffect particle in move.particleEffects) SearchAndCastGameObject(particle, warmTimer);
-                foreach (Projectile projectile in move.projectiles) SearchAndCastGameObject(projectile, warmTimer);
+                foreach (Projectile projectile in move.projectiles)
+                {
+                    Debug.Log("Casting Projectile");
+                    SearchAndCastGameObject(projectile, warmTimer);
+                }
             }
         }
     }
@@ -2206,6 +2210,8 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
                 if (field.FieldType.Equals(typeof(GameObject)))
                 {
+                    Debug.Log("Instantiating Projectile");
+
                     GameObject tempGO = Instantiate((GameObject)fieldValue);
                     tempGO.transform.position = new Vector2(-999, -999);
                     Destroy(tempGO, warmTimer);

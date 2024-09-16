@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0400000006000000
+    buttonExecution: 0700000006000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -285,6 +285,8 @@ MonoBehaviour:
     impactDuration: 1
     fixedZAxis: 0
     projectileCollision: 1
+    isBoomerang: 0
+    BoomerangPrefab: {fileID: 0}
     unblockable: 1
     mirrorOn2PSide: 1
     destroyWhenOffCameraBounds: 0
@@ -642,6 +644,8 @@ MonoBehaviour:
     impactDuration: 1
     fixedZAxis: 0
     projectileCollision: 1
+    isBoomerang: 0
+    BoomerangPrefab: {fileID: 0}
     unblockable: 1
     mirrorOn2PSide: 1
     destroyWhenOffCameraBounds: 0
@@ -999,6 +1003,8 @@ MonoBehaviour:
     impactDuration: 1
     fixedZAxis: 0
     projectileCollision: 1
+    isBoomerang: 0
+    BoomerangPrefab: {fileID: 0}
     unblockable: 1
     mirrorOn2PSide: 1
     destroyWhenOffCameraBounds: 0

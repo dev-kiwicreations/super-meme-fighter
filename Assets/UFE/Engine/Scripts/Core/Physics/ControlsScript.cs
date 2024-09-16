@@ -97,6 +97,7 @@ public class ControlsScript : MonoBehaviour
     public HeadLookScript headLookScript;
     public GameObject emulatedCam;
     public CameraScript cameraScript;
+    public Vector3 boomerangTransform;
 
     public Text debugger;
     public string aiDebugger { get; set; }
@@ -119,6 +120,7 @@ public class ControlsScript : MonoBehaviour
 
     public void Init()
     {
+
         // Set Input Recording
         foreach (ButtonPress bp in System.Enum.GetValues(typeof(ButtonPress)))
         {
@@ -936,7 +938,6 @@ public class ControlsScript : MonoBehaviour
         }
     }
 
-
     private void TranslateInputs(
         IDictionary<InputReferences, InputEvents> previousInputs,
         IDictionary<InputReferences, InputEvents> currentInputs
@@ -1058,6 +1059,7 @@ public class ControlsScript : MonoBehaviour
 #if !UFE_LITE && !UFE_BASIC
                         if (UFE.config.gameplayType != GameplayType._3DArena && CanWalk())
                             myPhysicsScript.MoveX(-mirror, ev.axisRaw);
+
 #else
                         if (CanWalk()) myPhysicsScript.MoveX(-mirror, ev.axisRaw);
 #endif
@@ -1949,6 +1951,8 @@ public class ControlsScript : MonoBehaviour
 
     public void ReadMove(MoveInfo move)
     {
+
+        Debug.Log("Projectile Instantiated");
         if (move == null) return;
 
         potentialParry = 0;
@@ -2035,6 +2039,7 @@ public class ControlsScript : MonoBehaviour
         int projCount = 0;
         foreach (Projectile projectile in move.projectiles)
         {
+            Debug.Log("Projectile Fired");
             if (
                 !projectile.casted &&
                 projectile.projectilePrefab != null &&
@@ -2080,6 +2085,7 @@ public class ControlsScript : MonoBehaviour
                     projectileMoveScript.fpTransform = pTemp.AddComponent<FPTransform>();
                 }
 
+              
                 projectileMoveScript.fpTransform.position = newPos + new FPVector(projectile._castingOffSet.x * -mirror, projectile._castingOffSet.y, projectile._castingOffSet.z);
                 projectileMoveScript.data = projectile;
                 projectileMoveScript.data.uniqueId = move.id;

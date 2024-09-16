@@ -340,7 +340,7 @@ MonoBehaviour:
           hitBoxDefinitionIndex: 0
         reference: 1
         editorToggle: 0
-        soundEffectsToggle: 0
+        soundEffectsToggle: 1
       moveBack:
         id: 7b78e86c-0920-410e-81c6-9cb89a39f314
         animData:
@@ -853,7 +853,7 @@ MonoBehaviour:
         lockZMotion: 0
         loopDownClip: 0
         soundEffects:
-        - {fileID: 8300000, guid: ca30b687bd7188f4591ec450735bddab, type: 3}
+        - {fileID: 8300000, guid: 6dc69224ed4ae3c4dad80fdf30e1cf15, type: 3}
         continuousSound: 0
         particleEffect:
           editorToggle: 0
@@ -1171,7 +1171,8 @@ MonoBehaviour:
         lockYMotion: 0
         lockZMotion: 0
         loopDownClip: 0
-        soundEffects: []
+        soundEffects:
+        - {fileID: 0}
         continuousSound: 0
         particleEffect:
           editorToggle: 0
@@ -2957,10 +2958,10 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -3063,7 +3064,7 @@ MonoBehaviour:
           hitBoxDefinitionType: 0
         _animationSpeed:
           _serializedValue: 4294967296
-        wrapMode: 0
+        wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
         autoSpeed: 1
@@ -3401,7 +3402,7 @@ MonoBehaviour:
         lockZMotion: 0
         loopDownClip: 0
         soundEffects:
-        - {fileID: 8300000, guid: 09adc31c5d545164ca0c96ce85113b50, type: 3}
+        - {fileID: 8300000, guid: 674d964a88f960b4fb8e6df4cf707e10, type: 3}
         continuousSound: 0
         particleEffect:
           editorToggle: 0
@@ -3418,7 +3419,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 38
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       airRecovery:
         id: 24414078-6743-46d9-9b00-ba013597228e
@@ -3614,7 +3615,7 @@ MonoBehaviour:
         lockZMotion: 0
         loopDownClip: 0
         soundEffects:
-        - {fileID: 8300000, guid: 52caae0013b7cb941bb64788642349b6, type: 3}
+        - {fileID: 8300000, guid: 638d536a63ed88249bcff03cb33eae71, type: 3}
         continuousSound: 0
         particleEffect:
           editorToggle: 0
@@ -3721,7 +3722,7 @@ MonoBehaviour:
         lockZMotion: 0
         loopDownClip: 0
         soundEffects:
-        - {fileID: 8300000, guid: 52caae0013b7cb941bb64788642349b6, type: 3}
+        - {fileID: 8300000, guid: 638d536a63ed88249bcff03cb33eae71, type: 3}
         continuousSound: 0
         particleEffect:
           editorToggle: 0
@@ -4130,7 +4131,7 @@ MonoBehaviour:
         wrapMode: 8
         moveInfo: {fileID: 0}
         useMoveFile: 0
-        autoSpeed: 1
+        autoSpeed: 0
         _restingClipInterval:
           _serializedValue: 25769803776
         overrideBlendingIn: 0
@@ -4588,7 +4589,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 40
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       standUpFromAirHit:
         id: e79face6-6e64-44aa-9565-b72f8d906531
@@ -5966,7 +5967,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 54
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       moveEnabled: 1
       jumpEnabled: 1
@@ -5981,6 +5982,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0a9dfe064a7220418b47e9da23f1ea6, type: 2}
     - {fileID: 11400000, guid: 0e205681a1502934aac6d8786117736c, type: 2}
     - {fileID: 11400000, guid: 143308c5a8df5a142b44b204cecdc503, type: 2}
+    - {fileID: 11400000, guid: 4ec28f4b464d41146b17d7a8d712ee57, type: 2}
+    - {fileID: 11400000, guid: 200aa10a3f1d59e4dbfb2a981a5d6df4, type: 2}
     AM_File: {fileID: 0}
     enabledBasicMovesToggle: 0
     basicMovesToggle: 1

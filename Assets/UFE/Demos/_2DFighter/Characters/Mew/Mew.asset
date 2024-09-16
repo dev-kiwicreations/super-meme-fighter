@@ -233,14 +233,14 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 0
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       moveForward:
         id: 59198575-f19e-4b1e-bafd-9a1542399624
         animData:
         - id: 
-          clip: {fileID: 7400000, guid: 581c8fefba1cb314186e9037eafa86a3, type: 2}
-          customHitBoxDefinition: {fileID: 11400000, guid: d6f5176505020b247870a5080afd0627, type: 2}
+          clip: {fileID: 7400000, guid: 4c2509e4a81d75645a9b4f01eccb26a7, type: 2}
+          customHitBoxDefinition: {fileID: 11400000, guid: bfff5194bde9f7544b0ed34e4a9a6ebc, type: 2}
           length:
             _serializedValue: 2219066368
           bakeSpeed: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 1
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       moveBack:
         id: f2f20e94-8119-4880-81dc-885975ddebea
@@ -870,7 +870,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 5
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       jumpBack:
         id: 9be0b5d9-dfd5-47f6-bfbe-e00015a66d55
@@ -1188,7 +1188,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 8
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       fallBack:
         id: e777c886-7c30-4132-aef3-c6fc4a9dcd35
@@ -3418,7 +3418,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 38
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       airRecovery:
         id: 5bec41be-4468-41c4-ae89-37ead307255a
@@ -3738,7 +3738,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 23
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 1
       getHitLow:
         id: 4c0c691f-bbed-4425-92a6-c751472adcb7
@@ -4588,7 +4588,7 @@ MonoBehaviour:
           bodyPart: 0
           hitBoxDefinitionIndex: 0
         reference: 40
-        editorToggle: 0
+        editorToggle: 1
         soundEffectsToggle: 0
       standUpFromAirHit:
         id: 04266435-3e0d-4338-a5b7-0757c66ac4a4
@@ -5981,9 +5981,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fb0983f97ab2bf649970e6268dbfc0fd, type: 2}
     - {fileID: 11400000, guid: e5e3418ef348c964984f1530f68859a3, type: 2}
     - {fileID: 11400000, guid: bf8ff19532d51ae42b659e32c7813254, type: 2}
+    - {fileID: 11400000, guid: b418ea98eee77ab4d9cdd903c1b7d90e, type: 2}
+    - {fileID: 11400000, guid: b22dd31b48b6dc3419eb704d698f8bad, type: 2}
     AM_File: {fileID: 0}
-    enabledBasicMovesToggle: 1
-    basicMovesToggle: 1
+    enabledBasicMovesToggle: 0
+    basicMovesToggle: 0
     attackMovesToggle: 1
   aiInstructionsSet:
   - aiInfo: {fileID: 11400000, guid: b6aab449a11683144aa744471183370f, type: 2}

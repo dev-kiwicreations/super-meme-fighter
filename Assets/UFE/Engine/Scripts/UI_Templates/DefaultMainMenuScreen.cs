@@ -84,6 +84,8 @@ public class DefaultMainMenuScreen : MainMenuScreen
         }
         if (confirmButtonDown)
         {
+
+            UFE.PlaySound(cancelSound);
             if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject)
             {
                 DirectlyStartPlayerVersusCPU();

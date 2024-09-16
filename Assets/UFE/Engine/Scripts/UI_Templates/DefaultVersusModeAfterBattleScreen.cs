@@ -62,10 +62,13 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             {
                 UFE.PlaySound(moveCursorSound);
                 BackToMainMenu.Select();
+
             }
         }
         if (confirmButtonDown)
         {
+           /* Debug.Log(">>>> Button MainMenu Selected");
+
             if (EventSystem.current.currentSelectedGameObject == PlayAgain.gameObject)
             {
                 UFE.PlaySound(selectSound);
@@ -73,13 +76,16 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToMainMenu.gameObject)
             {
+                Debug.Log("Main Called");
                 UFE.PlaySound(selectSound);
                 GoToMainMenu();
-            }
+            }*/
         }
         if (cancelButtonDown)
         {
-            GoToStageSelectionScreen();
+            Debug.Log(">>>> Cancel MainMenu Selected");
+
+            //GoToStageSelectionScreen();
         }
     }
     
@@ -87,16 +93,27 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-            RepeatBattle();
-        } // Check if the Backspace key is pressed
+       if (Input.GetKeyDown(KeyCode.Return))
+       {
+            if (EventSystem.current.currentSelectedGameObject == PlayAgain.gameObject)
+            {
+                UFE.PlaySound(selectSound);
+                RepeatBattle();
+            }
+            else if (EventSystem.current.currentSelectedGameObject == BackToMainMenu.gameObject)
+            {
+                Debug.Log("Main Called");
+                UFE.PlaySound(selectSound);
+                GoToMainMenu();
+            }
+       }
+        
+       /*  // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToMainMenu();
-        }
+        }*/
     }
 
     private void OnDisable()

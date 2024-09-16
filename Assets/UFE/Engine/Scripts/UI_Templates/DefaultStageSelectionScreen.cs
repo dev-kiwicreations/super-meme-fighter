@@ -91,11 +91,11 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
+      /*  if (Input.GetKeyDown(KeyCode.Backspace))
         {
             playSfx.PlaySfx(playSfx.clickSound);
             GoToCharacterSelectionScreen();
-        }
+        }*/
     }
 
     public override void OnShow()
@@ -376,17 +376,19 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         {
             if (EventSystem.current.currentSelectedGameObject == ConfirmStage.gameObject)
             {
-                UFE.PlaySound(selectSound);
+                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
                 GoToStageReadyScreen();
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToCharacterSelect.gameObject)
             {
-                UFE.PlaySound(clickSound);
+                GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
                 GoToCharacterSelectionScreen();
             }
         }
         if (cancelButtonDown)
         {
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
+
             GoToCharacterSelectionScreen();
         }
     }

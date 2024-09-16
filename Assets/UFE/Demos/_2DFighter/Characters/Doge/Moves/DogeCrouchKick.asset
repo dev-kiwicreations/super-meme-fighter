@@ -95,9 +95,9 @@ MonoBehaviour:
     onPressExecution: 1
     buttonSequence: 
     buttonExecution: 
-    editorToggle: 0
-    buttonSequenceToggle: 0
-    buttonExecutionToggle: 0
+    editorToggle: 1
+    buttonSequenceToggle: 1
+    buttonExecutionToggle: 1
   previousMoves: []
   opponentConditions:
     basicMoveLimitation: 
@@ -119,10 +119,10 @@ MonoBehaviour:
       standBy: 1
       blocking: 0
       blockStunned: 0
-      stunned: 0
+      stunned: 1
       resetStunValue: 0
-    basicMovesToggle: 0
-    statesToggle: 0
+    basicMovesToggle: 1
+    statesToggle: 1
   moveClassification:
     attackType: 1
     hitType: 0

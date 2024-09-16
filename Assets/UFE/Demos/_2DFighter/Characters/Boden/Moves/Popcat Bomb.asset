@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0600000005000000
+    buttonExecution: 0500000006000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -130,7 +130,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 0
+    sounds:
+    - {fileID: 8300000, guid: 7a9407805175da0439d0b8ee0a86a9a9, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
@@ -138,7 +142,7 @@ MonoBehaviour:
   blockableArea:
     enabled: 1
     activeFramesBegin: 0
-    activeFramesEnds: 0
+    activeFramesEnds: 60
     bodyPart: 0
     hitBoxDefinitionIndex: 0
     shape: 0

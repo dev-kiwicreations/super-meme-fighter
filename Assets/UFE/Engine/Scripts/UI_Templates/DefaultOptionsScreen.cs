@@ -427,11 +427,11 @@ public class DefaultOptionsScreen : OptionsScreen
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
+    /*    if (Input.GetKeyDown(KeyCode.Backspace))
         {
             playSfx.PlaySfx(playSfx.clickSound);
                 GoToMainMenuScreen();
-        }
+        }*/
     }
     public override void DoFixedUpdate(
         IDictionary<InputReferences, InputEvents> player1PreviousInputs,
@@ -448,6 +448,7 @@ public class DefaultOptionsScreen : OptionsScreen
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),null,
             new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
             {
+                playSfx.PlaySfx(playSfx.clickSound);
                 GoToMainMenuScreen();
             }));
     }
@@ -542,13 +543,13 @@ public class DefaultOptionsScreen : OptionsScreen
                 }
             }
         }
-        if (confirmButtonDown)
+       /* if (confirmButtonDown)
         {
             if(EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
             {
                 GoToMainMenuScreen();
             }
-        }
+        }*/
     }
     
 }

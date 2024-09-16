@@ -53,7 +53,7 @@ MonoBehaviour:
   totalFrames: 61
   startUpFrames: 0
   activeFrames: 1
-  recoveryFrames: 2
+  recoveryFrames: 60
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0600000004000000
+    buttonExecution: 0700000006000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
     onPressExecution: 1
     buttonSequence: 
     buttonExecution: 
-    editorToggle: 0
+    editorToggle: 1
     buttonSequenceToggle: 0
     buttonExecutionToggle: 0
   previousMoves: []
@@ -130,7 +130,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 0
+    sounds:
+    - {fileID: 8300000, guid: cd602c35ad30d03488a09e476a3619ca, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
@@ -138,7 +142,7 @@ MonoBehaviour:
   blockableArea:
     enabled: 1
     activeFramesBegin: 0
-    activeFramesEnds: 0
+    activeFramesEnds: 60
     bodyPart: 0
     hitBoxDefinitionIndex: 0
     shape: 0
@@ -274,13 +278,15 @@ MonoBehaviour:
         _serializedValue: 0
       z:
         _serializedValue: 0
-    speed: 15
+    speed: 20
     directionAngle: 0
     _duration:
       _serializedValue: 12884901888
     impactDuration: 1
     fixedZAxis: 0
     projectileCollision: 1
+    isBoomerang: 0
+    BoomerangPrefab: {fileID: 0}
     unblockable: 1
     mirrorOn2PSide: 0
     destroyWhenOffCameraBounds: 0
@@ -614,7 +620,7 @@ MonoBehaviour:
     moveLinkOnBlock: {fileID: 0}
     moveLinkOnParry: {fileID: 0}
     forceGrounded: 0
-    moveLinksToggle: 0
+    moveLinksToggle: 1
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
     preview: 1

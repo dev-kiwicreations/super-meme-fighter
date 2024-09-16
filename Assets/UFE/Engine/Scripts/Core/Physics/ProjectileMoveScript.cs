@@ -2,6 +2,7 @@ using UnityEngine;
 using UFENetcode;
 using FPLibrary;
 using System.Collections.Generic;
+using UnityEditor;
 
 namespace UFE3D
 {
@@ -35,6 +36,14 @@ namespace UFE3D
         [RecordVar] public Fix64 spaceBetweenHits = .1;
         [RecordVar] public FPVector relativeSpawnPosition;
         #endregion
+
+
+
+        public delegate void onTriggerBoomerang(Transform pos);
+        public static event onTriggerBoomerang TriggerBoomerang;
+
+
+        bool reverse;
 
         public override void UFEStart()
         {
@@ -178,7 +187,6 @@ namespace UFE3D
 
             return false;
         }
-
         public override void UFEFixedUpdate()
         {
             if (isDestroyed || UFE.freezePhysics) return;
@@ -211,6 +219,7 @@ namespace UFE3D
                 // Move Projectile
                 if (data.applyGravity)
                 {
+                   
                     verticalForce -= UFE.config._gravity * data.weight * UFE.fixedDeltaTime;
                     FPVector newPosition = fpTransform.position;
 
@@ -221,6 +230,8 @@ namespace UFE3D
 
                     newPosition.y += verticalForce * UFE.fixedDeltaTime;
                     fpTransform.position = newPosition;
+
+                   
                 }
                 else
                 {
@@ -288,11 +299,28 @@ namespace UFE3D
                 IsCollidingCharacter(opAssist);
             }
 
-
             // Update Unity Transform
             transform.position = fpTransform.position.ToVector();
+
+          
         }
 
+        public static Transform pos_;
+
+        public void InstantiateBoomerang()
+        {
+
+            Transform pos = myControlsScript.transform;
+           pos_ = pos;
+           Debug.Log("{{{{"+myControlsScript.gameObject.name);
+           GameObject obj = Instantiate(data.BoomerangPrefab,this.transform.position,data.BoomerangPrefab.transform.rotation ,this.transform.parent);
+        }
+
+        public static void SetPositionTarget()
+        {
+            TriggerBoomerang.Invoke(pos_);
+        }
+        
 
         public void IsCollidingProjectile(ControlsScript opControlsScript)
         {
@@ -318,7 +346,10 @@ namespace UFE3D
 
         public void IsCollidingCharacter(ControlsScript opControlsScript)
         {
-            if (isHit > 0 || !opControlsScript.GetActive()) return;
+            if (isHit > 0 || !opControlsScript.GetActive())
+            {
+                return;
+            }
 
             FPVector[] collisionVectors = CollisionManager.TestCollision(opControlsScript.HitBoxes.hitBoxes, new HurtBox[] { hurtBox }, HitConfirmType.Hit, false, mirror > 0);
             if (collisionVectors.Length > 0 && opControlsScript.ValidateHit(hit))
@@ -367,6 +398,7 @@ namespace UFE3D
 
         public void ProjectileHit()
         {
+            Debug.Log("Boomerang EFFect");
             if (data.impactPrefab != null)
             {
                 string uniqueId = data.impactPrefab.name + myControlsScript.playerNum.ToString() + UFE.currentFrame;
@@ -378,12 +410,30 @@ namespace UFE3D
                 }
             }
             totalHits--;
-            if (totalHits <= 0) UFE.DestroyGameObject(gameObject);
+           
+            if (totalHits <= 0)
+            {
+                /*if (data.isBoomerang)
+                {
+                    *//*   data.forceApplied.x = -data.forceApplied.x;
+                       reverse = true;*//*
+                    InstantiateBoomerang();
 
+                }
+                else
+                {
+                }*/
+                    UFE.DestroyGameObject(gameObject);
+
+            }
+            // activateBoomerang.Invoke(fpTransform.position.ToVector());
             isHit = spaceBetweenHits;
         }
 
-
+        public void InvokeDestroy()
+        {
+            UFE.DestroyGameObject(gameObject);
+        }
         public Rect GetBounds()
         {
             if (projectileRenderer != null)

@@ -26,7 +26,7 @@ MonoBehaviour:
     _serializedValue: 4294967296
   wrapMode: 0
   characterPrefabStorage: 0
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 8163239627644416165, guid: bc72aa5ed8eb2384c9288c9f5d8bb3cc, type: 3}
   prefabResourcePath: 
   moveName: Popcat Claw
   description: 
@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0600000007000000
+    buttonExecution: 0400000006000000
     editorToggle: 1
     buttonSequenceToggle: 1
     buttonExecutionToggle: 1
@@ -142,7 +142,11 @@ MonoBehaviour:
   bodyPartVisibilityChanges: []
   opponentOverride: []
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 9
+    sounds:
+    - {fileID: 8300000, guid: 5c78e4fcf0cbe6d4ab9caee5c864145c, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
@@ -387,33 +391,33 @@ MonoBehaviour:
         _x:
           _serializedValue: 0
         _y:
-          _serializedValue: 7129645568
+          _serializedValue: 0
         topRight:
           x:
             _serializedValue: 19456202752
           y:
-            _serializedValue: 7129645568
+            _serializedValue: 0
           z:
             _serializedValue: 0
         topLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 7129645568
+            _serializedValue: 0
           z:
             _serializedValue: 0
         bottomRight:
           x:
             _serializedValue: 19456202752
           y:
-            _serializedValue: 21474836480
+            _serializedValue: 14345190400
           z:
             _serializedValue: 0
         bottomLeft:
           x:
             _serializedValue: 0
           y:
-            _serializedValue: 21474836480
+            _serializedValue: 14345190400
           z:
             _serializedValue: 0
         width:
@@ -423,7 +427,7 @@ MonoBehaviour:
         xMax:
           _serializedValue: 19456202752
         yMax:
-          _serializedValue: 21474836480
+          _serializedValue: 14345190400
       shape: 1
       type: 0
   blockableArea:

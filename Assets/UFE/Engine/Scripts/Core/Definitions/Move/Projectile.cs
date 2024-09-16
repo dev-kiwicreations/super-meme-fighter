@@ -20,6 +20,8 @@ public class Projectile : ICloneable
     public float impactDuration = 1;
     public bool fixedZAxis;
     public bool projectileCollision;
+    public bool isBoomerang;
+    public GameObject BoomerangPrefab;
     public bool unblockable;
     public bool mirrorOn2PSide;
     public bool destroyWhenOffCameraBounds;

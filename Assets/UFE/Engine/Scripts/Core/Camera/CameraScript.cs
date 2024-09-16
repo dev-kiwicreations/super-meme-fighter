@@ -88,16 +88,24 @@ namespace UFE3D
                 if (UFE.config.gameplayType == GameplayType._2DFighter)
                 {
                     Vector3 newPosition = ((player1.transform.position + player2.transform.position) / 2) + UFE.config.cameraOptions.initialDistance;
-                    float highestPos = player1.transform.position.y > player2.transform.position.y ? player1.transform.position.y : player2.transform.position.y;
+                    float highestPos = player1.transform.position.y;
                     if (UFE.config.cameraOptions.verticalPriority != VerticalPriority.Disabled && highestPos >= UFE.config.cameraOptions.verticalThreshold)
                     {
                         if (UFE.config.cameraOptions.verticalPriority == VerticalPriority.AverageDistance)
                         {
-                            newPosition.y += Mathf.Abs(player1.transform.position.y - player2.transform.position.y) / 2;
+                            // newPosition.y += Mathf.Abs(player1.transform.position.y - player2.transform.position.y) / 2;
+                                newPosition.y += Mathf.Abs(player1.transform.position.y) / 2;
+
                         }
                         else if (UFE.config.cameraOptions.verticalPriority == VerticalPriority.HighestCharacter)
                         {
-                            newPosition.y += highestPos;
+                            if(player1.transform.position.y > player2.transform.position.y)
+                            {
+                                newPosition.y += (highestPos) / 2.5f;
+
+                            }
+                            else newPosition.y = UFE.config.cameraOptions.initialDistance.y;
+
                         }
                     }
                     else

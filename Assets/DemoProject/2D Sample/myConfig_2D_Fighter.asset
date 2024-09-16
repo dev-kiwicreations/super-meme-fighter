@@ -152,11 +152,15 @@ MonoBehaviour:
           possibleStagesIndexes: 00000000
         showOpponentsInEditor: 1
       showStoryInEditor: 1
-    selectableCharactersInStoryMode: 01000000000000000200000003000000040000000500000006000000070000000800000009000000
-    selectableCharactersInVersusMode: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    selectableCharactersInStoryMode: 010000000000000002000000030000000400000005000000060000000700000008000000090000000a000000
+    selectableCharactersInVersusMode: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
     characterStories:
-      _keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+      _keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
       _values:
+      - opening: {fileID: 0}
+        ending: {fileID: 0}
+        fightsGroups: []
+        showStoryInEditor: 0
       - opening: {fileID: 0}
         ending: {fileID: 0}
         fightsGroups: []
@@ -276,7 +280,7 @@ MonoBehaviour:
     enableZoom: 0
     followCharacters: 0
     initialFieldOfView: 16
-    verticalPriority: 0
+    verticalPriority: 2
     verticalThreshold: 0
     movementSpeed: 12
     minZoom: 40
@@ -1322,6 +1326,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a22f5315d477254faeb77e8e77f1490, type: 2}
   - {fileID: 11400000, guid: 2e33b5283554a61478ac640c8b2f58c7, type: 2}
   - {fileID: 11400000, guid: 1f2adee20440ef44f8b892659cc4ad27, type: 2}
+  - {fileID: 11400000, guid: feb85eb564010384586f5a2f1be9f6f4, type: 2}
   teamModes:
   - modeName: Tag Battle (DBZF\Marvel) - 2D 3v3 Tag Team
     teams:
@@ -1525,7 +1530,7 @@ MonoBehaviour:
     emulateNetwork: 0
     trainingModeDebugger: 0
     preloadedObjects: 0
-    inputsToggle: 1
+    inputsToggle: 0
     networkToggle: 1
     recordToggle: 1
     hitboxColorsToggle: 1
@@ -2164,19 +2169,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 2
+    selectedDifficultyLevel: 5
     selectedDifficulty:
-      difficultyLevel: 2
+      difficultyLevel: 5
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.1
+      timeBetweenDecisions: 0
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.1
+      timeBetweenActions: 0.001
       overrideAggressiveness: 1
-      aggressiveness: 0.7
+      aggressiveness: 0.9
       overrideRuleCompliance: 1
-      ruleCompliance: 0.6
+      ruleCompliance: 0.7
       overrideComboEfficiency: 0
-      comboEfficiency: 0.7
+      comboEfficiency: 1
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
@@ -2227,7 +2232,7 @@ MonoBehaviour:
     synchronizationMessageFrequency: 0
     synchronizationAction: 2
   music: 1
-  musicVolume: 1
+  musicVolume: 0.0108764265
   soundfx: 1
   soundfxVolume: 1
   colorStateOne: {r: 1, g: 0, b: 0, a: 1}
