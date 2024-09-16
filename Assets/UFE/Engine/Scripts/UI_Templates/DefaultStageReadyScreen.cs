@@ -22,6 +22,7 @@ public class DefaultStageReadyScreen : StageReadyScreen
     public Vector3 positionPlayer2 = new Vector3(4, 0, 0);
 
     public Text mapName;
+    bool loadingGamePlay;
     public GameObject area51png;
     public PlaySFX playSfx;
     
@@ -299,8 +300,10 @@ public class DefaultStageReadyScreen : StageReadyScreen
         {
             if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject)
             {
+
                 UFE.PlaySound(yesSound);
-                GoToLoadingBattleScreen();
+                if (!loadingGamePlay) GoToLoadingBattleScreen();
+                loadingGamePlay = true;
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject)
             {
