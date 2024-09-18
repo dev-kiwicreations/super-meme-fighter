@@ -115,7 +115,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 {
                     // this.TryDeselectCharacter(1);
                     
-                  //  GoToPreviousScreen();
+                    GoToPreviousScreen();
                 })
             );
 
@@ -196,17 +196,17 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
     public override void SetHoverIndex(int player, int characterIndex)
     {
-        Debug.Log("SetHoverIndex. player: " + player + " characterIndex: " + characterIndex);
-        Debug.Log("Before");
-        Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
+      //  Debug.Log("SetHoverIndex. player: " + player + " characterIndex: " + characterIndex);
+      //  Debug.Log("Before");
+       // Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
 
         int maxCharacterIndex = this.GetMaxCharacterIndex();
         this.p1HoverIndex = Mathf.Clamp(this.p1HoverIndex, 0, maxCharacterIndex);
         this.p2HoverIndex = Mathf.Clamp(this.p2HoverIndex, 0, maxCharacterIndex);
         base.SetHoverIndex(player, characterIndex);
 
-        Debug.Log("After");
-        Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
+     //   Debug.Log("After");
+      //  Debug.Log("p1HoverIndex: " + p1HoverIndex + " p2HoverIndex: " + p2HoverIndex + " this.GetMaxCharacterIndex(): " + this.GetMaxCharacterIndex());
         if (characterIndex >= 0 && characterIndex <= maxCharacterIndex)
         {
             UFE3D.CharacterInfo character = this.selectableCharacters[characterIndex];
@@ -922,7 +922,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     protected virtual void TryDeselectCharacter(AudioClip sound)
     {
         GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-        this.TryDeselectCharacter();
+     //   this.TryDeselectCharacter();
     }
 
     protected virtual void TrySelectCharacter(AudioClip sound)
@@ -933,13 +933,13 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+      /*  if (Input.GetKeyDown(KeyCode.Return))
         {
             // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().characterSound);
             // this.TrySelectCharacter(playerIndex);
             this.characterSelectButton();
         } // Check if the Backspace key is pressed
-      /*  if (Input.GetKeyDown(KeyCode.Backspace))
+      *//*  if (Input.GetKeyDown(KeyCode.Backspace))
         {
            // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToPreviousScreen();

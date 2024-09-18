@@ -16,10 +16,10 @@ MonoBehaviour:
   gameplayType: 0
   animData:
     id: 
-    clip: {fileID: 0}
+    clip: {fileID: 7400000, guid: 8b25e17ed4b333842a67a0caeb147dcd, type: 2}
     customHitBoxDefinition: {fileID: 0}
     length:
-      _serializedValue: 0
+      _serializedValue: 4294967296
     bakeSpeed: 0
     hitBoxDefinitionType: 0
   _animationSpeed:
@@ -107,15 +107,15 @@ MonoBehaviour:
   selfConditions:
     basicMoveLimitation: 
     possibleMoveStates: []
-    basicMovesToggle: 0
-    statesToggle: 0
+    basicMovesToggle: 1
+    statesToggle: 1
   moveClassification:
     attackType: 0
     hitType: 0
     startupSpeed: 0
     recoverySpeed: 0
     hitConfirmType: 0
-    preferableDistance: 0
+    preferableDistance: 1
     gaugeUsage: 1
     anyAttackType: 1
     anyHitType: 1
@@ -126,8 +126,8 @@ MonoBehaviour:
     onStrike: 1
     onBlock: 1
     onParry: 1
-    activeFramesBegins: 55
-    activeFramesEnds: 60
+    activeFramesBegins: 10
+    activeFramesEnds: 14
     counterMoveType: 0
     counterMoveFilter: {fileID: 0}
     disableHitImpact: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
     hitType: 0
     ignoreInputs: 1
     ignorePlayerConditions: 1
-    ignoreGauge: 0
+    ignoreGauge: 1
     nextMoveStartupFrame: 1
     linkableMoves:
     - {fileID: 0}
@@ -147,12 +147,12 @@ MonoBehaviour:
     - move: {fileID: 11400000, guid: 8f9cec0ecc3de7949ad7736e0ed8b65c, type: 2}
       characterName: Shiba
     linkableMovesToggle: 1
-    hitConfirmToggle: 1
+    hitConfirmToggle: 0
     counterMoveToggle: 0
     useCharacterMoves: 1
   gauges: []
   sortOrder:
-  - castingFrame: 0
+  - castingFrame: 10
     value: -10
     editorToggle: 0
   particleEffects: []
