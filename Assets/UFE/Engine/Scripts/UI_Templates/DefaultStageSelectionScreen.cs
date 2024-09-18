@@ -91,7 +91,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
 
     private void Update()
     {
-      /*  if (Input.GetKeyDown(KeyCode.Backspace))
+      /* if (Input.GetKeyDown(KeyCode.Backspace))
         {
             playSfx.PlaySfx(playSfx.clickSound);
             GoToCharacterSelectionScreen();
@@ -388,7 +388,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
         if (cancelButtonDown)
         {
             GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-
+            Debug.Log("Cancel Button Called!");
             GoToCharacterSelectionScreen();
         }
     }

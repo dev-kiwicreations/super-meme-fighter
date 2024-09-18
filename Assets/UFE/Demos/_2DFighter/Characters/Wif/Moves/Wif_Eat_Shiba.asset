@@ -106,7 +106,21 @@ MonoBehaviour:
     statesToggle: 0
   selfConditions:
     basicMoveLimitation: 
-    possibleMoveStates: []
+    possibleMoveStates:
+    - possibleState: 0
+      jumpArc: 0
+      jumpArcBegins: 0
+      jumpArcEnds: 100
+      opponentDistance: 6
+      proximityRangeBegins: 10
+      proximityRangeEnds: 30
+      movingForward: 0
+      movingBack: 0
+      standBy: 1
+      blocking: 0
+      blockStunned: 0
+      stunned: 0
+      resetStunValue: 0
     basicMovesToggle: 0
     statesToggle: 1
   moveClassification:
@@ -141,12 +155,12 @@ MonoBehaviour:
     castingFrame: 1
     stun: 1
     _stunTime:
-      _serializedValue: 128849018880
+      _serializedValue: 300647710720
     overrideHitAnimations: 1
     resetAppliedForces: 1
-    standUpOptions: 1
+    standUpOptions: 0
     characterSpecific: 0
-    move: {fileID: 0}
+    move: {fileID: 11400000, guid: 6a46f06f86364544984051c55c17f715, type: 2}
     characterSpecificMoves:
     - move: {fileID: 11400000, guid: 6a46f06f86364544984051c55c17f715, type: 2}
       characterName: Shiba
@@ -165,7 +179,7 @@ MonoBehaviour:
     techMove: {fileID: 0}
     techable: 1
     resetHitAnimations: 1
-    forceStand: 0
+    forceStand: 1
     fixRotation: 0
     armorBreaker: 0
     continuousHit: 0
@@ -368,7 +382,7 @@ MonoBehaviour:
         z:
           _serializedValue: 0
     hitToggle: 1
-    damageOptionsToggle: 0
+    damageOptionsToggle: 1
     hitStunOptionsToggle: 0
     forceOptionsToggle: 0
     opponentForceToggle: 1
@@ -377,7 +391,7 @@ MonoBehaviour:
     overrideEventsToggle: 0
     hitConditionsToggle: 0
     pullInToggle: 0
-    hurtBoxesToggle: 1
+    hurtBoxesToggle: 0
     wallBounceToggle: 0
     groundBounceToggle: 0
     hurtBoxes:
@@ -439,8 +453,8 @@ MonoBehaviour:
       type: 0
   blockableArea:
     enabled: 0
-    activeFramesBegin: 41
-    activeFramesEnds: 45
+    activeFramesBegin: 57
+    activeFramesEnds: 60
     bodyPart: 0
     hitBoxDefinitionIndex: 0
     shape: 0
