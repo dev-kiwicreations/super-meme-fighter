@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: Wif_Eat_Shiba
+  m_Name: Wif_Eat_Startt
   m_EditorClassIdentifier: 
   id: 7456e840-df5e-413c-a5cb-8e1ad91f482d
   gameplayType: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   characterPrefabStorage: 0
   characterPrefab: {fileID: 8441277510628428427, guid: 7915baebfcdcf9948b2528925a641331, type: 3}
   prefabResourcePath: 
-  moveName: Wif_Eat_Opp
+  moveName: wif_eat_start
   description: 
   fps: 60
   ignoreGravity: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   fixedSpeed: 1
   animSpeedKeyFrame: []
   totalFrames: 61
-  startUpFrames: 0
-  activeFrames: 61
+  startUpFrames: 55
+  activeFrames: 6
   recoveryFrames: 0
   applyRootMotion: 0
   lockXMotion: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     requireButtonPress: 1
     onPressExecution: 1
     buttonSequence: 
-    buttonExecution: 0400000006000000
+    buttonExecution: 0500000006000000
     editorToggle: 1
     buttonSequenceToggle: 0
     buttonExecutionToggle: 1
@@ -124,12 +124,12 @@ MonoBehaviour:
     basicMovesToggle: 0
     statesToggle: 0
   moveClassification:
-    attackType: 0
+    attackType: 1
     hitType: 0
-    startupSpeed: 0
-    recoverySpeed: 0
+    startupSpeed: 1
+    recoverySpeed: 5
     hitConfirmType: 0
-    preferableDistance: 0
+    preferableDistance: 2
     gaugeUsage: 1
     anyAttackType: 1
     anyHitType: 1
@@ -158,12 +158,10 @@ MonoBehaviour:
       _serializedValue: 257698037760
     overrideHitAnimations: 1
     resetAppliedForces: 1
-    standUpOptions: 0
+    standUpOptions: 1
     characterSpecific: 0
-    move: {fileID: 11400000, guid: 6a46f06f86364544984051c55c17f715, type: 2}
+    move: {fileID: 0}
     characterSpecificMoves:
-    - move: {fileID: 11400000, guid: 6a46f06f86364544984051c55c17f715, type: 2}
-      characterName: Shiba
     - move: {fileID: 11400000, guid: 9b5191e348b6f6d4694187a402a949ca, type: 2}
       characterName: Brett
     - move: {fileID: 11400000, guid: 533fdea26fda820419f70e25c8d3120e, type: 2}
@@ -184,15 +182,21 @@ MonoBehaviour:
       characterName: Trump
     - move: {fileID: 11400000, guid: a8d71ab7f3ca5a846a34301038c32b87, type: 2}
       characterName: Wif
+    - move: {fileID: 11400000, guid: 6a46f06f86364544984051c55c17f715, type: 2}
+      characterName: Shiba
     animationPreview: 0
     movesToggle: 1
   characterAssist: []
-  soundEffects: []
+  soundEffects:
+  - castingFrame: 0
+    sounds:
+    - {fileID: 8300000, guid: 75177b4061af1b64ebad8adc00b30e91, type: 3}
+    soundEffectsToggle: 1
   inGameAlert: []
   stanceChanges: []
   cameraMovements: []
   hits:
-  - activeFramesBegin: 0
+  - activeFramesBegin: 55
     activeFramesEnds: 60
     hitConfirmType: 0
     throwMove: {fileID: 0}
@@ -213,8 +217,8 @@ MonoBehaviour:
     opponentConditions:
       basicMoveLimitation: 
       possibleMoveStates: []
-      basicMovesToggle: 0
-      statesToggle: 0
+      basicMovesToggle: 1
+      statesToggle: 1
     downHit: 0
     resetPreviousHitStun: 0
     resetCrumples: 0
@@ -402,15 +406,15 @@ MonoBehaviour:
         z:
           _serializedValue: 0
     hitToggle: 1
-    damageOptionsToggle: 0
+    damageOptionsToggle: 1
     hitStunOptionsToggle: 0
     forceOptionsToggle: 0
     opponentForceToggle: 1
     selfForceToggle: 0
-    stageReactionsToggle: 1
+    stageReactionsToggle: 0
     overrideEventsToggle: 1
-    hitConditionsToggle: 0
-    pullInToggle: 1
+    hitConditionsToggle: 1
+    pullInToggle: 0
     hurtBoxesToggle: 0
     wallBounceToggle: 0
     groundBounceToggle: 0

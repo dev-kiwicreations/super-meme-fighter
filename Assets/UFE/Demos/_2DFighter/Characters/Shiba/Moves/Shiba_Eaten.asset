@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03f9522b1b0f53b4c87d047ac5c3794f, type: 3}
-  m_Name: Shiba_GetEaten
+  m_Name: Shiba_Eaten
   m_EditorClassIdentifier: 
   id: 502d8b8c-c8ec-472c-b4f9-2ead52ed51f8
   gameplayType: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   characterPrefabStorage: 0
   characterPrefab: {fileID: 0}
   prefabResourcePath: 
-  moveName: Shiba_Get_Eaten
+  moveName: Shiba_Eaten
   description: 
   fps: 60
   ignoreGravity: 0
@@ -52,8 +52,8 @@ MonoBehaviour:
   animSpeedKeyFrame: []
   totalFrames: 61
   startUpFrames: 0
-  activeFrames: 61
-  recoveryFrames: 0
+  activeFrames: 57
+  recoveryFrames: 4
   applyRootMotion: 0
   lockXMotion: 0
   lockYMotion: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   cameraMovements: []
   hits:
   - activeFramesBegin: 0
-    activeFramesEnds: 60
+    activeFramesEnds: 56
     hitConfirmType: 0
     throwMove: {fileID: 0}
     techMove: {fileID: 0}
