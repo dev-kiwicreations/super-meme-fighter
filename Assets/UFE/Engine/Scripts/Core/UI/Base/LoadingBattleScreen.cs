@@ -1,4 +1,6 @@
-﻿namespace UFE3D
+﻿using System.Diagnostics;
+
+namespace UFE3D
 {
 	public class LoadingBattleScreen : UFEScreen
 	{

@@ -146,7 +146,7 @@ public partial class UFE
 		}
 	}
 
-	public static void ShowScreen(UFEScreen screen, Action nextScreenAction = null)
+	public static void ShowScreen(UFEScreen screen, Action nextScreenAction = null,bool restart = false)
 	{
 		if (screen != null)
 		{
@@ -165,7 +165,8 @@ public partial class UFE
 			}
 
 			UFE.currentScreen.OnShow();
-		}
+			if(restart) UFE.OnGameRestart();
+        }
 	}
 
 	public static void Quit()
@@ -335,7 +336,9 @@ public partial class UFE
 
 	public static void StartGame(float fadeTime)
 	{
-		if (UFE.currentScreen.hasFadeOut)
+
+        Debug.Log("STARTING GAME");
+        if (UFE.currentScreen.hasFadeOut)
 		{
 			UFE.eventSystem.enabled = false;
 			CameraFade.StartAlphaFade(
@@ -583,9 +586,9 @@ public partial class UFE
 		UFE.StartControlGMScreen((float)UFE.config.gameGUI.screenFadeDuration);
 	}
 	
-	public static void StartStageReadyScreen()
+	public static void StartStageReadyScreen(bool Restart = false)
 	{
-		UFE.StartStageReadyScreen((float)UFE.config.gameGUI.screenFadeDuration);
+		UFE.StartStageReadyScreen((float)UFE.config.gameGUI.screenFadeDuration,Restart);
 	}
 
 	public static void StartPauseScreen()
@@ -650,7 +653,7 @@ public partial class UFE
 		}
 	}
 	
-	public static void StartStageReadyScreen(float fadeTime)
+	public static void StartStageReadyScreen(float fadeTime, bool restart= false)
 	{
 		if (UFE.currentScreen.hasFadeOut)
 		{
@@ -661,11 +664,11 @@ public partial class UFE
 				fadeTime / 2f,
 				0f
 			);
-			UFE.DelayLocalAction(() => { UFE.eventSystem.enabled = true; UFE._StartStageReadyScreen(fadeTime / 2f); }, (Fix64)fadeTime / 2);
+			UFE.DelayLocalAction(() => { UFE.eventSystem.enabled = true; UFE._StartStageReadyScreen(fadeTime / 2f, restart); }, (Fix64)fadeTime / 2);
 		}
 		else
 		{
-			UFE._StartStageReadyScreen(fadeTime / 2f);
+			UFE._StartStageReadyScreen(fadeTime / 2f,restart);
 		}
 	}
 	
@@ -1576,7 +1579,7 @@ public partial class UFE
 		}
 	}	
 	
-	private static void _StartStageReadyScreen(float fadeTime)
+	private static void _StartStageReadyScreen(float fadeTime,bool restart = false)
 	{
 		UFE.HideScreen(UFE.currentScreen);
 		if (UFE.config.gameGUI.stageReadyScreen == null)
@@ -1585,7 +1588,7 @@ public partial class UFE
 		}
 		else
 		{
-			UFE.ShowScreen(UFE.config.gameGUI.stageReadyScreen);
+			UFE.ShowScreen(UFE.config.gameGUI.stageReadyScreen,null,restart);
 			if (!UFE.config.gameGUI.stageReadyScreen.hasFadeIn) fadeTime = 0;
 			CameraFade.StartAlphaFade(UFE.config.gameGUI.screenFadeColor, true, fadeTime);
 		}

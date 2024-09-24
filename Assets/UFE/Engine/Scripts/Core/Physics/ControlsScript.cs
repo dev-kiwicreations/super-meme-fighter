@@ -113,14 +113,13 @@ public class ControlsScript : MonoBehaviour
 
 
     private PhysicsScript myPhysicsScript;
-    private MoveSetScript myMoveSetScript;
+    public MoveSetScript myMoveSetScript;
     private HitBoxesScript myHitBoxesScript;
     public SpriteRenderer mySpriteRenderer;
     private ControlsScript _owner;
 
     public void Init()
     {
-
         // Set Input Recording
         foreach (ButtonPress bp in System.Enum.GetValues(typeof(ButtonPress)))
         {
@@ -409,7 +408,6 @@ public class ControlsScript : MonoBehaviour
             axisRaw.Add(currentInputs[inputRef].axisRaw);
             buttonP.Add(currentInputs[inputRef].button);
         }
-
 
         // Update opControlsScript Reference if Needed
         if (!opControlsScript.gameObject.activeInHierarchy) opControlsScript = UFE.GetControlsScript(playerNum == 1 ? 2 : 1);
@@ -1762,6 +1760,7 @@ public class ControlsScript : MonoBehaviour
     public void CastMove(MoveInfo move, bool overrideCurrentMove = false, bool forceGrounded = false, bool castWarning = false)
     {
         if (move == null) return;
+
         if (castWarning && !myMoveSetScript.HasMove(move.id))
             Debug.LogError("Move '" + move.moveName + "' could not be found under this character's move set.");
 
@@ -1769,6 +1768,8 @@ public class ControlsScript : MonoBehaviour
         {
             KillCurrentMove();
             MoveInfo newMove = myMoveSetScript.InstantiateMove(move);
+            Debug.Log("MOVE IS STARTING -- "+newMove.moveName);
+
             SetMove(newMove);
         }
         else
@@ -1815,6 +1816,7 @@ public class ControlsScript : MonoBehaviour
         {
             if (opInfo.recordedMovesInCurrentRound.Exists(x => x.MoveID == currentMove.id))
             {
+                Debug.Log("MOVE EXISTS NOW! "+currentMove.moveName);
                 var highestPressCountEntry = opInfo.recordedMovesInCurrentRound
                     .Where(x => x.MoveID == currentMove.id)
                     .OrderByDescending(x => x.PressCount)
@@ -1951,8 +1953,6 @@ public class ControlsScript : MonoBehaviour
 
     public void ReadMove(MoveInfo move)
     {
-
-        Debug.Log("Projectile Instantiated");
         if (move == null) return;
 
         potentialParry = 0;
@@ -2315,18 +2315,21 @@ public class ControlsScript : MonoBehaviour
             }
         }
 
-
+       // Debug.Log(move.opponentOverride.Length + " >>>>>>>>>>>>>");
         // Check Opponent Override
         foreach (OpponentOverride opponentOverride in move.opponentOverride)
         {
+            Fix64 updatedLifePoints = opControlsScript.currentLifePoints - move.hits[0]._damageOnHit;
+
             if (!opponentOverride.casted && move.currentFrame >= opponentOverride.castingFrame)
             {
+            //    Debug.Log("HELLO>>>" + updatedLifePoints);
+
                 if (opponentOverride.stun)
                 {
                     opControlsScript.stunTime = opponentOverride._stunTime / UFE.config.fps;
                     if (opControlsScript.stunTime > 0) opControlsScript.currentSubState = SubStates.Stunned;
                 }
-
                 opControlsScript.KillCurrentMove();
                 foreach (CharacterSpecificMoves csMove in opponentOverride.characterSpecificMoves)
                 {
@@ -2385,6 +2388,8 @@ public class ControlsScript : MonoBehaviour
 
                 opponentOverride.casted = true;
             }
+            
+
         }
 
 #if !UFE_LITE && !UFE_BASIC
@@ -2677,8 +2682,6 @@ public class ControlsScript : MonoBehaviour
         if (move.currentFrame >= move.totalFrames - 1)
         {
             KillCurrentMove();
-
-            // Assist - Despawn after Exit Move
             if (exitMove != null && move.id == exitMove.id)
             {
                 exitMove = null;
@@ -2688,6 +2691,7 @@ public class ControlsScript : MonoBehaviour
                 worldTransform.position = new FPVector(-999, -999, 0);
                 transform.position = worldTransform.position.ToVector();
             }
+
         }
 
 
@@ -2931,6 +2935,10 @@ public class ControlsScript : MonoBehaviour
     public void KillCurrentMove()
     {
         if (currentMove == null) return;
+        if(opControlsScript.currentLifePoints <= 0 && currentMove.moveName == "wif_eat_start")
+        {
+            opControlsScript.myMoveSetScript.PlayBasicMove(BasicMoveReference.FallDownFromGroundBounce,false);
+        }
         currentMove.currentFrame = 0;
         currentMove.currentTick = 0;
 
@@ -3530,6 +3538,8 @@ public class ControlsScript : MonoBehaviour
 
     public void GetHit(Hit hit, int remainingFrames, FPVector[] location, bool ignoreDirection, ControlsScript attacker)
     {
+      //  Fix64 updatedLifePoints = currentLifePoints - hit._damageOnHit;
+
         // Get what animation should be played depending on the character's state
         bool airHit = false;
         bool armored = false;
@@ -4310,7 +4320,11 @@ public class ControlsScript : MonoBehaviour
             && playerNum == 1 && UFE.config.trainingModeOptions.p1Life == LifeBarTrainingMode.Infinite) return false;
         if ((UFE.gameMode == GameMode.TrainingRoom || UFE.gameMode == GameMode.ChallengeMode)
             && playerNum == 2 && UFE.config.trainingModeOptions.p2Life == LifeBarTrainingMode.Infinite) return false;
-        if (currentLifePoints <= 0) return true;
+        if (currentLifePoints <= 0)
+        {
+            Debug.Log("IS DEAD NOW");
+            return true;
+        }
         if (UFE.GetTimer() <= 0 && UFE.config.roundOptions.hasTimer) return true;
 
         currentLifePoints -= damage;

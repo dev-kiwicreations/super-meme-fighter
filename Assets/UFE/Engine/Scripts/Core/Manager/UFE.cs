@@ -8,6 +8,7 @@ using System.Reflection;
 using FPLibrary;
 using UFENetcode;
 using UFE3D;
+using System.Runtime.CompilerServices;
 
 public partial class UFE : MonoBehaviour, UFEInterface
 {
@@ -71,6 +72,9 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
     public delegate void ScreenChangedHandler(UFEScreen previousScreen, UFEScreen newScreen);
     public static event ScreenChangedHandler OnScreenChanged;
+
+    public delegate void GameRestart();
+    public static event GameRestart OnGameRestart;
 
     public delegate void StoryModeHandler(UFE3D.CharacterInfo character);
     public static event StoryModeHandler OnStoryModeStarted;
@@ -966,7 +970,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
             {
                 UFE.instantiatedObjects.Clear();
 
-                if (UFE.config.selectedStage.stageLoadingMethod == StorageMode.SceneFile)
+                  if (UFE.config.selectedStage.stageLoadingMethod == StorageMode.SceneFile)
                 {
                     SceneManager.UnloadSceneAsync(UFE.config.selectedStage.stagePath);
                     SceneManager.SetActiveScene(mainScene);
@@ -2166,6 +2170,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
         memoryDump.Clear();
         Debug.Log("PrLoad battle complete");
+        
     }
 
     public static void SearchAndCastGameObject(UFE3D.CharacterInfo characterInfo, float warmTimer)
@@ -2210,8 +2215,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
                 if (field.FieldType.Equals(typeof(GameObject)))
                 {
-                    Debug.Log("Instantiating Projectile");
-
+                
                     GameObject tempGO = Instantiate((GameObject)fieldValue);
                     tempGO.transform.position = new Vector2(-999, -999);
                     Destroy(tempGO, warmTimer);

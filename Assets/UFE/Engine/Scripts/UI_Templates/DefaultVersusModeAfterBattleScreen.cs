@@ -14,11 +14,14 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     #region public override methods
     public override void OnShow()
     {
+        Debug.Log("SHOWING ENDPANEL");
         base.OnShow();
         if (!UFE.IsPlayingMusic())
         {
             UFE.PlayMusic(this.music);
         }
+        PlayAgain.Select();
+
         UFE.canvas.planeDistance = 20f;
         UFE.canvas.sortingOrder = 500;
         UFE.canvas.worldCamera = Camera.main;
@@ -67,19 +70,21 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         }
         if (confirmButtonDown)
         {
-           /* Debug.Log(">>>> Button MainMenu Selected");
 
             if (EventSystem.current.currentSelectedGameObject == PlayAgain.gameObject)
             {
-                UFE.PlaySound(selectSound);
-                RepeatBattle();
+                Debug.Log(">>>> Button RepeatBattle Selected");
+
+                UFE.PlaySound(selectSound);/*
+                UFE.StartStageReadyScreen(true);*/
+                UFE.RestartMatch();
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToMainMenu.gameObject)
             {
                 Debug.Log("Main Called");
                 UFE.PlaySound(selectSound);
                 GoToMainMenu();
-            }*/
+            }
         }
         if (cancelButtonDown)
         {
@@ -93,7 +98,7 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
     
     private void Update()
     {
-       if (Input.GetKeyDown(KeyCode.Return))
+       /*if (Input.GetKeyDown(KeyCode.Return))
        {
             if (EventSystem.current.currentSelectedGameObject == PlayAgain.gameObject)
             {
@@ -106,7 +111,7 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
                 UFE.PlaySound(selectSound);
                 GoToMainMenu();
             }
-       }
+       }*/
         
        /*  // Check if the Backspace key is pressed
         if (Input.GetKeyDown(KeyCode.Backspace))
