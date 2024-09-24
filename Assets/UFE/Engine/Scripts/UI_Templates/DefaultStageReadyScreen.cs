@@ -288,12 +288,15 @@ public class DefaultStageReadyScreen : StageReadyScreen
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                GoToFight.Select();
+                if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject) GoToFight.Select();
+                if(EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject) BackToStageSelect.Select();
+
             }
             else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                BackToStageSelect.Select();
+                if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject) GoToFight.Select();
+                if (EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject) BackToStageSelect.Select();
             }
         }
         if (confirmButtonDown)

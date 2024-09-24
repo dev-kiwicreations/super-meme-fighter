@@ -718,6 +718,12 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
             Debug.Log("No UFE Gradient Found on Player 2 name");
         }
     }
+    public override void TrySelectCharacter(int characterIndex, int player)
+    {
+        if (player == 2) BtnPressed = true;
+        base.TrySelectCharacter(characterIndex, player);
+       
+    }
     public void characterSelectButton()
     {
         playerNo = 2;
@@ -729,6 +735,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
         isPLayer2Allowed = true;
         isPLayer1Allowed = false;
+
 
         
         title1.SetActive(false);
@@ -938,12 +945,13 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         {
             // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().characterSound);
             // this.TrySelectCharacter(playerIndex);
-            if(isPLayer1Allowed)
-            {
-
-                GoToMainMenuScreen();
                 BtnPressed = true;
+
+            if(isPLayer1Allowed || isPLayer2Allowed)
+            {
+                GoToMainMenuScreen();
             }
+
         } // Check if the Backspace key is pressed
       /*  if (Input.GetKeyDown(KeyCode.Backspace))
         {

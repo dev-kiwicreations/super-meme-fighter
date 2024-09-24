@@ -46,7 +46,7 @@ MonoBehaviour:
   cooldownFrames: 360
   attackCountForCooldownToActivate: 2
   cooldownFramesToTrackCooldown: 180
-  disableHeadLook: 0
+  disableHeadLook: 1
   speedKeyFrameToggle: 0
   fixedSpeed: 1
   animSpeedKeyFrame: []
@@ -617,8 +617,8 @@ MonoBehaviour:
     groundBounce: 0
     obeyDirectionalHit: 1
     hitEffectsOnHit: 1
-    resetPreviousHorizontalPush: 1
-    resetPreviousVerticalPush: 1
+    resetPreviousHorizontalPush: 0
+    resetPreviousVerticalPush: 0
     applyDifferentAirForce: 0
     applyDifferentBlockForce: 0
     _pushForce:
@@ -648,7 +648,7 @@ MonoBehaviour:
     moveLinkOnBlock: {fileID: 0}
     moveLinkOnParry: {fileID: 0}
     forceGrounded: 0
-    moveLinksToggle: 0
+    moveLinksToggle: 1
     damageOptionsToggle: 1
     hitStunOptionsToggle: 1
     preview: 1

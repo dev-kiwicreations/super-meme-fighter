@@ -42,10 +42,10 @@ MonoBehaviour:
   autoCorrectRotation: 0
   allowSideSwitch: 0
   frameWindowRotation: 0
-  cooldown: 0
-  cooldownFrames: 0
-  attackCountForCooldownToActivate: 0
-  cooldownFramesToTrackCooldown: 0
+  cooldown: 1
+  cooldownFrames: 360
+  attackCountForCooldownToActivate: 2
+  cooldownFramesToTrackCooldown: 180
   disableHeadLook: 1
   speedKeyFrameToggle: 0
   fixedSpeed: 1
@@ -291,11 +291,11 @@ MonoBehaviour:
     damageScaling: 1
     damageType: 1
     _damageOnHit:
-      _serializedValue: 171798691840
+      _serializedValue: 214748364800
     _minDamageOnHit:
       _serializedValue: 0
     _damageOnBlock:
-      _serializedValue: 0
+      _serializedValue: 214748364800
     doesntKill: 0
     hitType: 0
     resetPreviousHorizontalPush: 0

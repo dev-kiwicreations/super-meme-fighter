@@ -44,8 +44,8 @@ public class DefaultControlScreen : ControlScreen
             null,null,new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
             {
                 // this.TryDeselectCharacter(1);
-                playSfx.PlaySfx(playSfx.clickSound);
-                GoToMainMenuScreen();
+                /*playSfx.PlaySfx(playSfx.clickSound);
+                GoToMainMenuScreen();*/
             }));
 
     }
@@ -53,7 +53,7 @@ public class DefaultControlScreen : ControlScreen
 
     private void Update()
     {
-        if (!BtnPressed &&(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7)))
+        if (!BtnPressed && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick1Button6)))
         {
             playSfx.PlaySfx(playSfx.clickSound);
             GoToMainMenuScreen();

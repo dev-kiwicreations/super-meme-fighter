@@ -31,6 +31,7 @@ public class DefaultOptionsScreen : OptionsScreen
     public Button increaseSFXButton;
     public Button decreaseSFXButton;
     public PlaySFX playSfx;
+    bool BtnPressed;
     #endregion
 
     #region private properties
@@ -78,7 +79,7 @@ public class DefaultOptionsScreen : OptionsScreen
             this.difficultySlider.value = this.GetDifficultyIndex(difficulty);
             virtualSlider = this.difficultySlider.value;
         }
-        
+
 
         if (this.difficultyName != null)
         {
@@ -178,7 +179,7 @@ public class DefaultOptionsScreen : OptionsScreen
     #region difficulty buttons
     public void IncreaseAiDifficulty()
     {
-        if(virtualSlider == 0)
+        if (virtualSlider == 0)
         {
             virtualSlider = 1;
         }
@@ -427,11 +428,13 @@ public class DefaultOptionsScreen : OptionsScreen
 
     private void Update()
     {
-    /*    if (Input.GetKeyDown(KeyCode.Backspace))
+        if (!BtnPressed && (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.JoystickButton6)))
         {
+            BtnPressed = true;
+
             playSfx.PlaySfx(playSfx.clickSound);
-                GoToMainMenuScreen();
-        }*/
+            GoToMainMenuScreen();
+        }
     }
     public override void DoFixedUpdate(
         IDictionary<InputReferences, InputEvents> player1PreviousInputs,
@@ -447,9 +450,9 @@ public class DefaultOptionsScreen : OptionsScreen
             player2CurrentInputs,
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage),null,
             new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
-            {
+            {/*
                 playSfx.PlaySfx(playSfx.clickSound);
-                GoToMainMenuScreen();
+                GoToMainMenuScreen();*/
             }));
     }
     protected virtual void HighlightStage(
@@ -552,6 +555,7 @@ public class DefaultOptionsScreen : OptionsScreen
                 GoToMainMenuScreen();
             }
         }
+      
     }
     
 }

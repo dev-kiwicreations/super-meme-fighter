@@ -29,6 +29,7 @@ public class DefaultPauseScreen : PauseScreen
 
     private void Start()
     {
+
         BackButtonOnHowToPlay.onClick.AddListener(GoBackToPause);
     }
 

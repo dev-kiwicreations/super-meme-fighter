@@ -94,14 +94,14 @@ namespace UFE3D
                         if (UFE.config.cameraOptions.verticalPriority == VerticalPriority.AverageDistance)
                         {
                             // newPosition.y += Mathf.Abs(player1.transform.position.y - player2.transform.position.y) / 2;
-                                newPosition.y += Mathf.Abs(player1.transform.position.y) / 2;
+                                newPosition.y += Mathf.Abs(player1.transform.position.y) / 4;
 
                         }
                         else if (UFE.config.cameraOptions.verticalPriority == VerticalPriority.HighestCharacter)
                         {
                             if(player1.transform.position.y > player2.transform.position.y)
                             {
-                                newPosition.y += (highestPos) / 2.5f;
+                                newPosition.y += (highestPos) / 7f;
 
                             }
                             else newPosition.y = UFE.config.cameraOptions.initialDistance.y;

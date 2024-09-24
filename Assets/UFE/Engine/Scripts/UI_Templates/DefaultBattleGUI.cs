@@ -584,8 +584,6 @@ public class DefaultBattleGUI : BattleGUI{
 	protected override void OnGamePaused (bool isPaused){
 		base.OnGamePaused(isPaused);
 
-		
-
 		if (UFE.config.gameGUI.pauseScreen != null){
 			if (isPaused){
 				this.pause = GameObject.Instantiate(UFE.config.gameGUI.pauseScreen);
