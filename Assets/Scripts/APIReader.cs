@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 using System.Text;
 using NaughtyAttributes;
 using Newtonsoft.Json;
@@ -11,19 +12,28 @@ public class APIReader : MonoBehaviour
     [SerializeField] private string APIUrl;
     [SerializeField] private string AuthorizationToken;
     public static APIReader Instance;
+    public static string WALLET_ID = "0x87a16F829Dd5979548D5581f1B32503Eb0b3f9D4";
     private string _requestData = $"";
     private PostAPIResponse _postAPIResponse;
+
+    [DllImport("__Internal")]
+    private static extern void InitWalletID();
     private void Awake()
     {
         Instance = this;
     }
 
+    public void onWalletIDRecieved(string msg)
+    {
+        WALLET_ID = msg;
+        Debug.Log(">>>>>> :" + WALLET_ID);
+    }
     [Button("POST API Request")]
     public void PostAPIRequest(string playerName, string enemyName, int difficulty)
     {
         APIPostData postData = new APIPostData
         {
-            player_wallet_id = "0x87a16F829Dd5979548D5581f1B32503Eb0b3f9D4",
+            player_wallet_id = WALLET_ID,
             player_meme = playerName,
             enemy_meme = enemyName,
             started_at = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
