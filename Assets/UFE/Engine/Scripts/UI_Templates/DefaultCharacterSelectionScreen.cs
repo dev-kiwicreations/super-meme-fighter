@@ -35,6 +35,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     public Animator hudPlayer1;
     public Animator hudPlayer2;
     public Animator hudBothPlayers;
+    bool BtnPressed;
     public Sprite noCharacterSprite;
 
     public int defaultCharacterPlayer1 = 0;
@@ -114,8 +115,8 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
                 new UFEScreenExtensions.ActionCallback(delegate (AudioClip sound)
                 {
                     // this.TryDeselectCharacter(1);
-                    
-                    GoToPreviousScreen();
+
+                    GoToMainMenuScreen();
                 })
             );
 
@@ -930,16 +931,21 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         this.TrySelectCharacter();
     }
     #endregion
-    
+
     private void Update()
     {
-      /*  if (Input.GetKeyDown(KeyCode.Return))
+        if (!BtnPressed && (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Joystick1Button6)))
         {
             // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().characterSound);
             // this.TrySelectCharacter(playerIndex);
-            this.characterSelectButton();
+            if(isPLayer1Allowed)
+            {
+
+                GoToMainMenuScreen();
+                BtnPressed = true;
+            }
         } // Check if the Backspace key is pressed
-      *//*  if (Input.GetKeyDown(KeyCode.Backspace))
+      /*  if (Input.GetKeyDown(KeyCode.Backspace))
         {
            // GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToPreviousScreen();

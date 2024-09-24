@@ -15,6 +15,7 @@ public class DefaultControlGMScreen : ControlGMScreen
     public Sprite[] ControlTextures;
     public UnityEngine.UI.Image LayoutImage;
     public GameObject NextBtn, PrevBtn;
+    bool NextPressed, PrevPressed;
     #region public override methods
 
     public override void DoFixedUpdate(
@@ -60,6 +61,7 @@ public class DefaultControlGMScreen : ControlGMScreen
                 BackToPause.Select();
             }
         }
+      
         if (confirmButtonDown)
         {
             if (EventSystem.current.currentSelectedGameObject == BackToPause.gameObject)
@@ -81,17 +83,26 @@ public class DefaultControlGMScreen : ControlGMScreen
             PauseScreen.GoBackToPause();
         }
 
-        if (Input.GetAxis("P1JoystickHorizontal") > 0 || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("P1JoystickHorizontalDpad") > 0)
+        if (!NextPressed && (Input.GetAxis("P1JoystickHorizontal") == 1 || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("P1JoystickHorizontalDpad") == 1))
         {
+            playSfx.PlaySfx(playSfx.clickSound);
+
             ChangeControlLayout(1);
             NextBtn.SetActive(false);
             PrevBtn.SetActive(true);
+            NextPressed = !NextPressed;
+            if (PrevPressed == true) PrevPressed = false;
         }
-        if (Input.GetAxis("P1JoystickHorizontal") < 0 || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("P1JoystickHorizontalDpad") < 0)
+        if (!PrevPressed && (Input.GetAxis("P1JoystickHorizontal") < 0 || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("P1JoystickHorizontalDpad") < 0))
         {
+            playSfx.PlaySfx(playSfx.clickSound);
+
             ChangeControlLayout(0);
             PrevBtn.SetActive(false);
             NextBtn.SetActive(true);
+            if (NextPressed == true) NextPressed = false;
+            PrevPressed = !PrevPressed;
+
         }
     }
 

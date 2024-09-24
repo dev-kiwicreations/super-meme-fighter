@@ -17,7 +17,7 @@ namespace UFE3D
 		#endregion
 
 		#region public instance methods
-		public virtual void GoToCharacterSelectionScreen()
+		public virtual void GoToCharacterSelectionScreen(bool restart = false)
 		{
 			this.SelectOption((int)VersusModeAfterBattleScreen.Option.CharacterSelectionScreen, UFE.GetLocalPlayer());
 		}
@@ -41,6 +41,7 @@ namespace UFE3D
 		#region public override methods
 		public override void SelectOption(int option, int player)
 		{
+
 			VersusModeAfterBattleScreen.Option selectedOption = (VersusModeAfterBattleScreen.Option)option;
 			if (selectedOption == VersusModeAfterBattleScreen.Option.CharacterSelectionScreen)
 			{
@@ -57,7 +58,8 @@ namespace UFE3D
 			}
 			else if (selectedOption == VersusModeAfterBattleScreen.Option.RepeatBattle)
 			{
-				UFE.StartLoadingBattleScreen();
+                Debug.Log("Repeating Battle");
+                UFE.StartLoadingBattleScreen();
 			}
 		}
 		#endregion

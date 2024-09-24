@@ -543,13 +543,15 @@ public class DefaultOptionsScreen : OptionsScreen
                 }
             }
         }
-       /* if (confirmButtonDown)
+        if (confirmButtonDown)
         {
-            if(EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
+            if (EventSystem.current.currentSelectedGameObject == cancelButton.gameObject) 
             {
+                playSfx.PlaySfx(playSfx.clickSound);
+
                 GoToMainMenuScreen();
             }
-        }*/
+        }
     }
     
 }

@@ -10,15 +10,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Experimental.Rendering.RenderGraphModule;
 using UnityEngine.EventSystems;
+using FPLibrary;
 
 public class DefaultControlScreen : ControlScreen
 {
-    
+    public Button cancelButton;
     public PlaySFX playSfx;
     public Sprite[] ControlTextures;
     public UnityEngine.UI.Image LayoutImage;
     int i = 0;
     public GameObject NextBtn, PrevBtn;
+    bool BtnPressed, NextPressed, PrevPressed;
     #region public override methods
     public override void OnHide()
     {
@@ -27,6 +29,7 @@ public class DefaultControlScreen : ControlScreen
 
     public override void OnShow()
     {
+        cancelButton.Select();
         base.OnShow();
     }
 
@@ -46,27 +49,36 @@ public class DefaultControlScreen : ControlScreen
             }));
 
     }
-
     #endregion
 
     private void Update()
     {
-      /*  if (Input.GetKeyDown(KeyCode.Backspace))
+        if (!BtnPressed &&(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7)))
         {
             playSfx.PlaySfx(playSfx.clickSound);
             GoToMainMenuScreen();
-        }*/
-        if (Input.GetAxis("P1JoystickHorizontal") > 0 || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("P1JoystickHorizontalDpad") > 0)
+            BtnPressed = true;
+        }
+        if (!NextPressed && (Input.GetAxis("P1JoystickHorizontal") == 1 || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("P1JoystickHorizontalDpad") == 1))
         {
+            playSfx.PlaySfx(playSfx.clickSound);
+
             ChangeControlLayout(1);
             NextBtn.SetActive(false);
             PrevBtn.SetActive(true);
+            NextPressed = !NextPressed;
+            if (PrevPressed == true) PrevPressed = false;
         }
-        if (Input.GetAxis("P1JoystickHorizontal") < 0 || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("P1JoystickHorizontalDpad") <0)
+        if (!PrevPressed && (Input.GetAxis("P1JoystickHorizontal") < 0 || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("P1JoystickHorizontalDpad") <0))
         {
+            playSfx.PlaySfx(playSfx.clickSound);
+
             ChangeControlLayout(0);
             PrevBtn.SetActive(false);
             NextBtn.SetActive(true);
+            if (NextPressed == true) NextPressed = false;
+            PrevPressed = !PrevPressed;
+
         }
     }
 
@@ -76,15 +88,18 @@ public class DefaultControlScreen : ControlScreen
 
         NextBtn.SetActive(false);
         PrevBtn.SetActive(true);
+
     }
     public void PrevLayoutBtn()
     {
         ChangeControlLayout(0);
         PrevBtn.SetActive(false);
         NextBtn.SetActive(true);
+
     }
     public void ChangeControlLayout(int index)
     {
         LayoutImage.sprite = ControlTextures[index];
+
     }
 }

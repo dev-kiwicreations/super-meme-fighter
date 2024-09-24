@@ -5,8 +5,8 @@ using UFE3D;
 
 public class DefaultLoadingBattleScreen : LoadingBattleScreen
 {
-    public float delayBeforePreload = 1.5f;
-    public float delayAfterPreload = 2.0f;
+    public float delayBeforePreload = 0.5f;
+    public float delayAfterPreload = 0.5f;
     public Text namePlayer1;
     public Text namePlayer2;
     public Text nameStage;
