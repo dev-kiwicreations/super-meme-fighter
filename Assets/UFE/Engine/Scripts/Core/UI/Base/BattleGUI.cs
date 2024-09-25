@@ -385,7 +385,6 @@ namespace UFE3D
             UFE.DelaySynchronizedAction(this.OpenMenuAfterBattle, UFE.config.roundOptions._showMenuDelay);
         }
 
-
         protected void OpenMenuAfterBattle()
         {
             UFE.HideScreen(UFE.currentScreen);
