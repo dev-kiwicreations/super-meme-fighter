@@ -6,6 +6,7 @@ using FPLibrary;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Text;
+using UnityEditor.PackageManager;
 
 public partial class UFE
 {
@@ -337,7 +338,7 @@ public partial class UFE
 	public static void StartGame(float fadeTime)
 	{
 
-        Debug.Log("STARTING GAME");
+     //   Debug.Log("STARTING GAME");
         if (UFE.currentScreen.hasFadeOut)
 		{
 			UFE.eventSystem.enabled = false;
@@ -2369,7 +2370,24 @@ public partial class UFE
 	public static void PlaySound(AudioClip soundFX)
 	{
 		UFE.PlaySound(soundFX, UFE.GetSoundFXVolume());
+		
 	}
+
+	public static void PauseSound()
+	{
+        if (UFE.soundsAudioSource != null)
+        {
+            UFE.soundsAudioSource.Pause();
+        }
+    }
+
+	public static void ResumeSound()
+	{
+        if (UFE.soundsAudioSource != null)
+        {
+            UFE.soundsAudioSource.UnPause();
+        }
+    }
 
 	public static void PlaySound(AudioClip soundFX, float volume)
 	{

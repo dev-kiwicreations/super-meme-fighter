@@ -878,6 +878,13 @@ public partial class UFE : MonoBehaviour, UFEInterface
         else
         {
             UFE.timeScale = UFE.config._gameSpeed;
+            if(GetPlayer1ControlsScript().currentState == PossibleStates.Crouch)
+            {
+                GetPlayer1ControlsScript().myMoveSetScript.PlayBasicMove(BasicMoveReference.Idle);
+                GetPlayer1ControlsScript().isCrouching = false;
+                GetPlayer1ControlsScript().currentState = PossibleStates.Stand;
+            }
+           
         }
 
         if (UFE.OnGamePaused != null)
@@ -2136,7 +2143,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
 
     public static void PreloadBattle(float warmTimer)
     {
-        Debug.Log("PrLoadinng battle...");
+        Debug.Log("PreLoadinng battle...");
         if (UFE.config.preloadHitEffects)
         {
             SearchAndCastGameObject(UFE.config.hitOptions.weakHit, warmTimer);
@@ -2192,7 +2199,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
                 foreach (MoveParticleEffect particle in move.particleEffects) SearchAndCastGameObject(particle, warmTimer);
                 foreach (Projectile projectile in move.projectiles)
                 {
-                    Debug.Log("Casting Projectile");
+                    //Debug.Log("Casting Projectile");
                     SearchAndCastGameObject(projectile, warmTimer);
                 }
             }

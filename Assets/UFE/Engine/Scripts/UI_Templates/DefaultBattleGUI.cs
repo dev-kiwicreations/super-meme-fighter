@@ -127,10 +127,11 @@ public class DefaultBattleGUI : BattleGUI{
 		}
 	}
 
-	#endregion
+    #endregion
 
-	#region public override methods
-	public override void DoFixedUpdate(
+
+    #region public override methods
+    public override void DoFixedUpdate(
 		IDictionary<InputReferences, InputEvents> player1PreviousInputs,
 		IDictionary<InputReferences, InputEvents> player1CurrentInputs,
 		IDictionary<InputReferences, InputEvents> player2PreviousInputs,
@@ -586,6 +587,7 @@ public class DefaultBattleGUI : BattleGUI{
 
 		if (UFE.config.gameGUI.pauseScreen != null){
 			if (isPaused){
+				UFE.PauseSound();
 				this.pause = GameObject.Instantiate(UFE.config.gameGUI.pauseScreen);
 				this.pause.transform.SetParent(UFE.canvas != null ? UFE.canvas.transform : null, false);
 				this.pause.OnShow();
@@ -596,7 +598,8 @@ public class DefaultBattleGUI : BattleGUI{
 
 				this.pause.OnHide();
 				GameObject.Destroy(this.pause.gameObject);
-			}
+               
+            }
 		}
 	}
 

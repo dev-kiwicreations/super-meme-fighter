@@ -495,7 +495,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
 
     public override void OnCharacterSelectionAllowed(int characterIndex, int player)
     {
-        Debug.Log("OnCharacterSelectionAllowed. characterIndex: " + characterIndex + "player: " + player);
+       // Debug.Log("OnCharacterSelectionAllowed. characterIndex: " + characterIndex + "player: " + player);
         base.OnCharacterSelectionAllowed(characterIndex, player);
         this.UpdateHud();
         this.characterSelectButton();
@@ -652,7 +652,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         {
             namePlayer2.gameObject.SetActive(true);
         }
-        Debug.Log("OnCharacterButtonClicked. index: " + index);
+       // Debug.Log("OnCharacterButtonClicked. index: " + index);
         
         if (UFE.config.player1Character == null)
         {
@@ -675,7 +675,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         UFEGradient player1nameGradient = namePlayer1.GetComponent<UFEGradient>();
         if (player1nameGradient != null)
         {
-            Debug.Log("Found on Player 1 name");
+          //  Debug.Log("Found on Player 1 name");
             Color32 startColor = new Color32(0xFF, 0x4C, 0x4C, 0xFF); // #FF4C4C
             Color32 endColor = new Color32(0xF7, 0xD1, 0x08, 0xFF);   // #F7D108
 
@@ -699,7 +699,7 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
         UFEGradient player2nameGradient = namePlayer2.GetComponent<UFEGradient>();
         if (player2nameGradient != null)
         {
-            Debug.Log("Found on Player 1 name");
+           // Debug.Log("Found on Player 1 name");
             Color32 startColor = new Color32(0xFF, 0x4C, 0x4C, 0xFF); // #FF4C4C
             Color32 endColor = new Color32(0xF7, 0xD1, 0x08, 0xFF);   // #F7D108
 
@@ -761,13 +761,13 @@ public class DefaultCharacterSelectionScreen : CharacterSelectionScreen
     #region protected instance methods
     protected override int GetMaxCharacterIndex()
     {
-        Debug.Log(Mathf.Min(this.selectableCharacters.Length, this.characters.Length) - 1);
+        //Debug.Log(Mathf.Min(this.selectableCharacters.Length, this.characters.Length) - 1);
         return Mathf.Min(this.selectableCharacters.Length, this.characters.Length) - 1;
     }
 
     protected virtual void UpdateHud()
     {
-        Debug.Log("UpdateHud");
+        //Debug.Log("UpdateHud");
         if (UFE.gameMode == GameMode.StoryMode)
         {
             if (this.hudPlayer1 != null)

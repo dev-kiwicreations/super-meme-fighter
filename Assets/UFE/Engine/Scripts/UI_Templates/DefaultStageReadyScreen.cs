@@ -25,7 +25,9 @@ public class DefaultStageReadyScreen : StageReadyScreen
     bool loadingGamePlay;
     public GameObject area51png;
     public PlaySFX playSfx;
-    
+    bool BtnPressed;
+
+
     public override void OnShow()
     {
         base.OnShow();
@@ -85,7 +87,17 @@ public class DefaultStageReadyScreen : StageReadyScreen
             area51png.SetActive(false);
         }
     }
-    
+    private void Update()
+    {
+        if (!BtnPressed && (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.JoystickButton6)))
+        {
+            BtnPressed = true;
+            playSfx.PlaySfx(playSfx.clickSound);
+            GoToStageSelectionScreen();
+        }
+    }
+
+
     public void CreatePlayer1()
     {
         //if (this.displayMode == DisplayMode.CharacterGameObject)
@@ -288,15 +300,15 @@ public class DefaultStageReadyScreen : StageReadyScreen
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject) GoToFight.Select();
-                if(EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject) BackToStageSelect.Select();
+                if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject) BackToStageSelect.Select();
+                else if(EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject) GoToFight.Select();
 
             }
             else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject) GoToFight.Select();
-                if (EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject) BackToStageSelect.Select();
+                if (EventSystem.current.currentSelectedGameObject == GoToFight.gameObject) BackToStageSelect.Select();
+                else if (EventSystem.current.currentSelectedGameObject == BackToStageSelect.gameObject) GoToFight.Select();
             }
         }
         if (confirmButtonDown)
@@ -314,22 +326,10 @@ public class DefaultStageReadyScreen : StageReadyScreen
                 GoToStageSelectionScreen();
             }
         }
-        if (cancelButtonDown)
-        {
-            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-
-            GoToStageSelectionScreen();
-        }
+     
     }
     
-    private void Update()
-    {
-       /* if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            playSfx.PlaySfx(playSfx.clickSound);
-            GoToStageSelectionScreen();
-        }*/
-    }
+ 
     
     #endregion
 }

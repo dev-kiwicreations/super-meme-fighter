@@ -14,12 +14,8 @@ public class CountdownText : MonoBehaviour
         // Start the countdown coroutine
         StartCoroutine(Countdown());
     }
-
     IEnumerator Countdown()
     {
-        // Wait for 1 second
-        yield return new WaitForSeconds(0.1f);
-
         // Enable the Text GameObject
         countdownText.gameObject.SetActive(true);
 
@@ -27,7 +23,14 @@ public class CountdownText : MonoBehaviour
         for (int i = 3; i > 0; i--)
         {
             // Update the text
+            while (UFE.IsPaused())
+            {
+                  UFE.PauseSound();
+                yield return new WaitUntil(() => UFE.IsPaused() == false);    
+            }
+            UFE.ResumeSound();
             countdownText.text = i.ToString();
+
             // Wait for 1 second
             yield return new WaitForSeconds(1f);
         }

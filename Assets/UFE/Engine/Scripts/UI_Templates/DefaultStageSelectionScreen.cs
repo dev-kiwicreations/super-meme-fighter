@@ -24,6 +24,7 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
     public Vector3 positionPlayer1 = new Vector3(-4, 0, 0);
     public Vector3 positionPlayer2 = new Vector3(4, 0, 0);
     public PlaySFX playSfx;
+    bool BtnPressed;
 
     #region public instance methods
     public virtual void NextStage()
@@ -91,11 +92,12 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
 
     private void Update()
     {
-      /* if (Input.GetKeyDown(KeyCode.Backspace))
+        if (!BtnPressed && (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.JoystickButton6)))
         {
-            playSfx.PlaySfx(playSfx.clickSound);
+            BtnPressed = true;
+            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
             GoToCharacterSelectionScreen();
-        }*/
+        }
     }
 
     public override void OnShow()
@@ -364,12 +366,14 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
             if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                BackToCharacterSelect.Select();
+                if (EventSystem.current.currentSelectedGameObject == ConfirmStage.gameObject) BackToCharacterSelect.Select();
+                else if (EventSystem.current.currentSelectedGameObject == BackToCharacterSelect.gameObject) ConfirmStage.Select();
             }
             else if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                ConfirmStage.Select();
+                if (EventSystem.current.currentSelectedGameObject == ConfirmStage.gameObject) BackToCharacterSelect.Select();
+                else if (EventSystem.current.currentSelectedGameObject == BackToCharacterSelect.gameObject) ConfirmStage.Select();
             }
         }
         if (confirmButtonDown)
@@ -384,12 +388,6 @@ public class DefaultStageSelectionScreen : StageSelectionScreen
                 GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
                 GoToCharacterSelectionScreen();
             }
-        }
-        if (cancelButtonDown)
-        {
-            GetComponent<PlaySFX>().PlaySfx(GetComponent<PlaySFX>().clickSound);
-            Debug.Log("Cancel Button Called!");
-            GoToCharacterSelectionScreen();
         }
     }
 
