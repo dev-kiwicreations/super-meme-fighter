@@ -382,8 +382,9 @@ namespace UFE3D
                 publicWinner = UFE.config.player2Character;
                 PlayerPrefs.SetString("winnerName", UFE.config.player2Character.characterName);
             }
-            UFE.DelaySynchronizedAction(this.OpenMenuAfterBattle, UFE.config.roundOptions._showMenuDelay); 
+            UFE.DelaySynchronizedAction(this.OpenMenuAfterBattle, UFE.config.roundOptions._showMenuDelay);
         }
+
 
         protected void OpenMenuAfterBattle()
         {
