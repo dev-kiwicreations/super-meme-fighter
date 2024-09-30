@@ -460,6 +460,7 @@ public partial class UFE
 	}
     public static void ChangeModes(int mode)
     {
+
         selectableCharacters = UFE.GetVersusModeSelectableCharacters();
         if (mode == 1)
         {
