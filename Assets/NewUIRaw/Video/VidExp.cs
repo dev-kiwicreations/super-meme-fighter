@@ -8,6 +8,7 @@ public class VidExp : MonoBehaviour
     public string videoFileName;
     public GameObject staticImage;
     private const string VideoLoadedKey = "isVideoLoaded";
+    public int waitTime;
 
     bool isVideoLoaded = false;
 
@@ -35,7 +36,8 @@ public class VidExp : MonoBehaviour
         player.prepareCompleted -= OnVideoPrepared; // Unsubscribe from the event
         if (!isVideoLoaded) //If video is not loaded then delay the video after being prepared for 0.5f
         {
-            Invoke(nameof(DisableStaticImage), 0.5f);
+            
+            Invoke(nameof(DisableStaticImage), waitTime);
             isVideoLoaded = true;
 
             // Save the state to PlayerPrefs
@@ -51,6 +53,7 @@ public class VidExp : MonoBehaviour
 
     public void DisableStaticImage()
     {
-        //staticImage.SetActive(false); // Hide the static image
+        if(staticImage == null) staticImage = GameObject.Find("BackgroundImage");
+        staticImage.SetActive(false); // Hide the static image
     }
 }

@@ -6,7 +6,6 @@ using FPLibrary;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Text;
-using UnityEditor.PackageManager;
 
 public partial class UFE
 {
@@ -24,14 +23,16 @@ public partial class UFE
 	protected static readonly string SoundsVolumeKey = "SoundsVolume";
 	protected static readonly string DifficultyLevelKey = "DifficultyLevel";
 	protected static readonly string DebugModeKey = "DebugMode";
-	#endregion
+    protected static UFE3D.CharacterInfo[] selectableCharacters = new UFE3D.CharacterInfo[0];
 
-	#region Story mode definitions
-	//-----------------------------------------------------------------------------------------------------------------
-	// Required for the Story Mode: if the player lost its previous battle, 
-	// he needs to fight the same opponent again, not the next opponent.
-	//-----------------------------------------------------------------------------------------------------------------
-	private static StoryModeInfo storyMode = new StoryModeInfo();
+    #endregion
+
+    #region Story mode definitions
+    //-----------------------------------------------------------------------------------------------------------------
+    // Required for the Story Mode: if the player lost its previous battle, 
+    // he needs to fight the same opponent again, not the next opponent.
+    //-----------------------------------------------------------------------------------------------------------------
+    private static StoryModeInfo storyMode = new StoryModeInfo();
 	private static List<string> unlockedCharactersInStoryMode = new List<string>();
 	private static List<string> unlockedCharactersInVersusMode = new List<string>();
 	private static bool player1WonLastBattle;
@@ -44,10 +45,11 @@ public partial class UFE
 	public static Text debugger2;
 
 	public static bool autoSaveAssets;
-	#endregion
-
-	#region GUI related methods
-	public static BattleGUI GetBattleGUI()
+    #endregion
+    
+   
+    #region GUI related methods
+    public static BattleGUI GetBattleGUI()
 	{
 		return UFE.config.gameGUI.battleGUI;
 	}
@@ -456,8 +458,25 @@ public partial class UFE
 	{
 		UFE.StartMainMenuScreen((float)UFE.config.gameGUI.screenFadeDuration);
 	}
-
-	public static void StartMainMenuScreen(float fadeTime)
+    public static void ChangeModes(int mode)
+    {
+        selectableCharacters = UFE.GetVersusModeSelectableCharacters();
+        if (mode == 1)
+        {
+            UFE.SetCPU(1, false);
+            UFE.SetCPU(2, true);
+            UFE.config.player1Character = selectableCharacters[1];
+			UFE.SetPlayer(1,UFE.config.player1Character);
+			UFE.SetPlayer1(selectableCharacters[1]);
+            UFE.config.player2Character = selectableCharacters[2];
+            UFE.SetPlayer(2, UFE.config.player2Character);
+            UFE.config.selectedStage = UFE.config.stages[0];
+            UFE.StartLoadingBattleScreen();
+        }
+		else UFE._StartMainMenuScreen(0.1f);
+        
+    }
+    public static void StartMainMenuScreen(float fadeTime)
 	{
 		if (UFE.currentScreen.hasFadeOut)
 		{
@@ -1307,6 +1326,7 @@ public partial class UFE
 		UFE.HideScreen(UFE.currentScreen);
 		if (UFE.config.gameGUI.introScreen == null)
 		{
+			//ChangeModes(1);
 			//Debug.Log("Intro Screen not found! Make sure you have set the prefab correctly in the Global Editor");
 			UFE._StartMainMenuScreen(fadeTime);
 		}
@@ -2309,6 +2329,11 @@ public partial class UFE
 		UFE.soundsAudioSource.loop = false;
 		UFE.soundsAudioSource.playOnAwake = false;
 		UFE.soundsAudioSource.volume = 1f;
+
+		UFE.ButtonSoundSource = cam.gameObject.AddComponent<AudioSource>();
+		UFE.ButtonSoundSource.loop = false;
+		UFE.ButtonSoundSource.playOnAwake = false;
+		UFE.ButtonSoundSource.volume = 1f;
 	}
 
 	public static bool IsPlayingMusic()
@@ -2375,17 +2400,17 @@ public partial class UFE
 
 	public static void PauseSound()
 	{
-        if (UFE.soundsAudioSource != null)
+        if (UFE.ButtonSoundSource != null)
         {
-            UFE.soundsAudioSource.Pause();
+            UFE.ButtonSoundSource.Pause();
         }
     }
 
 	public static void ResumeSound()
 	{
-        if (UFE.soundsAudioSource != null)
+        if (UFE.ButtonSoundSource != null)
         {
-            UFE.soundsAudioSource.UnPause();
+            UFE.ButtonSoundSource.UnPause();
         }
     }
 
@@ -2396,6 +2421,18 @@ public partial class UFE
 			UFE.soundsAudioSource.PlayOneShot(soundFX, volume);
 		}
 	}
+    public static void PlayInGameSound(AudioClip soundFX)
+    {
+        UFE.PlayInGameSound(soundFX, UFE.GetSoundFXVolume());
+
+    }
+    public static void PlayInGameSound(AudioClip soundFX,float volume)
+	{
+        if (config.soundfx && soundFX != null && UFE.soundsAudioSource != null)
+        {
+            UFE.ButtonSoundSource.PlayOneShot(soundFX, volume);
+        }
+    }
 
 	public static void SetMusic(bool on)
 	{
@@ -2451,6 +2488,11 @@ public partial class UFE
 	public static void StopSounds()
 	{
 		UFE.soundsAudioSource.Stop();
+	}
+
+	public static void StopInGameSounds()
+	{
+		UFE.ButtonSoundSource.Stop();
 	}
 	#endregion
 

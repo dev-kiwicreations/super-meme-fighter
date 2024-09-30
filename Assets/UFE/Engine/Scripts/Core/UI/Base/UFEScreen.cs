@@ -77,7 +77,7 @@ namespace UFE3D
 
             if (this.onLoadSound != null)
             {
-                UFE.DelayLocalAction(delegate () { UFE.PlaySound(this.onLoadSound); }, this.delayBeforePlayingMusic);
+                UFE.DelayLocalAction(delegate () { UFE.PlayInGameSound(this.onLoadSound); }, this.delayBeforePlayingMusic);
             }
         }
 

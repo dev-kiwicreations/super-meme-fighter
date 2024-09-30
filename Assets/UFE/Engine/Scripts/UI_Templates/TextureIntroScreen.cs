@@ -5,8 +5,8 @@ using UFE3D;
 public class TextureIntroScreen : IntroScreen
 {
     public bool skippable = true;
-    public float delayBeforeGoingToMenu = 3f;
-    public float minDelayBeforeSkipping = 0.1f;
+    public float delayBeforeGoingToMenu = 0f;
+    public float minDelayBeforeSkipping = 0f;
 
     #region public override methods
     public override void OnShow()

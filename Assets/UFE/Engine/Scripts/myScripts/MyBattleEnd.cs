@@ -101,8 +101,9 @@ namespace UFE3D
             winnerPortrait.sprite = sprite;
             PortraitAdjust();
             //----------------------------------
-
-            winnerText.text = (winnerPlayerInfo.characterName + " WINS!").ToUpper();
+            if(winnerPlayerInfo.characterName == "Brett") winnerText.text = (winnerPlayerInfo.characterName + "   WINS!").ToUpper();
+            else if (winnerPlayerInfo.characterName == "Popcat") winnerText.text = (winnerPlayerInfo.characterName + "   WINS!").ToUpper();
+            else winnerText.text = (winnerPlayerInfo.characterName + " WINS!").ToUpper();
         }
         public void PortraitAdjust()
         {

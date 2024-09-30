@@ -669,7 +669,8 @@ namespace UFE3D
 						if (pair.Key.engineRelatedButton == UFE.config.inputOptions.cancelButton)
 						{
 							currentCancelButton = pair.Value.button;
-						}
+
+                        }
 					}
 				}
 			}
@@ -736,7 +737,7 @@ namespace UFE3D
 			{
 				if (cancelCallback != null && cancelCallback.Action != null)
 				{
-					cancelCallback.Action(cancelCallback.Sound);
+                    cancelCallback.Action(cancelCallback.Sound);
 				}
 				return true;
 			}
@@ -843,7 +844,7 @@ namespace UFE3D
 			if (sound != null)
 			{
 				UFE.PlaySound(sound);
-			}
+            }
 
 			if (action != null)
 			{

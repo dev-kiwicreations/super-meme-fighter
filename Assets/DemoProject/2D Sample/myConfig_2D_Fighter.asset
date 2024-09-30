@@ -74,7 +74,7 @@ MonoBehaviour:
     screenFadeDuration:
       _serializedValue: 2147483648
     gameFadeDuration:
-      _serializedValue: 4294967296
+      _serializedValue: 2147483648
     roundFadeDuration:
       _serializedValue: 2147483648
     screenFadeColor: {r: 0, g: 0, b: 0, a: 1}
@@ -91,7 +91,7 @@ MonoBehaviour:
       scaleFactor: 1
       screenMatchMode: 1
       scaleMode: 1
-    introScreen: {fileID: 11400002, guid: 70fb6f5004bbf493190d7b2f011adfdf, type: 3}
+    introScreen: {fileID: 0}
     mainMenuScreen: {fileID: 11400002, guid: 5ae2a078222193e4ca9658f7044c53ad, type: 3}
     optionsScreen: {fileID: 11400056, guid: 2737f2cf99cd3416b9a9d13df2abbe04, type: 3}
     creditsScreen: {fileID: 11400010, guid: aa93c5bcd99024642a42c5a1f110eeb1, type: 3}
@@ -2169,19 +2169,19 @@ MonoBehaviour:
       overrideComboEfficiency: 0
       comboEfficiency: 1
       startupBehavior: 5
-    selectedDifficultyLevel: 1
+    selectedDifficultyLevel: 2
     selectedDifficulty:
-      difficultyLevel: 1
+      difficultyLevel: 2
       overrideTimeBetweenDecisions: 1
-      timeBetweenDecisions: 0.15
+      timeBetweenDecisions: 0.1
       overrideTimeBetweenActions: 1
-      timeBetweenActions: 0.15
+      timeBetweenActions: 0.1
       overrideAggressiveness: 1
-      aggressiveness: 0.65
+      aggressiveness: 0.7
       overrideRuleCompliance: 1
       ruleCompliance: 0.6
       overrideComboEfficiency: 0
-      comboEfficiency: 0.6248
+      comboEfficiency: 0.7
       startupBehavior: 5
   networkOptions:
     forceAnimationControl: 1
@@ -2232,9 +2232,9 @@ MonoBehaviour:
     synchronizationMessageFrequency: 0
     synchronizationAction: 2
   music: 1
-  musicVolume: 0.0108764265
+  musicVolume: 0.030999422
   soundfx: 1
-  soundfxVolume: 1
+  soundfxVolume: 0.9
   colorStateOne: {r: 1, g: 0, b: 0, a: 1}
   colorIsHit: {r: 1, g: 0, b: 1, a: 1}
   colorBodyCollider: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

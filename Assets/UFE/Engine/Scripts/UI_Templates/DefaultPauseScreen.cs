@@ -207,6 +207,7 @@ public class DefaultPauseScreen : PauseScreen
             }
             else if (EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject)
             {
+                UFE.StopInGameSounds();
                 GoToMainMenu();
             }
         }

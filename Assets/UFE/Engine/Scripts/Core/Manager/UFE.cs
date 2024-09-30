@@ -238,6 +238,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
     private static Fix64 _fixedDeltaTime;
     private static AudioSource musicAudioSource;
     private static AudioSource soundsAudioSource;
+    private static AudioSource ButtonSoundSource;
     private static Scene mainScene;
 
     private static UFEController p1Controller;
@@ -874,9 +875,11 @@ public partial class UFE : MonoBehaviour, UFEInterface
         if (pause)
         {
             UFE.timeScale = 0;
+            UFE.PauseSound();
         }
         else
         {
+            UFE.ResumeSound();
             UFE.timeScale = UFE.config._gameSpeed;
             if(GetPlayer1ControlsScript().currentState == PossibleStates.Crouch)
             {

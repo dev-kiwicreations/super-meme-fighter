@@ -25,10 +25,10 @@ public class CountdownText : MonoBehaviour
             // Update the text
             while (UFE.IsPaused())
             {
-                  UFE.PauseSound();
                 yield return new WaitUntil(() => UFE.IsPaused() == false);    
             }
-            UFE.ResumeSound();
+            yield return new WaitForSeconds(0.1f);
+
             countdownText.text = i.ToString();
 
             // Wait for 1 second

@@ -268,11 +268,12 @@ public class DefaultBattleGUI : BattleGUI{
 	            )
             )
             {
-	            if (!UFE.IsPaused())
-	            {
-		            // In that case, we can process pause menu events
-		            UFE.PauseGame(!UFE.IsPaused());
-	            }
+                if (!UFE.IsPaused())
+                {
+                    Debug.Log("Game is PAUSED >>>>>>");
+                    // In that case, we can process pause menu events
+                    UFE.PauseGame(!UFE.IsPaused());
+                }
             }
 
 
