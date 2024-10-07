@@ -21,7 +21,7 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             UFE.PlayMusic(this.music);
         }
         PlayAgain.Select();
-
+        if (UFE.Mode == 1) BackToMainMenu.gameObject.SetActive(false);
         UFE.canvas.planeDistance = 20f;
         UFE.canvas.sortingOrder = 500;
         UFE.canvas.worldCamera = Camera.main;
@@ -64,7 +64,9 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                BackToMainMenu.Select();
+                if (UFE.Mode != 1)
+                    BackToMainMenu.Select();
+                else PlayAgain.Select();
 
             }
         }

@@ -9,9 +9,20 @@ using FPLibrary;
 using UFENetcode;
 using UFE3D;
 using System.Runtime.CompilerServices;
-
+using System.Runtime.InteropServices;
+using System.Collections;
+[System.Serializable]
+public class GameModeData
+{
+    public int gameMode;
+    public int player1;
+    public int player2;
+    public int stageIndex;
+}
 public partial class UFE : MonoBehaviour, UFEInterface
 {
+    [DllImport("__Internal")]
+    private static extern string GetGameMode();
     #region Global info instance
     public GlobalInfo UFE_Config;
     #endregion
@@ -210,6 +221,8 @@ public partial class UFE : MonoBehaviour, UFEInterface
     public static List<DelayedAction> delayedSynchronizedActions = new List<DelayedAction>();
     public static List<InstantiatedGameObject> instantiatedObjects = new List<InstantiatedGameObject>();
     public static ChallengeMode challengeMode;
+    protected static UFE3D.CharacterInfo[] selectableCharacters = new UFE3D.CharacterInfo[0];
+    bool ModeCheck;
     #endregion
 
 
@@ -960,6 +973,53 @@ public partial class UFE : MonoBehaviour, UFEInterface
         UFE.PauseGame(false);
     }
 
+
+    public void ChangeMode(string result)
+    {
+        if (result != null) ModeCheck = true;
+        // Split the result string by commas
+        string[] values = result.Split(',');
+
+        if (values.Length == 4)
+        {
+            // Parse the values (convert strings to int, assuming all are integers)
+            int gameMode = int.Parse(values[0]);
+            int player1 = int.Parse(values[1]);
+            int player2 = int.Parse(values[2]);
+            int stageIndex = int.Parse(values[3]);
+
+            // Now you can use gameMode, player1, player2, and stageIndex as needed
+            Debug.Log($"GameMode: {gameMode}, P1: {player1}, P2: {player2}, StageIndex: {stageIndex}");
+
+            ChangeModes(gameMode, player1, player2, stageIndex);
+            // Add your logic to handle these values here...
+        }
+        else
+        {
+            Debug.LogError("Invalid string format received from JavaScript.");
+        }
+    }
+    public static void ChangeModes(int mode, int p1, int p2, int stageIndex)
+    {
+        Debug.Log("Changing Modes");
+        Mode = mode;
+        selectableCharacters = UFE.GetVersusModeSelectableCharacters();
+        if (Mode == 1)
+        {
+            UFE.SetCPU(1, false);
+            UFE.SetCPU(2, true);
+            UFE.config.player1Character = selectableCharacters[p1];
+            UFE.SetPlayer(1, UFE.config.player1Character);
+            UFE.config.player2Character = selectableCharacters[p2];
+            UFE.SetPlayer(2, UFE.config.player2Character);
+            UFE.config.selectedStage = UFE.config.stages[stageIndex];
+            UFE.StartLoadingBattleScreen();
+        }
+        else
+        {
+            UFE.StartIntroScreen(0f);
+        }
+    }
     public static void EndGame(bool killEngine = true)
     {
         UFE.timeScale = UFE.config._gameSpeed;
@@ -1735,10 +1795,29 @@ public partial class UFE : MonoBehaviour, UFEInterface
         }
         else
         {
-            UFE.StartIntroScreen(0f);
+            //ChangeModes(1, 2, 2, 1);
+            if(!ModeCheck) StartIntroScreen(0f);
         }
     }
 
+    IEnumerator CheckGameModeReady()
+    {
+        string jsonString = null;
+
+        // Retry every 0.5 seconds until we get the game mode data
+        while (jsonString == null || jsonString == "")
+        {
+            jsonString = GetGameMode();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        var _mode = JsonUtility.FromJson<GameModeData>(jsonString);
+
+        if (_mode.gameMode == 1)
+            ChangeModes(_mode.gameMode, _mode.player1, _mode.player2, _mode.stageIndex);
+        else
+            StartIntroScreen(0f);
+    }
     //public List<Dictionary<System.Reflection.MemberInfo, System.Object>> dictionaryList = new List<Dictionary<System.Reflection.MemberInfo, System.Object>>();
     protected void Update()
     {

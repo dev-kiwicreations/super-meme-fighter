@@ -6,12 +6,15 @@ using FPLibrary;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Text;
+using System.Runtime.InteropServices;
+
 
 public partial class UFE
 {
 	#region GUI definitions
 	public static UFEScreen currentScreen { get; set; }
-	public static UFEScreen battleGUI { get; set; }
+	public static int Mode;
+    public static UFEScreen battleGUI { get; set; }
 	public static Canvas canvas { get; protected set; }
 	public static CanvasGroup canvasGroup { get; protected set; }
 	public static EventSystem eventSystem { get; protected set; }
@@ -23,8 +26,7 @@ public partial class UFE
 	protected static readonly string SoundsVolumeKey = "SoundsVolume";
 	protected static readonly string DifficultyLevelKey = "DifficultyLevel";
 	protected static readonly string DebugModeKey = "DebugMode";
-    protected static UFE3D.CharacterInfo[] selectableCharacters = new UFE3D.CharacterInfo[0];
-
+   
     #endregion
 
     #region Story mode definitions
@@ -458,25 +460,7 @@ public partial class UFE
 	{
 		UFE.StartMainMenuScreen((float)UFE.config.gameGUI.screenFadeDuration);
 	}
-    public static void ChangeModes(int mode)
-    {
-
-        selectableCharacters = UFE.GetVersusModeSelectableCharacters();
-        if (mode == 1)
-        {
-            UFE.SetCPU(1, false);
-            UFE.SetCPU(2, true);
-            UFE.config.player1Character = selectableCharacters[1];
-			UFE.SetPlayer(1,UFE.config.player1Character);
-			UFE.SetPlayer1(selectableCharacters[1]);
-            UFE.config.player2Character = selectableCharacters[2];
-            UFE.SetPlayer(2, UFE.config.player2Character);
-            UFE.config.selectedStage = UFE.config.stages[0];
-            UFE.StartLoadingBattleScreen();
-        }
-		else UFE._StartMainMenuScreen(0.1f);
-        
-    }
+    
     public static void StartMainMenuScreen(float fadeTime)
 	{
 		if (UFE.currentScreen.hasFadeOut)
@@ -1326,12 +1310,13 @@ public partial class UFE
 	{
 		UFE.HideScreen(UFE.currentScreen);
 		if (UFE.config.gameGUI.introScreen == null)
-		{
-			//ChangeModes(1);
-			//Debug.Log("Intro Screen not found! Make sure you have set the prefab correctly in the Global Editor");
-			UFE._StartMainMenuScreen(fadeTime);
-		}
-		else
+        {
+			// Mode = 1;
+           //  ChangeModes(1,2,6,3);
+           UFE._StartMainMenuScreen(fadeTime);
+            //Debug.Log("Intro Screen not found! Make sure you have set the prefab correctly in the Global Editor");
+        }
+        else
 		{
 			UFE.ShowScreen(UFE.config.gameGUI.introScreen);
 			if (!UFE.config.gameGUI.introScreen.hasFadeIn) fadeTime = 0;

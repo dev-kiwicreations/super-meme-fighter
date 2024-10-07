@@ -13,10 +13,12 @@ public class DefaultMainMenuScreen : MainMenuScreen
     public Button StartGame;
     public Button HowToPlayButton;
     public Button OptionsButton;
+    public GameObject BGImage;
     #region public override methods
     public override void OnShow()
     {
         base.OnShow();
+        if(VidExp.disableCheck) BGImage.SetActive(false);
     }
     public override void DoFixedUpdate(
         IDictionary<InputReferences, InputEvents> player1PreviousInputs,
@@ -88,6 +90,7 @@ public class DefaultMainMenuScreen : MainMenuScreen
             UFE.PlaySound(cancelSound);
             if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject)
             {
+                //UFE.ChangeModes(1, 1, 1, 1);
                 DirectlyStartPlayerVersusCPU();
             }
             else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
@@ -98,6 +101,7 @@ public class DefaultMainMenuScreen : MainMenuScreen
             {
                 GoToOptionsScreen();
             }
+            VidExp.disableCheck = true;
         }
     }
     #endregion

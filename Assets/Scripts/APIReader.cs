@@ -16,8 +16,6 @@ public class APIReader : MonoBehaviour
     private string _requestData = $"";
     private PostAPIResponse _postAPIResponse;
 
-    [DllImport("__Internal")]
-    private static extern void InitWalletID();
     private void Awake()
     {
         Instance = this;

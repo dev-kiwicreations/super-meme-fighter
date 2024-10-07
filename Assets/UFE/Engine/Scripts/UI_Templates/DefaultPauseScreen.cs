@@ -29,7 +29,7 @@ public class DefaultPauseScreen : PauseScreen
 
     private void Start()
     {
-
+        if (UFE.Mode == 1) MainMenuButton.gameObject.SetActive(false);
         BackButtonOnHowToPlay.onClick.AddListener(GoBackToPause);
     }
 
@@ -166,7 +166,8 @@ public class DefaultPauseScreen : PauseScreen
                 UFE.PlaySound(moveCursorSound);
                 if (EventSystem.current.currentSelectedGameObject == ContinueButton.gameObject)
                 {
-                    MainMenuButton.Select();
+                    if(UFE.Mode != 1)
+                        MainMenuButton.Select();
                 }
                 else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
                 {
@@ -186,7 +187,8 @@ public class DefaultPauseScreen : PauseScreen
                 }
                 else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
                 {
-                    MainMenuButton.Select();
+                    if (UFE.Mode != 1)
+                        MainMenuButton.Select();
                 }
                 else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject) 
                 {
