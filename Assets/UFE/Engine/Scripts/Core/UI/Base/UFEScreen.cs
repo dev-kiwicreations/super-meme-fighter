@@ -86,5 +86,19 @@ namespace UFE3D
         /// <param name="option">The option id in the grid.</param>
         /// <param name="player">The player who selected it (1 or 2).</param>
         public virtual void SelectOption(int option, int player) { }
+
+        public virtual void RedirectToDashboard(string url)
+        {
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+                UFE.RedirectUser(url);   
+#endif
+
+        }
+
+        public virtual void TweetOnClick()
+        {
+            //Functionality not COmmunicated yet.
+        }
     }
 }

@@ -175,8 +175,8 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             RectTransform rectTransform = portraitPlayer1.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                rectTransform.anchoredPosition = new Vector3(-550, -142, 0);
-                rectTransform.sizeDelta = new Vector2(1261.419f, 1268.854f);
+                rectTransform.anchoredPosition = new Vector3(-544f, -101, 0);
+                rectTransform.sizeDelta = new Vector2(1280.025f, 1323.841f);
             }
         }
         else if (UFE.config.player1Character.characterName == "Mog")

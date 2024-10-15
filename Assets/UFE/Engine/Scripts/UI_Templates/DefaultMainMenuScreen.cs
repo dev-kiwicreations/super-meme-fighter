@@ -10,13 +10,25 @@ using UnityEngine.UI;
 public class DefaultMainMenuScreen : MainMenuScreen
 {
     public PlaySFX playSfx;
-    public Button StartGame;
+    public Button StartGame,StartFight;
     public Button HowToPlayButton;
     public Button OptionsButton;
     public GameObject BGImage;
+    public GameObject GenericMenu, MemeMenu;
     #region public override methods
+    private void Awake()
+    {
+        if (UFE.Mode == 1) firstSelectableGameObject = StartFight.gameObject;
+    }
     public override void OnShow()
     {
+        if (UFE.Mode == 1)
+        {
+            StartFight.gameObject.SetActive(true);
+            StartGame.gameObject.SetActive(false);
+            GenericMenu.gameObject.SetActive(false);
+            MemeMenu.gameObject.SetActive(true);
+        }
         base.OnShow();
         if(VidExp.disableCheck) BGImage.SetActive(false);
     }
@@ -47,20 +59,23 @@ public class DefaultMainMenuScreen : MainMenuScreen
     {
         if (verticalAxisDown)
         {
-            if (EventSystem.current.currentSelectedGameObject == null)
+            if(EventSystem.current.currentSelectedGameObject == null)
             {
-                StartGame.Select();
+                if (UFE.Mode == 1) StartGame.Select();
+                else StartFight.Select();
             }
+           
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject)
+                if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject || EventSystem.current.currentSelectedGameObject == StartFight.gameObject)
                 {
                     OptionsButton.Select();
                 }
                 else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
                 {
-                    StartGame.Select();
+                    if (UFE.Mode == 1) StartFight.Select();
+                    else StartGame.Select();
                 }
                 else if(EventSystem.current.currentSelectedGameObject == OptionsButton.gameObject) 
                 {
@@ -70,7 +85,7 @@ public class DefaultMainMenuScreen : MainMenuScreen
             else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject)
+                if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject || EventSystem.current.currentSelectedGameObject == StartFight.gameObject)
                 {
                     HowToPlayButton.Select();
                 }
@@ -80,7 +95,8 @@ public class DefaultMainMenuScreen : MainMenuScreen
                 }
                 else if(EventSystem.current.currentSelectedGameObject == OptionsButton.gameObject) 
                 {
-                    StartGame.Select();
+                    if (UFE.Mode == 1) StartFight.Select();
+                    else StartGame.Select();
                 }
             }
         }
@@ -90,7 +106,12 @@ public class DefaultMainMenuScreen : MainMenuScreen
             UFE.PlaySound(cancelSound);
             if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject)
             {
+              //  UFE.ChangeModes(1, 1, 1, 1);
                 DirectlyStartPlayerVersusCPU();
+            }
+            else if(EventSystem.current.currentSelectedGameObject == StartFight.gameObject)
+            {
+                GoToLoadingScreen();
             }
             else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
             {

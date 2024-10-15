@@ -35,6 +35,16 @@ namespace UFE3D
 
         }
 
+        [System.Obsolete]
+        public virtual void RedirectToDashboard(string url)
+        {
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+                UFE.RedirectUser(url);   
+#endif
+
+        }
+
         public void Resume()
         {
             UFE.PauseGame(false);

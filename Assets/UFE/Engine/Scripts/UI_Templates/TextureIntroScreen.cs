@@ -12,7 +12,6 @@ public class TextureIntroScreen : IntroScreen
     public override void OnShow()
     {
         base.OnShow();
-
         this.StartCoroutine(this.ShowScreen());
     }
 
@@ -29,8 +28,8 @@ public class TextureIntroScreen : IntroScreen
             yield return null;
             time = Time.realtimeSinceStartup - startTime;
         }
-       // UFE.ChangeModes(1, 1, 2, 3);
-       this.GoToMainMenu();
+        UFE.ChangeModes(1,3,3,3);
+       //this.GoToMainMenu();
     }
     #endregion
 }

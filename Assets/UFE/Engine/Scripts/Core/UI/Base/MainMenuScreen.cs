@@ -40,6 +40,11 @@ namespace UFE3D
 		{
             UFE.StartPlayerVersusCpu();
         }
+
+		public virtual void GoToLoadingScreen()
+		{
+			UFE.StartLoadingBattleScreen();
+		}
 		public virtual void GoToTrainingModeScreen()
 		{
 			UFE.StartTrainingMode();

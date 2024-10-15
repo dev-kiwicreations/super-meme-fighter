@@ -10,7 +10,6 @@ namespace UFE3D
     {
         public static MyBattleEnd instance;
 
-        public GameObject Generic_Menu, Meme_Menu;
         void Awake()
         {
             if (instance == null)
@@ -27,11 +26,6 @@ namespace UFE3D
         // Start is called before the first frame update
         void Start()
         {
-            if(UFE.Mode == 1)
-            {
-                Generic_Menu.gameObject.SetActive(false);
-                Meme_Menu.gameObject.SetActive(true);
-            }
             if (UFE.config.selectedStage != null && UFE.config.selectedStage.screenshot != null)
             {
                 Texture2D texture = UFE.config.selectedStage.screenshot;
@@ -96,8 +90,6 @@ namespace UFE3D
 
         public void SetWinnerPlayer()
         {
-
-
             Texture2D texture = winnerPlayerInfo.profilePictureBig;
 
             // Create a Sprite from the Texture2D

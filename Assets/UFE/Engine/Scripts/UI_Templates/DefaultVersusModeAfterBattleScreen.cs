@@ -10,6 +10,8 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
 {
     public Button PlayAgain;
     public Button BackToMainMenu;
+    public Button TweetBtn;
+    public Button ExitBtn;
     
     #region public override methods
     public override void OnShow()
@@ -20,7 +22,13 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         {
             UFE.PlayMusic(this.music);
         }
-        if (UFE.Mode == 1) BackToMainMenu.gameObject.SetActive(false);
+        if (UFE.Mode == 1)
+        {
+            PlayAgain.gameObject.SetActive(false);
+            BackToMainMenu.gameObject.SetActive(false);
+            ExitBtn.gameObject.SetActive(true);
+            TweetBtn.gameObject.SetActive(true);
+        }
         UFE.canvas.planeDistance = 20f;
         UFE.canvas.sortingOrder = 500;
         UFE.canvas.worldCamera = Camera.main;
@@ -42,7 +50,8 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             player2CurrentInputs,
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
     }
-    
+
+    [Obsolete]
     protected virtual void HighlightStage(
         Fix64 horizontalAxis,
         Fix64 verticalAxis,
@@ -58,12 +67,16 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                PlayAgain.Select();
+                if (UFE.Mode == 1) TweetBtn.Select();
+                else
+                {
+                    PlayAgain.Select();
+                }
             }
             else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if(UFE.Mode == 1) PlayAgain.Select();
+                if (UFE.Mode == 1) ExitBtn.Select();
                 else BackToMainMenu.Select();
 
             }
@@ -74,9 +87,6 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             if (EventSystem.current.currentSelectedGameObject == PlayAgain.gameObject)
             {
                 Debug.Log(">>>> Button RepeatBattle Selected");
-
-               // UFE.PlaySound(selectSound);/*
-               // UFE.StartStageReadyScreen(true);*/
                 UFE.RestartMatch();
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToMainMenu.gameObject)
@@ -84,12 +94,23 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
                 Debug.Log("Main Called");
                 UFE.PlaySound(selectSound);
                 GoToMainMenu();
+
+            }
+            else if (EventSystem.current.currentSelectedGameObject == TweetBtn.gameObject)
+            {
+                UFE.PlaySound(selectSound);
+                TweetOnClick();
+               // Functionality for Tweet Not Yet Finalized.
+            }
+            else if(EventSystem.current.currentSelectedGameObject == ExitBtn.gameObject)
+            {
+                Debug.Log("ExitBtn Called");
+                RedirectToDashboard("https://staging.supermemefighter.xyz/dashboard");
             }
         }
         if (cancelButtonDown)
         {
             Debug.Log(">>>> Cancel MainMenu Selected");
-
             //GoToStageSelectionScreen();
         }
     }

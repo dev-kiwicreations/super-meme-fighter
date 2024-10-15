@@ -90,6 +90,8 @@ MonoBehaviour:
   moveCursorSound: {fileID: 8300000, guid: abe5624f4e123f8408c4b7f7d1356e9b, type: 3}
   PlayAgain: {fileID: 11400018}
   BackToMainMenu: {fileID: 4439074994589819628}
+  TweetBtn: {fileID: 8929015274899789807}
+  ExitBtn: {fileID: 8323808058140900720}
 --- !u!114 &5696260491471700325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,8 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cfa85ff79f66644a9003b8e401032b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Generic_Menu: {fileID: 728526071658305849}
-  Meme_Menu: {fileID: 6928278202808796973}
   winnerPlayerInfo: {fileID: 0}
   mapBG: {fileID: 5433609961235061763}
   winnerPortrait: {fileID: 2921646750941126089}
@@ -1197,7 +1197,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4288624496560165253}
-  - {fileID: 4812582446393240299}
   m_Father: {fileID: 22400000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1298,6 +1297,8 @@ RectTransform:
   m_Children:
   - {fileID: 22400014}
   - {fileID: 4459037846527075653}
+  - {fileID: 2344191687260569827}
+  - {fileID: 3510499793683985682}
   m_Father: {fileID: 3686100687726767628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1320,12 +1321,12 @@ GameObject:
   - component: {fileID: 594999993332106983}
   - component: {fileID: 4064030590673981963}
   m_Layer: 5
-  m_Name: Button_Menu
+  m_Name: Button_Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3510499793683985682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1338,7 +1339,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4812582446393240299}
+  m_Father: {fileID: 4288624496560165253}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1412,10 +1413,10 @@ MonoBehaviour:
     m_ColorMultiplier: 2
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 402d5a9d08f8a9b44baff97bb66f16fd, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: eab5c3fdb62d9d943ba63baae897052b, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 402d5a9d08f8a9b44baff97bb66f16fd, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 9349adb5e3116744cb572fc75409b3d4, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 6c54102b514930a44994ff46dc777fec, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 3c7fcdc8664697149bfef776e7d25c0e, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 6c54102b514930a44994ff46dc777fec, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2d6bab94bf248c74c8067b9603a571c3, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1428,15 +1429,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400022}
-        m_TargetAssemblyTypeName: UFE3D.VersusModeAfterBattleScreen, UFE3D
-        m_MethodName: GoToMainMenu
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UFE3D.UFEScreen, UFE3D
+        m_MethodName: RedirectToDashboard
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://staging.supermemefighter.xyz/dashboard
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &594999993332106983
@@ -2023,43 +2024,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &6928278202808796973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4812582446393240299}
-  m_Layer: 5
-  m_Name: MemeVMemeMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &4812582446393240299
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928278202808796973}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2344191687260569827}
-  - {fileID: 3510499793683985682}
-  m_Father: {fileID: 3686100687726767628}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7850833779464950681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,12 +2075,12 @@ GameObject:
   - component: {fileID: 3072743196043715712}
   - component: {fileID: 3751421266371043205}
   m_Layer: 5
-  m_Name: Button_Repeat_Battle
+  m_Name: Button_Tweet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2344191687260569827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2124,16 +2088,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8104687347303410302}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.002183655, w: 0.9999977}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4812582446393240299}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 4288624496560165253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.25}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 206}
+  m_AnchoredPosition: {x: -0.2795105, y: 206.00061}
   m_SizeDelta: {x: 474, y: 128}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6467835884570543012
@@ -2203,10 +2167,10 @@ MonoBehaviour:
     m_ColorMultiplier: 2
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7ec8553f1b6c25a4b806d51ec77205b7, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 300c6560ae9749f4bb686826f78fbc8b, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 7ec8553f1b6c25a4b806d51ec77205b7, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: d7046d79153063f49b042ddfd38cca20, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1039963ced9d42b40ba8299d1004edd8, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 3d3982084ec64e74e97fe49acecb24c5, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 1039963ced9d42b40ba8299d1004edd8, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 4172d3e7ec4515c459166c3566413d07, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted

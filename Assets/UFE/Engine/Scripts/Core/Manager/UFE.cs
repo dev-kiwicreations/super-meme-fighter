@@ -995,13 +995,20 @@ public partial class UFE : MonoBehaviour, UFEInterface
             Debug.LogError("Invalid string format received from JavaScript.");
         }
     }
+
+    [Obsolete]
+    public static void RedirectUser(string url)
+    {
+        Application.ExternalEval($"window.location.href = '{url}';");
+    }
     public static void ChangeModes(int mode, int p1, int p2, int stageIndex)
     {
-        Debug.Log("Changing Modes");
         Mode = mode;
         selectableCharacters = UFE.GetVersusModeSelectableCharacters();
-        if (Mode == 1)
+        if (mode == 1)
         {
+            Debug.Log("Changing Modes");
+
             UFE.SetCPU(1, false);
             UFE.SetCPU(2, true);
             UFE.config.player1Character = selectableCharacters[p1];
@@ -1009,12 +1016,10 @@ public partial class UFE : MonoBehaviour, UFEInterface
             UFE.config.player2Character = selectableCharacters[p2];
             UFE.SetPlayer(2, UFE.config.player2Character);
             UFE.config.selectedStage = UFE.config.stages[stageIndex];
-            UFE.StartLoadingBattleScreen();
+          //  UFE.StartLoadingBattleScreen();
         }
-        else
-        {
-            UFE.StartIntroScreen(0f);
-        }
+
+        UFE.StartMainMenuScreen();
     }
     public static void EndGame(bool killEngine = true)
     {

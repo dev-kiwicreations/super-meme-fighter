@@ -715,6 +715,11 @@ public class DefaultBattleGUI : BattleGUI{
 	protected override void OnRoundBegin(int roundNumber){
 		base.OnRoundBegin(roundNumber);
 
+		if (UFE.Mode == 1)
+		{
+			this.player1GUI.name.gameObject.SetActive(false);
+            this.player2GUI.name.gameObject.SetActive(false);
+        }
 		if (this.player1GUI != null && this.player1GUI.alert != null && this.player1GUI.alert.text != null){
 			this.player1GUI.alert.text.text = string.Empty;
 		}

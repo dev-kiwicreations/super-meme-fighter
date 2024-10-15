@@ -17,6 +17,7 @@ public class DefaultPauseScreen : PauseScreen
     public Button MainMenuButton;
     public Button BackButtonOnHowToPlay;
     public GameObject ShowControls;
+    public Button GiveUpBtn;
     #endregion
 
     #region protected instance fields
@@ -29,7 +30,11 @@ public class DefaultPauseScreen : PauseScreen
 
     private void Start()
     {
-        if (UFE.Mode == 1) MainMenuButton.gameObject.SetActive(false);
+        if (UFE.Mode == 1)
+        {
+            MainMenuButton.gameObject.SetActive(false);
+            GiveUpBtn.gameObject.SetActive(true);
+        }
         BackButtonOnHowToPlay.onClick.AddListener(GoBackToPause);
     }
 
@@ -145,6 +150,8 @@ public class DefaultPauseScreen : PauseScreen
             player2CurrentInputs,
             new UFEScreenExtensions.MoveCursorCallback(this.HighlightStage));
     }
+
+    [Obsolete]
     protected virtual void HighlightStage(
         Fix64 horizontalAxis,
         Fix64 verticalAxis,
@@ -168,12 +175,13 @@ public class DefaultPauseScreen : PauseScreen
                 {
                     if(UFE.Mode != 1)
                         MainMenuButton.Select();
+                    else GiveUpBtn.Select();
                 }
                 else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)
                 {
                     ContinueButton.Select();
                 }
-                else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject) 
+                else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject || EventSystem.current.currentSelectedGameObject == GiveUpBtn.gameObject) 
                 {
                     HowToPlayButton.Select();
                 }
@@ -189,8 +197,9 @@ public class DefaultPauseScreen : PauseScreen
                 {
                     if (UFE.Mode != 1)
                         MainMenuButton.Select();
+                    else GiveUpBtn.Select();
                 }
-                else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject) 
+                else if(EventSystem.current.currentSelectedGameObject == MainMenuButton.gameObject || EventSystem.current.currentSelectedGameObject == GiveUpBtn.gameObject) 
                 {
                     ContinueButton.Select();
                 }
@@ -211,6 +220,11 @@ public class DefaultPauseScreen : PauseScreen
             {
                 UFE.StopInGameSounds();
                 GoToMainMenu();
+            }
+            else if(EventSystem.current.currentSelectedGameObject == GiveUpBtn.gameObject)
+            {
+                Debug.Log("GiveUP Called");
+                RedirectToDashboard("https://staging.supermemefighter.xyz/dashboard");
             }
         }
     }
@@ -246,7 +260,7 @@ public class DefaultPauseScreen : PauseScreen
             this.screens[this.currentScreen].SelectOption(option, player);
         }
     }
-    #endregion
+#endregion
 
     #region protected instance methods
     protected virtual void HideScreen(UFEScreen screen)

@@ -1816,7 +1816,7 @@ public class ControlsScript : MonoBehaviour
         {
             if (opInfo.recordedMovesInCurrentRound.Exists(x => x.MoveID == currentMove.id))
             {
-                Debug.Log("MOVE EXISTS NOW! "+currentMove.moveName);
+               // Debug.Log("MOVE EXISTS NOW! "+currentMove.moveName);
                 var highestPressCountEntry = opInfo.recordedMovesInCurrentRound
                     .Where(x => x.MoveID == currentMove.id)
                     .OrderByDescending(x => x.PressCount)
