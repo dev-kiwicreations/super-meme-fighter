@@ -9,6 +9,8 @@ namespace UFE3D
     public class MyBattleEnd : MonoBehaviour
     {
         public static MyBattleEnd instance;
+
+        public GameObject Generic_Menu, Meme_Menu;
         void Awake()
         {
             if (instance == null)
@@ -25,6 +27,11 @@ namespace UFE3D
         // Start is called before the first frame update
         void Start()
         {
+            if(UFE.Mode == 1)
+            {
+                Generic_Menu.gameObject.SetActive(false);
+                Meme_Menu.gameObject.SetActive(true);
+            }
             if (UFE.config.selectedStage != null && UFE.config.selectedStage.screenshot != null)
             {
                 Texture2D texture = UFE.config.selectedStage.screenshot;
@@ -70,7 +77,10 @@ namespace UFE3D
                 {
                     Debug.Log("The stored winner does not match player 1 or player 2.");
                 }
-                APIReader.Instance.PutAPIRequest(winCondition);
+                
+                if(UFE.Mode == 1) APIReader.Instance.PutAPIRequest(winCondition,"meme");
+                else APIReader.Instance.PutAPIRequest(winCondition, "gym");
+
                 if (storedWinnerName == "Toshi" || storedWinnerName == "Trump")
                 {
                     winnerPortrait.transform.localScale = new Vector3(
@@ -204,6 +214,16 @@ namespace UFE3D
                 {
                     rectTransform.anchoredPosition = new Vector3(0, -235, 0);
                     rectTransform.sizeDelta = new Vector2(1083f, 1201f);
+                }
+            }
+            else if (winnerPlayerInfo.characterName == "Floki")
+            {
+                RectTransform rectTransform = winnerPortrait.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    rectTransform.anchoredPosition = new Vector3(-4.05f, -280f, 0);
+                    rectTransform.sizeDelta = new Vector2(1133.382f, 1282.439f);
+                    rectTransform.localScale = new Vector3(-1f, 1f, 1f);
                 }
             }
         }

@@ -188,6 +188,15 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
                 rectTransform.sizeDelta = new Vector2(1020.493f, 1026.508f);
             }
         }
+        else if (UFE.config.player1Character.characterName == "Floki")
+        {
+            RectTransform rectTransform = portraitPlayer1.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                rectTransform.anchoredPosition = new Vector3(-508f, -185f, 0);
+                rectTransform.sizeDelta = new Vector2(1129.094f, 1268.187f);
+            }
+        }
     }
     public void RightPortraitAdjust()
     {
@@ -293,6 +302,15 @@ public class DefaultLoadingBattleScreen : LoadingBattleScreen
             {
                 rectTransform.anchoredPosition = new Vector3(-549, -193, 0);
                 rectTransform.sizeDelta = new Vector2(1053.449f, 1074.78f);
+            }
+        }
+        else if (UFE.config.player2Character.characterName == "Floki")
+        {
+            RectTransform rectTransform = portraitPlayer2.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                rectTransform.anchoredPosition = new Vector3(-508f, -185f, 0);
+                rectTransform.sizeDelta = new Vector2(1129.094f, 1268.187f);
             }
         }
     }

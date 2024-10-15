@@ -20,7 +20,6 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         {
             UFE.PlayMusic(this.music);
         }
-        PlayAgain.Select();
         if (UFE.Mode == 1) BackToMainMenu.gameObject.SetActive(false);
         UFE.canvas.planeDistance = 20f;
         UFE.canvas.sortingOrder = 500;
@@ -64,9 +63,8 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             else if (verticalAxis < 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if (UFE.Mode != 1)
-                    BackToMainMenu.Select();
-                else PlayAgain.Select();
+                if(UFE.Mode == 1) PlayAgain.Select();
+                else BackToMainMenu.Select();
 
             }
         }
@@ -77,8 +75,8 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             {
                 Debug.Log(">>>> Button RepeatBattle Selected");
 
-                UFE.PlaySound(selectSound);/*
-                UFE.StartStageReadyScreen(true);*/
+               // UFE.PlaySound(selectSound);/*
+               // UFE.StartStageReadyScreen(true);*/
                 UFE.RestartMatch();
             }
             else if (EventSystem.current.currentSelectedGameObject == BackToMainMenu.gameObject)

@@ -13,7 +13,7 @@ public partial class UFE
 {
 	#region GUI definitions
 	public static UFEScreen currentScreen { get; set; }
-	public static int Mode;
+	public static int Mode =0;
     public static UFEScreen battleGUI { get; set; }
 	public static Canvas canvas { get; protected set; }
 	public static CanvasGroup canvasGroup { get; protected set; }

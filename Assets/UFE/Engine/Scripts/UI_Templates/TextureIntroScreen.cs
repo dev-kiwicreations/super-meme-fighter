@@ -29,8 +29,8 @@ public class TextureIntroScreen : IntroScreen
             yield return null;
             time = Time.realtimeSinceStartup - startTime;
         }
-
-        this.GoToMainMenu();
+       // UFE.ChangeModes(1, 1, 2, 3);
+       this.GoToMainMenu();
     }
     #endregion
 }

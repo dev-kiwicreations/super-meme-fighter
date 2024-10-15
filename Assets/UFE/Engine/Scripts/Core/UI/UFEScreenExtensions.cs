@@ -841,7 +841,7 @@ namespace UFE3D
 
 		private static void DefaultCancelAction(this Action action, AudioClip sound)
 		{
-			if (sound != null)
+			if (sound != null && !UFE.IsPaused())
 			{
 				UFE.PlaySound(sound);
             }

@@ -29,6 +29,7 @@ public class APIReader : MonoBehaviour
     [Button("POST API Request")]
     public void PostAPIRequest(string playerName, string enemyName, int difficulty)
     {
+        Debug.Log("Difficulty: "+difficulty);
         APIPostData postData = new APIPostData
         {
             player_wallet_id = WALLET_ID,
@@ -42,13 +43,15 @@ public class APIReader : MonoBehaviour
         StartCoroutine(GetAPIRequest(_requestData, RequestType.POST));
     }
     [Button("PUT API Request")]
-    public void PutAPIRequest(bool winCondition)
+    public void PutAPIRequest(bool winCondition, string _mode = "gym")
     {
         APIPutData putData = new APIPutData
         {
-            win = winCondition
+            win = winCondition,
+            mode = _mode
         };
         _requestData = JsonConvert.SerializeObject(putData);
+        Debug.Log("PUT REQUEST--- " + _requestData.ToString());
         StartCoroutine(GetAPIRequest(_requestData, RequestType.PUT));
     }
     private IEnumerator GetAPIRequest(string postData, RequestType requestType)
@@ -110,6 +113,7 @@ public struct PostAPIResponse
 public struct APIPutData
 {
     public bool win;
+    public string mode;
 }
 public enum RequestType
 {

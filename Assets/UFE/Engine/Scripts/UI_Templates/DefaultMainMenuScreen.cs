@@ -90,7 +90,6 @@ public class DefaultMainMenuScreen : MainMenuScreen
             UFE.PlaySound(cancelSound);
             if (EventSystem.current.currentSelectedGameObject == StartGame.gameObject)
             {
-                //UFE.ChangeModes(1, 1, 1, 1);
                 DirectlyStartPlayerVersusCPU();
             }
             else if (EventSystem.current.currentSelectedGameObject == HowToPlayButton.gameObject)

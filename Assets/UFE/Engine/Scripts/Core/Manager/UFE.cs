@@ -977,22 +977,18 @@ public partial class UFE : MonoBehaviour, UFEInterface
     public void ChangeMode(string result)
     {
         if (result != null) ModeCheck = true;
-        // Split the result string by commas
         string[] values = result.Split(',');
 
         if (values.Length == 4)
         {
-            // Parse the values (convert strings to int, assuming all are integers)
             int gameMode = int.Parse(values[0]);
             int player1 = int.Parse(values[1]);
             int player2 = int.Parse(values[2]);
             int stageIndex = int.Parse(values[3]);
 
-            // Now you can use gameMode, player1, player2, and stageIndex as needed
             Debug.Log($"GameMode: {gameMode}, P1: {player1}, P2: {player2}, StageIndex: {stageIndex}");
 
             ChangeModes(gameMode, player1, player2, stageIndex);
-            // Add your logic to handle these values here...
         }
         else
         {

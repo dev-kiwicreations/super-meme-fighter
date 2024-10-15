@@ -58,8 +58,9 @@ namespace UFE3D
 			}
 			else if (selectedOption == VersusModeAfterBattleScreen.Option.RepeatBattle)
 			{
-                Debug.Log("Repeating Battle");
-                UFE.StartLoadingBattleScreen();
+                Debug.Log("Repeating Battle");/*
+                UFE.StartLoadingBattleScreen();*/
+				UFE.RestartMatch();
 			}
 		}
 		#endregion
