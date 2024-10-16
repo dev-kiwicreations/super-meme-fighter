@@ -223,6 +223,8 @@ public partial class UFE : MonoBehaviour, UFEInterface
     public static ChallengeMode challengeMode;
     protected static UFE3D.CharacterInfo[] selectableCharacters = new UFE3D.CharacterInfo[0];
     bool ModeCheck;
+    public static bool WinCheck = false;
+
     #endregion
 
 
@@ -1001,7 +1003,7 @@ public partial class UFE : MonoBehaviour, UFEInterface
     {
         Application.ExternalEval($"window.location.href = '{url}';");
     }
-    public static void ChangeModes(int mode, int p1, int p2, int stageIndex)
+    public static void ChangeModes(int mode, int p1=0, int p2=0, int stageIndex=0)
     {
         Mode = mode;
         selectableCharacters = UFE.GetVersusModeSelectableCharacters();
@@ -1016,6 +1018,8 @@ public partial class UFE : MonoBehaviour, UFEInterface
             UFE.config.player2Character = selectableCharacters[p2];
             UFE.SetPlayer(2, UFE.config.player2Character);
             UFE.config.selectedStage = UFE.config.stages[stageIndex];
+            UFE.SetAIDifficulty(AIDifficultyLevel.Normal);
+            Debug.Log("DifficultyLevel =" + UFE.GetAIDifficulty().difficultyLevel.ToString());
           //  UFE.StartLoadingBattleScreen();
         }
 

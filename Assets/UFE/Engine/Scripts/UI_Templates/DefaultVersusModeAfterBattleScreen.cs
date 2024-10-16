@@ -24,10 +24,22 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
         }
         if (UFE.Mode == 1)
         {
-            PlayAgain.gameObject.SetActive(false);
             BackToMainMenu.gameObject.SetActive(false);
-            ExitBtn.gameObject.SetActive(true);
-            TweetBtn.gameObject.SetActive(true);
+
+            if (UFE.WinCheck)
+            {
+                PlayAgain.gameObject.SetActive(false);
+              
+                ExitBtn.gameObject.SetActive(true);
+                TweetBtn.gameObject.SetActive(true);
+            }
+            else
+            {
+                PlayAgain.gameObject.SetActive(true);
+                ExitBtn.gameObject.SetActive(true);
+                TweetBtn.gameObject.SetActive(false);
+            }
+           
         }
         UFE.canvas.planeDistance = 20f;
         UFE.canvas.sortingOrder = 500;
@@ -67,7 +79,7 @@ public class DefaultVersusModeAfterBattleScreen : VersusModeAfterBattleScreen
             if (verticalAxis > 0)
             {
                 UFE.PlaySound(moveCursorSound);
-                if (UFE.Mode == 1) TweetBtn.Select();
+                if (UFE.Mode == 1 && UFE.WinCheck) TweetBtn.Select();
                 else
                 {
                     PlayAgain.Select();

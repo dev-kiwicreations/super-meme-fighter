@@ -371,6 +371,7 @@ namespace UFE3D
             if (winner.playerNum == this.player1.controlsScript.playerNum)
             {
                 this.player1.winner = true;
+                UFE.WinCheck = true;
                 publicWinner = UFE.config.player1Character;
                 PlayerPrefs.SetString("winnerName", UFE.config.player1Character.characterName);
 
@@ -379,6 +380,7 @@ namespace UFE3D
             if (winner.playerNum == this.player2.controlsScript.playerNum)
             {
                 this.player2.winner = true;
+                UFE.WinCheck = false;
                 publicWinner = UFE.config.player2Character;
                 PlayerPrefs.SetString("winnerName", UFE.config.player2Character.characterName);
             }
